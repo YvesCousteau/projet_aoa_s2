@@ -1,3 +1,11 @@
+
+int main(int argc, char const *argv[]) {
+  baseline()
+  return 0;
+}
+
+
+
 void baseline (unsigned n,
 const float a [ n ],
 const float b [ n ],
