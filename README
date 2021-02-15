@@ -5,4 +5,4 @@ Pour compiler la seconde version optimisée : make OPT=OPT2
 Pour exécuter avec une taille 300, 100 répétitions de warmup (lors de la première méta) et 30 répétitions de mesure : ./s13 300 100 30
 
 Pour exécuter avec MAQAO :
-maqao oneview --create-report=one binary=sgemm run_command="<binary> 300 100 30"
+maqao oneview --create-report=one binary=s13 run_command="<binary> 300 100 30"
