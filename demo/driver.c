@@ -6,7 +6,7 @@
 
 extern uint64_t rdtsc ();
 
-extern void sgemm (int n, float a[n][n], float b[n][n], float c[n][n]);
+extern void s13 (int n, float a[n][n], float b[n][n], float c[n][n], int offset, double radius);
 
 static void init_array (int n, float a[n][n]) {
    int i, j;
@@ -31,6 +31,9 @@ int main (int argc, char *argv[]) {
       abort();
    }
 
+   int offset = 0;
+   double radius = 10;
+
    int i, m;
 
    /* get command line arguments */
@@ -52,15 +55,15 @@ int main (int argc, char *argv[]) {
       /* warmup (repw repetitions in first meta, 1 repet in next metas) */
       if (m == 0) {
          for (i=0; i<repw; i++)
-            sgemm (size, a, b, c);
+            s13 (size, a, b, c, offset, radius);
       } else {
-         sgemm (size, a, b, c);
+         s13 (size, a, b, c, offset, radius);
       }
 
       /* measure repm repetitions */
       uint64_t t1 = rdtsc();
       for (i=0; i<repm; i++)
-         sgemm (size, a, b, c);
+         s13 (size, a, b, c, offset, radius);
       uint64_t t2 = rdtsc();
 
       /* print performance */
