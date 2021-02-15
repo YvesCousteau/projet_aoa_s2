@@ -1,19 +1,15 @@
 CC=gcc
-CFLAGS=-W -Wall -ansi -pedantic
-LDFLAGS=
-EXEC=projet
+CFLAGS=-O2 -g -Wall
+OPTFLAGS=-O3 -g -Wall
+OBJS=driver.o kernel.o rdtsc.o
 
-all:
-	$(EXEC)
+all:	sgemm
 
-projet: code.o
-	$(CC) -o projet code.o $(LDFLAGS)
+sgemm:	$(OBJS)
+	$(CC) -o $@ $^
 
-code.o: code.c
-	$(CC) -o code.o -c code.c $(CFLAGS)
+kernel.o: kernel.c
+	$(CC) $(OPTFLAGS) -D $(OPT) -c $< -o $@
 
 clean:
-	rm -rf *.o
-
-mrproper: clean
-	rm -rf $(EXEC)
+	rm -rf $(OBJS) sgemm
