@@ -1,7 +1,7 @@
 #ifdef OPT1
 
-void s13 (int n, float a[n][n], float b[n][n], float c[n][n], int offset, double radius) {
-   int i, j, k;
+void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int offset , double radius) {
+   int i, j;
 
    for ( i =0; i < n ; i ++) {
      for ( j =0; j < n ; j ++) {
@@ -21,8 +21,8 @@ void s13 (int n, float a[n][n], float b[n][n], float c[n][n], int offset, double
 #elif defined OPT2
 
 
-void s13 (int n, float a[n][n], float b[n][n], float c[n][n], int offset, double radius) {
-   int i, j, k;
+void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int offset , double radius) {
+   int i, j;
 
    for ( i =0; i < n ; i ++) {
      for ( j =0; j < n ; j ++) {
@@ -42,8 +42,8 @@ void s13 (int n, float a[n][n], float b[n][n], float c[n][n], int offset, double
 #else
 
 /* original */
-void s13 (int n, float a[n][n], float b[n][n], float c[n][n], int offset, double radius) {
-   int i, j, k;
+void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int offset , double radius) {
+   int i, j;
 
    for ( i =0; i < n ; i ++) {
      for ( j =0; j < n ; j ++) {

@@ -6,14 +6,14 @@
 
 extern uint64_t rdtsc ();
 
-extern void s13 (int n, float a[n][n], float b[n][n], float c[n][n], int offset, double radius);
+//extern void s13 (int n, float a[n][n], float b[n][n], float c[n][n], int offset, double radius);
+extern void s13 (unsigned n , const float a [ n ] ,const float b [ n ] , float c [ n ][ n ] ,int offset , double radius);
 
-static void init_array (int n, float a[n][n]) {
-   int i, j;
+static void init_array (int n, float a[n]) {
+   int i;
 
    for (i=0; i<n; i++)
-      for (j=0; j<n; j++)
-         a[i][j] = (float) rand() / RAND_MAX;
+      a[i] = (float) rand() / RAND_MAX;
 }
 
 static void print_array (int n, float a[n][n]) {
@@ -43,8 +43,9 @@ int main (int argc, char *argv[]) {
 
    for (m=0; m<NB_METAS; m++) {
       /* allocate arrays */
-      float (*a)[size] = malloc (size * size * sizeof a[0][0]);
-      float (*b)[size] = malloc (size * size * sizeof b[0][0]);
+      float (*a) = malloc (size * sizeof(float));
+      float (*b) = malloc (size * sizeof(float));
+      //float (*b)[size] = malloc (size * size * sizeof b[0][0]);
       float (*c)[size] = malloc (size * size * sizeof c[0][0]);
 
       /* init arrays */
