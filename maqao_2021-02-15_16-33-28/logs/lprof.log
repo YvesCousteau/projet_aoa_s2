@@ -1,0 +1,58 @@
+[MAQAO] PROCESS LAUNCHED (host pop-os, process 11103)
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+0.01 cycles/FMA
+
+* Info: Callchains info will be incomplete
+
+* Info: Try to recompile your application with -fno-omit-frame-pointer or to rerun with btm=stack
+[MAQAO] STOP PROFILING (host pop-os, process 11103)
+[MAQAO] DUMPING SAMPLES (host pop-os, process 11103)
+[MAQAO] FINISHED DUMPING SAMPLES (host pop-os, process 11103)
+[MAQAO] DUMPING SOURCE INFO FOR CALLCHAIN NODES (host pop-os, process 11103)
+[MAQAO] FINISHED DUMPING SOURCE INFO FOR CALLCHAIN NODES (host pop-os, process 11103)
+[MAQAO] ANALYZING binary (host pop-os)
+[MAQAO] binary (host pop-os) DONE
+[MAQAO] Your experiment path is /home/hugohenrotte/Code/projet_aoa_s2/maqao_2021-02-15_16-33-28/lprof_npsu/
+[MAQAO] To display your profiling results:
+#################################################################################################
+#    LEVEL    |     REPORT     |                            COMMAND                             #
+#################################################################################################
+#  Functions  |  Cluster-wide  |  maqao lprof -df xp=/home/hugohenrotte/Code/projet_aoa_s2/maq  #
+#  Functions  |  Per-node      |  maqao lprof -df -dn xp=/home/hugohenrotte/Code/projet_aoa_s2  #
+#  Functions  |  Per-process   |  maqao lprof -df -dp xp=/home/hugohenrotte/Code/projet_aoa_s2  #
+#  Functions  |  Per-thread    |  maqao lprof -df -dt xp=/home/hugohenrotte/Code/projet_aoa_s2  #
+#  Loops      |  Cluster-wide  |  maqao lprof -dl xp=/home/hugohenrotte/Code/projet_aoa_s2/maq  #
+#  Loops      |  Per-node      |  maqao lprof -dl -dn xp=/home/hugohenrotte/Code/projet_aoa_s2  #
+#  Loops      |  Per-process   |  maqao lprof -dl -dp xp=/home/hugohenrotte/Code/projet_aoa_s2  #
+#  Loops      |  Per-thread    |  maqao lprof -dl -dt xp=/home/hugohenrotte/Code/projet_aoa_s2  #
+#################################################################################################
+

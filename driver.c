@@ -69,7 +69,7 @@ int main (int argc, char *argv[]) {
 
       /* print performance */
       printf ("%.2f cycles/FMA\n",
-              (t2 - t1) / ((float) size * size * size * repm));
+              (t2 - t1) / ((float) (size - offset) * size * repm));
 
       /* print output */
       //if (m == 0) print_array (n, c);

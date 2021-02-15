@@ -1,0 +1,20 @@
+/home/hugohenrotte/Code/projet_aoa_s2/kernel.c: 3 - 19
+--------------------------------------------------------------------------------
+
+3: void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int offset , double radius) {
+4:    int i, j;
+5: 
+6:    for ( i =0; i < n ; i ++) {
+7:      for ( j =0; j < n ; j ++) {
+8:          if ( offset + j < 0 || offset + j >= n )
+9:             continue;
+10:          
+11:          c [ i ][ offset + j ] = 0.0;
+12: 
+13:          if ( a[offset + j] < radius ) {
+14:            c [ i ][ offset + j ] = a [ offset + j ] / b [ i ];
+15:          }
+16: 
+17:       }
+18:    }
+19: }

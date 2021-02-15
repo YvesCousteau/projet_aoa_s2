@@ -1,0 +1,13 @@
+********************************************************************************
+
+MAQAO 2.12.0 - 0597352531e99b23a212d512422aed33d7be3e4f::20201203-142304 || 2020/12/03
+
+maqao oneview --create-report=one binary=s13 run_command=<binary> 300 100 30 uarch=SKYLAKE lprof_params=--use-OS-timers 
+
+Info: OMP_NUM_THREADS not set, it will be considered as equal to 1
+Warning: profile_start is set to remove 30% of the application but is ignored by current report.
+To force the profiler to not analyze a part of the code, use profile_start unit "s" with time in seconds as value
+or insert LPROF probes in your application sources and recompile. More data about LPROF probes are available
+using command maqao oneview --help-lprof-probes
+
+CMD:  OMP_NUM_THREADS=1   /usr/local/bin/maqao lprof --use-OS-timers --xp=/home/hugohenrotte/Code/projet_aoa_s2/maqao_2021-02-15_16-33-28/lprof_npsu/ --mpi-command=""   -- /home/hugohenrotte/Code/projet_aoa_s2/maqao_2021-02-15_16-33-28/binary 300 100 30
