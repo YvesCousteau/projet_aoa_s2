@@ -174,3 +174,66 @@ MAQAO 2.13.0 - 0a2b44fc1142f4c5c3e2b206c19b6c7b43c1d709::20210226-115937 || 2021
 maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 100 100 100 
 
 Info: OMP_NUM_THREADS not set, it will be considered as equal to 1
+********************************************************************************
+
+MAQAO 2.13.0 - 0a2b44fc1142f4c5c3e2b206c19b6c7b43c1d709::20210226-115937 || 2021/02/26
+
+maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 31 31 
+
+Info: OMP_NUM_THREADS not set, it will be considered as equal to 1
+********************************************************************************
+
+MAQAO 2.13.0 - 0a2b44fc1142f4c5c3e2b206c19b6c7b43c1d709::20210226-115937 || 2021/02/26
+
+maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 \) 31 31 
+
+Info: OMP_NUM_THREADS not set, it will be considered as equal to 1
+********************************************************************************
+
+MAQAO 2.13.0 - 0a2b44fc1142f4c5c3e2b206c19b6c7b43c1d709::20210226-115937 || 2021/02/26
+
+maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 31 31 
+
+Info: OMP_NUM_THREADS not set, it will be considered as equal to 1
+********************************************************************************
+
+MAQAO 2.13.0 - 0a2b44fc1142f4c5c3e2b206c19b6c7b43c1d709::20210226-115937 || 2021/02/26
+
+maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 31 31 
+
+Info: OMP_NUM_THREADS not set, it will be considered as equal to 1
+********************************************************************************
+
+MAQAO 2.13.0 - 0a2b44fc1142f4c5c3e2b206c19b6c7b43c1d709::20210226-115937 || 2021/02/26
+
+maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 31 31 
+
+Info: OMP_NUM_THREADS not set, it will be considered as equal to 1
+********************************************************************************
+
+MAQAO 2.13.0 - 0a2b44fc1142f4c5c3e2b206c19b6c7b43c1d709::20210226-115937 || 2021/02/26
+
+maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 31 31 
+
+Info: OMP_NUM_THREADS not set, it will be considered as equal to 1
+********************************************************************************
+
+MAQAO 2.13.0 - 0a2b44fc1142f4c5c3e2b206c19b6c7b43c1d709::20210226-115937 || 2021/02/26
+
+maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 31 31 
+
+Info: OMP_NUM_THREADS not set, it will be considered as equal to 1
+********************************************************************************
+
+MAQAO 2.13.0 - 0a2b44fc1142f4c5c3e2b206c19b6c7b43c1d709::20210226-115937 || 2021/02/26
+
+maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 31 31 
+
+Info: OMP_NUM_THREADS not set, it will be considered as equal to 1
+********************************************************************************
+
+MAQAO 2.13.0 - 0a2b44fc1142f4c5c3e2b206c19b6c7b43c1d709::20210226-115937 || 2021/02/26
+
+maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 31 31 
+
+Info: OMP_NUM_THREADS not set, it will be considered as equal to 1

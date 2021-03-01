@@ -9,6 +9,9 @@ OBJS=driver.o kernel.o rdtsc.o
 CFILE=driver.c kernel.c rdtsc.c
 
 R_ANAL=analysis
+SIZE=$$((1*2**10))
+NB_WARMUP=31
+NB_MESURE_REP=31
 
 all:	s13
 
@@ -24,10 +27,10 @@ maqao: s13
 	@mkdir -p $(R_ANAL)
 	@echo --- generating maqao file ---
 
-	@maqao oneview -R1 xp=exp_OV1 of=text -- ./s13_01 100 100 100 > $(R_ANAL)/resultat_01.txt
-	@maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 100 100 100 > $(R_ANAL)/resultat_02.txt
-	@maqao oneview -R1 xp=exp_OV3 of=text -- ./s13_03 100 100 100 > $(R_ANAL)/resultat_03.txt
-	@maqao oneview -R1 xp=exp_OV3n of=text -- ./s13_03n 100 100 100 > $(R_ANAL)/resultat_03n.txt
+	maqao oneview -R1 xp=exp_OV1 of=text -- ./s13_01 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) > $(R_ANAL)/resultat_01.txt
+	@maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) > $(R_ANAL)/resultat_02.txt
+	@maqao oneview -R1 xp=exp_OV3 of=text -- ./s13_03 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) > $(R_ANAL)/resultat_03.txt
+	@maqao oneview -R1 xp=exp_OV3n of=text -- ./s13_03n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) > $(R_ANAL)/resultat_03n.txt
 	
 
 analysis: maqao
