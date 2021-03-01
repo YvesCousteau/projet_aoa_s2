@@ -1,3 +1,0 @@
-loop_id;module;function_name;source_info;level;time_p;time_s;time_s_min;time_s_avg;time_s_max;cov_deviation;nb_threads;
-5;binary;s13;kernel.c:7-14;Innermost;99.74;7.69;7.69;7.69;7.69;0;1;
-6;binary;s13;kernel.c:6-14;Outermost;0.23;0.02;0.02;0.02;0.02;0;1;

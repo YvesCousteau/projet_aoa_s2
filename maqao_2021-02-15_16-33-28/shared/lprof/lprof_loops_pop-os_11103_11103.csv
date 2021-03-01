@@ -1,2 +1,0 @@
-loop_id;module;function_name;source_info;level;time_p;time_s;time_s_min;time_s_avg;time_s_max;cov_deviation;nb_threads;
-5;binary;s13;kernel.c:7-14;Innermost;99.08;0.11;;;;;;

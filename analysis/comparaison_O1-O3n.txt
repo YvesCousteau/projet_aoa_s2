@@ -1,0 +1,124 @@
+27,28c27,28
+<   Application:			./s13_01
+<   Timestamp:			2021-03-01 16:44:33
+---
+>   Application:			./s13_03n
+>   Timestamp:			2021-03-01 16:46:45
+50c50
+<   Total Time:				0.04 s
+---
+>   Total Time:				0.03 s
+54c54
+<   Perfect Flow Complexity:		6.66
+---
+>   Perfect Flow Complexity:		6.15
+57c57
+<       Potential Speedup:		1.25
+---
+>       Potential Speedup:		1.18
+60c60
+<       Potential Speedup:		1.16
+---
+>       Potential Speedup:		1.18
+63c63
+<       Potential Speedup:		6.66
+---
+>       Potential Speedup:		6.15
+76c76
+<       Cumulated Speedup | 1.2500 | 
+---
+>       Cumulated Speedup | 1.1765 | 
+78c78
+<     s13 - 01 - 6:	1.25
+---
+>     s13 - 03n - 5:	1.1765
+82c82
+<       Cumulated Speedup | 1.1644 | 
+---
+>       Cumulated Speedup | 1.1765 | 
+84c84
+<     s13 - 01 - 6:	1.1644
+---
+>     s13 - 03n - 5:	1.1765
+88c88
+<       Cumulated Speedup | 6.6579 | 
+---
+>       Cumulated Speedup | 6.1538 | 
+90c90
+<     s13 - 01 - 6:	6.6579
+---
+>     s13 - 03n - 5:	6.1538
+155c155
+<    s13                                          | s13_01          | 100          | 0.04       |
+---
+>    s13                                          | s13_03n         | 100          | 0.03       |
+169c169
+<    6          | s13_01          |                                              | 100          |
+---
+>    5          | s13_03n         |                                              | 100          |
+188c188
+<       5.1.1  -  Loop 6 from s13_01
+---
+>       5.1.1  -  Loop 5 from s13_03n
+306c306
+< 0% of peak computational performance is used (0.22 out of 32.00 FLOP per cycle (GFLOPS @ 1GHz))
+---
+> 0% of peak computational performance is used (0.27 out of 32.00 FLOP per cycle (GFLOPS @ 1GHz))
+312c312
+< By removing them, you can lower the cost of an iteration from 4.50 to 3.25 cycles (1.38x speedup).
+---
+> By removing them, you can lower the cost of an iteration from 3.75 to 3.00 cycles (1.25x speedup).
+323,325c323,325
+< Your loop is probably not vectorized.
+< Only 17% of vector register length is used (average across all SSE/AVX instructions).
+< By vectorizing your loop, you can lower the cost of an iteration from 4.50 to 0.75 cycles (6.00x speedup).
+---
+> Your loop is not vectorized.
+> Only 14% of vector register length is used (average across all SSE/AVX instructions).
+> By vectorizing your loop, you can lower the cost of an iteration from 3.75 to 0.75 cycles (5.00x speedup).
+328c328
+< Store and arithmetical SSE/AVX instructions are used in scalar version (process only one data element in vector registers).
+---
+> All SSE/AVX instructions are used in scalar version (process only one data element in vector registers).
+359,364c359
+<  - CVTSS2SD: 1 occurrences
+< 
+< 
+< Workaround
+< Pass to your compiler a micro-architecture specialization option:
+<  - Please read your compiler manual
+---
+>  - VCVTSS2SD: 1 occurrences
+390c385
+<  - CVTSS2SD (FP32 to FP64, scalar): 1 occurrences
+---
+>  - VCVTSS2SD (FP32 to FP64, scalar): 1 occurrences
+431c426
+< By removing them, you can lower the cost of an iteration from 3.75 to 2.75 cycles (1.36x speedup).
+---
+> By removing them, you can lower the cost of an iteration from 3.25 to 2.50 cycles (1.30x speedup).
+442,444c437,439
+< Your loop is probably not vectorized.
+< Only 18% of vector register length is used (average across all SSE/AVX instructions).
+< By vectorizing your loop, you can lower the cost of an iteration from 3.75 to 0.50 cycles (7.47x speedup).
+---
+> Your loop is not vectorized.
+> Only 14% of vector register length is used (average across all SSE/AVX instructions).
+> By vectorizing your loop, you can lower the cost of an iteration from 3.25 to 0.44 cycles (7.43x speedup).
+447c442
+< Store and arithmetical SSE/AVX instructions are used in scalar version (process only one data element in vector registers).
+---
+> All SSE/AVX instructions are used in scalar version (process only one data element in vector registers).
+478,483c473
+<  - CVTSS2SD: 1 occurrences
+< 
+< 
+< Workaround
+< Pass to your compiler a micro-architecture specialization option:
+<  - Please read your compiler manual
+---
+>  - VCVTSS2SD: 1 occurrences
+493c483
+<  - CVTSS2SD (FP32 to FP64, scalar): 1 occurrences
+---
+>  - VCVTSS2SD (FP32 to FP64, scalar): 1 occurrences
