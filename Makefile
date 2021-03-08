@@ -9,7 +9,7 @@ OPTFLAGS=-O3 -g -Wall
 CFLAGS=-O2 -g -Wall
 
 
-OBJS=driver.o kernel.o rdtsc.o
+OBJS=driver.o rdtsc.o s13_01.o s13_02.o s13_03.o s13_03n.o
 CFILE=driver.c kernel.c rdtsc.c
 
 R_ANAL=analysis
@@ -25,19 +25,27 @@ NB_MESURE_REP=100
 #	@$(CC) $(OFLAG3n) -D $(OPT)  $(CFILE) -o s13_03n
 
 
-all:	sgemm
+all:	s13
 
-sgemm:	$(OBJS)
-	$(CC) -o $@ $^
+s13:	$(OBJS)
+# 	$(CC) -o $@ $^
+	$(CC) -o main.o driver.o rdtsc.o s13_01.o -o s13_01
+	$(CC) -o main.o driver.o rdtsc.o s13_02.o -o s13_02
+	$(CC) -o main.o driver.o rdtsc.o s13_03.o -o s13_03
+	$(CC) -o main.o driver.o rdtsc.o s13_03n.o -o s13_03n
 
-kernel.o: kernel.c
-	$(CC) $(OPTFLAGS) -D $(OPT) -c $< -o $@
+s13_01.o: kernel.c
+	@$(CC) $(OFLAG1) -D $(OPT) $(CFILE) -c $< -o s13_01.o
+	
+s13_02.o: kernel.c
+	@$(CC) $(OFLAG2) -D $(OPT)  $(CFILE) -c $< -o s13_02.o
+	
+s13_03.o: kernel.c
+	@$(CC) $(OFLAG3) -D $(OPT)  $(CFILE) -c $< -o s13_03.o
+	
+s13_03n.o: kernel.c
+	@$(CC) $(OFLAG3n) -D $(OPT)  $(CFILE) -c $< -o s13_03n.o
 
-dsds:
-	@$(CC) $(OFLAG1) -D $(OPT) $(CFILE) -c s13_01
-	@$(CC) $(OFLAG2) -D $(OPT)  $(CFILE) -c s13_02
-	@$(CC) $(OFLAG3) -D $(OPT)  $(CFILE) -c s13_03
-	@$(CC) $(OFLAG3n) -D $(OPT)  $(CFILE) -c s13_03n
 
 
 maqao: s13
