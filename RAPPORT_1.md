@@ -55,7 +55,7 @@ Pendant la mesure :
 – Répétitions du corps du driver
 – Via un script ou une boucle dans le driver
 – En toute rigueur, 31 méta-répétitions nécessaires
-– Souhaité : (médiane - minimum) / minimum < 5 %
+– Souhaité : (médiane - minimum) / minimum < 5 % = 31
 
 #### Environnement d'exécution le plus léger possible
 – Le plus simple et efficace : redémarrer en mode
