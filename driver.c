@@ -16,17 +16,19 @@ static void init_array (int n, float a[n]) {
       a[i] = (float) rand() / RAND_MAX;
 }
 
-static void print_array (int n, float a[n][n]) {
+static void dump_array (char * filename, int n, float a[n][n]) {
    int i, j;
+
+   FILE * out = fopen(filename, "a+");
 
    for (i=0; i<n; i++)
       for (j=0; j<n; j++)
-         printf ("%f\n", a[i][j]);
+         fprintf (out, "%f\n", a[i][j]);
 }
 
 int main (int argc, char *argv[]) {
    /* check command line arguments */
-   if (argc != 4) {
+   if (argc < 4 || argc > 5) {
       fprintf (stderr, "Usage: %s <size> <nb warmup repets> <nb measure repets>\n", argv[0]);
       abort();
    }
@@ -72,7 +74,7 @@ int main (int argc, char *argv[]) {
               (t2 - t1) / ((float) (size - offset) * size * repm));
 
       /* print output */
-      //if (m == 0) print_array (n, c);
+      dump_array (argv[4], size, c);
 
       /* free arrays */
       free (a);
