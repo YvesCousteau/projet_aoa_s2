@@ -1,0 +1,86 @@
+27,28c27,28
+<   Application:			./s13_01
+<   Timestamp:			2021-03-10 16:19:02
+---
+>   Application:			./s13_02
+>   Timestamp:			2021-03-10 16:19:09
+50c50
+<   Total Time:				3.92 s
+---
+>   Total Time:				3.93 s
+54c54
+<   Perfect Flow Complexity:		6.66
+---
+>   Perfect Flow Complexity:		6.34
+57c57
+<       Potential Speedup:		1.25
+---
+>       Potential Speedup:		1.24
+60c60
+<       Potential Speedup:		1.16
+---
+>       Potential Speedup:		1.20
+63c63
+<       Potential Speedup:		6.66
+---
+>       Potential Speedup:		6.34
+76c76
+<       Cumulated Speedup | 1.2500 | 
+---
+>       Cumulated Speedup | 1.2353 | 
+78c78
+<     s13 - 01 - 7:	1.25
+---
+>     s13 - 02 - 6:	1.2353
+82c82
+<       Cumulated Speedup | 1.1644 | 
+---
+>       Cumulated Speedup | 1.1957 | 
+84c84
+<     s13 - 01 - 7:	1.1644
+---
+>     s13 - 02 - 6:	1.1957
+88c88
+<       Cumulated Speedup | 6.6579 | 
+---
+>       Cumulated Speedup | 6.3396 | 
+90c90
+<     s13 - 01 - 7:	6.6579
+---
+>     s13 - 02 - 6:	6.3396
+155c155
+<    s13                                          | s13_01          | 100          | 3.93       |
+---
+>    s13                                          | s13_02          | 100          | 3.93       |
+169c169
+<    7          | s13_01          |                                              | 100          |
+---
+>    6          | s13_02          |                                              | 100          |
+188c188
+<       5.1.1  -  Loop 7 from s13_01
+---
+>       5.1.1  -  Loop 6 from s13_02
+306c306
+< 0% of peak computational performance is used (0.22 out of 32.00 FLOP per cycle (GFLOPS @ 1GHz))
+---
+> 0% of peak computational performance is used (0.25 out of 32.00 FLOP per cycle (GFLOPS @ 1GHz))
+312c312
+< By removing them, you can lower the cost of an iteration from 4.50 to 3.25 cycles (1.38x speedup).
+---
+> By removing them, you can lower the cost of an iteration from 4.00 to 3.00 cycles (1.33x speedup).
+324,325c324,325
+< Only 17% of vector register length is used (average across all SSE/AVX instructions).
+< By vectorizing your loop, you can lower the cost of an iteration from 4.50 to 0.75 cycles (6.00x speedup).
+---
+> Only 18% of vector register length is used (average across all SSE/AVX instructions).
+> By vectorizing your loop, you can lower the cost of an iteration from 4.00 to 0.75 cycles (5.33x speedup).
+431c431
+< By removing them, you can lower the cost of an iteration from 3.75 to 2.75 cycles (1.36x speedup).
+---
+> By removing them, you can lower the cost of an iteration from 3.50 to 2.50 cycles (1.40x speedup).
+443,444c443,444
+< Only 18% of vector register length is used (average across all SSE/AVX instructions).
+< By vectorizing your loop, you can lower the cost of an iteration from 3.75 to 0.50 cycles (7.47x speedup).
+---
+> Only 19% of vector register length is used (average across all SSE/AVX instructions).
+> By vectorizing your loop, you can lower the cost of an iteration from 3.50 to 0.47 cycles (7.47x speedup).
