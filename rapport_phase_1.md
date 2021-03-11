@@ -86,11 +86,19 @@ Il existe de nombreuses méthodes afin d'optimiser le code.
 
 ### I.3) Méthodologie de détermination du nb de répétitions de warmup et demesure
 
+On cherche 
+
 (médiane - minimum) / minimum < 5 % = 31
 
-## II Cache L1
+## II Analyse statique MAQAO"
 
-### II.1) Environnement expérimental
+ - (ce qui va donc décaler la numérotation des sections suivantes)  
+
+- Cette section contiendra l'analyse *statique*, c'est à dire qui ne dépends pas du niveau mémoire et ne fait pas intervenir de temps/speedups => juste explication de ce qui a changé au niveau du code généré par le compilateur entre les diverses combinaisons (O2 vs O3 etc.) en terme de vecto, déroulage etc.
+
+## III Cache L1
+
+### III.1) Environnement expérimental
 
 Toutes les mesures ont été effectuées sur la machine suivante.
 
@@ -111,9 +119,9 @@ Voici les informations des différents caches de la machine.
 
 ![Drag Racing](lstopo.png)
 
-### II.2) Justification de la taille des tableaux pour que ça tienne dans le cache
+### III.2) Justification de la taille des tableaux pour que ça tienne dans le cache
 
-### II.3) Détermination du nombre de répétitions de warmup et de mesure
+### III.3) Détermination du nombre de répétitions de warmup et de mesure
 
 => mesures (courbes) et valeurs retenues pour ces deux paramètres clé
 Warmups: médianes de cycles/itération
@@ -122,22 +130,25 @@ itération] ou pourcentage d'erreur (par rapport aux 20-30 cycles) ou à
 la limite nous indiquer combien de cycles RDTSC a duré le nombre de
 répétitions choisi (et pourquoi c'est suffisant selon eux)
 
-II.4) Mesures des diverses variantes et analyse
+### III.4) Mesures des diverses variantes et analyse
+
 gcc O2, O3 etc.
 Cette partie devrait être assez grosse (car contient des captures écran
 MAQAO ainsi que leur analyse)...
 Explicité dans les consignes : on attend des médianes (sur 31 métas) de
 cycles/itération
 
-## III Cache L2
+La section II.4 "Mesures des diverses variantes et analyse" (qui deviendra donc III.4 pour le L1 etc.) sera alors déchargée de ce qui sera désormais dans la nouvelle section et ne gardera, en plus des mesures, que l'analyse *dynamique*, c'est à dire discussion quant aux gains ou aux pertes de perf d'une combinaison à l'autre (avec évidemment mise en perspective avec l'analyse statique).
+
+## IV Cache L2
 
 (CF II)
 
-## IV Cache L3
+## V Cache L3
 
 (CF II)
 
-## V RAM
+## VI RAM
 
 (CF II)
 
