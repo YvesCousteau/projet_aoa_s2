@@ -33,13 +33,13 @@ Celui ci consiste à
 
 De nombreux obstacles rentrent en compte quant à la précision des mesures : 
 
--	Précision du timer
--	RDTSC : précis à quelques cycles près mais biais de 20-30 cycles (amorti à partir de ~500 cycles)
--	Compteurs matériels : plusieurs secondes nécessaires
--	Etat initial de la machine
--	Régime transitoire : C-states/DVFS, caches et prefetchers “froids”, pipeline non rempli
--	Stabilité (variation d'une mesure à l'autre)
--	Pollution par système et autres applis
+- Précision du timer
+- RDTSC : précis à quelques cycles près mais biais de 20-30 cycles (amorti à partir de ~500 cycles)
+- Compteurs matériels : plusieurs secondes nécessaires
+- Etat initial de la machine
+- Régime transitoire : C-states/DVFS, caches et prefetchers “froids”, pipeline non rempli
+- Stabilité (variation d'une mesure à l'autre)
+- Pollution par système et autres applis
 
 #### Les solutions suivantes permettent de palier à ces obstacles et d'obtenir des mesures fiables et exploitables :
 
@@ -53,10 +53,10 @@ Lors des mesures ces répétitions amortissent l'erreur du timer.
 
 ##### <u>Méta-répétitions pour mesurer la stabilité</u>
 
--	Répétitions du corps du driver
--	Via un script ou une boucle dans le driver
--	En toute rigueur, 31 méta-répétitions nécessaires
--	Souhaité : (médiane - minimum) / minimum < 5 % = 31
+- Répétitions du corps du driver
+- Via un script ou une boucle dans le driver
+- En toute rigueur, 31 méta-répétitions nécessaires
+- Souhaité : (médiane - minimum) / minimum < 5 % = 31
 
 ##### <u>Environnement d'exécution le plus léger possible</u>
 
@@ -107,9 +107,9 @@ Toutes les mesures ont été effectuées sur la machine suivante.
 | Linux                               | Pop!_OS 20.10 x86_64                      |
 | Virtualisation                      | Simple-boot                               |
 | Version noyau                       |                                           |
-| Version GCC                         |                                           |
+| Version GCC                         | gcc 10.2.0                                |
 | Version oneAPI                      |                                           |
-| Version MAQAO                       | 2.12.0                                    |
+| Version MAQAO                       | 2.13.0                                    |
 | Techno RAM                          | 2x8 Go DDR4 3200MHz                       |
 
 Voici les informations des différents caches de la machine.
