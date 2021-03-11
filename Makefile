@@ -13,7 +13,7 @@ OPTFLAGS=-O3 -g -Wall
 CFLAGS=-O2 -g -Wall
 
 
-OBJS=s13_01.o s13_02.o s13_03.o s13_03n.o
+OBJS=s13_01.o s13_02.o s13_03.o s13_03n.o s13_03n_v1.o s13_03n_v2.o s13_03n_v3.o s13_03n_v4.o s13_03n_v5.o
 CFILE=driver.c kernel.c rdtsc.c
 
 R_ANAL=analysis
