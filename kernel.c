@@ -18,9 +18,6 @@ void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int o
    }
 }
 
-#elif defined OPT2
-
-
 #elif defined CORRECTED
 
 void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int offset, double radius) {
