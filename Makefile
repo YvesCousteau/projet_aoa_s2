@@ -5,7 +5,7 @@ OFLAG2=-O2
 OFLAG3=-O3
 OFLAG3n=-O3 -march=native
 OFLAG3n_v2=-O3 -ffast-math -fstack-arrays -march=native
-OFLAG3n_v3=-O3 -mmx -march=native
+OFLAG3n_v3=-O3 -mmmx -march=native
 OFLAG3n_v4=-O3 -mfmoth=sse -march=native
 OFLAG3n_v5=-O3 -msse4.2 -mavx -march=native
 

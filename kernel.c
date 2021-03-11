@@ -29,7 +29,7 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
          if ( a[ j ] < radius ) {
            c [ i ][ j ] = a [ j ] / b [ i ];
          }
-		 else {
+		 else {
      	 	 c [ i ][ j ] = 0.0;
 		 }
 
