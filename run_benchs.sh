@@ -32,7 +32,7 @@ function run(){
   #for iteration in ${!BENCH_ITERATIONS[@]}; do
     #local size=${BENCH_ITERATIONS[${iteration}]}
 	local iteration="L1"
-	local size=${BENCH_ITERATION["L1"]}
+	local size=1024
 
     # run the bench
     echo -e "\t${GREEN}>${NOCOLOR}${LIGHTGRAY} \
