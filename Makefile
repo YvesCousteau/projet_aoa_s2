@@ -4,6 +4,10 @@ OFLAG1=-O1
 OFLAG2=-O2
 OFLAG3=-O3
 OFLAG3n=-O3 -march=native
+OFLAG3n_v2=-O3 -ffast-math -fstack-arrays -march=native
+OFLAG3n_v3=-O3 -mmx -march=native
+OFLAG3n_v4=-O3 -mfmoth=sse -march=native
+OFLAG3n_v5=-O3 -msse4.2 -mavx -march=native
 
 OPTFLAGS=-O3 -g -Wall
 CFLAGS=-O2 -g -Wall
@@ -25,19 +29,38 @@ s13:	$(OBJS)
 	$(CC) -o main.c driver.c rdtsc.c s13_02.o -o s13_02
 	$(CC) -o main.c driver.c rdtsc.c s13_03.o -o s13_03
 	$(CC) -o main.c driver.c rdtsc.c s13_03n.o -o s13_03n
+	$(CC) -o main.c driver.c rdtsc.c s13_03n_v1.o -o s13_03n_v1
+	$(CC) -o main.c driver.c rdtsc.c s13_03n_v2.o -o s13_03n_v2
+	$(CC) -o main.c driver.c rdtsc.c s13_03n_v3.o -o s13_03n_v3
+	$(CC) -o main.c driver.c rdtsc.c s13_03n_v4.o -o s13_03n_v4
+	$(CC) -o main.c driver.c rdtsc.c s13_03n_v5.o -o s13_03n_v5
 
 s13_01.o: kernel.c
-	@$(CC) $(OFLAG1) -D $(OPT) -c -o $@ $< 
-	
-s13_02.o: kernel.c
-	@$(CC) $(OFLAG2) -D $(OPT) -c -o $@ $< 
-	
-s13_03.o: kernel.c
-	@$(CC) $(OFLAG3) -D $(OPT) -c -o $@ $< 
-	
-s13_03n.o: kernel.c
-	@$(CC) $(OFLAG3n) -D $(OPT) -c -o $@ $< 
+	@$(CC) $(OFLAG1) -D $(OPT) -c -o $@ $<
 
+s13_02.o: kernel.c
+	@$(CC) $(OFLAG2) -D $(OPT) -c -o $@ $<
+
+s13_03.o: kernel.c
+	@$(CC) $(OFLAG3) -D $(OPT) -c -o $@ $<
+
+s13_03n.o: kernel.c
+	@$(CC) $(OFLAG3n) -D $(OPT) -c -o $@ $<
+
+s13_03n_v1.o: kernel.c
+	@$(CC) $(OFLAG3n_v1) -D $(OPT) -c -o $@ $<
+
+s13_03n_v2.o: kernel.c
+	@$(CC) $(OFLAG3n_v2) -D $(OPT) -c -o $@ $<
+
+s13_03n_v3.o: kernel.c
+	@$(CC) $(OFLAG3n_v3) -D $(OPT) -c -o $@ $<
+
+s13_03n_v4.o: kernel.c
+	@$(CC) $(OFLAG3n_v4) -D $(OPT) -c -o $@ $<
+
+s13_03n_v5.o: kernel.c
+	@$(CC) $(OFLAG3n_v5) -D $(OPT) -c -o $@ $<
 
 
 maqao: s13
@@ -48,7 +71,7 @@ maqao: s13
 	@maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) > $(R_ANAL)/resultat_02.txt
 	@maqao oneview -R1 xp=exp_OV3 of=text -- ./s13_03 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) > $(R_ANAL)/resultat_03.txt
 	@maqao oneview -R1 xp=exp_OV3n of=text -- ./s13_03n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) > $(R_ANAL)/resultat_03n.txt
-	
+
 
 analysis: maqao
 	@echo --- generating diff file, kawalsky....analysis ---
