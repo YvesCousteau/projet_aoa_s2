@@ -33,16 +33,13 @@ Celui ci consiste à
 
 De nombreux obstacles rentrent en compte quant à la précision des mesures : 
 
-- Précision du timer
-  – RDTSC : précis à quelques cycles près mais biais de 
-  20-30 cycles (amorti à partir de ~500 cycles)
-  – Compteurs matériels : plusieurs secondes 
-  nécessaires
-  - Etat initial de la machine
-  – Régime transitoire : C-states/DVFS, caches et 
-  prefetchers “froids”, pipeline non rempli
-  - Stabilité (variation d'une mesure à l'autre)
-  – Pollution par système et autres applis
+-	Précision du timer
+-	RDTSC : précis à quelques cycles près mais biais de 20-30 cycles (amorti à partir de ~500 cycles)
+-	Compteurs matériels : plusieurs secondes nécessaires
+-	Etat initial de la machine
+-	Régime transitoire : C-states/DVFS, caches et prefetchers “froids”, pipeline non rempli
+-	Stabilité (variation d'une mesure à l'autre)
+-	Pollution par système et autres applis
 
 #### Les solutions suivantes permettent de palier à ces obstacles et d'obtenir des mesures fiables et exploitables :
 
@@ -56,10 +53,10 @@ Lors des mesures ces répétitions amortissent l'erreur du timer.
 
 ##### <u>Méta-répétitions pour mesurer la stabilité</u>
 
-– Répétitions du corps du driver
-– Via un script ou une boucle dans le driver
-– En toute rigueur, 31 méta-répétitions nécessaires
-– Souhaité : (médiane - minimum) / minimum < 5 % = 31
+-	Répétitions du corps du driver
+-	Via un script ou une boucle dans le driver
+-	En toute rigueur, 31 méta-répétitions nécessaires
+-	Souhaité : (médiane - minimum) / minimum < 5 % = 31
 
 ##### <u>Environnement d'exécution le plus léger possible</u>
 
