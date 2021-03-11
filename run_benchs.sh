@@ -22,7 +22,7 @@ BENCH_ITERATIONS["RAM"]=$(( $L1 + $L2 + $L3 + $L3 ))
 
 function run(){
   local exe=$1
-  local bench_dir=gcc_run_output/
+  local bench_dir=gcc_run_output
 
   echo -e "${LIGHTGREEN}*${NOCOLOR} running bench ${GREEN}$exe${NOCOLOR}"
 
