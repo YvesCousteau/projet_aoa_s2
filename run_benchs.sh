@@ -28,6 +28,7 @@ function run(){
 
   #for iteration in ${!BENCH_ITERATIONS[@]}; do
     #local size=${BENCH_ITERATIONS[${iteration}]}
+	local iteration="L1"
 	local size=${BENCH_ITERATION["L1"]}
 
     # run the bench
