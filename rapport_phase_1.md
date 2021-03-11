@@ -38,10 +38,10 @@ De nombreux obstacles rentrent en compte quant à la précision des mesures :
   20-30 cycles (amorti à partir de ~500 cycles)
   – Compteurs matériels : plusieurs secondes 
   nécessaires
-  ● Etat initial de la machine
+  - Etat initial de la machine
   – Régime transitoire : C-states/DVFS, caches et 
   prefetchers “froids”, pipeline non rempli
-  ● Stabilité (variation d'une mesure à l'autre)
+  - Stabilité (variation d'une mesure à l'autre)
   – Pollution par système et autres applis
 
 #### Les solutions suivantes permettent de palier à ces obstacles et d'obtenir des mesures fiables et exploitables :
