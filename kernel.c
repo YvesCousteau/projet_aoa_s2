@@ -1,4 +1,4 @@
-#ifdef OPT1
+#ifdef ORIGINAL
 
 void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int offset , double radius) {
    int i, j;
