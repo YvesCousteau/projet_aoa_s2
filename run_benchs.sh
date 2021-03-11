@@ -9,13 +9,13 @@ cpupower -c $CORE_ID frequency-set --governor performance
 REPETITION=1000
 
   # 2**10 = Ki ; 2**10**2 = Mi
-L1=$(( 32 * 2**10 )) 
-L2=$(( 256 * 2**10 )) 
-L3=$(( 12 * $(( 2**10))**2 )) 
+L1=$(( 32 * 2**10 ))
+L2=$(( 256 * 2**10 ))
+L3=$(( 12 * $(( 2**10))**2 ))
 
 declare -A BENCH_ITERATIONS
 BENCH_ITERATIONS["L1"]=$(( $L1 /2 ))
-BENCH_ITERATIONS["L2"]=$(( $L1 + $L2/2 )) 
+BENCH_ITERATIONS["L2"]=$(( $L1 + $L2/2 ))
 BENCH_ITERATIONS["L3"]=$(( $L1 + $L2 + $L3/2 ))
 BENCH_ITERATIONS["RAM"]=$(( $L1 + $L2 + $L3 + $L3 ))
 # subroutines
@@ -40,13 +40,13 @@ ${NOCOLOR}"
 }
 
 
-# main 
+# main
 if [ ! -z "$1" ]; then
   run $1
 
-else 
+else
   echo -e "${GREEN} Running full tests ${NOCOLOR}"
-  for executable in `find . -executable -type f -depth 1 ! -name "*.*"`; do
+  for executable in `find . -maxdepth 1 -executable -type f  ! -name "*.*"`; do
     run $executable
   done
 
