@@ -26,15 +26,16 @@ function run(){
 
   echo -e "${LIGHTGREEN}*${NOCOLOR} running bench ${GREEN}$exe${NOCOLOR}"
 
-  for iteration in ${!BENCH_ITERATIONS[@]}; do
-    local size=${BENCH_ITERATIONS[${iteration}]}
+  #for iteration in ${!BENCH_ITERATIONS[@]}; do
+    #local size=${BENCH_ITERATIONS[${iteration}]}
+	local size=${BENCH_ITERATION["L1"]}
 
     # run the bench
     echo -e "\t${GREEN}>${NOCOLOR}${LIGHTGRAY} \
 taskset -c $CORE_ID $exe $size $REPETITION > $bench_dir/${exe}_${iteration}.dat \
 ${NOCOLOR}"
 	taskset -c $CORE_ID $exe $size $REPETITION > $bench_dir/${exe}_${iteration}.dat
-  done | sed -e 's/^/\t/' # indent make's output
+  #done | sed -e 's/^/\t/' # indent make's output
 }
 
 
