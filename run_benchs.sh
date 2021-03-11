@@ -20,6 +20,9 @@ BENCH_ITERATIONS["L3"]=$(( $L1 + $L2 + $L3/2 ))
 BENCH_ITERATIONS["RAM"]=$(( $L1 + $L2 + $L3 + $L3 ))
 # subroutines
 
+warmup=100
+rep=100
+
 function run(){
   local exe=$1
   local bench_dir=gcc_run_output
@@ -33,9 +36,9 @@ function run(){
 
     # run the bench
     echo -e "\t${GREEN}>${NOCOLOR}${LIGHTGRAY} \
-taskset -c $CORE_ID $exe $size $REPETITION > $bench_dir/${exe}_${iteration}.dat \
+taskset -c $CORE_ID $exe $size $warmup $rep > $bench_dir/${exe}_${iteration}.dat \
 ${NOCOLOR}"
-	taskset -c $CORE_ID $exe $size $REPETITION > $bench_dir/${exe}_${iteration}.dat
+	taskset -c $CORE_ID $exe $size $warmup $rep > $bench_dir/${exe}_${iteration}.dat
   #done | sed -e 's/^/\t/' # indent make's output
 }
 
