@@ -46,7 +46,7 @@ if [ ! -z "$1" ]; then
 
 else 
   echo -e "${GREEN} Running full tests ${NOCOLOR}"
-  for executable in `find . -executable -type f ! -name "*.*"`; do
+  for executable in `find . -executable -type f -depth 1 ! -name "*.*"`; do
     run $executable
   done
 
