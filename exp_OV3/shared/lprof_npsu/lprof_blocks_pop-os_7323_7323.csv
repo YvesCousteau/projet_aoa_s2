@@ -1,6 +1,0 @@
-block_id;module;source_info;time_p;time_s;time_s_min;time_s_avg;time_s_max;cov_deviation;nb_threads;
-93;s13_03;;27.77;1.09;;;;;;
-94;s13_03;;25.99;1.02;;;;;;
-91;s13_03;;24.33;0.95;;;;;;
-92;s13_03;;21.78;0.85;;;;;;
-89;s13_03;;0.13;0;;;;;;

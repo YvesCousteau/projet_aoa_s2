@@ -1,5 +1,0 @@
-Node;Process;Thread;System (%);Binary (%);Time (s);Math (%);OMP (%);String (%);Others (%);IO (%);Memory (%);MPI (%);Pthread (%);
-_ALL;_ALL;_ALL;0;100;3.93;0;0;0;0;0;0;0;0;
-pop-os;_ALL;_ALL;0;100;3.93;0;0;0;0;0;0;0;0;
-pop-os;7292;_ALL;0;100;3.93;0;0;0;0;0;0;0;0;
-pop-os;7292;7292;0;100;3.93;0;0;0;0;0;0;0;0;
