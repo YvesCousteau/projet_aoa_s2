@@ -23,7 +23,7 @@ void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int o
 void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int offset, double radius) {
 	int i, j;
 	for ( i = 0; i < n ; i ++)
-		a[j] = a[j]<radius ? 0.0 : a[j];
+		a[i] = a[i]<radius ? 0.0 : a[i];
 
 	for ( i = 0; i < n ; i ++) {
 		for ( j = offset; j < n; j ++) {
