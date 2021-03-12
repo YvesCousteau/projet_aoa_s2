@@ -13,11 +13,13 @@ L1=$(( 32 * 2**10 ))
 L2=$(( 256 * 2**10 ))
 L3=$(( 12 * $(( 2**10))**2 ))
 
+sizeofloat=4
+
 declare -A BENCH_ITERATIONS
-BENCH_ITERATIONS["L1"]=$(( $L1 /2 ))
-BENCH_ITERATIONS["L2"]=$(( $L1 + $L2/2 ))
-BENCH_ITERATIONS["L3"]=$(( $L1 + $L2 + $L3/2 ))
-BENCH_ITERATIONS["RAM"]=$(( $L1 + $L2 + $L3 + $L3 ))
+BENCH_ITERATIONS["L1"]=$(( $(( $L1 /2 )) / $(($sizeofloat ** 2 )) ))
+BENCH_ITERATIONS["L2"]=$(( $(( $L1 + $L2/2 )) / $(($sizeofloat ** 2 )) )) 
+BENCH_ITERATIONS["L3"]=$(( $(( $L1 + $L2 + $L3/2 )) / $(($sizeofloat ** 2 )) )) 
+BENCH_ITERATIONS["RAM"]=$(( $(( $L1 + $L2 + $L3 + $L3 )) / $(($sizeofloat ** 2 )) )) 
 # subroutines
 
 warmup=100
@@ -29,17 +31,15 @@ function run(){
 
   echo -e "${LIGHTGREEN}*${NOCOLOR} running bench ${GREEN}$exe${NOCOLOR}"
 
-  #for iteration in ${!BENCH_ITERATIONS[@]}; do
-    #local size=${BENCH_ITERATIONS[${iteration}]}
-	local iteration="L1"
-	local size=1024
+  for iteration in ${!BENCH_ITERATIONS[@]}; do
+    local size=${BENCH_ITERATIONS[${iteration}]}
 
     # run the bench
     echo -e "\t${GREEN}>${NOCOLOR}${LIGHTGRAY} \
 taskset -c $CORE_ID $exe $size $warmup $rep $bench_dir/${exe}_${iteration}.dmp > $bench_dir/${exe}_${iteration}.dat \
 ${NOCOLOR}"
 	taskset -c $CORE_ID $exe $size $warmup $rep $bench_dir/${exe}_${iteration}.dmp > $bench_dir/${exe}_${iteration}.dat
-  #done | sed -e 's/^/\t/' # indent make's output
+  done | sed -e 's/^/\t/' # indent make's output
 }
 
 
