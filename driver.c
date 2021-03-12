@@ -7,7 +7,7 @@
 extern uint64_t rdtsc ();
 
 //extern void s13 (int n, float a[n][n], float b[n][n], float c[n][n], int offset, double radius);
-extern void s13 (unsigned n , const float a [ n ] ,const float b [ n ] , float c [ n ][ n ] ,int offset , double radius);
+extern void s13 (unsigned n , float a [ n ] ,const float b [ n ] , float c [ n ][ n ] ,int offset , double radius);
 
 static void init_array (int n, float a[n]) {
    int i;
