@@ -76,7 +76,97 @@ Il existe de nombreuses méthodes afin d'optimiser le code.
 
 ### I.2) Stratégies utilisées en commun pour améliorer la stabilité
 
+#### Optimisation de la compilation
+`gcc` propose plusieurs "flags" de compilation.
+On se propose dans un premier temps de trouver un bonne combinaison de flags pour améliorer la performance de notre kernel.
+
+On trouve les options disponibles suivantes intéressantes :
+```
+# basic
+-O1
+-O2
+-O3
+-O3 -ffast-math -fstack-arrays
+-march=native
+
+# floating point computing (can be impled by -march=native)
+-msse4.2 -mavx / -msse2avx  # /proc/cpuinfos | grep sse
+-mfpmath=sse
+-mmmx
+
+-fallow-store-data-races
+```
+
+Pour vérifier leur performance effective, on compile une version différente de l'executable, chacune avec des flags différents.
+
+On execute tous les executables :
+```
+CORE_ID=3 # the core id on which the bench is executed
+cpupower -c $CORE_ID frequency-set --governor performance
+
+size=$(( 5 * 2**10 ))
+warmup=100
+rep=100
+
+for exe in `find . -maxdepth 1 -executable -type f  ! -name "*.*"`; do
+	taskset -c $CORE_ID $exe $size $warmup $rep > gcc_run_output/${exe}_${iteration}.dat
+done
+``` 
+
+On compare maintenant facilement les résultats :
+```
+for file in `ls gcc_exec_output`; do
+	echo `awk '{ sum += $1 } END { print sum }' $file` $file
+done | sort
+```
+Ce qui nous sort :
+```
+65.35 s13_03n_v5.dat	# -O3 -msse4.2 -mavx -march=native
+65.56 s13_03n_v4.dat	# -O3 -mfpmath=sse -march=native
+66.64 s13_03n.dat		# -O3 -march=native
+67.86 s13_03n_v2.dat	# -O3 -ffast-math -fstack-arrays -march=native
+68.3 s13_03n_v3.dat		# -O3 -march=native -mmmx
+73.12 s13_03.dat		# -03
+73.85 s13_02.dat		# -O2
+74.53 s13_01.dat		# -O1
+```
+On remarque que les flags `-mfpmath=sse -msse4.2 -mavx` et `-march=native` sont particulièrement efficaces.
+On gardera ces flags pour la compilation avec `gcc`.
+
 #### Optimisation code
+
+##### Optimisations évidentes
+
+Dans un premier temps, on optimise le kernel juse en comprenant le code.
+On trouve une forme plus "agréable" en supprimant des conditions inutiles :
+
+```
+void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int offset, double radius) {
+   int i, j;
+
+   for ( i = 0; i < n ; i ++) {
+     for ( j = offset; j < n; j ++) {
+
+         if ( a[ j ] < radius ) {
+           c [ i ][ j ] = a [ j ] / b [ i ];
+         }
+         else {
+             c [ i ][ j ] = 0.0;
+         }
+
+      }
+   }
+}
+```
+
+On vérifie que notre version a le même comportement que l'originale en compilant lesversions originales et corrigées, et en ajoutant une fonction dump\_result() et en comparant les sorties avec `diff`.
+
+On compare maintenant les performances de deux manières :
+- en compartant les temps d'execution des deux versions
+- en compartant les rapports que maqao produit sur les deux binaires.
+
+Finalement :
+
 
 - If hoisting
 - loop tilling / unrolling

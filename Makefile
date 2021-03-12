@@ -1,19 +1,14 @@
 CC=gcc
 
-OFLAG1=-O1
-OFLAG2=-O2
-OFLAG3=-O3
-OFLAG3n=-O3 -march=native
-OFLAG3n_v2=-O3 -ffast-math -fstack-arrays -march=native
-OFLAG3n_v3=-O3 -mmmx -march=native
 OFLAG3n_v4=-O3 -mfpmath=sse -march=native
 OFLAG3n_v5=-O3 -msse4.2 -mavx -march=native
+OFLAG3n_v6=-O3 -mfpmath=sse -msse4.2 -mavx -march=native
 
 OPTFLAGS=-O3 -g -Wall
 CFLAGS=-O2 -g -Wall
 
 
-OBJS=s13_01.o s13_02.o s13_03.o s13_03n.o s13_03n_v1.o s13_03n_v2.o s13_03n_v3.o s13_03n_v4.o s13_03n_v5.o
+OBJS=s13_03n_v4.o s13_03n_v5.o s13_03n_v6.o
 CFILE=driver.c kernel.c rdtsc.c
 
 R_ANAL=analysis
@@ -25,36 +20,10 @@ NB_MESURE_REP=100
 all:	s13
 
 s13:	$(OBJS)
-	$(CC) -o main.c driver.c rdtsc.c s13_01.o -o s13_01
-	$(CC) -o main.c driver.c rdtsc.c s13_02.o -o s13_02
-	$(CC) -o main.c driver.c rdtsc.c s13_03.o -o s13_03
-	$(CC) -o main.c driver.c rdtsc.c s13_03n.o -o s13_03n
-	$(CC) -o main.c driver.c rdtsc.c s13_03n_v1.o -o s13_03n_v1
-	$(CC) -o main.c driver.c rdtsc.c s13_03n_v2.o -o s13_03n_v2
-	$(CC) -o main.c driver.c rdtsc.c s13_03n_v3.o -o s13_03n_v3
-	$(CC) -o main.c driver.c rdtsc.c s13_03n_v4.o -o s13_03n_v4
-	$(CC) -o main.c driver.c rdtsc.c s13_03n_v5.o -o s13_03n_v5
+	$(CC) driver.c rdtsc.c s13_03n_v4.o -o s13_03n_v4
+	$(CC) driver.c rdtsc.c s13_03n_v5.o -o s13_03n_v5
+	$(CC) driver.c rdtsc.c s13_03n_v6.o -o s13_03n_v6
 
-s13_01.o: kernel.c
-	@$(CC) $(OFLAG1) -D $(OPT) -c -o $@ $<
-
-s13_02.o: kernel.c
-	@$(CC) $(OFLAG2) -D $(OPT) -c -o $@ $<
-
-s13_03.o: kernel.c
-	@$(CC) $(OFLAG3) -D $(OPT) -c -o $@ $<
-
-s13_03n.o: kernel.c
-	@$(CC) $(OFLAG3n) -D $(OPT) -c -o $@ $<
-
-s13_03n_v1.o: kernel.c
-	@$(CC) $(OFLAG3n_v1) -D $(OPT) -c -o $@ $<
-
-s13_03n_v2.o: kernel.c
-	@$(CC) $(OFLAG3n_v2) -D $(OPT) -c -o $@ $<
-
-s13_03n_v3.o: kernel.c
-	@$(CC) $(OFLAG3n_v3) -D $(OPT) -c -o $@ $<
 
 s13_03n_v4.o: kernel.c
 	@$(CC) $(OFLAG3n_v4) -D $(OPT) -c -o $@ $<
@@ -62,6 +31,8 @@ s13_03n_v4.o: kernel.c
 s13_03n_v5.o: kernel.c
 	@$(CC) $(OFLAG3n_v5) -D $(OPT) -c -o $@ $<
 
+s13_03n_v6.o: kernel.c
+	@$(CC) $(OFLAG3n_v6) -D $(OPT) -c -o $@ $<
 
 maqao: s13
 	@mkdir -p $(R_ANAL)
@@ -104,3 +75,4 @@ cleanAnalyse:
 	@echo --- Clean analyse file ---
 	@rm $(R_ANAL)/*
 	@rm -rf exp_*
+
