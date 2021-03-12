@@ -21,20 +21,14 @@ void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int o
 #elif defined CORRECTED
 
 void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int offset, double radius) {
-   int i, j;
+	int i, j;
+	for ( i = 0; i < n ; i ++) {
+		for ( j = offset; j < n; j ++) {
 
-   for ( i = 0; i < n ; i ++) {
-     for ( j = offset; j < n; j ++) {
-
-         if ( a[ j ] < radius ) {
-           c [ i ][ j ] = a [ j ] / b [ i ];
-         }
-		 else {
-     	 	 c [ i ][ j ] = 0.0;
-		 }
-
-      }
-   }
+			c [ i ][ j ] = a[ j ] < radius ? a [ j ] / b [ i ] : 0.0;
+		
+		}
+	}
 }
 
 #else
