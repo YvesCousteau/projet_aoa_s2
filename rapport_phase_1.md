@@ -161,11 +161,18 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
 
 On vérifie que notre version a le même comportement que l'originale en compilant lesversions originales et corrigées, et en ajoutant une fonction dump\_result() et en comparant les sorties avec `diff`.
 
-On compare maintenant les performances de deux manières :
-- en compartant les temps d'execution des deux versions
-- en compartant les rapports que maqao produit sur les deux binaires.
-
-Finalement :
+On compare maintenant les performances de la nouvelle implémentation avec leur temps d'execution des deux versions
+	Avec la même méthode que pour l'optimisation des flags de gcc on trouve :
+```
+52.12 CORRECTED_s13_03n_v6.dat
+54.31 CORRECTED_s13_03n_v5.dat
+55.34 CORRECTED_s13_03n_v4.dat
+61.93 ORIGINAL_s13_03n_v5.dat
+63.94 ORIGINAL_s13_03n_v6.dat
+64.09 ORIGINAL_s13_03n_v4.dat
+```
+	On remarque que la version corrigée de la fonction est de loin meilleur à la version originale.
+	Au passage, on vérifie que les flags de gcc sont bien intéressants niveau performance.
 
 
 - If hoisting
