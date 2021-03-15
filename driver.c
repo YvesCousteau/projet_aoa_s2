@@ -70,11 +70,12 @@ int main (int argc, char *argv[]) {
       uint64_t t2 = rdtsc();
 
       /* print performance */
-      printf ("%.2f cycles/FMA\n",
-              (t2 - t1) / ((float) (size - offset) * size * repm));
+      // printf ("%.2f cycles/FMA\n",
+      //         (t2 - t1) / ((float) (size - offset) * size * repm));
 
+      printf ("%.2ld s\n", t2 - t1);
       /* print output */
-      dump_array (argv[4], size, c);
+      //dump_array (argv[4], size, c);
 
       /* free arrays */
       free (a);

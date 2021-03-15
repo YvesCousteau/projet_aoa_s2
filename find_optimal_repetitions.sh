@@ -10,7 +10,7 @@ cpupower -c $CORE_ID frequency-set --governor performance
 
 warmup=100
 rep=100
-size=1024
+size=2000
 
 function run(){
   local exe=$1
@@ -18,16 +18,14 @@ function run(){
 
   echo -e "${LIGHTGREEN}*${NOCOLOR} running bench ${GREEN}$exe${NOCOLOR}"
 
-  for rep in `seq 1 10 100`; do
-  	for warmup in `seq 1 10 100`; do
+	for warmup in `seq 100 50 1000`; do
 
-    	# run the bench
-    	echo -e "\t${GREEN}>${NOCOLOR}${LIGHTGRAY} \
-	taskset -c $CORE_ID $exe $size $warmup $rep > $bench_dir/${exe}_rep-${rep}_warmup-${warmup}.dat \
-	${NOCOLOR}"
-		taskset -c $CORE_ID $exe $size $warmup $rep > $bench_dir/${exe}_rep-${rep}_warmup-${warmup}.dat
-  	  done | sed -e 's/^/\t/' # indent make's output
-	done
+  	# run the bench
+  	echo -e "\t${GREEN}>${NOCOLOR}${LIGHTGRAY} \
+taskset -c $CORE_ID $exe $size $warmup $rep > $bench_dir/${exe}_rep-${rep}_warmup-${warmup}.dat \
+${NOCOLOR}"
+	taskset -c $CORE_ID $exe $size $warmup $rep > $bench_dir/${exe}_rep-${rep}_warmup-${warmup}.dat
+	  done | sed -e 's/^/\t/' # indent make's output
 }
 
 

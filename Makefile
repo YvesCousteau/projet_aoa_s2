@@ -8,7 +8,7 @@ OPTFLAGS=-O3 -g -Wall
 CFLAGS=-O2 -g -Wall
 
 
-OBJS=s13_03n_v4.o s13_03n_v5.o s13_03n_v6.o
+OBJS=s13_03n_v6.o
 CFILE=driver.c kernel.c rdtsc.c
 
 R_ANAL=analysis
@@ -20,16 +20,7 @@ NB_MESURE_REP=100
 all:	s13
 
 s13:	$(OBJS)
-	$(CC) driver.c rdtsc.c s13_03n_v4.o -o s13_03n_v4
-	$(CC) driver.c rdtsc.c s13_03n_v5.o -o s13_03n_v5
 	$(CC) driver.c rdtsc.c s13_03n_v6.o -o s13_03n_v6
-
-
-s13_03n_v4.o: kernel.c
-	@$(CC) $(OFLAG3n_v4) -D $(OPT) -c -o $@ $<
-
-s13_03n_v5.o: kernel.c
-	@$(CC) $(OFLAG3n_v5) -D $(OPT) -c -o $@ $<
 
 s13_03n_v6.o: kernel.c
 	@$(CC) $(OFLAG3n_v6) -D $(OPT) -c -o $@ $<
@@ -75,4 +66,3 @@ cleanAnalyse:
 	@echo --- Clean analyse file ---
 	@rm $(R_ANAL)/*
 	@rm -rf exp_*
-
