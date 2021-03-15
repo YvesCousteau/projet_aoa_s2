@@ -3,7 +3,7 @@ source colors.sh
 
 
 function cleanCSV() {
-  for f in `find gcc_exec_output/ -name "*.dat"`; do
+  for f in `find $1 -name "*.dat"`; do
     cat $f | cut -d';' -f1,9 | sed "s/\_/\\\\\\\\\\\_/g"  > $f.cleaned # yes, 11 \ to escape the _
   done
 }
