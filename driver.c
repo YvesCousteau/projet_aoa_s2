@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <unistd.h>
 
 #define NB_METAS 31
 
@@ -40,8 +41,12 @@ int main (int argc, char *argv[]) {
 
    /* get command line arguments */
    int size = atoi (argv[1]); /* matrix size */
-   int repw = atoi (argv[2]); /* repetition number */
+   //int repw = atoi (argv[2]); /* repetition number */
+   int repw = 0;
    int repm = atoi (argv[3]); /* repetition number */
+
+      uint64_t rep [NB_METAS][repm];
+
 
    for (m=0; m<NB_METAS; m++) {
       /* allocate arrays */
@@ -64,16 +69,23 @@ int main (int argc, char *argv[]) {
       }
 
       /* measure repm repetitions */
+      //uint64_t t1 = rdtsc();
+      //for (i=0; i<repm; i++)
+      //   s13 (size, a, b, c, offset, radius);
+      //uint64_t t2 = rdtsc();
+
+
+      for (i=0; i<repm; i++){
       uint64_t t1 = rdtsc();
-      for (i=0; i<repm; i++)
          s13 (size, a, b, c, offset, radius);
       uint64_t t2 = rdtsc();
+      rep[m][i] = t2-t1;
+      }
 
       /* print performance */
-      // printf ("%.2f cycles/FMA\n",
-      //         (t2 - t1) / ((float) (size - offset) * size * repm));
+       //printf ("%.2f cycles/FMA\n",
+               //(t2 - t1) / ((float) (size - offset) * size * repm));
 
-      printf ("%.2ld s\n", t2 - t1);
       /* print output */
       //dump_array (argv[4], size, c);
 
@@ -81,7 +93,15 @@ int main (int argc, char *argv[]) {
       free (a);
       free (b);
       free (c);
+
+      sleep(4);
    }
+
+      for (int i = 0; i < NB_METAS; i++){
+	for (int j= 0; j < repm; j++)
+	      printf("%ld, ", rep[i][j]);
+	printf(";");
+     	}
 
    return EXIT_SUCCESS;
 }
