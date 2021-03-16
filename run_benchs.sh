@@ -17,9 +17,9 @@ sizeofloat=4
 
 declare -A BENCH_ITERATIONS
 BENCH_ITERATIONS["L1"]=$(( $(( $L1 /2 )) / $(($sizeofloat ** 2 )) ))
-BENCH_ITERATIONS["L2"]=$(( $(( $L1 + $L2/2 )) / $(($sizeofloat ** 2 )) )) 
-BENCH_ITERATIONS["L3"]=$(( $(( $L1 + $L2 + $L3/2 )) / $(($sizeofloat ** 2 )) )) 
-BENCH_ITERATIONS["RAM"]=$(( $(( $L1 + $L2 + $L3 + $L3 )) / $(($sizeofloat ** 2 )) )) 
+BENCH_ITERATIONS["L2"]=$(( $(( $L1 + $L2/2 )) / $(($sizeofloat ** 2 )) ))
+BENCH_ITERATIONS["L3"]=$(( $(( $L1 + $L2 + $L3/2 )) / $(($sizeofloat ** 2 )) ))
+BENCH_ITERATIONS["RAM"]=$(( $(( $L1 + $L2 + $L3 + $L3 )) / $(($sizeofloat ** 2 )) ))
 # subroutines
 
 warmup=100
