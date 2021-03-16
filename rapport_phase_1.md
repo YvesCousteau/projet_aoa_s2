@@ -97,7 +97,7 @@ On trouve les options disponibles suivantes intéressantes :
 -fallow-store-data-races
 ```
 
-Pour vérifier leur performance effective, on compile une version différente de l'executable, chacune avec des flags différents.
+Pour vérifier leur performance effective, on compile une version différente de l'exécutable, chacune avec des flags différents.
 
 On execute tous les executables :
 ``` bash
@@ -114,11 +114,13 @@ done
 ```
 
 On compare maintenant facilement les résultats :
+
 ``` bash
 for file in `ls gcc_exec_output`; do
 	echo `awk '{ sum += $1 } END { print sum }' $file` $file
 done | sort
 ```
+
 Ce qui nous sort :
 ```
 65.35 s13_03n_v5.dat	# -O3 -msse4.2 -mavx -march=native
@@ -137,7 +139,7 @@ On gardera ces flags pour la compilation avec `gcc`.
 
 ##### Optimisations évidentes
 
-Dans un premier temps, on optimise le kernel juse en comprenant le code.
+Dans un premier temps, on optimise le kernel juste en comprenant le code.
 On trouve une forme plus "agréable" en supprimant des conditions inutiles :
 
 ``` c
@@ -159,9 +161,9 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
 }
 ```
 
-On vérifie que notre version a le même comportement que l'originale en compilant lesversions originales et corrigées, et en ajoutant une fonction dump\_result() et en comparant les sorties avec `diff`.
+On vérifie que notre version a le même comportement que l'originale en compilant les versions originales et corrigées, et en ajoutant une fonction dump\_result() et en comparant les sorties avec `diff`.
 
-On compare maintenant les performances de la nouvelle implémentation avec leur temps d'execution des deux versions
+On compare maintenant les performances de la nouvelle implémentation avec leur temps d'exécution des deux versions
 	Avec la même méthode que pour l'optimisation des flags de gcc on trouve :
 ```
 52.12 CORRECTED_s13_03n_v6.dat
@@ -171,8 +173,8 @@ On compare maintenant les performances de la nouvelle implémentation avec leur 
 63.94 ORIGINAL_s13_03n_v6.dat
 64.09 ORIGINAL_s13_03n_v4.dat
 ```
-	On remarque que la version corrigée de la fonction est de loin meilleur à la version originale.
-	Au passage, on vérifie que les flags de gcc sont bien intéressants niveau performance.
+On remarque que la version corrigée de la fonction est de loin meilleure à la version originale.
+Au passage, on vérifie que les flags de gcc sont bien intéressants niveau performance.
 
 
 - If hoisting
@@ -203,7 +205,7 @@ Toutes les mesures ont été effectuées sur la machine suivante.
 | DVFS : driver, governor et réglages |                                           |
 | Linux                               | Pop!_OS 20.10 x86_64                      |
 | Virtualisation                      | Simple-boot                               |
-| Version noyau                       |                                           |
+| Version noyau                       | Linux version 5.8.0-7642-generic                                          |
 | Version GCC                         | gcc 10.2.0                                |
 | Version oneAPI                      |                                           |
 | Version MAQAO                       | 2.13.0                                    |
@@ -262,6 +264,30 @@ On trouve donc `n = sqrt(582001) - 1`
 
 
 ### III.3) Détermination du nombre de répétitions de warmup et de mesure
+
+##### <u>Choix du nombre de warmups et répétitions en fonction de L1</u>
+
+![L1](L1.png)
+
+D'après le graphique ci-dessus nous nous rendons compte que 32 warmups sont suffisants pour le cache L1.
+
+##### <u>Choix du nombre de warmups et répétitions en fonction du L2</u>
+
+![L2](L2.png)
+
+D'après le graphique ci-dessus nous nous rendons compte que 19 warmups suffisent pour le cache L2.
+
+##### <u>Choix du nombre de warmups et répétitions en fonction du L3</u>
+
+![L3](L3.png)
+
+D'après le graphique ci-dessus nous nous rendons compte que 20 warmups suffisent pour le cache L3.
+
+##### <u>Choix du nombre de warmups et répétitions en fonction de la RAM</u>
+
+![RAM](RAM.png)
+
+D'après le graphique ci-dessus nous nous rendons compte que 20 warmups suffisent pour la RAM.
 
 => mesures (courbes) et valeurs retenues pour ces deux paramètres clé
 Warmups: médianes de cycles/itération
