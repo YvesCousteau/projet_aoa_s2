@@ -87,7 +87,7 @@ int main (int argc, char *argv[]) {
                //(t2 - t1) / ((float) (size - offset) * size * repm));
 
       /* print output */
-      //dump_array (argv[4], size, c);
+      if (argc==5) dump_array (argv[4], size, c);
 
       /* free arrays */
       free (a);
@@ -98,8 +98,10 @@ int main (int argc, char *argv[]) {
    }
 
       for (int i = 0; i < NB_METAS; i++){
-	for (int j= 0; j < repm; j++)
-	      printf("%ld,", rep[i][j]);
+	for (int j= 0; j < repm; j++){
+	      printf("%llu", rep[i][j]);
+			if (j != repm) printf(",");
+	}
 	printf("\n");
      	}
 
