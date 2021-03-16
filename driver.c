@@ -99,8 +99,8 @@ int main (int argc, char *argv[]) {
 
       for (int i = 0; i < NB_METAS; i++){
 	for (int j= 0; j < repm; j++)
-	      printf("%ld, ", rep[i][j]);
-	printf(";");
+	      printf("%ld,", rep[i][j]);
+	printf("\n");
      	}
 
    return EXIT_SUCCESS;
