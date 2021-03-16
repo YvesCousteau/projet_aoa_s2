@@ -100,7 +100,7 @@ On trouve les options disponibles suivantes intéressantes :
 Pour vérifier leur performance effective, on compile une version différente de l'executable, chacune avec des flags différents.
 
 On execute tous les executables :
-```
+``` bash
 CORE_ID=3 # the core id on which the bench is executed
 cpupower -c $CORE_ID frequency-set --governor performance
 
@@ -114,7 +114,7 @@ done
 ```
 
 On compare maintenant facilement les résultats :
-```
+``` bash
 for file in `ls gcc_exec_output`; do
 	echo `awk '{ sum += $1 } END { print sum }' $file` $file
 done | sort
@@ -227,7 +227,7 @@ Notre cache L1 fait 32 kB. Nous allons donc faire en sorte de le remplir à 70%.
 On note `L1 = sizeof(L1) * 70% / sizeof(float)`.
 
 On cherche donc n tel que  `2n + n² = L1`.
-on trouve donc `n = sqrt(5601) - 1`
+On trouve donc `n = sqrt(5601) - 1`
                `n = 73`
 
 ##### <u>Choix de n en fonction de L2</u>
@@ -237,7 +237,7 @@ Notre cache L2 fait 256 kB. Nous allons donc faire en sorte de le remplir à 70%
 On note `L2 = (L1 + sizeof(L2) * 70%) / sizeof(float)`.
 
 On cherche donc n tel que  `2n + n² = L2`.
-on trouve donc `n = sqrt(52801) - 1`
+On trouve donc `n = sqrt(52801) - 1`
                `n = 228`
 
 ##### <u>Choix de n en fonction de L3</u>
@@ -247,7 +247,7 @@ Notre cache L3 fait 12 MB. Nous allons donc faire en sorte de le remplir à 70%.
 On note `L3 = (L1 + L2 + sizeof(L3) * 70%) / sizeof(float)`.
 
 On cherche donc n tel que  `2n + n² = L3`.
-on trouve donc `n = sqrt(282001) - 1`
+On trouve donc `n = sqrt(282001) - 1`
                `n = 530`
 
 ##### <u>Choix de n en fonction de la RAM</u>
@@ -257,7 +257,7 @@ Nous voulons avoir un tableau passant dans la RAM. De ce fait nous allons rempli
 On note `RAM = (L1 + L2 + L3 + sizeof(L3) * 70%) / sizeof(float)`.
 
 On cherche donc n tel que  `2n + n² = RAM`.
-on trouve donc `n = sqrt(582001) - 1`
+On trouve donc `n = sqrt(582001) - 1`
                `n = 761`
 
 
