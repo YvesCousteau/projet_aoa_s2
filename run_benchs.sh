@@ -41,9 +41,9 @@ function run(){
 
     # run the bench
     echo -e "\t${GREEN}>${NOCOLOR}${LIGHTGRAY} \
-taskset -c $CORE_ID $exe $size $warmup $rep $bench_dir/${exe}_${iteration}.dmp > $bench_dir/${exe}_${iteration}.dat \
+taskset -c $CORE_ID $exe $size $warmup $rep $bench_dir/${exe}_${iteration}.dmp > $bench_dir/${exe}_${size}.dat \
 ${NOCOLOR}"
-	taskset -c $CORE_ID $exe $size $warmup $rep > $bench_dir/${exe}_${iteration}.dat
+	taskset -c $CORE_ID $exe $size $warmup $rep > $bench_dir/${exe}_${size}.dat
   done | sed -e 's/^/\t/' # indent make's output
 }
 

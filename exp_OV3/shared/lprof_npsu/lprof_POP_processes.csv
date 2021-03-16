@@ -1,0 +1,2 @@
+node;pid;total_cycles;mpi_cycles;omp_cycles;sum_walltime;thread_cycles;sum_insns;mpi_insns;omp_insns;scalar_double;scalar_single;packed_single_128;packed_double_128;packed_single_256;packed_double_256;packed_single_512;packed_double_512;
+pop-os;40074;382614880;0;0;0.1499999910593;0;0;0;0;0;0;0;0;0;0;0;0;
