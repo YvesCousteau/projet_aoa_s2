@@ -271,23 +271,23 @@ On trouve donc `n = sqrt(582001) - 1`
 
 D'après le graphique ci-dessus nous nous rendons compte que 32 warmups sont suffisants pour le cache L1.
 
-##### <u>Choix du nombre de warmups et répétitions en fonction du L2</u>
+##### <u>Choix du nombre de warmups et répétitions en fonction de L2</u>
 
 ![L2](L2.png)
 
 D'après le graphique ci-dessus nous nous rendons compte que 19 warmups suffisent pour le cache L2.
 
-##### <u>Choix du nombre de warmups et répétitions en fonction du L3</u>
+##### <u>Choix du nombre de warmups et répétitions en fonction de L3</u>
 
 ![L3](L3.png)
 
-D'après le graphique ci-dessus nous nous rendons compte que 20 warmups suffisent pour le cache L3.
+D'après le graphique ci-dessus nous nous rendons compte que 7 warmups suffisent pour le cache L3.
 
 ##### <u>Choix du nombre de warmups et répétitions en fonction de la RAM</u>
 
 ![RAM](RAM.png)
 
-D'après le graphique ci-dessus nous nous rendons compte que 20 warmups suffisent pour la RAM.
+D'après le graphique ci-dessus nous nous rendons compte que 12 warmups suffisent pour la RAM.
 
 => mesures (courbes) et valeurs retenues pour ces deux paramètres clé
 Warmups: médianes de cycles/itération
