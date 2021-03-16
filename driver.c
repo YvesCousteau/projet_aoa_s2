@@ -50,30 +50,29 @@ int main (int argc, char *argv[]) {
    int i, m;
 
    /* get command line arguments */
-   switch (argv[1]) {
-    case "L1":
-      int size = L1;
-      int repm = L1_REP;
-      break;
-    case "L2":
-      int size = L2;
-      int repm = L2_REP;
-      break;
-    case "L3":
-      int size = L3;
-      int repm = L3_REP;
-      break;
-    case "RAM":
-      int size = RAM;
-      int repm = RAM_REP;
-      break;
+   if (argv[1] == "L1") {
+     int size = L1;
+     int repm = L1_REP;
    }
+   if (argv[1] == "L2") {
+     int size = L2;
+     int repm = L2_REP;
+   }
+   if (argv[1] == "L3") {
+     int size = L3;
+     int repm = L3_REP;
+   }
+   if (argv[1] == "RAM") {
+     int size = RAM;
+     int repm = RAM_REP;
+   }
+
    // int size = atoi (argv[1]); /* matrix size */
    //int repw = atoi (argv[2]); /* repetition number */
    int repw = 100;
    // int repm = atoi (argv[3]); /* repetition number */
 
-      uint64_t rep [NB_METAS][repm];
+   uint64_t rep [NB_METAS][repw];
 
 
    for (m=0; m<NB_METAS; m++) {
@@ -133,9 +132,9 @@ int main (int argc, char *argv[]) {
    }
 
       for (int i = 0; i < NB_METAS; i++){
-	for (int j= 0; j < repm; j++){
+	for (int j= 0; j < repw; j++){
 	      printf("%lu", rep[i][j]);
-			if (j != repm) printf(",");
+			if (j != repw) printf(",");
 	}
 	printf("\n");
      	}
