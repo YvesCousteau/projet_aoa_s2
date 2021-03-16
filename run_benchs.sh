@@ -16,10 +16,10 @@ L3=$(( 12 * $(( 2**10))**2 ))
 sizeofloat=4
 
 declare -A BENCH_ITERATIONS
-BENCH_ITERATION_SIZE["L1"]=$(( $(( $L1 /2 )) / $(($sizeofloat ** 2 )) ))
-BENCH_ITERATION_SIZE["L2"]=$(( $(( $L1 + $L2/2 )) / $(($sizeofloat ** 2 )) ))
-BENCH_ITERATION_SIZE["L3"]=$(( $(( $L1 + $L2 + $L3/2 )) / $(($sizeofloat ** 2 )) ))
-BENCH_ITERATION_SIZE["RAM"]=$(( $(( $L1 + $L2 + $L3 + $L3 )) / $(($sizeofloat ** 2 )) ))
+BENCH_ITERATION_SIZE["L1"]=73
+BENCH_ITERATION_SIZE["L2"]=228
+BENCH_ITERATION_SIZE["L3"]=530
+BENCH_ITERATION_SIZE["RAM"]=818
 
 BENCH_ITERATION_WARMUP["L1"]=150000
 BENCH_ITERATION_WARMUP["L2"]=20000
