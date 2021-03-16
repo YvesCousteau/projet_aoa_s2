@@ -35,7 +35,7 @@ function run(){
 
   echo -e "${LIGHTGREEN}*${NOCOLOR} running bench ${GREEN}$exe${NOCOLOR}"
 
-  for iteration in ${!BENCH_ITERATIONS[@]}; do
+  for iteration in ${!BENCH_ITERATION_SIZE[@]}; do
     local size=${BENCH_ITERATION_SIZE[${iteration}]}
     local warmup=${BENCH_ITERATION_WARMUP[${iteration}]}
 
