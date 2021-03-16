@@ -5,6 +5,19 @@
 
 #define NB_METAS 31
 
+<<<<<<< HEAD
+=======
+#define L1 73
+#define L2 228
+#define L3 530
+#define RAM 818
+
+#define L1_REP 32
+#define L2_REP 19
+#define L3_REP 7
+#define RAM_REP 12
+
+>>>>>>> b179e9c041c22e5f9a51f2b93190551aa386c6b6
 extern uint64_t rdtsc ();
 
 //extern void s13 (int n, float a[n][n], float b[n][n], float c[n][n], int offset, double radius);
