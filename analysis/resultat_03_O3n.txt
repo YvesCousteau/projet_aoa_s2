@@ -1,0 +1,134 @@
+8c8
+< Info: Experiment directory created: /home/hugohenrotte/Code/projet_aoa_s2/exp_OV3
+---
+> Info: Experiment directory created: /home/hugohenrotte/Code/projet_aoa_s2/exp_OV3n
+17,18c17,18
+< hybrid POP metrics: block 1/4hybrid POP metrics: block 2/4hybrid POP metrics: block 3/4hybrid POP metrics: block 4/4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Info: ---> ANALYZE LOOP 10 (1/1)...Info: ---> ALL LOOPS HAVE BEEN ANALYZED                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+<                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           Info: ---> ANALYZE FUNCTION s13 (1/1) ...Info: ---> ALL FUNCTIONS HAVE BEEN ANALYZED                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+---
+> hybrid POP metrics: block 1/5hybrid POP metrics: block 2/5hybrid POP metrics: block 3/5hybrid POP metrics: block 4/5hybrid POP metrics: block 5/5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Info: ---> ANALYZE LOOP 10 (1/1)...Info: ---> ALL LOOPS HAVE BEEN ANALYZED                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Info: ---> ANALYZE FUNCTION s13 (1/1) ...Info: ---> ALL FUNCTIONS HAVE BEEN ANALYZED                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+33,34c33,34
+<   Application:			./s13_03
+<   Timestamp:			2021-03-16 20:02:54
+---
+>   Application:			./s13_03n
+>   Timestamp:			2021-03-16 20:02:57
+56c56
+<   Total Time:				0.15 s
+---
+>   Total Time:				0.13 s
+60c60
+<   Perfect Flow Complexity:		6.34
+---
+>   Perfect Flow Complexity:		6.15
+63c63
+<       Potential Speedup:		1.24
+---
+>       Potential Speedup:		1.18
+66c66
+<       Potential Speedup:		1.20
+---
+>       Potential Speedup:		1.18
+69c69
+<       Potential Speedup:		6.34
+---
+>       Potential Speedup:		6.15
+82c82
+<       Cumulated Speedup | 1.2353 | 
+---
+>       Cumulated Speedup | 1.1765 | 
+84c84
+<     s13 - 03 - 10:	1.2353
+---
+>     s13 - 03n - 10:	1.1765
+88c88
+<       Cumulated Speedup | 1.1957 | 
+---
+>       Cumulated Speedup | 1.1765 | 
+90c90
+<     s13 - 03 - 10:	1.1957
+---
+>     s13 - 03n - 10:	1.1765
+94c94
+<       Cumulated Speedup | 6.3396 | 
+---
+>       Cumulated Speedup | 6.1538 | 
+96c96
+<     s13 - 03 - 10:	6.3396
+---
+>     s13 - 03n - 10:	6.1538
+161c161
+<    s13                                          | s13_03          | 100          | 0.15       |
+---
+>    s13                                          | s13_03n         | 100          | 0.13       |
+175c175
+<    10         | s13_03          |                                              | 100          |
+---
+>    10         | s13_03n         |                                              | 100          |
+194c194
+<       5.1.1  -  Loop 10 from s13_03
+---
+>       5.1.1  -  Loop 10 from s13_03n
+312c312
+< 0% of peak computational performance is used (0.25 out of 32.00 FLOP per cycle (GFLOPS @ 1GHz))
+---
+> 0% of peak computational performance is used (0.27 out of 32.00 FLOP per cycle (GFLOPS @ 1GHz))
+318c318
+< By removing them, you can lower the cost of an iteration from 4.00 to 3.00 cycles (1.33x speedup).
+---
+> By removing them, you can lower the cost of an iteration from 3.75 to 3.00 cycles (1.25x speedup).
+329,331c329,331
+< Your loop is probably not vectorized.
+< Only 18% of vector register length is used (average across all SSE/AVX instructions).
+< By vectorizing your loop, you can lower the cost of an iteration from 4.00 to 0.75 cycles (5.33x speedup).
+---
+> Your loop is not vectorized.
+> Only 14% of vector register length is used (average across all SSE/AVX instructions).
+> By vectorizing your loop, you can lower the cost of an iteration from 3.75 to 0.75 cycles (5.00x speedup).
+334c334
+< Store and arithmetical SSE/AVX instructions are used in scalar version (process only one data element in vector registers).
+---
+> All SSE/AVX instructions are used in scalar version (process only one data element in vector registers).
+365,370c365
+<  - CVTSS2SD: 1 occurrences
+< 
+< 
+< Workaround
+< Pass to your compiler a micro-architecture specialization option:
+<  - Please read your compiler manual
+---
+>  - VCVTSS2SD: 1 occurrences
+396c391
+<  - CVTSS2SD (FP32 to FP64, scalar): 1 occurrences
+---
+>  - VCVTSS2SD (FP32 to FP64, scalar): 1 occurrences
+437c432
+< By removing them, you can lower the cost of an iteration from 3.50 to 2.50 cycles (1.40x speedup).
+---
+> By removing them, you can lower the cost of an iteration from 3.25 to 2.50 cycles (1.30x speedup).
+448,450c443,445
+< Your loop is probably not vectorized.
+< Only 19% of vector register length is used (average across all SSE/AVX instructions).
+< By vectorizing your loop, you can lower the cost of an iteration from 3.50 to 0.47 cycles (7.47x speedup).
+---
+> Your loop is not vectorized.
+> Only 14% of vector register length is used (average across all SSE/AVX instructions).
+> By vectorizing your loop, you can lower the cost of an iteration from 3.25 to 0.44 cycles (7.43x speedup).
+453c448
+< Store and arithmetical SSE/AVX instructions are used in scalar version (process only one data element in vector registers).
+---
+> All SSE/AVX instructions are used in scalar version (process only one data element in vector registers).
+484,489c479
+<  - CVTSS2SD: 1 occurrences
+< 
+< 
+< Workaround
+< Pass to your compiler a micro-architecture specialization option:
+<  - Please read your compiler manual
+---
+>  - VCVTSS2SD: 1 occurrences
+499c489
+<  - CVTSS2SD (FP32 to FP64, scalar): 1 occurrences
+---
+>  - VCVTSS2SD (FP32 to FP64, scalar): 1 occurrences
