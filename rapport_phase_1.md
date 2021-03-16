@@ -2,7 +2,7 @@
 
 ## Présentation du sujet
 
-Nous avons travaillé sur le sujet 13. 
+Nous avons travaillé sur le sujet 13.
 
 Celui ci consiste à  
 
@@ -31,7 +31,7 @@ Celui ci consiste à
 
 ### I.1) Justification des 5 points clés du driver (warmups, repets etc.)
 
-De nombreux obstacles rentrent en compte quant à la précision des mesures : 
+De nombreux obstacles rentrent en compte quant à la précision des mesures :
 
 - Précision du timer
 - RDTSC : précis à quelques cycles près mais biais de 20-30 cycles (amorti à partir de ~500 cycles)
@@ -47,7 +47,7 @@ De nombreux obstacles rentrent en compte quant à la précision des mesures :
 
 Communnément appelés "warmup" ces répétitions viennent en amont des mesures afin de préparer le système aux mesures.
 
-Elles permettent d'exclure le régime transitoire. Elles sont d'autant plus importantes lorsque la machine est froide. 
+Elles permettent d'exclure le régime transitoire. Elles sont d'autant plus importantes lorsque la machine est froide.
 
 Lors des mesures ces répétitions amortissent l'erreur du timer.
 
@@ -66,7 +66,7 @@ Une autre des solutions est de choisir un coeur sur lequel exécuter les mesures
 
 #### Optimisation du code
 
-Il existe de nombreuses méthodes afin d'optimiser le code. 
+Il existe de nombreuses méthodes afin d'optimiser le code.
 
 - If hoisting
 - loop tilling / unrolling
@@ -100,7 +100,7 @@ On trouve les options disponibles suivantes intéressantes :
 Pour vérifier leur performance effective, on compile une version différente de l'executable, chacune avec des flags différents.
 
 On execute tous les executables :
-```
+``` bash
 CORE_ID=3 # the core id on which the bench is executed
 cpupower -c $CORE_ID frequency-set --governor performance
 
@@ -111,10 +111,10 @@ rep=100
 for exe in `find . -maxdepth 1 -executable -type f  ! -name "*.*"`; do
 	taskset -c $CORE_ID $exe $size $warmup $rep > gcc_run_output/${exe}_${iteration}.dat
 done
-``` 
+```
 
 On compare maintenant facilement les résultats :
-```
+``` bash
 for file in `ls gcc_exec_output`; do
 	echo `awk '{ sum += $1 } END { print sum }' $file` $file
 done | sort
@@ -140,7 +140,7 @@ On gardera ces flags pour la compilation avec `gcc`.
 Dans un premier temps, on optimise le kernel juse en comprenant le code.
 On trouve une forme plus "agréable" en supprimant des conditions inutiles :
 
-```
+``` c
 void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int offset, double radius) {
    int i, j;
 
@@ -180,7 +180,7 @@ On compare maintenant les performances de la nouvelle implémentation avec leur 
 
 ### I.3) Méthodologie de détermination du nb de répétitions de warmup et demesure
 
-On cherche 
+On cherche
 
 (médiane - minimum) / minimum < 5 % = 31
 
@@ -211,9 +211,55 @@ Toutes les mesures ont été effectuées sur la machine suivante.
 
 Voici les informations des différents caches de la machine.
 
-![Drag Racing](lstopo.png)
+![lstopo](lstopo.png)
 
 ### III.2) Justification de la taille des tableaux pour que ça tienne dans le cache
+
+Nous devons déterminer la taille des tableaux tels que les valeurs traitées tiennent dans le cache souhaité.
+Nous traitons 3 tableaux, 2 de taille n et 1 de taille n².
+
+De ce fait il faut que `2n + n² < cache choisi`.
+
+##### <u>Choix de n en fonction de L1</u>
+
+Notre cache L1 fait 32 kB. Nous allons donc faire en sorte de le remplir à 70%.
+
+On note `L1 = sizeof(L1) * 70% / sizeof(float)`.
+
+On cherche donc n tel que  `2n + n² = L1`.
+On trouve donc `n = sqrt(5601) - 1`
+               `n = 73`
+
+##### <u>Choix de n en fonction de L2</u>
+
+Notre cache L2 fait 256 kB. Nous allons donc faire en sorte de le remplir à 70%.
+
+On note `L2 = (L1 + sizeof(L2) * 70%) / sizeof(float)`.
+
+On cherche donc n tel que  `2n + n² = L2`.
+On trouve donc `n = sqrt(52801) - 1`
+               `n = 228`
+
+##### <u>Choix de n en fonction de L3</u>
+
+Notre cache L3 fait 12 MB. Nous allons donc faire en sorte de le remplir à 70%.
+
+On note `L3 = (L1 + L2 + sizeof(L3) * 70%) / sizeof(float)`.
+
+On cherche donc n tel que  `2n + n² = L3`.
+On trouve donc `n = sqrt(282001) - 1`
+               `n = 530`
+
+##### <u>Choix de n en fonction de la RAM</u>
+
+Nous voulons avoir un tableau passant dans la RAM. De ce fait nous allons remplir les 3 caches et ajouter 70% du cache L3.
+
+On note `RAM = (L1 + L2 + L3 + sizeof(L3) * 70%) / sizeof(float)`.
+
+On cherche donc n tel que  `2n + n² = RAM`.
+On trouve donc `n = sqrt(582001) - 1`
+               `n = 761`
+
 
 ### III.3) Détermination du nombre de répétitions de warmup et de mesure
 
