@@ -211,7 +211,7 @@ Toutes les mesures ont été effectuées sur la machine suivante.
 
 Voici les informations des différents caches de la machine.
 
-![Drag Racing](lstopo.png)
+![lstopo](lstopo.png)
 
 ### III.2) Justification de la taille des tableaux pour que ça tienne dans le cache
 
@@ -219,6 +219,47 @@ Nous devons déterminer la taille des tableaux tels que les valeurs traitées ti
 Nous traitons 3 tableaux, 2 de taille n et 1 de taille n².
 
 De ce fait il faut que `2n + n² < cache choisi`.
+
+##### <u>Choix de n en fonction de L1</u>
+
+Notre cache L1 fait 32 kB. Nous allons donc faire en sorte de le remplir à 70%.
+
+On note `L1 = sizeof(L1) * 70% / sizeof(float)`.
+
+On cherche donc n tel que  `2n + n² = L1`.
+on trouve donc `n = sqrt(5601) - 1`
+               `n = 73`
+
+##### <u>Choix de n en fonction de L2</u>
+
+Notre cache L2 fait 256 kB. Nous allons donc faire en sorte de le remplir à 70%.
+
+On note `L2 = (L1 + sizeof(L2) * 70%) / sizeof(float)`.
+
+On cherche donc n tel que  `2n + n² = L2`.
+on trouve donc `n = sqrt(52801) - 1`
+               `n = 228`
+
+##### <u>Choix de n en fonction de L3</u>
+
+Notre cache L3 fait 12 MB. Nous allons donc faire en sorte de le remplir à 70%.
+
+On note `L3 = (L1 + L2 + sizeof(L3) * 70%) / sizeof(float)`.
+
+On cherche donc n tel que  `2n + n² = L3`.
+on trouve donc `n = sqrt(282001) - 1`
+               `n = 530`
+
+##### <u>Choix de n en fonction de la RAM</u>
+
+Nous voulons avoir un tableau passant dans la RAM. De ce fait nous allons remplir les 3 caches et ajouter 70% du cache L3.
+
+On note `RAM = (L1 + L2 + L3 + sizeof(L3) * 70%) / sizeof(float)`.
+
+On cherche donc n tel que  `2n + n² = RAM`.
+on trouve donc `n = sqrt(582001) - 1`
+               `n = 761`
+
 
 ### III.3) Détermination du nombre de répétitions de warmup et de mesure
 
