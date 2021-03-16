@@ -232,62 +232,15 @@ On cherche donc n tel que  `2n + n² = L1`.
 On trouve donc `n = sqrt(5601) - 1`
                `n = 73`
 
-##### <u>Choix de n en fonction de L2</u>
 
-Notre cache L2 fait 256 kB. Nous allons donc faire en sorte de le remplir à 70%.
-
-On note `L2 = (L1 + sizeof(L2) * 70%) / sizeof(float)`.
-
-On cherche donc n tel que  `2n + n² = L2`.
-On trouve donc `n = sqrt(52801) - 1`
-               `n = 228`
-
-##### <u>Choix de n en fonction de L3</u>
-
-Notre cache L3 fait 12 MB. Nous allons donc faire en sorte de le remplir à 70%.
-
-On note `L3 = (L1 + L2 + sizeof(L3) * 70%) / sizeof(float)`.
-
-On cherche donc n tel que  `2n + n² = L3`.
-On trouve donc `n = sqrt(282001) - 1`
-               `n = 530`
-
-##### <u>Choix de n en fonction de la RAM</u>
-
-Nous voulons avoir un tableau passant dans la RAM. De ce fait nous allons remplir les 3 caches et ajouter 70% du cache L3.
-
-On note `RAM = (L1 + L2 + 2*L3) / sizeof(float)`.
-
-On cherche donc n tel que  `2n + n² = RAM`.
-On trouve donc `n = sqrt(672001) - 1`
-               `n = 818`
-
-
-### III.3) Détermination du nombre de répétitions de warmup et de mesure
-
-##### <u>Choix du nombre de warmups et répétitions en fonction de L1</u>
+### III.3) Détermination du nombre de répétitions de warmups et de mesures
 
 ![L1](L1.png)
 
-D'après le graphique ci-dessus nous nous rendons compte que 32 warmups sont suffisants pour le cache L1.
+D'après le graphique ci-dessus nous nous rendons compte que 32 warmups suffisent pour le cache L1.
 
-##### <u>Choix du nombre de warmups et répétitions en fonction de L2</u>
 
-![L2](L2.png)
 
-D'après le graphique ci-dessus nous nous rendons compte que 19 warmups suffisent pour le cache L2.
-
-##### <u>Choix du nombre de warmups et répétitions en fonction de L3</u>
-
-![L3](L3.png)
-
-D'après le graphique ci-dessus nous nous rendons compte que 7 warmups suffisent pour le cache L3.
-
-##### <u>Choix du nombre de warmups et répétitions en fonction de la RAM</u>
-
-![RAM](RAM.png)
-
-D'après le graphique ci-dessus nous nous rendons compte que 12 warmups suffisent pour la RAM.
 
 => mesures (courbes) et valeurs retenues pour ces deux paramètres clé
 Warmups: médianes de cycles/itération
@@ -308,15 +261,82 @@ La section II.4 "Mesures des diverses variantes et analyse" (qui deviendra donc 
 
 ## IV Cache L2
 
-(CF II)
+### IV.1) Justification de la taille des tableaux pour que ça tienne dans le cache L2
+
+Nous devons déterminer la taille des tableaux tels que les valeurs traitées tiennent dans le cache souhaité.
+Nous traitons 3 tableaux, 2 de taille n et 1 de taille n².
+
+De ce fait il faut que `2n + n² < cache choisi`.
+
+Notre cache L2 fait 256 kB. Nous allons donc faire en sorte de le remplir à 70%.
+
+On note `L2 = (L1 + sizeof(L2) * 70%) / sizeof(float)`.
+
+On cherche donc n tel que  `2n + n² = L2`.
+On trouve donc `n = sqrt(52801) - 1`
+               `n = 228`
+
+### IV.2) Détermination du nombre de répétitions de warmups et de mesures
+
+![L2](L2.png)
+
+D'après le graphique ci-dessus nous nous rendons compte que 19 warmups suffisent pour le cache L2.
+
+### III.3) Mesures des diverses variantes et analyse
+
 
 ## V Cache L3
 
-(CF II)
+### V.1) Justification de la taille des tableaux pour que ça tienne dans le cache L3
+
+Nous devons déterminer la taille des tableaux tels que les valeurs traitées tiennent dans le cache souhaité.
+Nous traitons 3 tableaux, 2 de taille n et 1 de taille n².
+
+De ce fait il faut que `2n + n² < cache choisi`.
+
+Notre cache L3 fait 12 MB. Nous allons donc faire en sorte de le remplir à 70%.
+
+On note `L3 = (L1 + L2 + sizeof(L3) * 70%) / sizeof(float)`.
+
+On cherche donc n tel que  `2n + n² = L3`.
+On trouve donc `n = sqrt(282001) - 1`
+               `n = 530`
+
+### V.2) Détermination du nombre de répétitions de warmups et de mesures
+
+![L3](L3.png)
+
+D'après le graphique ci-dessus nous nous rendons compte que 7 warmups suffisent pour le cache L3.
+
+### III.3) Mesures des diverses variantes et analyse
+
 
 ## VI RAM
 
-(CF II)
+### VI.1) Justification de la taille des tableaux pour que ça tienne dans la RAM
+
+Nous devons déterminer la taille des tableaux tels que les valeurs traitées tiennent dans le cache souhaité.
+Nous traitons 3 tableaux, 2 de taille n et 1 de taille n².
+
+De ce fait il faut que `2n + n² < cache choisi`.
+
+Nous voulons avoir un tableau passant dans la RAM. De ce fait nous allons remplir les 3 caches et ajouter 70% du cache L3.
+
+On note `RAM = (L1 + L2 + 2*L3) / sizeof(float)`.
+
+On cherche donc n tel que  `2n + n² = RAM`.
+On trouve donc `n = sqrt(672001) - 1`
+               `n = 818`
+
+
+### VI.2) Détermination du nombre de répétitions de warmups et de mesures
+
+![RAM](RAM.png)
+
+D'après le graphique ci-dessus nous nous rendons compte que 12 warmups suffisent pour la RAM.
+
+### III.3) Mesures des diverses variantes et analyse
+
 
 Conclusion
 ----------
