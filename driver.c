@@ -81,10 +81,10 @@ int main (int argc, char *argv[]) {
       }
 
       /* measure repm repetitions */
-      // uint64_t t1 = rdtsc();
-      // for (i=0; i<repm; i++)
-      //   s13 (size, a, b, c, offset, radius);
-      // uint64_t t2 = rdtsc();
+      uint64_t t1 = rdtsc();
+      for (i=0; i<repm; i++)
+        s13 (size, a, b, c, offset, radius);
+      uint64_t t2 = rdtsc();
 
 
       for (i=0; i<repm; i++){
