@@ -256,11 +256,11 @@ On trouve donc `n = sqrt(282001) - 1`
 
 Nous voulons avoir un tableau passant dans la RAM. De ce fait nous allons remplir les 3 caches et ajouter 70% du cache L3.
 
-On note `RAM = (L1 + L2 + L3 + sizeof(L3) * 70%) / sizeof(float)`.
+On note `RAM = (L1 + L2 + 2*L3) / sizeof(float)`.
 
 On cherche donc n tel que  `2n + n² = RAM`.
-On trouve donc `n = sqrt(582001) - 1`
-               `n = 761`
+On trouve donc `n = sqrt(672001) - 1`
+               `n = 818`
 
 
 ### III.3) Détermination du nombre de répétitions de warmup et de mesure

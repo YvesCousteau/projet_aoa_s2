@@ -8,7 +8,7 @@
 #define L1 73
 #define L2 228
 #define L3 530
-#define RAM 761
+#define RAM 818
 
 #define L1_REP 32
 #define L2_REP 19
