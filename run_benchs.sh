@@ -1,21 +1,26 @@
 #!/bin/bash
 source colors.sh
+#source /opt/intel/oneapi/setvars.sh
 
 # environment
 
 CORE_ID=3 # the core id on which the bench is executed
-cpupower -c $CORE_ID frequency-set --governor performance
+sudo cpupower -c $CORE_ID frequency-set --governor performance
 
 REPETITION=1000
 
   # 2**10 = Ki ; 2**10**2 = Mi
-L1=$(( 32 * 2**10 ))
-L2=$(( 256 * 2**10 ))
-L3=$(( 12 * $(( 2**10))**2 ))
+kiO=1024
+L1=$((32*$kiO))
+L2=$(( 256 * $kiO ))
+L3=$(( 12 * $(($kiO*$kiO)) ))
 
 sizeofloat=4
 
-declare -A BENCH_ITERATIONS
+declare -A BENCH_ITERATIONS;
+declare -A BENCH_ITERATION_SIZE
+declare -A BENCH_ITERATION_WARMUP
+
 BENCH_ITERATION_SIZE["L1"]=73
 BENCH_ITERATION_SIZE["L2"]=228
 BENCH_ITERATION_SIZE["L3"]=530

@@ -21,7 +21,7 @@ OPTFLAGS=-O3 -g -Wall
 CFLAGS=-O2 -g -Wall
 
 
-OBJS=s13_03n_v6.o s13_03n_v5.o s13_03n_v4.o s13_03n.o s13_03.o s13_02.o s13_01.o
+OBJS=s13_03n_v6.o s13_03n_v5.o s13_03n_v4.o s13_03n.o s13_03.o s13_02.o s13_01.o s13_icx_O2.o s13_icx_O3.o s13_icx_mtune.o s13_icx_xhost.o  s13_icx_ultimate.o
 CFILE=driver.c kernel.c rdtsc.c
 
 #R_ANAL=analysis
@@ -41,49 +41,41 @@ s13:	$(OBJS)
 	$(CC) driver.c rdtsc.c s13_03.o -o s13_03
 	$(CC) driver.c rdtsc.c s13_02.o -o s13_02
 	$(CC) driver.c rdtsc.c s13_01.o -o s13_01
-	# $(II) driver.c rdtsc.c s13_icx_O2.o -o s13_icx_O2
-	# $(II) driver.c rdtsc.c s13_icx_O3.o -o s13_icx_O3
-	# $(II) driver.c rdtsc.c s13_icx_mtune.o -o s13_icx_mtune
-	# $(II) driver.c rdtsc.c s13_icx_xhost.o -o s13_icx_xhost
+
+	$(II) driver.c rdtsc.c s13_icx_O2.o -o s13_icx_O2
+	$(II) driver.c rdtsc.c s13_icx_O3.o -o s13_icx_O3
+	$(II) driver.c rdtsc.c s13_icx_mtune.o -o s13_icx_mtune
+	$(II) driver.c rdtsc.c s13_icx_xhost.o -o s13_icx_xhost
 	# $(II) driver.c rdtsc.c s13_icx_fast.o -o s13_icx_fast
-	# $(II) driver.c rdtsc.c s13_icx_ultimate.o -o s13_icx_ultimate
+	$(II) driver.c rdtsc.c s13_icx_ultimate.o -o s13_icx_ultimate
 
 
 s13_03n_v6.o: kernel.c
 	@$(CC) $(OFLAG3n_v6) -D $(OPT) -c -o $@ $<
-
 s13_03n_v5.o: kernel.c
 	@$(CC) $(OFLAG3n_v5) -D $(OPT) -c -o $@ $<
-
 s13_03n_v4.o: kernel.c
 	@$(CC) $(OFLAG3n_v4) -D $(OPT) -c -o $@ $<
-
 s13_03n.o: kernel.c
 	@$(CC) $(OFLAG3n) -D $(OPT) -c -o $@ $<
-
-
 s13_03.o: kernel.c
 	@$(CC) $(OFLAG3) -D $(OPT) -c -o $@ $<
-
-
 s13_02.o: kernel.c
 	@$(CC) $(OFLAG2) -D $(OPT) -c -o $@ $<
-
 s13_01.o: kernel.c
 	@$(CC) $(OFLAG1) -D $(OPT) -c -o $@ $<
 
+
+
+
 s13_icx_O2.o: kernel.c
-	@$(II) $(OFLAG_icx_O2) -D $(OPT) -c -o $@ $<
-
+	@$(II)  $(OFLAG_icx_O2) -D $(OPT) -c -o $@ $<
 s13_icx_O3.o: kernel.c
-	@$(II) $(OFLAG_icx_O3) -D $(OPT) -c -o $@ $<
-
+	@$(II)  $(OFLAG_icx_O3) -D $(OPT) -c -o $@ $<
 s13_icx_mtune.o: kernel.c
-	@$(II) $(OFLAG_icx_mtune) -D $(OPT) -c -o $@ $<
-
-
+	@$(II)  $(OFLAG_icx_mtune) -D $(OPT) -c -o $@ $<
 s13_icx_xhost.o: kernel.c
-	@$(II) $(OFLAG_icx_xhost) -D $(OPT) -c -o $@ $<
+	@$(II)  $(OFLAG_icx_xhost) -D $(OPT) -c -o $@ $<
 
 
 # s13_icx_fast.o: kernel.c
@@ -151,11 +143,10 @@ maqao: s13
 clean:
 	@echo --- Clean OBJS ---
 	@rm -rf $(OBJS) s13_*
-	rm -rf $(OBJS) sgemm
+	@rm -rf $(OBJS) sgemm
 
 
 
 cleanAnalyse:
 	@echo --- Clean analyse file ---
-	@rm $(R_ANAL)/*
-	@rm -rf exp_*
+	@rm $(R_HTML)/*

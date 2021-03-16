@@ -1,3 +1,7 @@
+Premierement vous devez installer ICX et GCC. 
+Après avoir installer ICX il faut ajouté ICX au source dans le terminal :
+> source /opt/intel/oneapi/setvars.sh
+
 Pour compiler la version originale : 
 > make OPT=ORIGINAL
 Pour compiler la première version optimisée : 
