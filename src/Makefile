@@ -9,12 +9,12 @@ OFLAG3n_v4=-O3 -mfpmath=sse -march=native
 OFLAG3n_v5=-O3 -msse4.2 -mavx -march=native
 OFLAG3n_v6=-O3 -mfpmath=sse -msse4.2 -mavx -march=native
 
-OFLAG_icx_O2=-O2
-OFLAG_icx_O3=-O3
-OFLAG_icx_mtune=-mtune=corei7 # optimize for processor cache sizes
-OFLAG_icx_xhost=-O2 -xHost # SIMD for the host's architecture
-OFLAG_icx_fast=-fast # -Ofast -ipo -static (static linking) -xHost
-OFLAG_icx_ultimate=-c -O3 -xSSE4.2 -axAVX,CORE-AVX2
+OFLAG_icx_O2=-O2 -static
+OFLAG_icx_O3=-O3 -static
+OFLAG_icx_mtune=-mtune=corei7 -static# optimize for processor cache sizes
+OFLAG_icx_xhost=-O2 -xHost -static# SIMD for the host's architecture
+OFLAG_icx_fast=-fast -static# -Ofast -ipo -static (static linking) -xHost
+OFLAG_icx_ultimate=-c -O3 -xSSE4.2 -axAVX,CORE-AVX2 -static
 
 
 OPTFLAGS=-O3 -g -Wall
@@ -26,8 +26,8 @@ CFILE=driver.c kernel.c rdtsc.c
 
 #R_ANAL=analysis
 R_HTML=../maqao_html
-SIZE=228
-NB_WARMUP=20000
+SIZE=73
+NB_WARMUP=130000
 NB_MESURE_REP=50
 
 
@@ -123,7 +123,6 @@ maqao: s13
 
 	@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_xhost $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
 	@mv $(R_HTML)/maqao_res/RESULTS/s13_icx_xhost_one_html $(R_HTML)/s13_icx_xhost_one_html ; rm -rf $(R_HTML)/maqao_res
-
 
 
 # analysis: maqao
