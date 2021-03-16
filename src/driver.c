@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <unistd.h>
+#include <time.h>
 
 #define NB_METAS 31
 
@@ -54,7 +55,7 @@ int main (int argc, char *argv[]) {
    /* get command line arguments */
    int size = atoi (argv[1]); /* matrix size */
    //int repw = atoi (argv[2]); /* repetition number */
-   int repw = 0;
+   int repw = atoi (argv[2]);
    int repm = atoi (argv[3]); /* repetition number */
 
       uint64_t rep [NB_METAS][repm];
@@ -74,8 +75,11 @@ int main (int argc, char *argv[]) {
 
       /* warmup (repw repetitions in first meta, 1 repet in next metas) */
       if (m == 0) {
+         clock_t start = clock();
          for (i=0; i<repw; i++)
             s13 (size, a, b, c, offset, radius);
+         clock_t stop = clock();
+         printf("temps: %f\n",(stop-start)/(float) CLOCKS_PER_SEC);
       } else {
          s13 (size, a, b, c, offset, radius);
       }
@@ -109,13 +113,13 @@ int main (int argc, char *argv[]) {
       //sleep(4);
    }
 
-      for (int i = 0; i < NB_METAS; i++){
+     /* for (int i = 0; i < NB_METAS; i++){
 	for (int j= 0; j < repm; j++){
 	      printf("%lu", rep[i][j]);
 			if (j != repm) printf(",");
 	}
 	printf("\n");
-     	}
+     	}*/
 
    return EXIT_SUCCESS;
 }

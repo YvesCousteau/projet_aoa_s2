@@ -4,20 +4,20 @@ Après avoir installer ICX il faut ajouté ICX au source dans le terminal :
 
 Pour compiler la version originale : 
 > make OPT=ORIGINAL
-Pour compiler la première version optimisée : 
-> make OPT=CORRECTED
-Pour compiler la seconde version optimisée : 
-> make OPT=CORRECTED2
+
 
 Pour supprimer les fichiers compiler :
 > make clean
+
+Pour supprimer les fichiers maqao :
+> make cleanAnalyse
 
 Pour executer le prog optimisé avec O3n_v6 avec une taille 228 20000 warmup et 50 répétition de mesure :
 > sudo cpupower -c 3 frequency-set --governor performance; taskset -c 3 ./s13_03n_v6 228 20000 50
 (On bloque la fréquence du processeur et on execute le programme sur un seul coeur)
 
 Pour exécuter avec MAQAO (la version originale) :
-> make OPT=ORIGINAL maqao
+> make maqao OPT=ORIGINAL 
 (On peut changer les options taille, warmup et répétition dans le Makefile)
 
 Pour executé les benchmarks :
