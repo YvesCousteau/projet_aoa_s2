@@ -196,10 +196,19 @@ On cherche
 
 Interessons nous a l'assembleur produit par les deux compilateurs : `gcc` et `icc`.
 
-### gcc
 
-#### `-O2` vs `-03`
-On remarque que le flag `-O2` produit un binaire non vectorise. Maqao indique en effet que
+### Intel OneAPI `icc`
+
+#### `-O1`, `-02`
+On remarque que le flag `-O2` produit un binaire non vectorise. Maqao indique en effet que le taux de vectorisation pour la boucle principale est de 7.67%.
+Ainsi maqao indique qu'on pourrait avoir un speedup de 7.77% en vectorisant completement les instructions.
+
+Le flag	`-O2` obtient un resultat similaire : 6.35% comme facteur de vectorisation et un potentiel speedup de 6.34%.
+
+Une analyse des binaires avec `radare2` nous confirme qu'aucune vectorisation n'est effectuee :
+	- les instructions utilisees sont de type scalaire (eg. `addss`, `movss`, ...).
+	- on utilise les registres `xmm`
+
 
 ## III Cache L1
 
