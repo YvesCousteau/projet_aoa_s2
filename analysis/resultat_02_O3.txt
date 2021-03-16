@@ -1,0 +1,44 @@
+8c8
+< Info: Experiment directory created: /home/hugohenrotte/Code/projet_aoa_s2/exp_OV2
+---
+> Info: Experiment directory created: /home/hugohenrotte/Code/projet_aoa_s2/exp_OV3
+17,18c17,18
+< hybrid POP metrics: block 1/4hybrid POP metrics: block 2/4hybrid POP metrics: block 3/4hybrid POP metrics: block 4/4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       Info: ---> ANALYZE LOOP 10 (1/1)...Info: ---> ALL LOOPS HAVE BEEN ANALYZED                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+<                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Info: ---> ANALYZE FUNCTION s13 (1/1) ...Info: ---> ALL FUNCTIONS HAVE BEEN ANALYZED                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+---
+> hybrid POP metrics: block 1/4hybrid POP metrics: block 2/4hybrid POP metrics: block 3/4hybrid POP metrics: block 4/4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Info: ---> ANALYZE LOOP 10 (1/1)...Info: ---> ALL LOOPS HAVE BEEN ANALYZED                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           Info: ---> ANALYZE FUNCTION s13 (1/1) ...Info: ---> ALL FUNCTIONS HAVE BEEN ANALYZED                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+33,34c33,34
+<   Application:			./s13_02
+<   Timestamp:			2021-03-16 20:02:51
+---
+>   Application:			./s13_03
+>   Timestamp:			2021-03-16 20:02:54
+56c56
+<   Total Time:				0.18 s
+---
+>   Total Time:				0.15 s
+84c84
+<     s13 - 02 - 10:	1.2353
+---
+>     s13 - 03 - 10:	1.2353
+90c90
+<     s13 - 02 - 10:	1.1957
+---
+>     s13 - 03 - 10:	1.1957
+96c96
+<     s13 - 02 - 10:	6.3396
+---
+>     s13 - 03 - 10:	6.3396
+161c161
+<    s13                                          | s13_02          | 100          | 0.18       |
+---
+>    s13                                          | s13_03          | 100          | 0.15       |
+175c175
+<    10         | s13_02          |                                              | 100          |
+---
+>    10         | s13_03          |                                              | 100          |
+194c194
+<       5.1.1  -  Loop 10 from s13_02
+---
+>       5.1.1  -  Loop 10 from s13_03
