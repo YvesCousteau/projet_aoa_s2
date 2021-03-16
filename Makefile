@@ -1,5 +1,8 @@
 CC=gcc
 
+
+OFLAG=-O2
+
 OFLAG3n_v4=-O3 -mfpmath=sse -march=native
 OFLAG3n_v5=-O3 -msse4.2 -mavx -march=native
 OFLAG3n_v6=-O3 -mfpmath=sse -msse4.2 -mavx -march=native
@@ -23,7 +26,7 @@ s13:	$(OBJS)
 	$(CC) driver.c rdtsc.c s13_03n_v6.o -o s13_03n_v6
 
 s13_03n_v6.o: kernel.c
-	@$(CC) $(OFLAG3n_v6) -D $(OPT) -c -o $@ $<
+	@$(CC) $(OFLAG) -D $(OPT) -c -o $@ $<
 
 maqao: s13
 	@mkdir -p $(R_ANAL)
