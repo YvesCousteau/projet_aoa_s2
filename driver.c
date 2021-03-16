@@ -81,22 +81,22 @@ int main (int argc, char *argv[]) {
       }
 
       /* measure repm repetitions */
-      //uint64_t t1 = rdtsc();
-      //for (i=0; i<repm; i++)
-      //   s13 (size, a, b, c, offset, radius);
-      //uint64_t t2 = rdtsc();
-
-
-      for (i=0; i<repm; i++){
       uint64_t t1 = rdtsc();
-         s13 (size, a, b, c, offset, radius);
+      for (i=0; i<repm; i++)
+        s13 (size, a, b, c, offset, radius);
       uint64_t t2 = rdtsc();
-      rep[m][i] = t2-t1;
-      }
+
+
+      // for (i=0; i<repm; i++){
+      // uint64_t t1 = rdtsc();
+      //    s13 (size, a, b, c, offset, radius);
+      // uint64_t t2 = rdtsc();
+      // rep[m][i] = t2-t1;
+      // }
 
       /* print performance */
-       //printf ("%.2f cycles/FMA\n",
-               //(t2 - t1) / ((float) (size - offset) * size * repm));
+       printf ("%.2f cycles/FMA\n",
+               (t2 - t1) / ((float) (size - offset) * size * repm));
 
       /* print output */
       if (argc==5) dump_array (argv[4], size, c);
@@ -106,7 +106,7 @@ int main (int argc, char *argv[]) {
       free (b);
       free (c);
 
-      sleep(4);
+      //sleep(4);
    }
 
       for (int i = 0; i < NB_METAS; i++){
