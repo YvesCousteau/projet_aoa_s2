@@ -2,7 +2,7 @@
 
 ## Présentation du sujet
 
-Nous avons travaillé sur le sujet 13. 
+Nous avons travaillé sur le sujet 13.
 
 Celui ci consiste à  
 
@@ -31,7 +31,7 @@ Celui ci consiste à
 
 ### I.1) Justification des 5 points clés du driver (warmups, repets etc.)
 
-De nombreux obstacles rentrent en compte quant à la précision des mesures : 
+De nombreux obstacles rentrent en compte quant à la précision des mesures :
 
 - Précision du timer
 - RDTSC : précis à quelques cycles près mais biais de 20-30 cycles (amorti à partir de ~500 cycles)
@@ -47,7 +47,7 @@ De nombreux obstacles rentrent en compte quant à la précision des mesures :
 
 Communnément appelés "warmup" ces répétitions viennent en amont des mesures afin de préparer le système aux mesures.
 
-Elles permettent d'exclure le régime transitoire. Elles sont d'autant plus importantes lorsque la machine est froide. 
+Elles permettent d'exclure le régime transitoire. Elles sont d'autant plus importantes lorsque la machine est froide.
 
 Lors des mesures ces répétitions amortissent l'erreur du timer.
 
@@ -66,7 +66,7 @@ Une autre des solutions est de choisir un coeur sur lequel exécuter les mesures
 
 #### Optimisation du code
 
-Il existe de nombreuses méthodes afin d'optimiser le code. 
+Il existe de nombreuses méthodes afin d'optimiser le code.
 
 - If hoisting
 - loop tilling / unrolling
@@ -111,7 +111,7 @@ rep=100
 for exe in `find . -maxdepth 1 -executable -type f  ! -name "*.*"`; do
 	taskset -c $CORE_ID $exe $size $warmup $rep > gcc_run_output/${exe}_${iteration}.dat
 done
-``` 
+```
 
 On compare maintenant facilement les résultats :
 ```
@@ -140,7 +140,7 @@ On gardera ces flags pour la compilation avec `gcc`.
 Dans un premier temps, on optimise le kernel juse en comprenant le code.
 On trouve une forme plus "agréable" en supprimant des conditions inutiles :
 
-```
+``` c
 void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int offset, double radius) {
    int i, j;
 
@@ -180,7 +180,7 @@ On compare maintenant les performances de la nouvelle implémentation avec leur 
 
 ### I.3) Méthodologie de détermination du nb de répétitions de warmup et demesure
 
-On cherche 
+On cherche
 
 (médiane - minimum) / minimum < 5 % = 31
 
@@ -214,6 +214,11 @@ Voici les informations des différents caches de la machine.
 ![Drag Racing](lstopo.png)
 
 ### III.2) Justification de la taille des tableaux pour que ça tienne dans le cache
+
+Nous devons déterminer la taille des tableaux tels que les valeurs traitées tiennent dans le cache souhaité.
+Nous traitons 3 tableaux, 2 de taille n et 1 de taille n².
+
+De ce fait il faut que `2n + n² < cache choisi`.
 
 ### III.3) Détermination du nombre de répétitions de warmup et de mesure
 
