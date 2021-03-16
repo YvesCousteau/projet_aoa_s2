@@ -7,6 +7,14 @@ OFLAG3n_v4=-O3 -mfpmath=sse -march=native
 OFLAG3n_v5=-O3 -msse4.2 -mavx -march=native
 OFLAG3n_v6=-O3 -mfpmath=sse -msse4.2 -mavx -march=native
 
+OFLAG_icx_O2=-O2
+OFLAG_icx_O3=-O3
+OFLAG_icx_mtune=-mtune=corei7 # optimize for processor cache sizes
+OFLAG_icx_xhost=-O2 -xHost # SIMD for the host's architecture
+OFLAG_icx_fast=-fast # -Ofast -ipo -static (static linking) -xHost
+OFLAG_icx_ultimate=-c -O3 -xSSE4.2 -axAVX,CORE-AVX2
+
+
 OPTFLAGS=-O3 -g -Wall
 CFLAGS=-O2 -g -Wall
 
