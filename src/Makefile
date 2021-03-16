@@ -96,27 +96,28 @@ maqao: s13
 	@mkdir -p $(R_HTML)
 	@echo --- generating maqao file ---
 
-	@maqao oneview -R1 xp=$(R_HTML)/gcc_O1 -- ./s13_01 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
-	@mv $(R_HTML)/gcc_O1/RESULTS/s13_01_one_html $(R_HTML)/s13_01_one_html ; rm -rf $(R_HTML)/gcc_O1
+	@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_01 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
+	@mv $(R_HTML)/maqao_res/RESULTS/s13_01_one_html $(R_HTML)/s13_01_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	@maqao oneview -R1 xp=$(R_HTML)/gcc_O1 -- ./s13_02 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
-	@mv $(R_HTML)/gcc_O1/RESULTS/s13_01_one_html $(R_HTML)/s13_01_one_html ; rm -rf $(R_HTML)/gcc_O1
+	@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_02 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
+	@mv $(R_HTML)/maqao_res/RESULTS/s13_02_one_html $(R_HTML)/s13_02_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	@maqao oneview -R1 xp=$(R_HTML)/gcc_O1 -- ./s13_03 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
-	@mv $(R_HTML)/gcc_O1/RESULTS/s13_01_one_html $(R_HTML)/s13_01_one_html ; rm -rf $(R_HTML)/gcc_O1
+	@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
+	@mv $(R_HTML)/maqao_res/RESULTS/s13_03_one_html $(R_HTML)/s13_03_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	@maqao oneview -R1 xp=$(R_HTML)/gcc_O1 -- ./s13_03n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
-	@mv $(R_HTML)/gcc_O1/RESULTS/s13_01_one_html $(R_HTML)/s13_01_one_html ; rm -rf $(R_HTML)/gcc_O1
+	@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
+	@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_one_html $(R_HTML)/s13_03n_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	@maqao oneview -R1 xp=$(R_HTML)/gcc_O1 -- ./s13_03n_v4 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
-	@mv $(R_HTML)/gcc_O1/RESULTS/s13_01_one_html $(R_HTML)/s13_01_one_html ; rm -rf $(R_HTML)/gcc_O1
+	@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n_v4 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
+	@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_v4_one_html $(R_HTML)/s13_03n_v4_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	@maqao oneview -R1 xp=$(R_HTML)/gcc_O1 -- ./s13_03n_v5 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
-	@mv $(R_HTML)/gcc_O1/RESULTS/s13_01_one_html $(R_HTML)/s13_01_one_html ; rm -rf $(R_HTML)/gcc_O1
+	@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n_v5 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
+	@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_v5_one_html $(R_HTML)/s13_03n_v5_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	@maqao oneview -R1 xp=$(R_HTML)/gcc_O1 -- ./s13_03n_v6 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
-	@mv $(R_HTML)/gcc_O1/RESULTS/s13_01_one_html $(R_HTML)/s13_01_one_html ; rm -rf $(R_HTML)/gcc_O1
+	@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n_v6 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) 
+	@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_v6_one_html $(R_HTML)/s13_03n_v6_one_html ; rm -rf $(R_HTML)/maqao_res
 
+	#@maqao oneview -R1 xp=exp_OV1 of=text -- ./s13_01 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) > $(R_HTML)/resultat_01.txt
 	#@maqao oneview -R1 xp=exp_OV2 of=text -- ./s13_02 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) > $(R_HTML)/resultat_02.txt
 	#@maqao oneview -R1 xp=exp_OV3 of=text -- ./s13_03 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) > $(R_HTML)/resultat_03.txt
 	#@maqao oneview -R1 xp=exp_OV3n of=text -- ./s13_03n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP) > $(R_HTML)/resultat_03n.txt
