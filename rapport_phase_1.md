@@ -31,38 +31,45 @@ Celui ci consiste à
 
 ### I.1) Justification des 5 points clés du driver (warmups, repets etc.)
 
-De nombreux obstacles rentrent en compte quant à la précision des mesures :
+Le driver tente de résoudre des problèmes de stabilité du système qui pourraient fausser les mesures de performance du kernel.
+Il prend donc différentes mesures pour résoudre ces problèmes :
 
-- Précision du timer
-- RDTSC : précis à quelques cycles près mais biais de 20-30 cycles (amorti à partir de ~500 cycles)
-- Compteurs matériels : plusieurs secondes nécessaires
-- Etat initial de la machine
-- Régime transitoire : C-states/DVFS, caches et prefetchers “froids”, pipeline non rempli
-- Stabilité (variation d'une mesure à l'autre)
-- Pollution par système et autres applis
+##### <u>Répétitions de "warmup"</u>
 
-#### Les solutions suivantes permettent de palier à ces obstacles et d'obtenir des mesures fiables et exploitables :
+Ce sont des répétitions qui viennent en amont des mesures afin de préparer le système.
 
-##### <u>Répétitions du noyau</u>
-
-Communnément appelés "warmup" ces répétitions viennent en amont des mesures afin de préparer le système aux mesures.
+	Ces warmups sont des passage "à vide" du code que l'on veut benchmarker.
+	Cela permet de remplir les caches avec les valeurs des tableaux de données sur lesquelles le kernel fais ses opérations.
+	Cela permet de "chauffer" la machine pour effectuer les test dans des conditions les plus stables possibles.
+	On verra l'utilité des warmups dans les figures suivantes, qui montrent que la première itération du kernel s'effectue dans un laps de temps beaucoup plus grand que les suivantes.
 
 Elles permettent d'exclure le régime transitoire. Elles sont d'autant plus importantes lorsque la machine est froide.
 
 Lors des mesures ces répétitions amortissent l'erreur du timer.
 
+
+##### Répétitions de l'expérience
+
+	Cette mesure prise par le driver pour réduire les erreurs de mesures est simple à comprendre : on effectue plusieures fois les mesures pour en faire la médiane et atténuer les éventuelles perturbations qui pourraient fausser les mesures.
+
+
 ##### <u>Méta-répétitions pour mesurer la stabilité</u>
+
+	Comme le point ci-dessus, cette répétition va exécuter N fois tout le processus de test : les warmups + les répétitions
+	Cela permet encore une fois d'obtenir 
 
 - Répétitions du corps du driver
 - Via un script ou une boucle dans le driver
 - En toute rigueur, 31 méta-répétitions nécessaires
 - Souhaité : (médiane - minimum) / minimum < 5 % = 31
 
+
 ##### <u>Environnement d'exécution le plus léger possible</u>
 
 En ayant un environnement d'exécution sain, meilleures seront les mesures. Il n'y aura pas/moins de bruit dû à d'autres processus. Il est donc préférable d'exécuter son OS en mode console ou de suspendre un maximum de processus en tache de fond.
 
 Une autre des solutions est de choisir un coeur sur lequel exécuter les mesures (process pinning). De ce fait aucun autre processus ne pourra venir interragir avec celui-ci. (taskset -c / Appel POSIX)
+
 
 #### Optimisation du code
 
@@ -73,6 +80,7 @@ Il existe de nombreuses méthodes afin d'optimiser le code.
 - loop pilling
 - loop fusion / fission
 - loop interchange
+
 
 ### I.2) Stratégies utilisées en commun pour améliorer la stabilité
 
