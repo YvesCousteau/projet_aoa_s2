@@ -34,7 +34,7 @@ Celui ci consiste à
 Le driver tente de résoudre des problèmes de stabilité du système qui pourraient fausser les mesures de performance du kernel.
 Il prend donc différentes mesures pour résoudre ces problèmes :
 
-##### <u>Répétitions de "warmup"</u>
+#### <u>Répétitions de "warmup"</u>
 
 Ce sont des répétitions qui viennent en amont des mesures afin de préparer le système.
 
@@ -48,12 +48,12 @@ Elles permettent d'exclure le régime transitoire. Elles sont d'autant plus impo
 Lors des mesures ces répétitions amortissent l'erreur du timer.
 
 
-##### Répétitions de l'expérience
+#### Répétitions de l'expérience
 
 	Cette mesure prise par le driver pour réduire les erreurs de mesures est simple à comprendre : on effectue plusieures fois les mesures pour en faire la médiane et atténuer les éventuelles perturbations qui pourraient fausser les mesures.
 
 
-##### <u>Méta-répétitions pour mesurer la stabilité</u>
+#### <u>Méta-répétitions pour mesurer la stabilité</u>
 
 	Comme le point ci-dessus, cette répétition va exécuter N fois tout le processus de test : les warmups + les répétitions
 	Cela permet encore une fois d'obtenir 
@@ -61,26 +61,18 @@ Lors des mesures ces répétitions amortissent l'erreur du timer.
 - Répétitions du corps du driver
 - Via un script ou une boucle dans le driver
 - En toute rigueur, 31 méta-répétitions nécessaires
-- Souhaité : (médiane - minimum) / minimum < 5 % = 31
+- Souhaité : (médiane - minimum) / minimum < 5 % => on prendre NB\_META 31
 
 
-##### <u>Environnement d'exécution le plus léger possible</u>
+#### Sonde utilsee
 
-En ayant un environnement d'exécution sain, meilleures seront les mesures. Il n'y aura pas/moins de bruit dû à d'autres processus. Il est donc préférable d'exécuter son OS en mode console ou de suspendre un maximum de processus en tache de fond.
-
-Une autre des solutions est de choisir un coeur sur lequel exécuter les mesures (process pinning). De ce fait aucun autre processus ne pourra venir interragir avec celui-ci. (taskset -c / Appel POSIX)
+On utilsera la fonction rdtac() de unistd.h pour les mesures de temps.
 
 
-#### Optimisation du code
+#### Valeurs des tableaux
 
-Il existe de nombreuses méthodes afin d'optimiser le code.
-
-- If hoisting
-- loop tilling / unrolling
-- loop pilling
-- loop fusion / fission
-- loop interchange
-
+Les valeurs du tableau sont randomisees a chaque meta-repetition.
+La machine prend donc le temps de re-remplir ses caches avec les nouvelles valeurs grace au 
 
 ### I.2) Stratégies utilisées en commun pour améliorer la stabilité
 
@@ -112,19 +104,19 @@ On execute tous les executables :
 CORE_ID=3 # the core id on which the bench is executed
 cpupower -c $CORE_ID frequency-set --governor performance
 
-size=$(( 5 * 2**10 ))
+size=1024
 warmup=100
 rep=100
 
 for exe in `find . -maxdepth 1 -executable -type f  ! -name "*.*"`; do
-	taskset -c $CORE_ID $exe $size $warmup $rep > gcc_run_output/${exe}_${iteration}.dat
+	taskset -c $CORE_ID $exe $size $warmup $rep > exec_output/${exe}_${iteration}.dat
 done
 ```
 
-On compare maintenant facilement les résultats :
+On compare maintenant facilement les résultats entre:
 
 ``` bash
-for file in `ls gcc_exec_output`; do
+for file in `ls exec_output/`; do
 	echo `awk '{ sum += $1 } END { print sum }' $file` $file
 done | sort
 ```
@@ -143,7 +135,12 @@ Ce qui nous sort :
 On remarque que les flags `-mfpmath=sse -msse4.2 -mavx` et `-march=native` sont particulièrement efficaces.
 On gardera ces flags pour la compilation avec `gcc`.
 
-#### Optimisation code
+##### Intel OneAPI
+
+Nos machines ayant des processeurs intel, il est interressant d'utiliser le compilateur d'Intel : `icx`.
+Oneapi est cense produire un binaire plus optimise, en proposant une compilation plus aggressive, et optimise pour les processeurs intel.
+
+#### Optimisation code // XXX pour la partie 2
 
 ##### Optimisations évidentes
 
@@ -196,15 +193,19 @@ On cherche
 
 ## II Analyse statique MAQAO"
 
- - (ce qui va donc décaler la numérotation des sections suivantes)  
 
-- Cette section contiendra l'analyse *statique*, c'est à dire qui ne dépends pas du niveau mémoire et ne fait pas intervenir de temps/speedups => juste explication de ce qui a changé au niveau du code généré par le compilateur entre les diverses combinaisons (O2 vs O3 etc.) en terme de vecto, déroulage etc.
+Interessons nous a l'assembleur produit par les deux compilateurs : `gcc` et `icc`.
+
+### gcc
+
+#### `-O2` vs `-03`
+On remarque que le flag `-O2` produit un binaire non vectorise. Maqao indique en effet que
 
 ## III Cache L1
 
 ### III.1) Environnement expérimental
 
-Toutes les mesures ont été effectuées sur la machine suivante.
+Toutes les mesures ont été effectuées sur la machine suivante :
 
 | Type                                | Informations                              |
 | ----------------------------------- | ----------------------------------------- |
@@ -226,9 +227,9 @@ Voici les informations des différents caches de la machine.
 ### III.2) Justification de la taille des tableaux pour que ça tienne dans le cache
 
 Nous devons déterminer la taille des tableaux tels que les valeurs traitées tiennent dans le cache souhaité.
-Nous traitons 3 tableaux, 2 de taille n et 1 de taille n².
+Nous traitons 3 tableaux : 2 de taille n et 1 de taille n².
 
-De ce fait il faut que `2n + n² < cache choisi`.
+De ce fait il faut que `2n + n² < cache cible`.
 
 ##### <u>Choix de n en fonction de L1</u>
 
@@ -246,9 +247,6 @@ On trouve donc `n = sqrt(5601) - 1`
 ![L1](L1.png)
 
 D'après le graphique ci-dessus nous nous rendons compte que 32 warmups suffisent pour le cache L1.
-
-
-
 
 => mesures (courbes) et valeurs retenues pour ces deux paramètres clé
 Warmups: médianes de cycles/itération
