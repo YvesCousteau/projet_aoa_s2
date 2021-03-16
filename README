@@ -17,5 +17,9 @@ Pour executer le prog optimisé avec O3n_v6 avec une taille 228 20000 warmup et 
 (On bloque la fréquence du processeur et on execute le programme sur un seul coeur)
 
 Pour exécuter avec MAQAO (la version originale) :
-make OPT=ORIGINAL maqao
+> make OPT=ORIGINAL maqao
 (On peut changer les options taille, warmup et répétition dans le Makefile)
+
+Pour executé les benchmarks :
+> bash ./scripts/run_benchs.sh 
+
