@@ -5,16 +5,6 @@
 
 #define NB_METAS 31
 
-#define L1 73
-#define L2 228
-#define L3 530
-#define RAM 761
-
-#define L1_REP 32
-#define L2_REP 19
-#define L3_REP 7
-#define RAM_REP 12
-
 extern uint64_t rdtsc ();
 
 //extern void s13 (int n, float a[n][n], float b[n][n], float c[n][n], int offset, double radius);
@@ -50,29 +40,12 @@ int main (int argc, char *argv[]) {
    int i, m;
 
    /* get command line arguments */
-   if (argv[1] == "L1") {
-     int size = L1;
-     int repm = L1_REP;
-   }
-   if (argv[1] == "L2") {
-     int size = L2;
-     int repm = L2_REP;
-   }
-   if (argv[1] == "L3") {
-     int size = L3;
-     int repm = L3_REP;
-   }
-   if (argv[1] == "RAM") {
-     int size = RAM;
-     int repm = RAM_REP;
-   }
-
-   // int size = atoi (argv[1]); /* matrix size */
+   int size = atoi (argv[1]); /* matrix size */
    //int repw = atoi (argv[2]); /* repetition number */
-   int repw = 100;
-   // int repm = atoi (argv[3]); /* repetition number */
+   int repw = 0;
+   int repm = atoi (argv[3]); /* repetition number */
 
-   uint64_t rep [NB_METAS][repw];
+      uint64_t rep [NB_METAS][repm];
 
 
    for (m=0; m<NB_METAS; m++) {
@@ -90,14 +63,7 @@ int main (int argc, char *argv[]) {
       /* warmup (repw repetitions in first meta, 1 repet in next metas) */
       if (m == 0) {
          for (i=0; i<repw; i++)
-         {
-            uint64_t t1 = rdtsc();
             s13 (size, a, b, c, offset, radius);
-            uint64_t t2 = rdtsc();
-            rep[m][i] = t2-t1;
-          }
-
-
       } else {
          s13 (size, a, b, c, offset, radius);
       }
@@ -110,10 +76,10 @@ int main (int argc, char *argv[]) {
 
 
       for (i=0; i<repm; i++){
-      // uint64_t t1 = rdtsc();
+      uint64_t t1 = rdtsc();
          s13 (size, a, b, c, offset, radius);
-      // uint64_t t2 = rdtsc();
-      // rep[m][i] = t2-t1;
+      uint64_t t2 = rdtsc();
+      rep[m][i] = t2-t1;
       }
 
       /* print performance */
@@ -132,9 +98,9 @@ int main (int argc, char *argv[]) {
    }
 
       for (int i = 0; i < NB_METAS; i++){
-	for (int j= 0; j < repw; j++){
+	for (int j= 0; j < repm; j++){
 	      printf("%lu", rep[i][j]);
-			if (j != repw) printf(",");
+			if (j != repm) printf(",");
 	}
 	printf("\n");
      	}
