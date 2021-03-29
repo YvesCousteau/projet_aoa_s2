@@ -4,14 +4,14 @@
 #include <unistd.h>
 #include <time.h>
 
-#define NB_METAS 1
+#define NB_METAS 31
 
 
 
 #define L2 226
 
 
-uint64_t mesure[1000];
+uint64_t mesure[31][1000];
 
 extern uint64_t rdtsc ();
 
@@ -96,7 +96,7 @@ int main (int argc, char *argv[]) {
         uint64_t t1 = rdtsc();
         s13 (size, a, b, c, offset, radius);
         uint64_t t2 = rdtsc();
-        mesure[i]=(t2 - t1);
+        mesure[m][i]=(t2 - t1);
       }
 
       // uint64_t t1 = rdtsc();
@@ -121,7 +121,11 @@ int main (int argc, char *argv[]) {
    }
 
    for (size_t i = 0; i < repm; i++) {
-     printf("%.2f\n",mesure[i]/((float)size*size) );
+     for (size_t j = 0; j < repm; j++) {
+       printf("%.2f\n",mesure[m][i]/((float)size*size) );
+     }
+     printf(";\n");
+
    }
    /* Print cycles moyen par meta rep */
    // printf("mesure : %.2f cycles\n",mesure/31 );
