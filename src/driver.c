@@ -4,14 +4,14 @@
 #include <unistd.h>
 #include <time.h>
 
-#define NB_METAS 31
+#define NB_METAS 1
 
 
 
 #define L2 226
 
 
-float mesure = 31;
+uint64_t mesure[1000];
 
 extern uint64_t rdtsc ();
 
@@ -69,34 +69,44 @@ int main (int argc, char *argv[]) {
       init_array (size, b);
 
       /* warmup (repw repetitions in first meta, 1 repet in next metas) */
-      if (m == 0) {
-         clock_t start = clock();
-         for (i=0; i<repw; i++)
-            s13 (size, a, b, c, offset, radius);
-         clock_t stop = clock();
-         printf("temps: %f\n",(stop-start)/(float) CLOCKS_PER_SEC);
-      } else {
-         s13 (size, a, b, c, offset, radius);
-      }
+      // if (m == 0) {
+      //    clock_t start = clock();
+      //    for (i=0; i<repw; i++)
+      //       s13 (size, a, b, c, offset, radius);
+      //    clock_t stop = clock();
+      //    printf("temps: %f\n",(stop-start)/(float) CLOCKS_PER_SEC);
+      // } else {
+      //    s13 (size, a, b, c, offset, radius);
+      // }
 
-      /* measure repm repetitions */
-      uint64_t t1 = rdtsc();
+
+      // for (i=0; i<repm; i++)
+      // {
+      //   uint64_t t1 = rdtsc();
+      //      s13 (size, a, b, c, offset, radius);
+      //   uint64_t t2 = rdtsc();
+      //   rep[m][i] = t2-t1;
+      //   mesure += rep[m][i];
+      //   printf ("%.2f cycles/c_elements\n",mesure/ ((float) size * size * repm));
+      // }
+
+
       for (i=0; i<repm; i++)
+      {
+        uint64_t t1 = rdtsc();
         s13 (size, a, b, c, offset, radius);
-      uint64_t t2 = rdtsc();
-
-
-      for (i=0; i<repm; i++){
-      uint64_t t1 = rdtsc();
-         s13 (size, a, b, c, offset, radius);
-      uint64_t t2 = rdtsc();
-      rep[m][i] = t2-t1;
-      mesure += (float)rep[m][i]/size;
+        uint64_t t2 = rdtsc();
+        mesure[i]=(t2 - t1);
       }
 
-      /* print performance */
-       // printf ("%.2f cycles/FMA\n",
-       //         (t2 - t1) / ((float) (size - offset) * size * repm));
+      // uint64_t t1 = rdtsc();
+      // for (i=0; i<repm; i++)
+      // {
+      //      s13 (size, a, b, c, offset, radius);
+      // }
+      // uint64_t t2 = rdtsc();
+      // printf ("%.2f cycles/c_element\n",(t2 - t1)/ ((float) size * size * repm));
+
 
       /* print output */
       if (argc==5) dump_array (argv[4], size, c);
@@ -106,11 +116,15 @@ int main (int argc, char *argv[]) {
       free (b);
       free (c);
 
-      sleep(5);
+      sleep(4);
 
    }
 
-   printf("mesure : %.2f cycles\n",mesure/31 );
+   for (size_t i = 0; i < repm; i++) {
+     printf("%.2f\n",mesure[i]/((float)size*size) );
+   }
+   /* Print cycles moyen par meta rep */
+   // printf("mesure : %.2f cycles\n",mesure/31 );
 
      /* for (int i = 0; i < NB_METAS; i++){
 	for (int j= 0; j < repm; j++){
