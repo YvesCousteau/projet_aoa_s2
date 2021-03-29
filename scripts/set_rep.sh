@@ -7,8 +7,8 @@ sudo cpupower -c $CORE_ID frequency-set --governor powersave
 make OPT=CORRECTED2;
 cd ../scripts/
 
-SIZE=226
+SIZE=782
 WARMUP=0
-REP=1000
+REP=100
 
-taskset -c $CORE_ID ../src/s13_02 $SIZE $WARMUP $REP > out
+taskset -c $CORE_ID ../src/s13_02 $SIZE $WARMUP $REP > out.xlsx

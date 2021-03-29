@@ -11,7 +11,7 @@
 #define L2 226
 
 
-uint64_t mesure[31][1000];
+
 
 extern uint64_t rdtsc ();
 
@@ -53,7 +53,7 @@ int main (int argc, char *argv[]) {
    int repw = atoi (argv[2]);
    int repm = atoi (argv[3]); /* repetition number */
 
-      uint64_t rep [NB_METAS][repm];
+   uint64_t rep [NB_METAS][repm];
 
 
    for (m=0; m<NB_METAS; m++) {
@@ -96,7 +96,7 @@ int main (int argc, char *argv[]) {
         uint64_t t1 = rdtsc();
         s13 (size, a, b, c, offset, radius);
         uint64_t t2 = rdtsc();
-        mesure[m][i]=(t2 - t1);
+        rep[m][i]=(t2 - t1);
       }
 
       // uint64_t t1 = rdtsc();
@@ -109,7 +109,7 @@ int main (int argc, char *argv[]) {
 
 
       /* print output */
-      if (argc==5) dump_array (argv[4], size, c);
+      //if (argc==5) dump_array (argv[4], size, c);
 
       /* free arrays */
       free (a);
@@ -120,12 +120,12 @@ int main (int argc, char *argv[]) {
 
    }
 
-   for (size_t i = 0; i < repm; i++) {
+   for (size_t i = 0; i < NB_METAS; i++) {
      for (size_t j = 0; j < repm; j++) {
-       printf("%.2f\n",mesure[m][i]/((float)size*size) );
+       printf("%.2f",rep[i][j]/((float)size*size) );
+       if (j != repm) printf(",");
      }
-     printf(";\n");
-
+     printf("\n");
    }
    /* Print cycles moyen par meta rep */
    // printf("mesure : %.2f cycles\n",mesure/31 );
