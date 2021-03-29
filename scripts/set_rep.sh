@@ -8,7 +8,7 @@ make OPT=CORRECTED2;
 
 CACHE=226
 WARMUP=0
-REP=2
+REP=10
 
 taskset -c $CORE_ID ./s13_02 $CACHE $WARMUP $REP
 cd ../scripts/
