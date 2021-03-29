@@ -7,16 +7,11 @@
 #define NB_METAS 31
 
 
-#define L1 73
-#define L2 228
-#define L3 530
-#define RAM 818
 
-#define L1_REP 32
-#define L2_REP 19
-#define L3_REP 7
-#define RAM_REP 12
+#define L2 226
 
+
+float mesure = 31;
 
 extern uint64_t rdtsc ();
 
@@ -96,6 +91,7 @@ int main (int argc, char *argv[]) {
          s13 (size, a, b, c, offset, radius);
       uint64_t t2 = rdtsc();
       rep[m][i] = t2-t1;
+      mesure += (float)rep[m][i]/size;
       }
 
       /* print performance */
@@ -110,8 +106,11 @@ int main (int argc, char *argv[]) {
       free (b);
       free (c);
 
-      //sleep(4);
+      sleep(5);
+
    }
+
+   printf("mesure : %.2f cycles\n",mesure/31 );
 
      /* for (int i = 0; i < NB_METAS; i++){
 	for (int j= 0; j < repm; j++){
