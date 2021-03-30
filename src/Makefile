@@ -21,8 +21,7 @@ OPTFLAGS=-O3 -g -Wall
 CFLAGS=-O2 -g -Wall
 
 
-# OBJS=s13_03n_v6.o s13_03n_v5.o s13_03n_v4.o s13_03n.o s13_03.o s13_02.o s13_01.o s13_icx_O2.o s13_icx_O3.o s13_icx_mtune.o s13_icx_xhost.o  s13_icx_ultimate.o
-OBJS=s13_02.o
+OBJS=s13_03n_v6.o s13_03n_v5.o s13_03n_v4.o s13_03n.o s13_03.o s13_02.o s13_01.o s13_icx_O2.o s13_icx_O3.o s13_icx_mtune.o s13_icx_xhost.o  s13_icx_ultimate.o
 CFILE=driver.c kernel.c rdtsc.c
 
 #R_ANAL=analysis
@@ -35,24 +34,21 @@ NB_MESURE_REP=50
 
 all:	s13
 
-s13:	$(OBJS)
-
-	$(CC) driver.c rdtsc.c s13_02.o -o s13_02
+s13: $(OBJS)
+	@$(CC) driver.c rdtsc.c s13_02.o -o s13_02
 	
-	# $(CC) driver.c rdtsc.c s13_03n_v6.o -o s13_03n_v6
-	# $(CC) driver.c rdtsc.c s13_03n_v5.o -o s13_03n_v5
-	# $(CC) driver.c rdtsc.c s13_03n_v4.o -o s13_03n_v4
-	# $(CC) driver.c rdtsc.c s13_03n.o -o s13_03n
-	# $(CC) driver.c rdtsc.c s13_03.o -o s13_03
-
-	# $(CC) driver.c rdtsc.c s13_01.o -o s13_01
+	@$(CC) driver.c rdtsc.c s13_03n_v6.o -o s13_03n_v6
+	@$(CC) driver.c rdtsc.c s13_03n_v5.o -o s13_03n_v5
+	@$(CC) driver.c rdtsc.c s13_03n_v4.o -o s13_03n_v4
+	@$(CC) driver.c rdtsc.c s13_03n.o -o s13_03n
+	@$(CC) driver.c rdtsc.c s13_03.o -o s13_03
 	#
-	# $(II) driver.c rdtsc.c s13_icx_O2.o -o s13_icx_O2
-	# $(II) driver.c rdtsc.c s13_icx_O3.o -o s13_icx_O3
-	# $(II) driver.c rdtsc.c s13_icx_mtune.o -o s13_icx_mtune
-	# $(II) driver.c rdtsc.c s13_icx_xhost.o -o s13_icx_xhost
-	# # $(II) driver.c rdtsc.c s13_icx_fast.o -o s13_icx_fast
-	# $(II) driver.c rdtsc.c s13_icx_ultimate.o -o s13_icx_ultimate
+	@$(II) driver.c rdtsc.c s13_icx_O2.o -o s13_icx_O2
+	@$(II) driver.c rdtsc.c s13_icx_O3.o -o s13_icx_O3
+	@$(II) driver.c rdtsc.c s13_icx_mtune.o -o s13_icx_mtune
+	@$(II) driver.c rdtsc.c s13_icx_xhost.o -o s13_icx_xhost
+	#$(II) driver.c rdtsc.c s13_icx_fast.o -o s13_icx_fast
+	@$(II) driver.c rdtsc.c s13_icx_ultimate.o -o s13_icx_ultimate
 
 s13_03n_v6.o: kernel.c
 	@$(CC) $(OFLAG3n_v6) -D $(OPT) -c -o $@ $<

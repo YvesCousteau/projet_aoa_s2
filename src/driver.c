@@ -4,14 +4,19 @@
 #include <unistd.h>
 #include <time.h>
 
-#define NB_METAS 31
+#define NB_METAS 1
 
 
 
 #define L2 226
 
-
 float mesure = 31;
+
+
+int cmp (const void * a, const void * b)
+{
+  return (int)( *(float*)a - *(float*)b );
+}
 
 extern uint64_t rdtsc ();
 
@@ -74,29 +79,35 @@ int main (int argc, char *argv[]) {
          for (i=0; i<repw; i++)
             s13 (size, a, b, c, offset, radius);
          clock_t stop = clock();
-         printf("temps: %f\n",(stop-start)/(float) CLOCKS_PER_SEC);
-      } else {
-         s13 (size, a, b, c, offset, radius);
+         //printf("temps: %f\n",(stop-start)/(float) CLOCKS_PER_SEC);
       }
 
       /* measure repm repetitions */
-      uint64_t t1 = rdtsc();
+      /*uint64_t t1 = rdtsc();
       for (i=0; i<repm; i++)
         s13 (size, a, b, c, offset, radius);
       uint64_t t2 = rdtsc();
 
+      printf ("%.2f cycles/c_elemente\n",
+         (t2 - t1) / ((float) (size* size)*repm);
+      */
+
 
       for (i=0; i<repm; i++){
-      uint64_t t1 = rdtsc();
+         uint64_t t1 = rdtsc();
          s13 (size, a, b, c, offset, radius);
-      uint64_t t2 = rdtsc();
-      rep[m][i] = t2-t1;
-      mesure += (float)rep[m][i]/size;
+         uint64_t t2 = rdtsc();
+         
+         rep[m][i] = t2-t1;
+
+         mesure += (float)rep[m][i]/size;
+         //printf ("%.2f cycles/c_element\n",(t2-t1)/ ((float) (size* size)));
       }
 
+      
       /* print performance */
-       // printf ("%.2f cycles/FMA\n",
-       //         (t2 - t1) / ((float) (size - offset) * size * repm));
+      //printf ("%.2f cycles/FMA\n",
+      //   (t2 - t1) / ((float) (size - offset) * size * repm));
 
       /* print output */
       if (argc==5) dump_array (argv[4], size, c);
@@ -110,7 +121,20 @@ int main (int argc, char *argv[]) {
 
    }
 
-   printf("mesure : %.2f cycles\n",mesure/31 );
+
+   for (int i = 0; i < repm; i++){
+      printf("%f", rep[0][i]/((float) (size* size)));
+      printf("\n");
+   }
+  
+   /*for (int i = 0; i < NB_METAS; i++){
+
+      qsort(rep[i],repm,sizeof(float),cmp);
+      //printf("%lu", rep[i][j]/(float) (size* size));
+      printf("%f\n",rep[i][15]);
+   }*/
+
+   //printf("mesure : %.2f cycles\n",mesure/NB_METAS );
 
      /* for (int i = 0; i < NB_METAS; i++){
 	for (int j= 0; j < repm; j++){

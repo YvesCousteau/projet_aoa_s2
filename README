@@ -12,6 +12,9 @@ Pour supprimer les fichiers compiler :
 Pour supprimer les fichiers maqao :
 > make cleanAnalyse
 
+Pour récupérer le nombre de répétition :
+> sh set_rep.sh <CACHE_VALUE>
+
 Pour executer le prog optimisé avec O3n_v6 avec une taille 228 20000 warmup et 50 répétition de mesure :
 > sudo cpupower -c 3 frequency-set --governor performance; taskset -c 3 ./s13_03n_v6 228 20000 50
 (On bloque la fréquence du processeur et on execute le programme sur un seul coeur)
