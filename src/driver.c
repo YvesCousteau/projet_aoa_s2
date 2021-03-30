@@ -69,15 +69,15 @@ int main (int argc, char *argv[]) {
       init_array (size, b);
 
       /* warmup (repw repetitions in first meta, 1 repet in next metas) */
-      // if (m == 0) {
-      //    clock_t start = clock();
-      //    for (i=0; i<repw; i++)
-      //       s13 (size, a, b, c, offset, radius);
-      //    clock_t stop = clock();
-      //    printf("temps: %f\n",(stop-start)/(float) CLOCKS_PER_SEC);
-      // } else {
-      //    s13 (size, a, b, c, offset, radius);
-      // }
+      if (m == 0) {
+         // clock_t start = clock();
+         for (i=0; i<repw; i++)
+            s13 (size, a, b, c, offset, radius);
+         // clock_t stop = clock();
+         // printf("temps: %f\n",(stop-start)/(float) CLOCKS_PER_SEC);
+      } else {
+         s13 (size, a, b, c, offset, radius);
+      }
 
 
       // for (i=0; i<repm; i++)
@@ -93,10 +93,10 @@ int main (int argc, char *argv[]) {
 
       for (i=0; i<repm; i++)
       {
-        uint64_t t1 = rdtsc();
+        // uint64_t t1 = rdtsc();
         s13 (size, a, b, c, offset, radius);
-        uint64_t t2 = rdtsc();
-        rep[m][i]=(t2 - t1);
+        // uint64_t t2 = rdtsc();
+        // rep[m][i]=(t2 - t1);
       }
 
       // uint64_t t1 = rdtsc();
@@ -120,13 +120,13 @@ int main (int argc, char *argv[]) {
 
    }
 
-   for (size_t i = 0; i < NB_METAS; i++) {
-     for (size_t j = 0; j < repm; j++) {
-       printf("%.2f",rep[i][j]/((float)size*size) );
-       if (j != repm) printf(",");
-     }
-     printf("\n");
-   }
+   // for (size_t i = 0; i < NB_METAS; i++) {
+   //   for (size_t j = 0; j < repm; j++) {
+   //     printf("%.2f",rep[i][j]/((float)size*size) );
+   //     if (j != repm) printf(",");
+   //   }
+   //   printf("\n");
+   // }
    /* Print cycles moyen par meta rep */
    // printf("mesure : %.2f cycles\n",mesure/31 );
 
