@@ -10,7 +10,7 @@ make -C $SRC OPT=ORIGINAL;
 
 CACHE=$1
 WARMUP=0
-REP=200
+REP=100
 
 taskset -c $CORE_ID ${SRC}s13_02 $CACHE $WARMUP $REP > find_warmup.data
 gnuplot ../template.gp > RAM_REP.png
