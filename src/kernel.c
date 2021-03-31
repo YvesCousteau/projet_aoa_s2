@@ -32,25 +32,75 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
 	}
 }
 
-#elif defined CORRECTED2
+#elif defined UNROLL_LOOPINVARIANT
 
 void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int offset, double radius) {
 	int i, j;
 
+  float bi;
+  float r = (double)radius;
+
   for ( i = 0; i < n ; i ++) {
-    for ( j = offset; j < n; j ++) {
+    bi = b [ i ];
 
-
-      if ( a[j] < radius ) {
-        c [ i ][ j ] = a [ j ] / b [ i ];
-      } else{
-        c [ i ][ j ] = 0.0;
-      }
-
+    for ( j = offset; j < (n-3); j +=4) {
+      c [ i ][ j ] = a[j] < r ? 0.0 : a [ j ] / bi;
+      c [ i ][ j+1 ] = a[j+1] < r ? 0.0 : a [ j+1 ] / bi;
+      c [ i ][ j+2 ] = a[j+2] < r ? 0.0 : a [ j+2 ] / bi;
+      c [ i ][ j+3 ] = a[j+3] < r ? 0.0 : a [ j+3 ] / bi;
     }
+
+    for(j = (n-3); j<n;j++){
+      c [ i ][ j ] = a[j] < r ? 0.0 : a [ j ] / bi;
+    }
+
   }
+
 }
 
+#elif defined UNROLL_LOOPINVARIANT2
+
+void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int offset, double radius) {
+  int i, j;
+
+  float bi;
+  float r = (float)radius;
+  float r2[4] = {r, r, r, r};
+
+  for ( i = 0; i < n ; i ++) {
+    bi = b [ i ];
+
+    for ( j = offset; j < (n-3); j +=4) {
+      c [ i ][ j ] = a[j] < r2[0] ? 0.0 : a [ j ] / bi;
+      c [ i ][ j+1 ] = a[j+1] < r2[1] ? 0.0 : a [ j+1 ] / bi;
+      c [ i ][ j+2 ] = a[j+2] < r2[2] ? 0.0 : a [ j+2 ] / bi;
+      c [ i ][ j+3 ] = a[j+3] < r2[3] ? 0.0 : a [ j+3 ] / bi;
+    }
+
+    for(j = (n-3); j<n;j++){
+      c [ i ][ j ] = a[j] < r ? 0.0 : a [ j ] / bi;
+    }
+
+  }
+
+}
+
+#elif defined LOOPINVARIANT
+
+void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int offset, double radius) {
+  int i, j;
+
+  float bi;
+  float r = (double)radius;
+
+  for ( i = 0; i < n ; i ++) {
+    bi = b [ i ];
+    for ( j = offset; j < n; j ++) {
+      c [ i ][ j ] = a[j] < radius ? 0.0 : a [ j ] / bi;
+    }
+  }
+
+}
 
 #else
 

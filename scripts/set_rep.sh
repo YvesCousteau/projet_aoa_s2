@@ -1,25 +1,13 @@
-[ -z $1 ] && exit
-
-
-SRC="../src/"
-
-#make -C $SRC clean;
+cd ../src/
+make clean;
 CORE_ID=3 # the core id on which the bench is executed
 sudo cpupower -c $CORE_ID frequency-set --governor powersave
-make -C $SRC OPT=ORIGINAL;
+make OPT=ORIGINAL;
+cd ../scripts/
 
 
-make OPT=CORRECTED2;
-#cd ../scripts/
+CACHE=1516
+WARMUP=10
+REP=1000
 
-SIZE=782
-WARMUP=40
-REP=1
-
-mkdir -p ../output
-for executable in `find . -type f -executable -name "s13*" `; do
-  filename=$(basename $executable)
-
-  taskset -c $CORE_ID ../src/$filename $SIZE $WARMUP $REP >  ../output/${filename}.xlsx
-
-done
+taskset -c $CORE_ID ../src/s13_02 $CACHE $WARMUP $REP #> ../output/RAM_rep.xlsx
