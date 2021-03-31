@@ -4,18 +4,8 @@
 #include <unistd.h>
 #include <time.h>
 
-#define NB_METAS 1
+#define NB_METAS 31
 
-
-
-#define L2 226
-
-
-
-int cmp (const void * a, const void * b)
-{
-  return (int)( *(float*)a - *(float*)b );
-}
 
 extern uint64_t rdtsc ();
 
@@ -96,22 +86,22 @@ int main (int argc, char *argv[]) {
       // }
 
 
-      for (i=0; i<repm; i++)
+      /*for (i=0; i<repm; i++)
       {
         uint64_t t1 = rdtsc();
         s13 (size, a, b, c, offset, radius);
 
         uint64_t t2 = rdtsc();
         rep[m][i]=(t2 - t1);
-      }
+      }*/
 
-      // uint64_t t1 = rdtsc();
-      // for (i=0; i<repm; i++)
-      // {
-      //      s13 (size, a, b, c, offset, radius);
-      // }
-      // uint64_t t2 = rdtsc();
-      // printf ("%.2f cycles/c_element\n",(t2 - t1)/ ((float) size * size * repm));
+      //uint64_t t1 = rdtsc();
+      for (i=0; i<repm; i++){
+           s13 (size, a, b, c, offset, radius);
+      }
+      //uint64_t t2 = rdtsc();
+
+      //printf ("%.2f cycles/c_element\n",(t2 - t1)/ ((float)size*size));
 
 
       /* print output */
@@ -122,18 +112,19 @@ int main (int argc, char *argv[]) {
       free (b);
       free (c);
 
-      sleep(4);
+      //sleep(4);
 
    }
 
 
-   for (size_t i = 0; i < NB_METAS; i++) {
+   /*for (size_t i = 0; i < NB_METAS; i++) {
      for (size_t j = 0; j < repm; j++) {
        printf("%.2f",rep[i][j]/((float)size*size) );
        if (j != repm) printf(",");
      }
      printf("\n");
-   }
+   }*/
+
    /* Print cycles moyen par meta rep */
    // printf("mesure : %.2f cycles\n",mesure/31 );
 
