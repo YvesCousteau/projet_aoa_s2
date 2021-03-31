@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-US"><head><title>OV - s13_02 - Profiling node pop-os - process 16749 - thread 16749</title>
+<html lang="en-US"><head><title>ONEVIEW</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" media="screen" href="../css/ui.jqgrid.css" />
 <link rel="stylesheet" type="text/css" href="../css/themes/redmond_custom/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="../css/themes/redmond_custom/jquery.jqplot.min.css" />
 <link rel="stylesheet" type="text/css" href="../css/maqao_modal.css" />
-<link rel="stylesheet" type="text/css" href="../css/global.css" />
-<link rel="stylesheet" type="text/css" href="../css/maqao_menu.css" />
+<link rel="stylesheet" type="text/css" href="../css/global_noheader.css" />
 <script src="../js/jquery-1.9.0.min.js" ></script>
 <script src="../js/jquery-ui-1.10.3.custom.min.js" ></script>
 <script src="../js/grid.locale-en.js" ></script>
@@ -23,7 +22,6 @@
 <script class="include" src="../js/jqplot.canvasAxisLabelRenderer.min.js"></script>
 <script class="include" src="../js/jqplot.enhancedLegendRenderer.min.js"></script>
 <script class="include" src="../js/jqplot.highlighter.min.js"></script>
-<script class="include" src="../js/maqao_menu.js"></script>
 <script>
 $( function() {
   $( document ).tooltip({
@@ -64,28 +62,243 @@ function addLoadEvent(func) {
 }
 </script>
 </head><body>
-<div id="page_title"><img alt="MAQAO" id="maqao_logo" src="../images/MAQAO_small_logo.png" /><ul id="maqao_menu"><li><a  href="../index.html">Global</a><ul><li><a  href="../config.html">Configurations</a></li><li><a  href="../log.html">Logs</a></li></ul></li><li><a  href="../application.html">Application</a></li><li><a  href="../fcts_and_loops.html">Functions</a></li><li><a  href="../loops_index.html">Loops</a></li><li><a  href="../topology.html">Topology</a></li></ul></div>
 <div id="anchor_file_start"></div>
 <div id="maqao_content">
-<div id="spacer_page_title" style="height:100px;" ></div>
-<div class="_fixed_box" ><h3 class="_header">Profiling node pop-os - process 16749 - thread 16749</h3>
-<div class="_content"><div class="_div_table"><table id="_treed_table_13" class="_treed_table"><tr><th class=" _left">Name</th><th>Module</th><th>Coverage (%)</th><th>Time (s)</th></tr>
-<tr id="_tr_13_1"  ondblclick="_action_37(this,1,-1, '../functions/s13_02_10.html');"  style="cursor:pointer;"><td id="_tr_13_1-1"  data-_i="1" data-_j="1"  class=" _left"  style="width:60%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span>s13<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_13_1-2"  data-_i="1" data-_j="2"  class=" _centered"  style="width:20%;word-break:break-all;" >s13_02</td><td id="_tr_13_1-3"  data-_i="1" data-_j="3"  class=" _centered"  style="width:10%;" >99.96</td><td id="_tr_13_1-4"  data-_i="1" data-_j="4"  class=" _centered"  style="width:10%;" >39.3</td></tr>
-<tr class="_treed_hidden _tr_13_1"  id="_tr_13_1_1"  ondblclick="_action_37(this,2,-1, '../loops/s13_02_6.html');"  style="cursor:pointer;"><td id="_tr_13_1_1-1"  data-_i="2" data-_j="1"  class=" _left"  style="width:60%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:15px;cursor:pointer;" >&#x25BA;</span>Loop 6 -  - s13_02<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_13_1_1-2"  data-_i="2" data-_j="2"  class=" _centered"  style="width:20%;word-break:break-all;" ></td><td id="_tr_13_1_1-3"  data-_i="2" data-_j="3"  class=" _centered"  style="width:10%;" >99.2</td><td id="_tr_13_1_1-4"  data-_i="2" data-_j="4"  class=" _centered"  style="width:10%;" >39</td></tr>
-<tr class="_treed_hidden _tr_13_1_1"  id="_tr_13_1_1_1"  ondblclick="_action_37(this,3,-1, '../loops/s13_02_8.html');"  style="cursor:pointer;"><td id="_tr_13_1_1_1-1"  data-_i="3" data-_j="1"  class=" _left"  style="width:60%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 8 -  - s13_02</td><td id="_tr_13_1_1_1-2"  data-_i="3" data-_j="2"  class=" _centered"  style="width:20%;word-break:break-all;" ></td><td id="_tr_13_1_1_1-3"  data-_i="3" data-_j="3"  class=" _centered"  style="width:10%;" >98.69</td><td id="_tr_13_1_1_1-4"  data-_i="3" data-_j="4"  class=" _centered"  style="width:10%;" >38.8</td></tr>
-<tr class="_treed_hidden _tr_13_1_1"  id="_tr_13_1_1_2"  ondblclick="_action_37(this,4,-1, '../loops/s13_02_7.html');"  style="cursor:pointer;"><td id="_tr_13_1_1_2-1"  data-_i="4" data-_j="1"  class=" _left"  style="width:60%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 7 -  - s13_02</td><td id="_tr_13_1_1_2-2"  data-_i="4" data-_j="2"  class=" _centered"  style="width:20%;word-break:break-all;" ></td><td id="_tr_13_1_1_2-3"  data-_i="4" data-_j="3"  class=" _centered"  style="width:10%;" >0.51</td><td id="_tr_13_1_1_2-4"  data-_i="4" data-_j="4"  class=" _centered"  style="width:10%;" >0.2</td></tr>
-<tr id="_tr_13_2"  ondblclick="_action_37(this,5,-1, '../functions/kernel_-1.html');"  style="cursor:pointer;"><td id="_tr_13_2-1"  data-_i="5" data-_j="1"  class=" _left"  style="width:60%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>unknown kernel region</td><td id="_tr_13_2-2"  data-_i="5" data-_j="2"  class=" _centered"  style="width:20%;word-break:break-all;" >kernel</td><td id="_tr_13_2-3"  data-_i="5" data-_j="3"  class=" _centered"  style="width:10%;" >0.04</td><td id="_tr_13_2-4"  data-_i="5" data-_j="4"  class=" _centered"  style="width:10%;" >0.02</td></tr>
-</table></div>
-<script>
-function _action_37 (obj, i, j, p){
-           open(""+p+"");
-}
+
+<div class="_fixed_box" ><h3 class="_header">s13_02 - Loop 9 - Sorted Load Distribution</h3>
+<div class="_content"><div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_78" style="height:500px" ></div></div>
+<script class="code">
+  $(document).ready(function(){
+    var ordinals = ['pop-os_19385_19385'];
+    var data = [{value: 0.31}];
+    var widthgl  = 900;
+    var widthin  = 900;
+    var heightgl = 400;
+    var heightin = 420;
+    let margin = {
+      top:    10,
+      right:  30,
+      bottom: 20,
+      left:   50
+    },
+    width = widthgl - margin.left - margin.right,
+    height = heightgl - margin.top - margin.bottom,
+    radius = (Math.min(width, height) / 2) - 10,
+    node;
+    const svg = d3.select('#chart_cat_78')
+        .append('svg')
+        .attr('width', widthin)
+        .attr('height', heightin)
+        .append('g')
+        .attr('transform', `translate(${margin.left}, ${margin.top})`)
+        .call(
+          d3.zoom()
+            .translateExtent([[0,0], [width, height] ])
+            .extent([[0, 0], [width, height] ])
+          .on('zoom', zoom)
+        ).on("dblclick.zoom", null);
+    let x = d3.scaleLinear().range([0, width])
+    let y = d3.scaleLinear().range([height, 0])
+    let color = d3.scaleOrdinal(d3.schemeCategory10)
+    let xScale = x.domain([-1, ordinals.length])
+    let yScale = y.domain([0, d3.max(data, function(d){return d.value})])
+    let xBand = d3.scaleBand().domain(d3.range(-1, ordinals.length)).range([0, width])
+    svg.append('rect')
+      .attr('class', 'zoom-panel')
+      .attr('width', width)
+      .attr('height', height)
+    let xAxis = svg.append('g')
+      .attr('class', 'xAxis')
+      .attr('transform', `translate(0, ${height})`)
+      .call(
+        d3.axisBottom(xScale).tickFormat((d, e) => {
+          return ordinals[d]
+        })
+      );
+    svg.append("text")
+      .attr("transform",
+            "translate(" + (width/2) + " ," + (height + margin.top + 30) + ")")
+      .style("text-anchor", "middle")
+      .text("MAQAO thread rank");
+    let yAxis = svg.append('g')
+      .attr('class', 'y axis')
+      .call(d3.axisLeft(yScale));
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Coverage");
+    let bars = svg.append('g')
+      .attr('clip-path','url(#my-clip-path)')
+      .attr('id', 'zoom_chart_78')
+      .selectAll('.bar')
+      .data(data)
+      .enter()
+      .append('rect')
+      .attr('class', 'bar')
+      .attr('id', function (d, i){ return 'zoom_chart_78_'+i;})
+      .attr('x', function(d, i){
+        return xScale(i) - xBand.bandwidth()*0.9/2
+      })
+      .attr('y', function(d, i){
+        return yScale(d.value)
+      })
+      .attr('width', xBand.bandwidth()*0.9)
+      .attr('height', function(d){
+        return height - yScale(d.value)
+      })
+    let defs = svg.append('defs')
+      defs.append('clipPath')
+        .attr('id', 'my-clip-path')
+        .append('rect')
+        .attr('width', width)
+        .attr('height', height)
+      let hideTicksWithoutLabel = function() {
+        d3.selectAll('.xAxis .tick text').each(function(d){
+          if(this.innerHTML === '') {
+            this.parentNode.style.display = 'none';
+          }
+        })
+      }
+      function zoom() {
+        if (d3.event.transform.k < 1) {
+          d3.event.transform.k = 1;
+          return;
+        }
+      xAxis.call(
+        d3.axisBottom(d3.event.transform.rescaleX(xScale)).tickFormat((d, e, target) => {
+          if (Math.floor(d) === d3.format(".1f")(d)) return ordinals[Math.floor(d)]
+            return ordinals[d];
+        })
+      )
+      hideTicksWithoutLabel()
+        bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
+    }
+  });
 </script>
-<script>
-function _onresize () {
-  document.getElementById("spacer_page_title").style.height = (document.getElementById("page_title").scrollHeight + 20)+"px";
-}
-window.onresize = _onresize;
+<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_79" style="height:500px" ></div></div>
+<script class="code">
+  $(document).ready(function(){
+    var ordinals = ['pop-os_19385_19385'];
+    var data = [{value: 0.12}];
+    var widthgl  = 900;
+    var widthin  = 900;
+    var heightgl = 400;
+    var heightin = 420;
+    let margin = {
+      top:    10,
+      right:  30,
+      bottom: 20,
+      left:   50
+    },
+    width = widthgl - margin.left - margin.right,
+    height = heightgl - margin.top - margin.bottom,
+    radius = (Math.min(width, height) / 2) - 10,
+    node;
+    const svg = d3.select('#chart_cat_79')
+        .append('svg')
+        .attr('width', widthin)
+        .attr('height', heightin)
+        .append('g')
+        .attr('transform', `translate(${margin.left}, ${margin.top})`)
+        .call(
+          d3.zoom()
+            .translateExtent([[0,0], [width, height] ])
+            .extent([[0, 0], [width, height] ])
+          .on('zoom', zoom)
+        ).on("dblclick.zoom", null);
+    let x = d3.scaleLinear().range([0, width])
+    let y = d3.scaleLinear().range([height, 0])
+    let color = d3.scaleOrdinal(d3.schemeCategory10)
+    let xScale = x.domain([-1, ordinals.length])
+    let yScale = y.domain([0, d3.max(data, function(d){return d.value})])
+    let xBand = d3.scaleBand().domain(d3.range(-1, ordinals.length)).range([0, width])
+    svg.append('rect')
+      .attr('class', 'zoom-panel')
+      .attr('width', width)
+      .attr('height', height)
+    let xAxis = svg.append('g')
+      .attr('class', 'xAxis')
+      .attr('transform', `translate(0, ${height})`)
+      .call(
+        d3.axisBottom(xScale).tickFormat((d, e) => {
+          return ordinals[d]
+        })
+      );
+    svg.append("text")
+      .attr("transform",
+            "translate(" + (width/2) + " ," + (height + margin.top + 30) + ")")
+      .style("text-anchor", "middle")
+      .text("MAQAO thread rank");
+    let yAxis = svg.append('g')
+      .attr('class', 'y axis')
+      .call(d3.axisLeft(yScale));
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Time");
+    let bars = svg.append('g')
+      .attr('clip-path','url(#my-clip-path)')
+      .attr('id', 'zoom_chart_79')
+      .selectAll('.bar')
+      .data(data)
+      .enter()
+      .append('rect')
+      .attr('class', 'bar')
+      .attr('id', function (d, i){ return 'zoom_chart_79_'+i;})
+      .attr('x', function(d, i){
+        return xScale(i) - xBand.bandwidth()*0.9/2
+      })
+      .attr('y', function(d, i){
+        return yScale(d.value)
+      })
+      .attr('width', xBand.bandwidth()*0.9)
+      .attr('height', function(d){
+        return height - yScale(d.value)
+      })
+    let defs = svg.append('defs')
+      defs.append('clipPath')
+        .attr('id', 'my-clip-path')
+        .append('rect')
+        .attr('width', width)
+        .attr('height', height)
+      let hideTicksWithoutLabel = function() {
+        d3.selectAll('.xAxis .tick text').each(function(d){
+          if(this.innerHTML === '') {
+            this.parentNode.style.display = 'none';
+          }
+        })
+      }
+      function zoom() {
+        if (d3.event.transform.k < 1) {
+          d3.event.transform.k = 1;
+          return;
+        }
+      xAxis.call(
+        d3.axisBottom(d3.event.transform.rescaleX(xScale)).tickFormat((d, e, target) => {
+          if (Math.floor(d) === d3.format(".1f")(d)) return ordinals[Math.floor(d)]
+            return ordinals[d];
+        })
+      )
+      hideTicksWithoutLabel()
+        bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
+    }
+  });
+</script>
+</div></div><script>
+document.addEventListener("DOMContentLoaded", function() {
+  $("#zoom_chart_78_0").click( function () {
+    window.open("../topo/_pop-os_19385_19385.html");
+  });
+  $("#zoom_chart_79_0").click( function () {
+    window.open("../topo/_pop-os_19385_19385.html");
+  });
+}, false);
 </script>
 
   <div id="MaqaoModal" class="maqao_modal">
