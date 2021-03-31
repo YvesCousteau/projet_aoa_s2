@@ -91,7 +91,7 @@ maqao: s13
 	@echo --- generating maqao file ---
 
 	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_02 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	mv -f $(R_HTML)/maqao_res/RESULTS/s13_02_one_html $(R_HTML)/s13_02_$(OPT)_$(CACHE_LVL)_one_html ; rm -rf $(R_HTML)/maqao_res
+	rm -rf $(R_HTML)/s13_02_$(OPT)_$(CACHE_LVL)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_02_one_html $(R_HTML)/s13_02_$(OPT)_$(CACHE_LVL)_one_html ; rm -rf $(R_HTML)/maqao_res
 
 	#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
 	#@mv $(R_HTML)/maqao_res/RESULTS/s13_03_one_html $(R_HTML)/s13_03_one_html ; rm -rf $(R_HTML)/maqao_res
