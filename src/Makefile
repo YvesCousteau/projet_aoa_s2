@@ -37,23 +37,24 @@ NB_MESURE_REP=1000
 all:	s13
 
 s13: $(OBJS)
-	@$(CC) driver.c rdtsc.c s13_02.o -o s13_02
-	#@$(II) driver.c rdtsc.c s13_icx_O2.o -o s13_icx_O2
+	@echo --- Compilation ---
+
+	$(CC) driver.c rdtsc.c s13_02.o -o s13_02
+	@#@$(II) driver.c rdtsc.c s13_icx_O2.o -o s13_icx_O2
 
 	
-	#@$(CC) driver.c rdtsc.c s13_03n_v6.o -o s13_03n_v6
-	#@$(CC) driver.c rdtsc.c s13_03n_v5.o -o s13_03n_v5
-	#@$(CC) driver.c rdtsc.c s13_03n_v4.o -o s13_03n_v4
-	#@$(CC) driver.c rdtsc.c s13_03n.o -o s13_03n
-	#@$(CC) driver.c rdtsc.c s13_03.o -o s13_03
-	#
+	@#@$(CC) driver.c rdtsc.c s13_03n_v6.o -o s13_03n_v6
+	@#@$(CC) driver.c rdtsc.c s13_03n_v5.o -o s13_03n_v5
+	@#@$(CC) driver.c rdtsc.c s13_03n_v4.o -o s13_03n_v4
+	@#@$(CC) driver.c rdtsc.c s13_03n.o -o s13_03n
+	@#@$(CC) driver.c rdtsc.c s13_03.o -o s13_03
 	
 
-	#@$(II) driver.c rdtsc.c s13_icx_O3.o -o s13_icx_O3
-	#@$(II) driver.c rdtsc.c s13_icx_mtune.o -o s13_icx_mtune
-	#@$(II) driver.c rdtsc.c s13_icx_xhost.o -o s13_icx_xhost
-	#$(II) driver.c rdtsc.c s13_icx_fast.o -o s13_icx_fast
-	#@$(II) driver.c rdtsc.c s13_icx_ultimate.o -o s13_icx_ultimate
+	@#@$(II) driver.c rdtsc.c s13_icx_O3.o -o s13_icx_O3
+	@#@$(II) driver.c rdtsc.c s13_icx_mtune.o -o s13_icx_mtune
+	@#@$(II) driver.c rdtsc.c s13_icx_xhost.o -o s13_icx_xhost
+	@#$(II) driver.c rdtsc.c s13_icx_fast.o -o s13_icx_fast
+	@#@$(II) driver.c rdtsc.c s13_icx_ultimate.o -o s13_icx_ultimate
 
 s13_03n_v6.o: kernel.c
 	@$(CC) $(OFLAG3n_v6) -D $(OPT) -c -o $@ $<
@@ -89,45 +90,45 @@ s13_icx_xhost.o: kernel.c
 s13_icx_ultimate.o: kernel.c
 	@$(II) $(OFLAG_icx_ultimate) -D $(OPT) -c -o $@ $<
 
-maqao: s13
+maqao: clean s13 
 	@mkdir -p $(R_HTML)
 	@echo --- generating maqao file ---
 
 	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_02 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
 	rm -rf $(R_HTML)/s13_02_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_02_one_html $(R_HTML)/s13_02_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	#maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	#rm -rf $(R_HTML)/s13_icx_02_$(CACHE_LVL)_$(OPT)_one_html  && mv $(R_HTML)/maqao_res/RESULTS/s13_icx_O2_one_html $(R_HTML)/s13_icx_02_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
+	@#maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	@#rm -rf $(R_HTML)/s13_icx_02_$(CACHE_LVL)_$(OPT)_one_html  && mv $(R_HTML)/maqao_res/RESULTS/s13_icx_O2_one_html $(R_HTML)/s13_icx_02_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 
 
 
-	#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	#@mv $(R_HTML)/maqao_res/RESULTS/s13_03_one_html $(R_HTML)/s13_03_one_html ; rm -rf $(R_HTML)/maqao_res
+	@#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	@#@mv $(R_HTML)/maqao_res/RESULTS/s13_03_one_html $(R_HTML)/s13_03_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	#@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_one_html $(R_HTML)/s13_03n_one_html ; rm -rf $(R_HTML)/maqao_res
+	@#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	@#@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_one_html $(R_HTML)/s13_03n_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n_v4 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	#@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_v4_one_html $(R_HTML)/s13_03n_v4_one_html ; rm -rf $(R_HTML)/maqao_res
+	@#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n_v4 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	@#@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_v4_one_html $(R_HTML)/s13_03n_v4_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n_v5 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	#@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_v5_one_html $(R_HTML)/s13_03n_v5_one_html ; rm -rf $(R_HTML)/maqao_res
+	@#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n_v5 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	@#@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_v5_one_html $(R_HTML)/s13_03n_v5_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n_v6 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	#@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_v6_one_html $(R_HTML)/s13_03n_v6_one_html ; rm -rf $(R_HTML)/maqao_res
+	@#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n_v6 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	@#@mv $(R_HTML)/maqao_res/RESULTS/s13_03n_v6_one_html $(R_HTML)/s13_03n_v6_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_mtune $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	#@mv $(R_HTML)/maqao_res/RESULTS/s13_icx_mtune_one_html $(R_HTML)/s13_icx_mtune_one_html ; rm -rf $(R_HTML)/maqao_res
+	@#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_mtune $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	@#@mv $(R_HTML)/maqao_res/RESULTS/s13_icx_mtune_one_html $(R_HTML)/s13_icx_mtune_one_html ; rm -rf $(R_HTML)/maqao_res
 
 	
-	#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	#@mv $(R_HTML)/maqao_res/RESULTS/s13_icx_O3_one_html $(R_HTML)/s13_icx_O3_one_html ; rm -rf $(R_HTML)/maqao_res
+	@#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	@#@mv $(R_HTML)/maqao_res/RESULTS/s13_icx_O3_one_html $(R_HTML)/s13_icx_O3_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_ultimate $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	#@mv $(R_HTML)/maqao_res/RESULTS/s13_icx_ultimate_one_html $(R_HTML)/s13_icx_ultimate_one_html ; rm -rf $(R_HTML)/maqao_res
+	@#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_ultimate $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	@#@mv $(R_HTML)/maqao_res/RESULTS/s13_icx_ultimate_one_html $(R_HTML)/s13_icx_ultimate_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_xhost $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	#@mv $(R_HTML)/maqao_res/RESULTS/s13_icx_xhost_one_html $(R_HTML)/s13_icx_xhost_one_html ; rm -rf $(R_HTML)/maqao_res
+	@#@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_xhost $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	@#@mv $(R_HTML)/maqao_res/RESULTS/s13_icx_xhost_one_html $(R_HTML)/s13_icx_xhost_one_html ; rm -rf $(R_HTML)/maqao_res
 
 
 # analysis: maqao
