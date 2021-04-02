@@ -6,12 +6,7 @@
 
 #define NB_METAS 31
 
-
-
 #define L2 226
-
-
-
 
 extern uint64_t rdtsc ();
 
