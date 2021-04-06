@@ -25,5 +25,5 @@ set multiplot layout 2, 2 rowsfirst
 set autoscale y
 
   set title "warmup time / exec time"
-  plot "find_warmup.data" u 1:xtic(2) t "Intel Core i7-lt" lt rgb "#81a1c1"
+  plot "l1_rep_perf.xlsx" u 1:xtic(2) t "Intel Core i7-lt" lt rgb "#81a1c1"
 
