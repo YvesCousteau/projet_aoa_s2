@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <unistd.h>
 #include <time.h>
-
+#include <omp.h>
 #define NB_METAS 1
 
 

@@ -310,9 +310,10 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
 void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int offset , double radius)
 {
    int i, j;
+   
    for ( i =0; i < n ; i ++)
    {
-     #pragma omp parallel for 
+     #pragma omp parallel for
        for ( j =0; j < n ; j ++)
        {
            if ( offset + j < 0 || offset + j >= n )
@@ -333,7 +334,7 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
 
   float bi;
   float r = (double)radius;
-
+  omp_set_num_threads(4);
   for ( i = 0; i < n ; i ++)
   {
     bi = b [ i ];
@@ -362,7 +363,7 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
   float bi[4][4];
 
   float r = (float)radius;
-
+  omp_set_num_threads(4);
   for ( i = 0; i < (n-3) ; i+= 4) {
     bi[0][0] = b[i];bi[0][1] = b[i];bi[0][2] = b[i];bi[0][3] = b[i];
     bi[1][0] = b[i+1];bi[1][1] = b[i+1];bi[1][2] = b[i+1];bi[1][3] = b[i+1];
