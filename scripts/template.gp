@@ -1,4 +1,4 @@
-set term png size 1900,1000 enhanced
+set term png size 1000,800 enhanced
 
 set grid
 
@@ -20,10 +20,8 @@ set boxwidth 0.9
 
 set xtic rotate by -45 scale 0
 
-set multiplot layout 2, 2 rowsfirst
-
 set autoscale y
 
   set title "warmup time / exec time"
-  plot "l1_rep_perf.xlsx" u 1:xtic(2) t "Intel Core i7-lt" lt rgb "#81a1c1"
+  plot "./runs_output/res" u 1:xtic(2) t "Intel Core i7-lt" lt rgb "#81a1c1"
 

@@ -116,17 +116,17 @@ int main (int argc, char *argv[]) {
       free (b);
       free (c);
 
-      sleep(4);
+      //sleep(4);
 
    }
 
-   for (size_t i = 0; i < NB_METAS; i++) {
-     for (size_t j = 0; j < repm; j++) {
-       printf("%.2f",rep[i][j]/((float)size*size) );
-       if (j != repm) printf(",");
-     }
-     printf("\n");
-   }
+   //for (size_t i = 0; i < NB_METAS; i++) {
+   //  for (size_t j = 0; j < repm; j++) {
+   //    printf("%.2f",rep[i][j]/((float)size*size) );
+   //    if (j != repm) printf(",");
+   //  }
+   //  printf("\n");
+   //}
    /* Print cycles moyen par meta rep */
    // printf("mesure : %.2f cycles\n",mesure/31 );
 
