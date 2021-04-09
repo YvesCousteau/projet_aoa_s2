@@ -6,8 +6,8 @@ set auto x
 
 set key left top
 
-set xlabel "# warmup"
-set ylabel "execution time s (lower is better)"
+set xlabel "compiler - flags"
+set ylabel "cycles/iteration"
 
 #overwrite
 if (exists("xlabel_")) set xlabel xlabel_
@@ -22,6 +22,6 @@ set xtic rotate by -45 scale 0
 
 set autoscale y
 
-  set title "warmup time / exec time"
-  plot "./runs_output/res" u 1:xtic(2) t "Intel Core i7-lt" lt rgb "#81a1c1"
+set title "warmup time / exec time"
+plot "res" u 1:xtic(2) t "Intel Core i7-lt" lt rgb "#81a1c1"
 

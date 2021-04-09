@@ -1,0 +1,8 @@
+13.95 gcc-ffast-math
+3.88 gcc-O2
+3.94 gcc-O3
+3.90 gcc-O3-native
+3.85 gcc-OFast
+3.11 icx-O2
+3.30 icx-O3
+2.40 icx-O3-native

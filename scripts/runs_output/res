@@ -1,8 +1,0 @@
-10530.36 s13_gcc_ffast-math.dat
-2422.78 s13_gcc_O2.dat
-2352.09 s13_gcc_O3.dat
-2024.46 s13_gcc_O3_native.dat
-2352.25 s13_gcc_OFast.dat
-3180.89 s13_icx_O2.dat
-3114.49 s13_icx_O3.dat
-1796.96 s13_icx_O3_native.dat

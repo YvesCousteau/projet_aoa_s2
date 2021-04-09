@@ -105,7 +105,7 @@ int main (int argc, char *argv[]) {
            s13 (size, a, b, c, offset, radius);
       }
       uint64_t t2 = rdtsc();
-      printf ("%.2f cycles/c_element\n",(t2 - t1)/ ((float) size * size));
+      printf ("%.2f cycles/c_element\n",(t2 - t1)/ ((float) size * size * repm));
 
 
       /* print output */
