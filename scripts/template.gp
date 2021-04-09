@@ -12,7 +12,7 @@ set ylabel "cycles/iteration"
 #overwrite
 if (exists("xlabel_")) set xlabel xlabel_
 
-set terminal png enhanced background rgb "#dddddd"
+#set terminal png enhanced background rgb "#dddddd"
 
 set style data histogram
 set style fill solid border -1
@@ -22,6 +22,6 @@ set xtic rotate by -45 scale 0
 
 set autoscale y
 
-set title "warmup time / exec time"
+set title "Cycles/Iteration pour differents compilateurs \& flags"
 plot "res" u 1:xtic(2) t "Intel Core i7-lt" lt rgb "#81a1c1"
 

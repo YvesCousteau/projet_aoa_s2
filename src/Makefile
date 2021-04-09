@@ -9,7 +9,6 @@ OFLAG2=-O2
 OFLAG3=-O3
 OFLAG3_Native=-O3 -march=native
 OFLAGFAST=-Ofast
-OFLAG_fastmath=-ffast-math
 OFLAG_mrecip= -mrecip
 
 #icx/icc flags
@@ -22,7 +21,7 @@ OPTFLAGS=-O3 -g -Wall
 CFLAGS=-O2 -g -Wall
 
 #OBJS=s13_$(CC)_mrecip.o
-OBJS=s13_$(CC)_O2.o s13_$(CC)_O3.o s13_$(CC)_O3_native.o s13_$(CC)_OFast.o s13_$(CC)_ffast-math.o s13_$(ICX)_O2.o s13_$(ICX)_O3.o s13_$(ICX)_O3_native.o
+OBJS=s13_$(CC)_O2.o s13_$(CC)_O3.o s13_$(CC)_O3_native.o s13_$(CC)_OFast.o s13_$(ICX)_O2.o s13_$(ICX)_O3.o s13_$(ICX)_O3_native.o
 CFILE=driver.c kernel.c rdtsc.c
 
 #R_ANAL=analysis
@@ -44,7 +43,6 @@ s13: $(OBJS)
 	$(CC) driver.c rdtsc.c s13_$(CC)_O3.o -o s13_$(CC)_O3
 	$(CC) driver.c rdtsc.c s13_$(CC)_OFast.o -o s13_$(CC)_OFast
 	$(CC) driver.c rdtsc.c s13_$(CC)_O3_native.o -o s13_$(CC)_O3_native
-	$(CC) driver.c rdtsc.c s13_$(CC)_ffast-math.o -o s13_$(CC)_ffast-math
 #	$(CC) driver.c rdtsc.c s13_$(CC)_mrecip.o -o s13_$(CC)_mrecip
 
 	#icx executable
@@ -61,8 +59,6 @@ s13_$(CC)_O3.o: kernel.c
 	@$(CC) $(OFLAG3) -D $(OPT) -c -o $@ $<
 s13_$(CC)_O2.o: kernel.c
 	@$(CC) $(OFLAG2) -D $(OPT) -c -o $@ $<
-s13_$(CC)_ffast-math.o:kernel.c
-	@$(CC) $(OFLAG_fastmath) -D $(OPT) -c -o $@ $<
 #s13_$(CC)_mrecip.o:kernel.c
 #	@$(CC) $(OFLAG_mrecip) -D $(OPT) -c -o $@ $<
 
