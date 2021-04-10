@@ -1,43 +1,43 @@
 
-* Info: Process launched (host alfred, process 45649)4.05 cycles/c_element
+* Info: Process launched (host alfred, process 46740)4.28 cycles/c_element
+3.98 cycles/c_element
+3.83 cycles/c_element
+3.97 cycles/c_element
+3.79 cycles/c_element
+4.02 cycles/c_element
+3.84 cycles/c_element
 3.80 cycles/c_element
-3.79 cycles/c_element
-4.75 cycles/c_element
-4.08 cycles/c_element
-4.06 cycles/c_element
-3.96 cycles/c_element
-4.09 cycles/c_element
-4.25 cycles/c_element
-4.16 cycles/c_element
-3.97 cycles/c_element
-4.03 cycles/c_element
-4.20 cycles/c_element
-4.00 cycles/c_element
-5.13 cycles/c_element
-3.99 cycles/c_element
-3.89 cycles/c_element
-3.97 cycles/c_element
-3.87 cycles/c_element
-4.01 cycles/c_element
-4.17 cycles/c_element
-3.91 cycles/c_element
-3.87 cycles/c_element
-3.79 cycles/c_element
-3.81 cycles/c_element
-4.99 cycles/c_element
-4.04 cycles/c_element
 3.74 cycles/c_element
-4.11 cycles/c_element
-3.87 cycles/c_element
-3.96 cycles/c_element
+4.09 cycles/c_element
+4.08 cycles/c_element
+4.48 cycles/c_element
+4.07 cycles/c_element
+4.04 cycles/c_element
+3.81 cycles/c_element
+3.80 cycles/c_element
+3.78 cycles/c_element
+3.85 cycles/c_element
+3.78 cycles/c_element
+3.74 cycles/c_element
+3.79 cycles/c_element
+3.95 cycles/c_element
+4.76 cycles/c_element
+4.15 cycles/c_element
+3.82 cycles/c_element
+3.81 cycles/c_element
+3.82 cycles/c_element
+3.78 cycles/c_element
+3.81 cycles/c_element
+3.91 cycles/c_element
+3.81 cycles/c_element
 
-* Info: Process finished (host alfred, process 45649)
+* Info: Process finished (host alfred, process 46740)
 * Info: Callchains info will be incomplete
 * Info: Try to recompile your application with -fno-omit-frame-pointer or to rerun with btm=stack
-* Info: Dumping samples (host alfred, process 45649)
-* Info: Dumping source info for callchain nodes (host alfred, process 45649)
+* Info: Dumping samples (host alfred, process 46740)
+* Info: Dumping source info for callchain nodes (host alfred, process 46740)
 * Info: Building/writing metadata (host alfred)
-* Info: Finished collect step (host alfred, process 45649)Info: Your experiment path is /home/tmo/Documents/IATIC4/ARCH/projet_aoa_s2/src/../maqao_html/gcc02ORIGINAL/tools/lprof_npsu
+* Info: Finished collect step (host alfred, process 46740)Info: Your experiment path is /home/tmo/Documents/IATIC4/ARCH/projet_aoa_s2/src/../maqao_html/gcc02ORIGINAL/tools/lprof_npsu
 Info: To display your profiling results:
 #################################################################################################
 #    LEVEL    |     REPORT     |                            COMMAND                             #
