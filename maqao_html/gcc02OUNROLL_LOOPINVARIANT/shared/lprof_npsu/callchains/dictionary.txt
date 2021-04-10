@@ -1,0 +1,2 @@
+__libc_start_main - :0
+libc-2.32.so
