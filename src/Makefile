@@ -1,6 +1,6 @@
-CC=gcc
-II=icx
-III=icc
+CC=gcc -fopenmp
+II=icx -fopenmp
+III=icc -fopenmp
 
 OFLAG=-O1
 OFLAG2=-O2

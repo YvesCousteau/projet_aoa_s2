@@ -1,7 +1,10 @@
-3.86 gcc-O2
-4.00 gcc-O3
-4.15 gcc-O3-native
-3.81 gcc-OFast
-3.23 icx-O2
-3.33 icx-O3
-2.37 icx-O3-native
+3.40 gcc-O2
+3.26 gcc-O3
+2.74 gcc-O3n
+3.10 gcc-OFast
+2.97 icc-O2
+3.28 icc-O3
+3.30 icc-O3n
+3.20 icx-O2
+3.28 icx-O3
+2.42 icx-O3n

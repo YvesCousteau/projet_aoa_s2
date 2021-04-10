@@ -20,7 +20,8 @@ set boxwidth 0.9
 
 set xtic rotate by -45 scale 0
 
-set autoscale y
+#set autoscale y
+set yrange [0:5]
 
 set title "Cycles/Iteration pour differents compilateurs \& flags"
 plot "res" u 1:xtic(2) t "Intel Core i7-lt, for L1 cache" lt rgb "#81a1c1"
