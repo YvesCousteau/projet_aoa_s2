@@ -1,36 +1,36 @@
-#compilers
 CC=gcc
-ICX=icx
-ICC=icc
+II=icx
+III=icc
 
-#gcc flags
 OFLAG=-O1
 OFLAG2=-O2
 OFLAG3=-O3
-OFLAG3_Native=-O3 -march=native
-OFLAGFAST=-Ofast
-OFLAG_mrecip= -mrecip
+OFLAGFast=-Ofast
+OFLAG3n=-O3 -march=native
+OFLAG3n_v4=-O3 -mfpmath=sse -march=native
+OFLAG3n_v5=-O3 -msse4.2 -mavx -march=native
+OFLAG3n_v6=-O3 -mfpmath=sse -msse4.2 -mavx -march=native
 
-#icx/icc flags
 OFLAG_icx_O2=-O2 -static
 OFLAG_icx_O3=-O3 -static
-OFLAG_icx_O3_Native=-O3 -march=native
+OFLAG_icx_O3n=-O3 -march=native -static
 
 
 OPTFLAGS=-O3 -g -Wall
 CFLAGS=-O2 -g -Wall
 
-#OBJS=s13_$(CC)_mrecip.o
-OBJS=s13_$(CC)_O2.o s13_$(CC)_O3.o s13_$(CC)_O3_native.o s13_$(CC)_OFast.o s13_$(ICX)_O2.o s13_$(ICX)_O3.o s13_$(ICX)_O3_native.o
+
+OBJS=s13_gcc_O3n.o s13_gcc_O3.o s13_gcc_O2.o s13_gcc_OFast.o s13_icx_O2.o s13_icx_O3.o s13_icx_O3n.o s13_icc_O2.o s13_icc_O3.o s13_icc_O3n.o
+#OBJS=s13_02.o
 CFILE=driver.c kernel.c rdtsc.c
 
 #R_ANAL=analysis
 R_HTML=../maqao_html
 
-CACHE_LVL=L3
-SIZE=782
-NB_WARMUP=20
-NB_MESURE_REP=800
+CACHE_LVL=L1
+SIZE=51
+NB_WARMUP=31
+NB_MESURE_REP=750
 
 
 all:	s13
@@ -38,84 +38,83 @@ all:	s13
 s13: $(OBJS)
 	@echo --- Compilation ---
 
-	#gcc executable
-	$(CC) driver.c rdtsc.c s13_$(CC)_O2.o -o s13_$(CC)_O2
-	$(CC) driver.c rdtsc.c s13_$(CC)_O3.o -o s13_$(CC)_O3
-	$(CC) driver.c rdtsc.c s13_$(CC)_OFast.o -o s13_$(CC)_OFast
-	$(CC) driver.c rdtsc.c s13_$(CC)_O3_native.o -o s13_$(CC)_O3_native
-#	$(CC) driver.c rdtsc.c s13_$(CC)_mrecip.o -o s13_$(CC)_mrecip
+	$(CC) driver.c rdtsc.c s13_gcc_O2.o -o s13_gcc_O2
+	$(II) driver.c rdtsc.c s13_icx_O2.o -o s13_icx_O2
+	$(III) driver.c rdtsc.c s13_icc_O2.o -o s13_icc_O2
 
-	#icx executable
-	$(ICX) driver.c rdtsc.c s13_$(ICX)_O2.o -o s13_$(ICX)_O2
-	$(ICX) driver.c rdtsc.c s13_$(ICX)_O3.o -o s13_$(ICX)_O3
-	$(ICX) driver.c rdtsc.c s13_$(ICX)_O3_native.o -o s13_$(ICX)_O3_native
+	$(CC) driver.c rdtsc.c s13_gcc_O3.o -o s13_gcc_O3
+	$(II) driver.c rdtsc.c s13_icx_O3.o -o s13_icx_O3
+	$(III) driver.c rdtsc.c s13_icc_O3.o -o s13_icc_O3
+	
+	$(CC) driver.c rdtsc.c s13_gcc_O3n.o -o s13_gcc_O3n
+	$(II) driver.c rdtsc.c s13_icx_O3n.o -o s13_icx_O3n
+	$(III) driver.c rdtsc.c s13_icc_O3n.o -o s13_icc_O3n
+	
+	$(CC) driver.c rdtsc.c s13_gcc_OFast.o -o s13_gcc_OFast
 
 
-s13_$(CC)_OFast.o: kernel.c
-	@$(CC) $(OFLAGFAST) -D $(OPT) -c -o $@ $<
-s13_$(CC)_O3_native.o: kernel.c
-	@$(CC) $(OFLAG3_Native) -D $(OPT) -c -o $@ $<
-s13_$(CC)_O3.o: kernel.c
+s13_gcc_OFast.o: kernel.c
+	@$(CC) $(OFLAGFast) -D $(OPT) -c -o $@ $<
+s13_gcc_O3n.o: kernel.c
+	@$(CC) $(OFLAG3n) -D $(OPT) -c -o $@ $<
+s13_gcc_O3.o: kernel.c
 	@$(CC) $(OFLAG3) -D $(OPT) -c -o $@ $<
-s13_$(CC)_O2.o: kernel.c
+s13_gcc_O2.o: kernel.c
 	@$(CC) $(OFLAG2) -D $(OPT) -c -o $@ $<
-#s13_$(CC)_mrecip.o:kernel.c
-#	@$(CC) $(OFLAG_mrecip) -D $(OPT) -c -o $@ $<
-
-
-s13_$(ICX)_O2.o: kernel.c
-	@$(ICX)  $(OFLAG_icx_O2) -D $(OPT) -c -o $@ $<
-s13_$(ICX)_O3.o: kernel.c
-	@$(ICX)  $(OFLAG_icx_O3) -D $(OPT) -c -o $@ $<
-s13_$(ICX)_O3_native.o:kernel.c
-	@$(ICX)  $(OFLAG_icx_O3_Native) -D $(OPT) -c -o $@ $<
 
 
 
-maqao: clean s13
+s13_icx_O2.o: kernel.c
+	@$(II)  $(OFLAG_icx_O2) -D $(OPT) -c -o $@ $<
+s13_icx_O3.o: kernel.c
+	@$(II)  $(OFLAG_icx_O3) -D $(OPT) -c -o $@ $<
+s13_icx_O3n.o: kernel.c
+	@$(II)  $(OFLAG_icx_O3n) -D $(OPT) -c -o $@ $<
+
+s13_icc_O2.o: kernel.c
+	@$(III)  $(OFLAG_icx_O2) -D $(OPT) -c -o $@ $<
+s13_icc_O3.o: kernel.c
+	@$(III)  $(OFLAG_icx_O3) -D $(OPT) -c -o $@ $<
+s13_icc_O3n.o: kernel.c
+	@$(III)  $(OFLAG_icx_O3n) -D $(OPT) -c -o $@ $<
+
+
+maqao: clean s13 
 	@mkdir -p $(R_HTML)
 	@echo --- generating maqao file ---
 
-	# gcc -O2
-	@echo --- generating maqao file for gcc -O2 ---
-	# @maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_02 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	# @rm -rf $(R_HTML)/s13_02_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_02_one_html $(R_HTML)/s13_02_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
-
-	# gcc -03
-	@echo --- generating maqao file for gcc -O3 ---
-	# @maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	# @rm -rf $(R_HTML)/s13_03_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_03_one_html $(R_HTML)/s13_03_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
-
-	# gcc -03n
-	@echo --- generating maqao file for gcc -O3n ---
-	# @maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_03n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	@rm -rf $(R_HTML)/s13_03n_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_03n_one_html $(R_HTML)/s13_03n_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
-
-	# gcc -0Fast
-	@echo --- generating maqao file for gcc -OFast ---
-	# @maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_0Fast $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	# @rm -rf $(R_HTML)/s13_0Fast_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_0Fast_one_html $(R_HTML)/s13_0Fast_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
-
-	# gcc -ffast-math
-	@echo --- generating maqao file for gcc -ffast-math ---
-	# @maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_$(CC)_ffast-math $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	# @rm -rf $(R_HTML)/s13_$(CC)_ffast-math_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_$(CC)_ffast-math_one_html $(R_HTML)/s13_$(CC)_ffast-math_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
-
-	# gcc -mrecip
-	@echo --- generating maqao file for gcc -mrecip ---
-	@maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_$(CC)_mrecip $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	@rm -rf $(R_HTML)/s13_$(CC)_mrecip_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_$(CC)_mrecip_one_html $(R_HTML)/s13_$(CC)_mrecip_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
+	#maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_gcc_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	#rm -rf $(R_HTML)/s13_gcc_O2_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_gcc_O2_one_html $(R_HTML)/s13_gcc_02_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 
 
-	# icx -O2
-	@echo --- generating maqao file for icx -O2 ---
-	# @maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	# @rm -rf $(R_HTML)/s13_icx_O2_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icx_O2_one_html $(R_HTML)/s13_icx_O2_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 
-	# icx -O3
-	@echo --- generating maqao file for icx -O3---
-	# @maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
-	# @rm -rf $(R_HTML)/s13_icx_O3_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icx_O3_one_html $(R_HTML)/s13_icx_O3_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
+	#maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_gcc_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	#rm -rf $(R_HTML)/s13_gcc_O3_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_gcc_O3_one_html $(R_HTML)/s13_gcc_03_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
+
+	#maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_gcc_O3n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	#rm -rf $(R_HTML)/s13_gcc_O3n_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_gcc_O3n_one_html $(R_HTML)/s13_gcc_03n_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
+
+	#maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_gcc_OFast $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	#rm -rf $(R_HTML)/s13_gcc_OFast_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_gcc_OFast_one_html $(R_HTML)/s13_gcc_OFast_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
+	
+
+	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	rm -rf $(R_HTML)/s13_icx_O2_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icx_O2_one_html $(R_HTML)/s13_icx_O2_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
+
+	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	rm -rf $(R_HTML)/s13_icx_O3_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icx_O3_one_html $(R_HTML)/s13_icx_O3_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
+
+	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_O3n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	rm -rf $(R_HTML)/s13_icx_O3n_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icx_O3n_one_html $(R_HTML)/s13_icx_O3n_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
+
+	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icc_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	rm -rf $(R_HTML)/s13_icc_O2_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icc_O2_one_html $(R_HTML)/s13_icc_O2_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
+
+	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icc_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	rm -rf $(R_HTML)/s13_icc_O3_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icc_O3_one_html $(R_HTML)/s13_icc_O3_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
+
+	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icc_O3n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	rm -rf $(R_HTML)/s13_icc_O3n_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icc_O3n_one_html $(R_HTML)/s13_icc_O3n_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 
 
 # analysis: maqao
