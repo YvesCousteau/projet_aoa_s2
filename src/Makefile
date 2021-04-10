@@ -91,32 +91,32 @@ maqao: clean s13
 	@mkdir -p $(R_HTML)
 
 	@echo --- generating maqao file gcc_O2 ---
-	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_gcc_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	maqao oneview -R1 --omp-num-threads=4 xp=$(R_HTML)/maqao_res -- ./s13_gcc_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
 	rm -rf $(R_HTML)/s13_gcc_O2_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_gcc_O2_one_html $(R_HTML)/s13_gcc_O2_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 	@echo --- generating maqao file gcc_O3 ---
-	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_gcc_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	maqao oneview -R1 --omp-num-threads=4 xp=$(R_HTML)/maqao_res -- ./s13_gcc_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
 	rm -rf $(R_HTML)/s13_gcc_O3_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_gcc_O3_one_html $(R_HTML)/s13_gcc_O3_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 	@echo --- generating maqao file gcc_O3 native ---
-	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_gcc_O3n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	maqao oneview -R1 --omp-num-threads=4 xp=$(R_HTML)/maqao_res -- ./s13_gcc_O3n $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
 	rm -rf $(R_HTML)/s13_gcc_O3n_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_gcc_O3n_one_html $(R_HTML)/s13_gcc_O3n_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 	@echo --- generating maqao file gcc_Ofast ---
-	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_gcc_OFast $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	maqao oneview -R1 --omp-num-threads=4 xp=$(R_HTML)/maqao_res -- ./s13_gcc_OFast $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
 	rm -rf $(R_HTML)/s13_gcc_OFast_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_gcc_OFast_one_html $(R_HTML)/s13_gcc_OFast_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 
 
 	@echo --- generating maqao file icx_O2 ---
-	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	maqao oneview -R1 --omp-num-threads=4 xp=$(R_HTML)/maqao_res -- ./s13_icx_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
 	rm -rf $(R_HTML)/s13_icx_O2_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icx_O2_one_html $(R_HTML)/s13_icx_O2_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 	@echo --- generating maqao file icx_O3 ---
-	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icx_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	maqao oneview -R1 --omp-num-threads=4 xp=$(R_HTML)/maqao_res -- ./s13_icx_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
 	rm -rf $(R_HTML)/s13_icx_O3_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icx_O3_one_html $(R_HTML)/s13_icx_O3_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 
 
 	@echo --- generating maqao file icc_O2 ---
-	maqao oneview -R1 xp=$(R_HTML)/maqao_res -- ./s13_icc_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	maqao oneview -R1 --omp-num-threads=4 xp=$(R_HTML)/maqao_res -- ./s13_icc_O2 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
 	rm -rf $(R_HTML)/s13_icc_O2_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icc_O2_one_html $(R_HTML)/s13_icc_O2_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 	@echo --- generating maqao file icc_O3 ---
-	maqao oneview -R1 xp=$(R_HTML)/maqao_res --  ./s13_icc_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
+	maqao oneview -R1 --omp-num-threads=4 xp=$(R_HTML)/maqao_res --  ./s13_icc_O3 $(SIZE) $(NB_WARMUP) $(NB_MESURE_REP)
 	rm -rf $(R_HTML)/s13_icc_O3_$(CACHE_LVL)_$(OPT)_one_html && mv $(R_HTML)/maqao_res/RESULTS/s13_icc_O3_one_html $(R_HTML)/s13_icc_O3_$(CACHE_LVL)_$(OPT)_one_html ; rm -rf $(R_HTML)/maqao_res
 
 

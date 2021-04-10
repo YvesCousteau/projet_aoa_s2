@@ -72,36 +72,43 @@ function addLoadEvent(func) {
 <div class="_content"><div class="_accordion_box collapsed"><h3 id="_accordion_header_1" class="_header collapsed" onclick="_click_accordion_header(this)" ><span class="_accordion_box_button">&#x25B6;</span>Filters<span class="tooltip-maqao-button help-maqao" title="A form that can be displayed / hidden by clicking on the header to specify which modules must be displayed in the profiling. By clicking on the button, only checked categories are displayed. Coverages are computed according displayed modules."></span></h3><div id="_accordion_content_1" class="_content collapsed"></form><button type="button" onclick="_upd_base_run();" style="cursor:pointer;">Choose Reference Run</button><hr>
 <form><u>Modules:</u><br style="margin-bottom:10px;">
 <input id="_input_check_all_mods" type="checkbox" style="vertical-align: middle;cursor:pointer" onchange="_onchange_modules (this)" checked ><span id="_input_check_all_mods_text">Uncheck all modules</span><br>
-<input id="_input_check_mod_s13_icx_O3" type="checkbox" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >s13_icx_O3 - <span id="cov_mod_s13_icx_O3" >99.78</span> %<br>
-<input id="_input_check_mod_libiomp5.so" type="checkbox" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >libiomp5.so - <span id="cov_mod_libiomp5.so" >0.21</span> %<br>
+<input id="_input_check_mod_s13_icx_O3" type="checkbox" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >s13_icx_O3 - <span id="cov_mod_s13_icx_O3" >99.85</span> %<br>
+<input id="_input_check_mod_libiomp5.so" type="checkbox" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >libiomp5.so - <span id="cov_mod_libiomp5.so" >0.14</span> %<br>
 </form><hr><button type="button" onclick="_upd_table();" style="cursor:pointer;">Filter Results</button>
-</div></div><div class="_div_table"><div><form><span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table15_opt4" onclick="click_table_menu('_table15_opt4', '_table15_opt_all', 'list_opts_table15')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Time (s)</span>
-<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table15_opt5" onclick="click_table_menu('_table15_opt5', '_table15_opt_all', 'list_opts_table15')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Nb Threads</span>
-<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table15_opt6" onclick="click_table_menu('_table15_opt6', '_table15_opt_all', 'list_opts_table15')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Deviation (coverage)</span>
-<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table15_opt7" onclick="click_table_menu('_table15_opt7', '_table15_opt_all', 'list_opts_table15')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;">Compilation Options</span>
-<span style='white-space:nowrap;'><input class="input_check_table_menu" type="button" id="_table15_opt_all" onclick="set_all_table_menu(this, 'list_opts_table15')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" value="Select all"></span>
+</div></div><div class="_div_table"><div><form><span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table16_opt4" onclick="click_table_menu('_table16_opt4', '_table16_opt_all', 'list_opts_table16')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Time (s)</span>
+<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table16_opt5" onclick="click_table_menu('_table16_opt5', '_table16_opt_all', 'list_opts_table16')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Nb Threads</span>
+<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table16_opt6" onclick="click_table_menu('_table16_opt6', '_table16_opt_all', 'list_opts_table16')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Deviation (coverage)</span>
+<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table16_opt7" onclick="click_table_menu('_table16_opt7', '_table16_opt_all', 'list_opts_table16')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;">Compilation Options</span>
+<span style='white-space:nowrap;'><input class="input_check_table_menu" type="button" id="_table16_opt_all" onclick="set_all_table_menu(this, 'list_opts_table16')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" value="Select all"></span>
 </form></div>
-<table id="_treed_table_15" class="_treed_table"><tr><th class=" _left tooltip-maqao" title="Name of the function / loop identifier">Name</th><th class=" tooltip-maqao" title="Name of the module (binary file) that contains the function / loop">Module</th><th class=" tooltip-maqao" title="Percentage of the execution time spent in the function / loop">Coverage (%)</th><th class=" _table15_opt4 tooltip-maqao" title="Execution time spent in the function / loop in seconds">Time (s)</th><th class=" _table15_opt5 tooltip-maqao" title="Number of threads that executed the function / objects">Nb Threads</th><th class=" _table15_opt6 tooltip-maqao" title="Deviation of the coverage amongs threads">Deviation (coverage)</th><th class=" _table15_opt7 _tcol_hidden tooltip-maqao" title="Compilation options used to compile the loop">Compilation Options</th></tr>
-<tr id="_tr_15_1"  ondblclick="_action_17(this,1,-1, 'functions/s13_icx_O3_9.html');"  style="cursor:pointer;"><td id="_tr_15_1-1"  data-_i="1" data-_j="1"  data-_p="s13_icx_O3_9" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span>s13<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_15_1-2"  data-_i="1" data-_j="2"  data-_p="s13_icx_O3_9" class=" _centered"  style="word-break:break-all;" >s13_icx_O3</td><td id="_tr_15_1-3"  data-_i="1" data-_j="3"  data-_p="s13_icx_O3_9" class=" _centered" >99.78</td><td id="_tr_15_1-4"  data-_i="1" data-_j="4"  data-_p="s13_icx_O3_9" class=" _centered _table15_opt4" >6.86</td><td id="_tr_15_1-5"  data-_i="1" data-_j="5"  data-_p="s13_icx_O3_9" class=" _centered _table15_opt5" >1</td><td id="_tr_15_1-6"  data-_i="1" data-_j="6"  data-_p="s13_icx_O3_9" class=" _centered _table15_opt6" >0.00</td><td id="_tr_15_1-7"  data-_i="1" data-_j="7"  data-_p="s13_icx_O3_9" class=" _table15_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr class="_treed_hidden _tr_15_1"  id="_tr_15_1_1"  ondblclick="_action_17(this,2,-1, 'loops/s13_icx_O3_5.html');"  style="cursor:pointer;"><td id="_tr_15_1_1-1"  data-_i="2" data-_j="1"  data-_p="s13_icx_O3_5" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:15px;cursor:pointer;" >&#x25BA;</span>Loop 5 -  - s13_icx_O3<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_15_1_1-2"  data-_i="2" data-_j="2"  data-_p="s13_icx_O3_5" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_15_1_1-3"  data-_i="2" data-_j="3"  data-_p="s13_icx_O3_5" class=" _centered" >6.54</td><td id="_tr_15_1_1-4"  data-_i="2" data-_j="4"  data-_p="s13_icx_O3_5" class=" _centered _table15_opt4" >0.45</td><td id="_tr_15_1_1-5"  data-_i="2" data-_j="5"  data-_p="s13_icx_O3_5" class=" _centered _table15_opt5" >1</td><td id="_tr_15_1_1-6"  data-_i="2" data-_j="6"  data-_p="s13_icx_O3_5" class=" _centered _table15_opt6" >0</td><td id="_tr_15_1_1-7"  data-_i="2" data-_j="7"  data-_p="s13_icx_O3_5" class=" _table15_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr class="_treed_hidden _tr_15_1_1"  id="_tr_15_1_1_1"  ondblclick="_action_17(this,3,-1, 'loops/s13_icx_O3_6.html');"  style="cursor:pointer;"><td id="_tr_15_1_1_1-1"  data-_i="3" data-_j="1"  data-_p="s13_icx_O3_6" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 6 -  - s13_icx_O3</td><td id="_tr_15_1_1_1-2"  data-_i="3" data-_j="2"  data-_p="s13_icx_O3_6" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_15_1_1_1-3"  data-_i="3" data-_j="3"  data-_p="s13_icx_O3_6" class=" _centered" >93.17</td><td id="_tr_15_1_1_1-4"  data-_i="3" data-_j="4"  data-_p="s13_icx_O3_6" class=" _centered _table15_opt4" >6.41</td><td id="_tr_15_1_1_1-5"  data-_i="3" data-_j="5"  data-_p="s13_icx_O3_6" class=" _centered _table15_opt5" >1</td><td id="_tr_15_1_1_1-6"  data-_i="3" data-_j="6"  data-_p="s13_icx_O3_6" class=" _centered _table15_opt6" >0</td><td id="_tr_15_1_1_1-7"  data-_i="3" data-_j="7"  data-_p="s13_icx_O3_6" class=" _table15_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr class="_treed_hidden _tr_15_1"  id="_tr_15_1_2"  oncontextmenu="_action_30(this,4,-1, 'nil');"  ondblclick="_action_15(this,4,-1, 'Loop 4 -  - s13_icx_O3');"  style="cursor:pointer;"><td id="_tr_15_1_2-1"  data-_i="4" data-_j="1"  class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 4 -  - s13_icx_O3</td><td id="_tr_15_1_2-2"  data-_i="4" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_15_1_2-3"  data-_i="4" data-_j="3"  class=" _centered" >0</td><td id="_tr_15_1_2-4"  data-_i="4" data-_j="4"  class=" _centered _table15_opt4"  style="background:#A52B12;" >0</td><td id="_tr_15_1_2-5"  data-_i="4" data-_j="5"  class=" _centered _table15_opt5" >0</td><td id="_tr_15_1_2-6"  data-_i="4" data-_j="6"  class=" _centered _table15_opt6" >0</td><td id="_tr_15_1_2-7"  data-_i="4" data-_j="7"  class=" _table15_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr id="_tr_15_2"  ondblclick="_action_17(this,5,-1, 'functions/libiomp5.so_1715.html');"  style="cursor:pointer;"><td id="_tr_15_2-1"  data-_i="5" data-_j="1"  data-_p="libiomp5.so_1715" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>__kmp_get_global_thread_id_reg</td><td id="_tr_15_2-2"  data-_i="5" data-_j="2"  data-_p="libiomp5.so_1715" class=" _centered"  style="word-break:break-all;" >libiomp5.so</td><td id="_tr_15_2-3"  data-_i="5" data-_j="3"  data-_p="libiomp5.so_1715" class=" _centered" >0.07</td><td id="_tr_15_2-4"  data-_i="5" data-_j="4"  data-_p="libiomp5.so_1715" class=" _centered _table15_opt4"  style="background:#A52B12;" >0</td><td id="_tr_15_2-5"  data-_i="5" data-_j="5"  data-_p="libiomp5.so_1715" class=" _centered _table15_opt5" >1</td><td id="_tr_15_2-6"  data-_i="5" data-_j="6"  data-_p="libiomp5.so_1715" class=" _centered _table15_opt6" >0.00</td><td id="_tr_15_2-7"  data-_i="5" data-_j="7"  data-_p="libiomp5.so_1715" class=" _table15_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr id="_tr_15_3"  ondblclick="_action_17(this,6,-1, 'functions/libiomp5.so_1199.html');"  style="cursor:pointer;"><td id="_tr_15_3-1"  data-_i="6" data-_j="1"  data-_p="libiomp5.so_1199" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>__kmp_api_omp_set_num_threads</td><td id="_tr_15_3-2"  data-_i="6" data-_j="2"  data-_p="libiomp5.so_1199" class=" _centered"  style="word-break:break-all;" >libiomp5.so</td><td id="_tr_15_3-3"  data-_i="6" data-_j="3"  data-_p="libiomp5.so_1199" class=" _centered" >0.07</td><td id="_tr_15_3-4"  data-_i="6" data-_j="4"  data-_p="libiomp5.so_1199" class=" _centered _table15_opt4"  style="background:#A52B12;" >0</td><td id="_tr_15_3-5"  data-_i="6" data-_j="5"  data-_p="libiomp5.so_1199" class=" _centered _table15_opt5" >1</td><td id="_tr_15_3-6"  data-_i="6" data-_j="6"  data-_p="libiomp5.so_1199" class=" _centered _table15_opt6" >0.00</td><td id="_tr_15_3-7"  data-_i="6" data-_j="7"  data-_p="libiomp5.so_1199" class=" _table15_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr id="_tr_15_4"  ondblclick="_action_17(this,7,-1, 'functions/libiomp5.so_1727.html');"  style="cursor:pointer;"><td id="_tr_15_4-1"  data-_i="7" data-_j="1"  data-_p="libiomp5.so_1727" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>__kmp_set_num_threads</td><td id="_tr_15_4-2"  data-_i="7" data-_j="2"  data-_p="libiomp5.so_1727" class=" _centered"  style="word-break:break-all;" >libiomp5.so</td><td id="_tr_15_4-3"  data-_i="7" data-_j="3"  data-_p="libiomp5.so_1727" class=" _centered" >0.07</td><td id="_tr_15_4-4"  data-_i="7" data-_j="4"  data-_p="libiomp5.so_1727" class=" _centered _table15_opt4"  style="background:#A52B12;" >0</td><td id="_tr_15_4-5"  data-_i="7" data-_j="5"  data-_p="libiomp5.so_1727" class=" _centered _table15_opt5" >1</td><td id="_tr_15_4-6"  data-_i="7" data-_j="6"  data-_p="libiomp5.so_1727" class=" _centered _table15_opt6" >0.00</td><td id="_tr_15_4-7"  data-_i="7" data-_j="7"  data-_p="libiomp5.so_1727" class=" _table15_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<table id="_treed_table_16" class="_treed_table"><tr><th class=" _left tooltip-maqao" title="Name of the function / loop identifier">Name</th><th class=" tooltip-maqao" title="Name of the module (binary file) that contains the function / loop">Module</th><th class=" tooltip-maqao" title="Percentage of the execution time spent in the function / loop">Coverage (%)</th><th class=" _table16_opt4 tooltip-maqao" title="Execution time spent in the function / loop in seconds">Time (s)</th><th class=" _table16_opt5 tooltip-maqao" title="Number of threads that executed the function / objects">Nb Threads</th><th class=" _table16_opt6 tooltip-maqao" title="Deviation of the coverage amongs threads">Deviation (coverage)</th><th class=" _table16_opt7 _tcol_hidden tooltip-maqao" title="Compilation options used to compile the loop">Compilation Options</th></tr>
+<tr id="_tr_16_1"  ondblclick="_action_18(this,1,-1, 'functions/s13_icx_O3_9.html');"  style="cursor:pointer;"><td id="_tr_16_1-1"  data-_i="1" data-_j="1"  data-_p="s13_icx_O3_9" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span>s13<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_16_1-2"  data-_i="1" data-_j="2"  data-_p="s13_icx_O3_9" class=" _centered"  style="word-break:break-all;" >s13_icx_O3</td><td id="_tr_16_1-3"  data-_i="1" data-_j="3"  data-_p="s13_icx_O3_9" class=" _centered" >99.78</td><td id="_tr_16_1-4"  data-_i="1" data-_j="4"  data-_p="s13_icx_O3_9" class=" _centered _table16_opt4" >6.83</td><td id="_tr_16_1-5"  data-_i="1" data-_j="5"  data-_p="s13_icx_O3_9" class=" _centered _table16_opt5" >1</td><td id="_tr_16_1-6"  data-_i="1" data-_j="6"  data-_p="s13_icx_O3_9" class=" _centered _table16_opt6" >0.00</td><td id="_tr_16_1-7"  data-_i="1" data-_j="7"  data-_p="s13_icx_O3_9" class=" _table16_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_16_1"  id="_tr_16_1_1"  ondblclick="_action_18(this,2,-1, 'loops/s13_icx_O3_5.html');"  style="cursor:pointer;"><td id="_tr_16_1_1-1"  data-_i="2" data-_j="1"  data-_p="s13_icx_O3_5" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:15px;cursor:pointer;" >&#x25BA;</span>Loop 5 -  - s13_icx_O3<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_16_1_1-2"  data-_i="2" data-_j="2"  data-_p="s13_icx_O3_5" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_16_1_1-3"  data-_i="2" data-_j="3"  data-_p="s13_icx_O3_5" class=" _centered" >7.96</td><td id="_tr_16_1_1-4"  data-_i="2" data-_j="4"  data-_p="s13_icx_O3_5" class=" _centered _table16_opt4" >0.55</td><td id="_tr_16_1_1-5"  data-_i="2" data-_j="5"  data-_p="s13_icx_O3_5" class=" _centered _table16_opt5" >1</td><td id="_tr_16_1_1-6"  data-_i="2" data-_j="6"  data-_p="s13_icx_O3_5" class=" _centered _table16_opt6" >0</td><td id="_tr_16_1_1-7"  data-_i="2" data-_j="7"  data-_p="s13_icx_O3_5" class=" _table16_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_16_1_1"  id="_tr_16_1_1_1"  ondblclick="_action_18(this,3,-1, 'loops/s13_icx_O3_6.html');"  style="cursor:pointer;"><td id="_tr_16_1_1_1-1"  data-_i="3" data-_j="1"  data-_p="s13_icx_O3_6" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 6 -  - s13_icx_O3</td><td id="_tr_16_1_1_1-2"  data-_i="3" data-_j="2"  data-_p="s13_icx_O3_6" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_16_1_1_1-3"  data-_i="3" data-_j="3"  data-_p="s13_icx_O3_6" class=" _centered" >91.75</td><td id="_tr_16_1_1_1-4"  data-_i="3" data-_j="4"  data-_p="s13_icx_O3_6" class=" _centered _table16_opt4" >6.28</td><td id="_tr_16_1_1_1-5"  data-_i="3" data-_j="5"  data-_p="s13_icx_O3_6" class=" _centered _table16_opt5" >1</td><td id="_tr_16_1_1_1-6"  data-_i="3" data-_j="6"  data-_p="s13_icx_O3_6" class=" _centered _table16_opt6" >0</td><td id="_tr_16_1_1_1-7"  data-_i="3" data-_j="7"  data-_p="s13_icx_O3_6" class=" _table16_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_16_1"  id="_tr_16_1_2"  oncontextmenu="_action_31(this,4,-1, 'nil');"  ondblclick="_action_16(this,4,-1, 'Loop 4 -  - s13_icx_O3');"  style="cursor:pointer;"><td id="_tr_16_1_2-1"  data-_i="4" data-_j="1"  class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 4 -  - s13_icx_O3</td><td id="_tr_16_1_2-2"  data-_i="4" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_16_1_2-3"  data-_i="4" data-_j="3"  class=" _centered" >0</td><td id="_tr_16_1_2-4"  data-_i="4" data-_j="4"  class=" _centered _table16_opt4"  style="background:#A52B12;" >0</td><td id="_tr_16_1_2-5"  data-_i="4" data-_j="5"  class=" _centered _table16_opt5" >0</td><td id="_tr_16_1_2-6"  data-_i="4" data-_j="6"  class=" _centered _table16_opt6" >0</td><td id="_tr_16_1_2-7"  data-_i="4" data-_j="7"  class=" _table16_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr id="_tr_16_2"  ondblclick="_action_18(this,5,-1, 'functions/libiomp5.so_1199.html');"  style="cursor:pointer;"><td id="_tr_16_2-1"  data-_i="5" data-_j="1"  data-_p="libiomp5.so_1199" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>__kmp_api_omp_set_num_threads</td><td id="_tr_16_2-2"  data-_i="5" data-_j="2"  data-_p="libiomp5.so_1199" class=" _centered"  style="word-break:break-all;" >libiomp5.so</td><td id="_tr_16_2-3"  data-_i="5" data-_j="3"  data-_p="libiomp5.so_1199" class=" _centered" >0.07</td><td id="_tr_16_2-4"  data-_i="5" data-_j="4"  data-_p="libiomp5.so_1199" class=" _centered _table16_opt4"  style="background:#A52B12;" >0</td><td id="_tr_16_2-5"  data-_i="5" data-_j="5"  data-_p="libiomp5.so_1199" class=" _centered _table16_opt5" >1</td><td id="_tr_16_2-6"  data-_i="5" data-_j="6"  data-_p="libiomp5.so_1199" class=" _centered _table16_opt6" >0.00</td><td id="_tr_16_2-7"  data-_i="5" data-_j="7"  data-_p="libiomp5.so_1199" class=" _table16_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr id="_tr_16_3"  ondblclick="_action_18(this,6,-1, 'functions/s13_icx_O3_7.html');"  style="cursor:pointer;"><td id="_tr_16_3-1"  data-_i="6" data-_j="1"  data-_p="s13_icx_O3_7" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span>main<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_16_3-2"  data-_i="6" data-_j="2"  data-_p="s13_icx_O3_7" class=" _centered"  style="word-break:break-all;" >s13_icx_O3</td><td id="_tr_16_3-3"  data-_i="6" data-_j="3"  data-_p="s13_icx_O3_7" class=" _centered" >0.07</td><td id="_tr_16_3-4"  data-_i="6" data-_j="4"  data-_p="s13_icx_O3_7" class=" _centered _table16_opt4"  style="background:#A52B12;" >0</td><td id="_tr_16_3-5"  data-_i="6" data-_j="5"  data-_p="s13_icx_O3_7" class=" _centered _table16_opt5" >1</td><td id="_tr_16_3-6"  data-_i="6" data-_j="6"  data-_p="s13_icx_O3_7" class=" _centered _table16_opt6" >0.00</td><td id="_tr_16_3-7"  data-_i="6" data-_j="7"  data-_p="s13_icx_O3_7" class=" _table16_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_16_3"  id="_tr_16_3_1"  ondblclick="_action_18(this,7,-1, 'loops/s13_icx_O3_0.html');"  style="cursor:pointer;"><td id="_tr_16_3_1-1"  data-_i="7" data-_j="1"  data-_p="s13_icx_O3_0" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 0 -  - s13_icx_O3</td><td id="_tr_16_3_1-2"  data-_i="7" data-_j="2"  data-_p="s13_icx_O3_0" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_16_3_1-3"  data-_i="7" data-_j="3"  data-_p="s13_icx_O3_0" class=" _centered" >0.07</td><td id="_tr_16_3_1-4"  data-_i="7" data-_j="4"  data-_p="s13_icx_O3_0" class=" _centered _table16_opt4"  style="background:#C69E3B;" >0.01</td><td id="_tr_16_3_1-5"  data-_i="7" data-_j="5"  data-_p="s13_icx_O3_0" class=" _centered _table16_opt5" >1</td><td id="_tr_16_3_1-6"  data-_i="7" data-_j="6"  data-_p="s13_icx_O3_0" class=" _centered _table16_opt6" >0</td><td id="_tr_16_3_1-7"  data-_i="7" data-_j="7"  data-_p="s13_icx_O3_0" class=" _table16_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_16_3"  id="_tr_16_3_2"  oncontextmenu="_action_31(this,8,-1, 'nil');"  ondblclick="_action_16(this,8,-1, 'Loop 1 -  - s13_icx_O3');"  style="cursor:pointer;"><td id="_tr_16_3_2-1"  data-_i="8" data-_j="1"  class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 1 -  - s13_icx_O3</td><td id="_tr_16_3_2-2"  data-_i="8" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_16_3_2-3"  data-_i="8" data-_j="3"  class=" _centered" >0</td><td id="_tr_16_3_2-4"  data-_i="8" data-_j="4"  class=" _centered _table16_opt4"  style="background:#A52B12;" >0</td><td id="_tr_16_3_2-5"  data-_i="8" data-_j="5"  class=" _centered _table16_opt5" >0</td><td id="_tr_16_3_2-6"  data-_i="8" data-_j="6"  class=" _centered _table16_opt6" >0</td><td id="_tr_16_3_2-7"  data-_i="8" data-_j="7"  class=" _table16_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_16_3"  id="_tr_16_3_3"  oncontextmenu="_action_31(this,9,-1, 'nil');"  ondblclick="_action_16(this,9,-1, 'Loop 3 -  - s13_icx_O3');"  style="cursor:pointer;"><td id="_tr_16_3_3-1"  data-_i="9" data-_j="1"  class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 3 -  - s13_icx_O3</td><td id="_tr_16_3_3-2"  data-_i="9" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_16_3_3-3"  data-_i="9" data-_j="3"  class=" _centered" >0</td><td id="_tr_16_3_3-4"  data-_i="9" data-_j="4"  class=" _centered _table16_opt4"  style="background:#A52B12;" >0</td><td id="_tr_16_3_3-5"  data-_i="9" data-_j="5"  class=" _centered _table16_opt5" >0</td><td id="_tr_16_3_3-6"  data-_i="9" data-_j="6"  class=" _centered _table16_opt6" >0</td><td id="_tr_16_3_3-7"  data-_i="9" data-_j="7"  class=" _table16_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_16_3"  id="_tr_16_3_4"  oncontextmenu="_action_31(this,10,-1, 'nil');"  ondblclick="_action_16(this,10,-1, 'Loop 2 -  - s13_icx_O3');"  style="cursor:pointer;"><td id="_tr_16_3_4-1"  data-_i="10" data-_j="1"  class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 2 -  - s13_icx_O3</td><td id="_tr_16_3_4-2"  data-_i="10" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_16_3_4-3"  data-_i="10" data-_j="3"  class=" _centered" >0</td><td id="_tr_16_3_4-4"  data-_i="10" data-_j="4"  class=" _centered _table16_opt4"  style="background:#A52B12;" >0</td><td id="_tr_16_3_4-5"  data-_i="10" data-_j="5"  class=" _centered _table16_opt5" >0</td><td id="_tr_16_3_4-6"  data-_i="10" data-_j="6"  class=" _centered _table16_opt6" >0</td><td id="_tr_16_3_4-7"  data-_i="10" data-_j="7"  class=" _table16_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr id="_tr_16_4"  ondblclick="_action_18(this,11,-1, 'functions/libiomp5.so_1727.html');"  style="cursor:pointer;"><td id="_tr_16_4-1"  data-_i="11" data-_j="1"  data-_p="libiomp5.so_1727" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>__kmp_set_num_threads</td><td id="_tr_16_4-2"  data-_i="11" data-_j="2"  data-_p="libiomp5.so_1727" class=" _centered"  style="word-break:break-all;" >libiomp5.so</td><td id="_tr_16_4-3"  data-_i="11" data-_j="3"  data-_p="libiomp5.so_1727" class=" _centered" >0.07</td><td id="_tr_16_4-4"  data-_i="11" data-_j="4"  data-_p="libiomp5.so_1727" class=" _centered _table16_opt4"  style="background:#A52B12;" >0</td><td id="_tr_16_4-5"  data-_i="11" data-_j="5"  data-_p="libiomp5.so_1727" class=" _centered _table16_opt5" >1</td><td id="_tr_16_4-6"  data-_i="11" data-_j="6"  data-_p="libiomp5.so_1727" class=" _centered _table16_opt6" >0.00</td><td id="_tr_16_4-7"  data-_i="11" data-_j="7"  data-_p="libiomp5.so_1727" class=" _table16_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
 </table></div>
 <script>
-document.getElementById("_tr_15_1_2").addEventListener('contextmenu', event => event.preventDefault());
-function _action_17 (obj, i, j, p){
-           open(""+p+"");
+document.getElementById("_tr_16_1_2").addEventListener('contextmenu', event => event.preventDefault());
+document.getElementById("_tr_16_3_2").addEventListener('contextmenu', event => event.preventDefault());
+document.getElementById("_tr_16_3_3").addEventListener('contextmenu', event => event.preventDefault());
+document.getElementById("_tr_16_3_4").addEventListener('contextmenu', event => event.preventDefault());
+function _action_16 (obj, i, j, p){
+           open("loops/empty_loop.html?loop="+p+"");
 }
-function _action_30 (obj, i, j, p){
+function _action_31 (obj, i, j, p){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/empty_lb.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_15 (obj, i, j, p){
-           open("loops/empty_loop.html?loop="+p+"");
+function _action_18 (obj, i, j, p){
+           open(""+p+"");
 }
 </script>
 <style>
@@ -132,19 +139,19 @@ width: 250px;
 </style>
 <div class="menu" data-visible=false id="mctxMenu0">
   <ul class="menu-options">
-    <li class="menu-option" id="mctxMenu0_1" onclick="_action_18('_p', '_p0_1')" oncontextmenu="_action_18('_p', '_p0_1')" >Load Distribution</li>
-    <li class="menu-option" id="mctxMenu0_2" onclick="_action_20('_p', '_p0_2')" oncontextmenu="_action_20('_p', '_p0_2')" >Sorted Load Distribution</li>
-    <li class="menu-option" id="mctxMenu0_3" onclick="_action_19('_p', '_p0_3')" oncontextmenu="_action_19('_p', '_p0_3')" >Load Distribution All Threads</li>
-    <li class="menu-option" id="mctxMenu0_4" onclick="_action_22('_p', '_p0_4')" oncontextmenu="_action_22('_p', '_p0_4')" >Load Callchains</li>
-    <li class="menu-option" id="mctxMenu0_5" onclick="_action_23('_p', '_p0_5')" oncontextmenu="_action_23('_p', '_p0_5')" >Go to report ...</li>
+    <li class="menu-option" id="mctxMenu0_1" onclick="_action_19('_p', '_p0_1')" oncontextmenu="_action_19('_p', '_p0_1')" >Load Distribution</li>
+    <li class="menu-option" id="mctxMenu0_2" onclick="_action_21('_p', '_p0_2')" oncontextmenu="_action_21('_p', '_p0_2')" >Sorted Load Distribution</li>
+    <li class="menu-option" id="mctxMenu0_3" onclick="_action_20('_p', '_p0_3')" oncontextmenu="_action_20('_p', '_p0_3')" >Load Distribution All Threads</li>
+    <li class="menu-option" id="mctxMenu0_4" onclick="_action_23('_p', '_p0_4')" oncontextmenu="_action_23('_p', '_p0_4')" >Load Callchains</li>
+    <li class="menu-option" id="mctxMenu0_5" onclick="_action_24('_p', '_p0_5')" oncontextmenu="_action_24('_p', '_p0_5')" >Go to report ...</li>
   </ul>
 </div>
 <div class="menu" data-visible=false id="mctxMenu3">
   <ul class="menu-options">
-    <li class="menu-option" id="mctxMenu3_1" onclick="_action_24('_p', '_p3_1')" oncontextmenu="_action_24('_p', '_p3_1')" >Load Distribution</li>
-    <li class="menu-option" id="mctxMenu3_2" onclick="_action_26('_p', '_p3_2')" oncontextmenu="_action_26('_p', '_p3_2')" >Sorted Load Distribution</li>
-    <li class="menu-option" id="mctxMenu3_3" onclick="_action_25('_p', '_p3_3')" oncontextmenu="_action_25('_p', '_p3_3')" >Load Distribution All Threads</li>
-    <li class="menu-option" id="mctxMenu3_4" onclick="_action_28('_p', '_p3_4')" oncontextmenu="_action_28('_p', '_p3_4')" >Load Callchains</li>
+    <li class="menu-option" id="mctxMenu3_1" onclick="_action_25('_p', '_p3_1')" oncontextmenu="_action_25('_p', '_p3_1')" >Load Distribution</li>
+    <li class="menu-option" id="mctxMenu3_2" onclick="_action_27('_p', '_p3_2')" oncontextmenu="_action_27('_p', '_p3_2')" >Sorted Load Distribution</li>
+    <li class="menu-option" id="mctxMenu3_3" onclick="_action_26('_p', '_p3_3')" oncontextmenu="_action_26('_p', '_p3_3')" >Load Distribution All Threads</li>
+    <li class="menu-option" id="mctxMenu3_4" onclick="_action_29('_p', '_p3_4')" oncontextmenu="_action_29('_p', '_p3_4')" >Load Callchains</li>
   </ul>
 </div>
 <script>
@@ -178,7 +185,7 @@ document.addEventListener("click", e => {
 });
 document.getElementById("mctxMenu0").addEventListener('contextmenu', event => event.preventDefault());
 
-_ids = ["_tr_15_1", "_tr_15_2", "_tr_15_3", "_tr_15_4"];
+_ids = ["_tr_16_1", "_tr_16_2", "_tr_16_3", "_tr_16_4"];
 for (var i = 0; i < _ids.length; i++) {
   var elem = document.getElementById(_ids[i]);
   elem.addEventListener("contextmenu", e => {
@@ -204,32 +211,32 @@ for (var i = 0; i < _ids.length; i++) {
     return false;
   });
 }
-function _action_18 (p, pm){
+function _action_19 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+".html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_20 (p, pm){
+function _action_21 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+"_sorted.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_19 (p, pm){
+function _action_20 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+"_all.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_22 (p, pm){
+function _action_23 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+"_callchains.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_23 (p, pm){
+function _action_24 (p, pm){
            open("functions/"+_global_elem.dataset._p+".html", "_self");
 }
 document.getElementById("mctxMenu3").addEventListener('contextmenu', event => event.preventDefault());
 
-_ids = ["_tr_15_1_1", "_tr_15_1_1_1"];
+_ids = ["_tr_16_1_1", "_tr_16_1_1_1", "_tr_16_3_1"];
 for (var i = 0; i < _ids.length; i++) {
   var elem = document.getElementById(_ids[i]);
   elem.addEventListener("contextmenu", e => {
@@ -255,22 +262,22 @@ for (var i = 0; i < _ids.length; i++) {
     return false;
   });
 }
-function _action_24 (p, pm){
+function _action_25 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+".html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_26 (p, pm){
+function _action_27 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+"_sorted.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_25 (p, pm){
+function _action_26 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+"_all.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_28 (p, pm){
+function _action_29 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+"_callchains.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
@@ -278,8 +285,8 @@ function _action_28 (p, pm){
 </script>
 <script>
 addLoadEvent(function(){
-  var boxs_on  = ["_table15_opt_all","_table15_opt4", "_table15_opt5", "_table15_opt6", ];
-  var boxs_off = ["_table15_opt7", ];
+  var boxs_on  = ["_table16_opt_all","_table16_opt4", "_table16_opt5", "_table16_opt6", ];
+  var boxs_off = ["_table16_opt7", ];
   for (var i = 0; i < boxs_on.length; i++) {
     var obj = document.getElementById(boxs_on[i]).checked = true;
   }
@@ -287,8 +294,8 @@ addLoadEvent(function(){
     var obj = document.getElementById(boxs_off[i]).checked = false;
   }
 });
-var list_opts_table15 = ['_table15_opt4','_table15_opt5','_table15_opt6','_table15_opt7',];addLoadEvent (function (){
-  _check_all_checkbox_ ("_table15_opt_all", "list_opts_table15");
+var list_opts_table16 = ['_table16_opt4','_table16_opt5','_table16_opt6','_table16_opt7',];addLoadEvent (function (){
+  _check_all_checkbox_ ("_table16_opt_all", "list_opts_table16");
 });
 </script>
 </div></div><script class="code">
@@ -313,7 +320,7 @@ addLoadEvent(function(){
   // Fill some data for each rows that contains all coverages
   // These data are used to update coverages when some modules are filtered
   // by the function _upd_table
-  var table   = document.getElementById("_treed_table_15");
+  var table   = document.getElementById("_treed_table_16");
   var nb_runs = 1;
   for (var i = 1, row; row = table.rows[i]; i++) {
     for (var j = 0; j < nb_runs; j++) {
@@ -322,7 +329,7 @@ addLoadEvent(function(){
   }
 });
 function _upd_table() {
-  var tab = document.getElementById("_treed_table_15");
+  var tab = document.getElementById("_treed_table_16");
   var nb_rows = tab.childNodes[0].rows.length;
   var rows = tab.childNodes[0].rows;
   for (var r = 0; r < 1; r++) {
@@ -380,7 +387,7 @@ function _upd_base_run () {
   var selected_radio_value = document.querySelector('input[name="radio_run"]:checked').value;
 
   // Sort functions based on the reference run
-  var table = document.getElementById ("_treed_table_15");
+  var table = document.getElementById ("_treed_table_16");
 
   // 1/ Build a table of loops based on their function, a list of functions and compute coverage for each module
   var functions_list  = [];
