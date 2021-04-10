@@ -1,2 +1,2 @@
 node;pid;total_cycles;mpi_cycles;omp_cycles;sum_walltime;thread_cycles;sum_insns;mpi_insns;omp_insns;scalar_double;scalar_single;packed_single_128;packed_double_128;packed_single_256;packed_double_256;packed_single_512;packed_double_512;
-alfred;43059;232369296;0;0;0.089999996125698;0;0;0;0;0;0;0;0;0;0;0;0;
+alfred;44777;219488416;0;0;0.08500000089407;0;0;0;0;0;0;0;0;0;0;0;0;
