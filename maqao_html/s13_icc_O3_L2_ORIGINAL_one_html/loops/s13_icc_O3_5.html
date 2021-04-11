@@ -72,12 +72,12 @@ function addLoadEvent(func) {
 <!-- ========================== Summary about the loop ========================== -->
   <table style="width:100%;border-radius:5px;color:white;background:#114B79;margin-bottom:15px;">
     <tr>
-      <th><button class="tooltip-maqao-button" title="No previous loop" style="cursor: not-allowed;">No Prev</button></th>
+      <th><button class="tooltip-maqao-button" onclick="window.location.href='s13_icc_O3_6.html';" title="Go to previous loop: 6" >Prev</button></th>
       <th>Loop Id: 5</th>
       <th>Module: s13_icc_O3</th>
       <th>Source: :0-0</th>
-      <th>Coverage: 96.52%</th>
-      <th><button class="tooltip-maqao-button" onclick="window.location.href='s13_icc_O3_4.html';" title="Go to next loop: 4" >Next</button></th>
+      <th>Coverage: 3.46%</th>
+      <th><button class="tooltip-maqao-button" title="No next loop" style="cursor: not-allowed;">No Next</button></th>
     </tr>
   </table>
   <div class="drag-container" id="main_section_content">
@@ -143,38 +143,70 @@ function addLoadEvent(func) {
 <div class="panelcontent" id="OV_panel_asm"><div style="margin-left: 10px;">
   <div id="enable_groups_button" class="tooltip-maqao" title="Check the box to display the group analysis. A group is a set of instructions accessing to the same memory area" data-groups="off" onclick="enable_groups (this);">Show groups analysis</div>
   <table style="width:100%;" id="table_asm">
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40157f MOV	%R8D,%EDX</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401582 ADD	%R14D,%EDX</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401585 JS	4015b1</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401587 CMP	%EDI,%EDX</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401589 JAE	4015b1</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40158b MOVSXD	%R12D,%RDX</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40158e PXOR	%XMM1,%XMM1</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#993333;word-break:break-all;"><span class="tooltip-maqao" title="Size: 4&lt;br&gt;Pattern: SSSS&lt;br&gt;Span: 8&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 16&lt;br&gt;Accessed memory without overlapping: 8&lt;br&gt;Accessed memory reused: 8&lt;br&gt;"><pre>0x401592 MOV	%R13D,(%R15,%RDX,8)    [1]</pre></span></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#663300;word-break:break-all;"><span class="tooltip-maqao" title="Size: 2&lt;br&gt;Pattern: LL&lt;br&gt;Span: 8&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 2&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 8&lt;br&gt;Accessed memory without overlapping: 8&lt;br&gt;Accessed memory reused: 0&lt;br&gt;"><pre>0x401596 MOVSS	(%RAX,%RDX,8),%XMM2    [2]</pre></span></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40159b CVTSS2SD	%XMM2,%XMM1</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40159f COMISD	%XMM1,%XMM0</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015a3 JBE	4015b1</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#6699ff;word-break:break-all;"><span class="tooltip-maqao" title="Size: 2&lt;br&gt;Pattern: LL&lt;br&gt;Span: 4&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 2&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 8&lt;br&gt;Accessed memory without overlapping: 4&lt;br&gt;Accessed memory reused: 4&lt;br&gt;"><pre>0x4015a5 DIVSS	(%R9,%RBP,4),%XMM2    [3]</pre></span></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#993333;word-break:break-all;"><span class="tooltip-maqao" title="Size: 4&lt;br&gt;Pattern: SSSS&lt;br&gt;Span: 8&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 16&lt;br&gt;Accessed memory without overlapping: 8&lt;br&gt;Accessed memory reused: 8&lt;br&gt;"><pre>0x4015ab MOVSS	%XMM2,(%R15,%RDX,8)    [1]</pre></span></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015b1 LEA	0x1(%R8,%R14,1),%EDX</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015b6 TEST	%EDX,%EDX</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015b8 JL	4015e7</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015ba CMP	%EDI,%EDX</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015bc JAE	4015e7</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015be MOVSXD	%R12D,%RDX</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015c1 PXOR	%XMM1,%XMM1</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#993333;word-break:break-all;"><span class="tooltip-maqao" title="Size: 4&lt;br&gt;Pattern: SSSS&lt;br&gt;Span: 8&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 16&lt;br&gt;Accessed memory without overlapping: 8&lt;br&gt;Accessed memory reused: 8&lt;br&gt;"><pre>0x4015c5 MOV	%R13D,0x4(%R15,%RDX,8)    [1]</pre></span></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#663300;word-break:break-all;"><span class="tooltip-maqao" title="Size: 2&lt;br&gt;Pattern: LL&lt;br&gt;Span: 8&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 2&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 8&lt;br&gt;Accessed memory without overlapping: 8&lt;br&gt;Accessed memory reused: 0&lt;br&gt;"><pre>0x4015ca MOVSS	0x4(%RAX,%RDX,8),%XMM2    [2]</pre></span></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015d0 CVTSS2SD	%XMM2,%XMM1</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015d4 COMISD	%XMM1,%XMM0</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015d8 JBE	4015e7</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#6699ff;word-break:break-all;"><span class="tooltip-maqao" title="Size: 2&lt;br&gt;Pattern: LL&lt;br&gt;Span: 4&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 2&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 8&lt;br&gt;Accessed memory without overlapping: 4&lt;br&gt;Accessed memory reused: 4&lt;br&gt;"><pre>0x4015da DIVSS	(%R9,%RBP,4),%XMM2    [3]</pre></span></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#993333;word-break:break-all;"><span class="tooltip-maqao" title="Size: 4&lt;br&gt;Pattern: SSSS&lt;br&gt;Span: 8&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 16&lt;br&gt;Accessed memory without overlapping: 8&lt;br&gt;Accessed memory reused: 8&lt;br&gt;"><pre>0x4015e0 MOVSS	%XMM2,0x4(%R15,%RDX,8)    [1]</pre></span></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015e7 INC	%R12D</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015ea ADD	$0x2,%R14D</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015ee CMP	%EBX,%R12D</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015f1 JB	40157f</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401552 MOV	%R13D,%R12D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401555 MOV	$0x1,%R15D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40155b MOV	%R12D,%R14D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40155e TEST	%EBX,%EBX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401560 JE	4015ed</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401566 MOV	%RDX,-0x8(%RSP)</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40156b LEA	(%R10,%RSI,1),%R15</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x40156f MOV	%R8D,%EDX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x401572 ADD	%R14D,%EDX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x401575 JS	4015a1</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x401577 CMP	%EDI,%EDX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x401579 JAE	4015a1</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x40157b MOVSXD	%R12D,%RDX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x40157e PXOR	%XMM1,%XMM1</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x401582 MOV	%R13D,(%R15,%RDX,8)</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x401586 MOVSS	(%RAX,%RDX,8),%XMM2</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x40158b CVTSS2SD	%XMM2,%XMM1</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x40158f COMISD	%XMM1,%XMM0</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x401593 JBE	4015a1</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x401595 DIVSS	(%R9,%RBP,4),%XMM2</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x40159b MOVSS	%XMM2,(%R15,%RDX,8)</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015a1 LEA	0x1(%R8,%R14,1),%EDX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015a6 TEST	%EDX,%EDX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015a8 JL	4015d7</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015aa CMP	%EDI,%EDX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015ac JAE	4015d7</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015ae MOVSXD	%R12D,%RDX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015b1 PXOR	%XMM1,%XMM1</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015b5 MOV	%R13D,0x4(%R15,%RDX,8)</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015ba MOVSS	0x4(%RAX,%RDX,8),%XMM2</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015c0 CVTSS2SD	%XMM2,%XMM1</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015c4 COMISD	%XMM1,%XMM0</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015c8 JBE	4015d7</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015ca DIVSS	(%R9,%RBP,4),%XMM2</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015d0 MOVSS	%XMM2,0x4(%R15,%RDX,8)</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015d7 INC	%R12D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015da ADD	$0x2,%R14D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015de CMP	%EBX,%R12D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>  (6) 0x4015e1 JB	40156f</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015e3 MOV	-0x8(%RSP),%RDX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015e8 LEA	0x1(%R12,%R12,1),%R15D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015ed LEA	-0x1(%R15),%R12D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015f1 CMP	%EDI,%R12D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015f4 JAE	401633</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015f6 LEA	-0x1(%R8,%R15,1),%R12D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015fb TEST	%R12D,%R12D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x4015fe JL	401633</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401600 CMP	%EDI,%R12D</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401603 JAE	401633</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401605 MOVSXD	%R15D,%R15</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401608 PXOR	%XMM1,%XMM1</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40160c LEA	(%R10,%R15,4),%R12</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401610 MOV	%R13D,-0x4(%R12,%RCX,4)</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401615 MOVSS	-0x4(%RAX,%R15,4),%XMM2</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40161c CVTSS2SD	%XMM2,%XMM1</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401620 COMISD	%XMM1,%XMM0</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401624 JBE	401633</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401626 DIVSS	(%R9,%RBP,4),%XMM2</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40162c MOVSS	%XMM2,-0x4(%R12,%RCX,4)</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401633 INC	%RBP</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401636 ADD	%R11,%RCX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401639 LEA	(%RSI,%R11,4),%RSI</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x40163d CMP	%RDX,%RBP</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x401640 JB	401552</pre></td></tr>
   </table>
   <script>
 function panel_asm_onmouseover_tr (obj) {
@@ -327,7 +359,7 @@ function src_loadhelp (divId) {
   </style>
 </div>
 <div class="panelcontent" id="OV_panel_callchains">
-<div class="_div_table"><table id="_treed_table_0" class="_treed_table"><tr><th class=" _left tooltip-maqao" title="Coverage of the callchain">Coverage (%)</th><th class=" tooltip-maqao" title="Name of the function">Name</th><th class=" tooltip-maqao" title="Name of the module (binary file) that contains the function">Module</th></tr>
+<div class="_div_table"><table id="_treed_table_1" class="_treed_table"><tr><th class=" _left tooltip-maqao" title="Coverage of the callchain">Coverage (%)</th><th class=" tooltip-maqao" title="Name of the function">Name</th><th class=" tooltip-maqao" title="Name of the module (binary file) that contains the function">Module</th></tr>
 </table></div>
   <script>
 function src_onresize () {
@@ -352,20 +384,20 @@ function src_loadhelp (divId) {
       </td>
     </tr>
   </table>
-<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_0" style="height:500px" ></div></div>
+<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_6" style="height:500px" ></div></div>
 <script class="code">
 </script>
-<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_1" style="height:500px" ></div></div>
+<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_7" style="height:500px" ></div></div>
 <script class="code">
 </script>
   <script>
 function set_ldbal_input (obj) {
-  document.getElementById("chart_cat_0").innerHTML = "";
-  var _width = Math.floor(document.getElementById("chart_cat_0").getBoundingClientRect().width);
+  document.getElementById("chart_cat_6").innerHTML = "";
+  var _width = Math.floor(document.getElementById("chart_cat_6").getBoundingClientRect().width);
   if (obj.value == "regular") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_7091_7091'];
-    var data = [{value: 96.52}];
+    var ordinals = ['pop-os_8054_8054'];
+    var data = [{value: 3.46}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -380,7 +412,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_0')
+    const svg = d3.select('#chart_cat_6')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -427,13 +459,13 @@ function set_ldbal_input (obj) {
       .text("Coverage");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_0')
+      .attr('id', 'zoom_chart_6')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_0_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_6_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -472,14 +504,14 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_0_0").click( function () {
-    window.open("../topo/_pop-os_7091_7091.html");
+  $("#zoom_chart_6_0").click( function () {
+    window.open("../topo/_pop-os_8054_8054.html");
   });
   }
   else if (obj.value == "sorted") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_7091_7091'];
-    var data = [{value: 96.52}];
+    var ordinals = ['pop-os_8054_8054'];
+    var data = [{value: 3.46}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -494,7 +526,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_0')
+    const svg = d3.select('#chart_cat_6')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -541,13 +573,13 @@ function set_ldbal_input (obj) {
       .text("Coverage");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_0')
+      .attr('id', 'zoom_chart_6')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_0_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_6_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -586,14 +618,14 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_0_0").click( function () {
-    window.open("../topo/_pop-os_7091_7091.html");
+  $("#zoom_chart_6_0").click( function () {
+    window.open("../topo/_pop-os_8054_8054.html");
   });
   }
   else if (obj.value == "all") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_7091_7091'];
-    var data = [{value: 96.52}];
+    var ordinals = ['pop-os_8054_8054'];
+    var data = [{value: 3.46}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -608,7 +640,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_0')
+    const svg = d3.select('#chart_cat_6')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -655,13 +687,13 @@ function set_ldbal_input (obj) {
       .text("Coverage");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_0')
+      .attr('id', 'zoom_chart_6')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_0_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_6_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -700,16 +732,16 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_0_0").click( function () {
-    window.open("../topo/_pop-os_7091_7091.html");
+  $("#zoom_chart_6_0").click( function () {
+    window.open("../topo/_pop-os_8054_8054.html");
   });
   }
-  document.getElementById("chart_cat_1").innerHTML = "";
-  var _width = Math.floor(document.getElementById("chart_cat_1").getBoundingClientRect().width);
+  document.getElementById("chart_cat_7").innerHTML = "";
+  var _width = Math.floor(document.getElementById("chart_cat_7").getBoundingClientRect().width);
   if (obj.value == "regular") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_7091_7091'];
-    var data = [{value: 10.97}];
+    var ordinals = ['pop-os_8054_8054'];
+    var data = [{value: 0.33}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -724,7 +756,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_1')
+    const svg = d3.select('#chart_cat_7')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -771,13 +803,13 @@ function set_ldbal_input (obj) {
       .text("Time");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_1')
+      .attr('id', 'zoom_chart_7')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_1_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_7_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -816,14 +848,14 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_1_0").click( function () {
-    window.open("../topo/_pop-os_7091_7091.html");
+  $("#zoom_chart_7_0").click( function () {
+    window.open("../topo/_pop-os_8054_8054.html");
   });
   }
   else if (obj.value == "sorted") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_7091_7091'];
-    var data = [{value: 10.97}];
+    var ordinals = ['pop-os_8054_8054'];
+    var data = [{value: 0.33}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -838,7 +870,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_1')
+    const svg = d3.select('#chart_cat_7')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -885,13 +917,13 @@ function set_ldbal_input (obj) {
       .text("Time");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_1')
+      .attr('id', 'zoom_chart_7')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_1_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_7_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -930,14 +962,14 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_1_0").click( function () {
-    window.open("../topo/_pop-os_7091_7091.html");
+  $("#zoom_chart_7_0").click( function () {
+    window.open("../topo/_pop-os_8054_8054.html");
   });
   }
   else if (obj.value == "all") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_7091_7091'];
-    var data = [{value: 10.97}];
+    var ordinals = ['pop-os_8054_8054'];
+    var data = [{value: 0.33}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -952,7 +984,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_1')
+    const svg = d3.select('#chart_cat_7')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -999,13 +1031,13 @@ function set_ldbal_input (obj) {
       .text("Time");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_1')
+      .attr('id', 'zoom_chart_7')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_1_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_7_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -1044,8 +1076,8 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_1_0").click( function () {
-    window.open("../topo/_pop-os_7091_7091.html");
+  $("#zoom_chart_7_0").click( function () {
+    window.open("../topo/_pop-os_8054_8054.html");
   });
   }
 }
@@ -1077,8 +1109,8 @@ function ldbal_loadhelp (divId) {
     <div id="loop_static_path_0" style="width:100%;">
       <table style="width:100%;">
         <tr><th>Metric</th><th>Value</th></tr>
-            <tr><td>Coverage (% app. time)</td><td>96.52</td></tr>
-            <tr><td>Time (s)</td><td>10.97</td></tr>
+            <tr><td>Coverage (% app. time)</td><td>3.46</td></tr>
+            <tr><td>Time (s)</td><td>0.33</td></tr>
             <tr><td>[VPROF] Instance Count</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (min)</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (avg)</td><td></td></tr>
@@ -1086,11 +1118,11 @@ function ldbal_loadhelp (divId) {
             <tr><td>[VPROF] Cycles per Iteration (min)</td><td></td></tr>
             <tr><td>[VPROF] Cycles per Iteration (avg)</td><td></td></tr>
             <tr><td>[VPROF] Cycles per Iteration (max)</td><td></td></tr>
-            <tr><td>CQA speedup if no scalar integer</td><td style="background-color:#FFCC99;">1.38</td></tr>
-            <tr><td>CQA speedup if FP arith vectorized</td><td style="background-color:#FFCC99;">1.84</td></tr>
-            <tr><td>CQA speedup if fully vectorized</td><td style="background-color:#FF950E;">5.50</td></tr>
+            <tr><td>CQA speedup if no scalar integer</td><td style="background-color:#FF950E;">2.00</td></tr>
+            <tr><td>CQA speedup if FP arith vectorized</td><td style="background-color:#FF950E;">2.33</td></tr>
+            <tr><td>CQA speedup if fully vectorized</td><td style="background-color:#FF950E;">7.53</td></tr>
             <tr><td>CQA speedup if no inter-iteration dependency</td><td>NA</td></tr>
-            <tr><td>CQA speedup if next bottleneck killed</td><td style="background-color:#FFCC99;">1.38</td></tr>
+            <tr><td>CQA speedup if next bottleneck killed</td><td style="background-color:#FFCC99;">1.33</td></tr>
             <tr><td>Speedup if perfectly load balanced</td><td>1</td></tr>
             <tr><td>Bottlenecks</td><td>micro-operation queue, </td></tr>
             <tr><td>Function</td><td>s13</td></tr>
@@ -1099,35 +1131,35 @@ function ldbal_loadhelp (divId) {
             <tr><td>Source loop unroll confidence level</td><td>NA</td></tr>
             <tr><td>Unroll/vectorization loop type</td><td>NA</td></tr>
             <tr><td>Unroll factor</td><td>NA</td></tr>
-            <tr><td>CQA cycles</td><td>8.25</td></tr>
-            <tr><td>CQA cycles if no scalar integer</td><td>6.00</td></tr>
-            <tr><td>CQA cycles if FP arith vectorized</td><td>4.48</td></tr>
-            <tr><td>CQA cycles if fully vectorized</td><td>1.50</td></tr>
-            <tr><td>Front-end cycles</td><td style="background-color:#FFCC99;">8.25</td></tr>
+            <tr><td>CQA cycles</td><td>8.00</td></tr>
+            <tr><td>CQA cycles if no scalar integer</td><td>4.00</td></tr>
+            <tr><td>CQA cycles if FP arith vectorized</td><td>3.44</td></tr>
+            <tr><td>CQA cycles if fully vectorized</td><td>1.06</td></tr>
+            <tr><td>Front-end cycles</td><td style="background-color:#FFCC99;">8.00</td></tr>
             <tr><td>P0 cycles</td><td>6.00</td></tr>
             <tr><td>P1 cycles</td><td>6.00</td></tr>
-            <tr><td>P2 cycles</td><td>2.67</td></tr>
-            <tr><td>P3 cycles</td><td>2.67</td></tr>
-            <tr><td>P4 cycles</td><td>4.00</td></tr>
+            <tr><td>P2 cycles</td><td>2.17</td></tr>
+            <tr><td>P3 cycles</td><td>1.83</td></tr>
+            <tr><td>P4 cycles</td><td>3.00</td></tr>
             <tr><td>P5 cycles</td><td>6.00</td></tr>
             <tr><td>P6 cycles</td><td>6.00</td></tr>
-            <tr><td>P7 cycles</td><td>2.67</td></tr>
-            <tr><td>DIV/SQRT cycles</td><td>6.00</td></tr>
+            <tr><td>P7 cycles</td><td>2.00</td></tr>
+            <tr><td>DIV/SQRT cycles</td><td>3.00</td></tr>
             <tr><td>Inter-iter dependencies cycles</td><td>NA</td></tr>
             <tr><td>Nb insns</td><td>32.00</td></tr>
-            <tr><td>Nb uops</td><td>33.00</td></tr>
-            <tr><td>Nb loads</td><td>4.00</td></tr>
-            <tr><td>Nb stores</td><td>4.00</td></tr>
-            <tr><td>Nb stack references</td><td style="background-color:#7FFF00;">0.00</td></tr>
-            <tr><td>FLOP/cycle</td><td>0.24</td></tr>
+            <tr><td>Nb uops</td><td>32.00</td></tr>
+            <tr><td>Nb loads</td><td>3.00</td></tr>
+            <tr><td>Nb stores</td><td>3.00</td></tr>
+            <tr><td>Nb stack references</td><td style="background-color:#FFCC99;">1.00</td></tr>
+            <tr><td>FLOP/cycle</td><td>0.13</td></tr>
             <tr><td>Nb FLOP add-sub</td><td>0.00</td></tr>
             <tr><td>Nb FLOP mul</td><td>0.00</td></tr>
             <tr><td>Nb FLOP fma</td><td>0.00</td></tr>
-            <tr><td>Nb FLOP div</td><td>2.00</td></tr>
+            <tr><td>Nb FLOP div</td><td>1.00</td></tr>
             <tr><td>Nb FLOP rcp</td><td>0.00</td></tr>
             <tr><td>Nb FLOP sqrt</td><td>0.00</td></tr>
             <tr><td>Nb FLOP rsqrt</td><td>0.00</td></tr>
-            <tr><td>Bytes/cycle</td><td>3.88</td></tr>
+            <tr><td>Bytes/cycle</td><td>4.00</td></tr>
             <tr><td>Bytes prefetched</td><td>0.00</td></tr>
             <tr><td>Bytes loaded</td><td>16.00</td></tr>
             <tr><td>Bytes stored</td><td>16.00</td></tr>
@@ -1136,25 +1168,25 @@ function ldbal_loadhelp (divId) {
             <tr><td>Stride n</td><td>NA</td></tr>
             <tr><td>Stride unknown</td><td>NA</td></tr>
             <tr><td>Stride indirect</td><td>NA</td></tr>
-            <tr><td>Vectorization ratio all</td><td style="background-color:#FF3333;">11.76</td></tr>
+            <tr><td>Vectorization ratio all</td><td style="background-color:#FF3333;">7.69</td></tr>
             <tr><td>Vectorization ratio load</td><td style="background-color:#FF3333;">0.00</td></tr>
             <tr><td>Vectorization ratio store</td><td style="background-color:#FF3333;">0.00</td></tr>
             <tr><td>Vectorization ratio mul</td><td>NA</td></tr>
             <tr><td>Vectorization ratio add_sub</td><td>NA</td></tr>
-            <tr><td>Vectorization ratio other</td><td style="background-color:#FF3333;">18.18</td></tr>
-            <tr><td>Vector-efficiency ratio all</td><td>18.38</td></tr>
+            <tr><td>Vectorization ratio other</td><td style="background-color:#FF3333;">11.11</td></tr>
+            <tr><td>Vector-efficiency ratio all</td><td>17.31</td></tr>
             <tr><td>Vector-efficiency ratio load</td><td>12.50</td></tr>
-            <tr><td>Vector-efficiency ratio store</td><td>12.50</td></tr>
+            <tr><td>Vector-efficiency ratio store</td><td>16.67</td></tr>
             <tr><td>Vector-efficiency ratio mul</td><td>NA</td></tr>
             <tr><td>Vector-efficiency ratio add_sub</td><td>NA</td></tr>
-            <tr><td>Vector-efficiency ratio other</td><td>21.59</td></tr>
+            <tr><td>Vector-efficiency ratio other</td><td>18.06</td></tr>
       </table>
     </div>
     <div id="loop_static_path_1" style="width:100%;">
       <table style="width:100%;">
         <tr><th>Metric</th><th>Value</th></tr>
-            <tr><td>Coverage (% app. time)</td><td>96.52</td></tr>
-            <tr><td>Time (s)</td><td>10.97</td></tr>
+            <tr><td>Coverage (% app. time)</td><td>3.46</td></tr>
+            <tr><td>Time (s)</td><td>0.33</td></tr>
             <tr><td>[VPROF] Instance Count</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (min)</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (avg)</td><td></td></tr>
@@ -1162,11 +1194,11 @@ function ldbal_loadhelp (divId) {
             <tr><td>[VPROF] Cycles per Iteration (min)</td><td></td></tr>
             <tr><td>[VPROF] Cycles per Iteration (avg)</td><td></td></tr>
             <tr><td>[VPROF] Cycles per Iteration (max)</td><td></td></tr>
-            <tr><td>CQA speedup if no scalar integer</td><td style="background-color:#FFCC99;">1.38</td></tr>
-            <tr><td>CQA speedup if FP arith vectorized</td><td style="background-color:#FFCC99;">1.84</td></tr>
-            <tr><td>CQA speedup if fully vectorized</td><td style="background-color:#FF950E;">5.50</td></tr>
+            <tr><td>CQA speedup if no scalar integer</td><td style="background-color:#FF950E;">2.00</td></tr>
+            <tr><td>CQA speedup if FP arith vectorized</td><td style="background-color:#FF950E;">2.33</td></tr>
+            <tr><td>CQA speedup if fully vectorized</td><td style="background-color:#FF950E;">7.53</td></tr>
             <tr><td>CQA speedup if no inter-iteration dependency</td><td>NA</td></tr>
-            <tr><td>CQA speedup if next bottleneck killed</td><td style="background-color:#FFCC99;">1.38</td></tr>
+            <tr><td>CQA speedup if next bottleneck killed</td><td style="background-color:#FFCC99;">1.33</td></tr>
             <tr><td>Speedup if perfectly load balanced</td><td>1</td></tr>
             <tr><td>Bottlenecks</td><td>micro-operation queue, </td></tr>
             <tr><td>Function</td><td>s13</td></tr>
@@ -1175,35 +1207,35 @@ function ldbal_loadhelp (divId) {
             <tr><td>Source loop unroll confidence level</td><td>NA</td></tr>
             <tr><td>Unroll/vectorization loop type</td><td>NA</td></tr>
             <tr><td>Unroll factor</td><td>NA</td></tr>
-            <tr><td>CQA cycles</td><td>8.25</td></tr>
-            <tr><td>CQA cycles if no scalar integer</td><td>6.00</td></tr>
-            <tr><td>CQA cycles if FP arith vectorized</td><td>4.48</td></tr>
-            <tr><td>CQA cycles if fully vectorized</td><td>1.50</td></tr>
-            <tr><td>Front-end cycles</td><td style="background-color:#FFCC99;">8.25</td></tr>
+            <tr><td>CQA cycles</td><td>8.00</td></tr>
+            <tr><td>CQA cycles if no scalar integer</td><td>4.00</td></tr>
+            <tr><td>CQA cycles if FP arith vectorized</td><td>3.44</td></tr>
+            <tr><td>CQA cycles if fully vectorized</td><td>1.06</td></tr>
+            <tr><td>Front-end cycles</td><td style="background-color:#FFCC99;">8.00</td></tr>
             <tr><td>P0 cycles</td><td>6.00</td></tr>
             <tr><td>P1 cycles</td><td>6.00</td></tr>
-            <tr><td>P2 cycles</td><td>2.67</td></tr>
-            <tr><td>P3 cycles</td><td>2.67</td></tr>
-            <tr><td>P4 cycles</td><td>4.00</td></tr>
+            <tr><td>P2 cycles</td><td>2.17</td></tr>
+            <tr><td>P3 cycles</td><td>1.83</td></tr>
+            <tr><td>P4 cycles</td><td>3.00</td></tr>
             <tr><td>P5 cycles</td><td>6.00</td></tr>
             <tr><td>P6 cycles</td><td>6.00</td></tr>
-            <tr><td>P7 cycles</td><td>2.67</td></tr>
-            <tr><td>DIV/SQRT cycles</td><td>6.00</td></tr>
+            <tr><td>P7 cycles</td><td>2.00</td></tr>
+            <tr><td>DIV/SQRT cycles</td><td>3.00</td></tr>
             <tr><td>Inter-iter dependencies cycles</td><td>NA</td></tr>
             <tr><td>Nb insns</td><td>32.00</td></tr>
-            <tr><td>Nb uops</td><td>33.00</td></tr>
-            <tr><td>Nb loads</td><td>4.00</td></tr>
-            <tr><td>Nb stores</td><td>4.00</td></tr>
-            <tr><td>Nb stack references</td><td style="background-color:#7FFF00;">0.00</td></tr>
-            <tr><td>FLOP/cycle</td><td>0.24</td></tr>
+            <tr><td>Nb uops</td><td>32.00</td></tr>
+            <tr><td>Nb loads</td><td>3.00</td></tr>
+            <tr><td>Nb stores</td><td>3.00</td></tr>
+            <tr><td>Nb stack references</td><td style="background-color:#FFCC99;">1.00</td></tr>
+            <tr><td>FLOP/cycle</td><td>0.13</td></tr>
             <tr><td>Nb FLOP add-sub</td><td>0.00</td></tr>
             <tr><td>Nb FLOP mul</td><td>0.00</td></tr>
             <tr><td>Nb FLOP fma</td><td>0.00</td></tr>
-            <tr><td>Nb FLOP div</td><td>2.00</td></tr>
+            <tr><td>Nb FLOP div</td><td>1.00</td></tr>
             <tr><td>Nb FLOP rcp</td><td>0.00</td></tr>
             <tr><td>Nb FLOP sqrt</td><td>0.00</td></tr>
             <tr><td>Nb FLOP rsqrt</td><td>0.00</td></tr>
-            <tr><td>Bytes/cycle</td><td>3.88</td></tr>
+            <tr><td>Bytes/cycle</td><td>4.00</td></tr>
             <tr><td>Bytes prefetched</td><td>0.00</td></tr>
             <tr><td>Bytes loaded</td><td>16.00</td></tr>
             <tr><td>Bytes stored</td><td>16.00</td></tr>
@@ -1212,18 +1244,18 @@ function ldbal_loadhelp (divId) {
             <tr><td>Stride n</td><td>NA</td></tr>
             <tr><td>Stride unknown</td><td>NA</td></tr>
             <tr><td>Stride indirect</td><td>NA</td></tr>
-            <tr><td>Vectorization ratio all</td><td style="background-color:#FF3333;">11.76</td></tr>
+            <tr><td>Vectorization ratio all</td><td style="background-color:#FF3333;">7.69</td></tr>
             <tr><td>Vectorization ratio load</td><td style="background-color:#FF3333;">0.00</td></tr>
             <tr><td>Vectorization ratio store</td><td style="background-color:#FF3333;">0.00</td></tr>
             <tr><td>Vectorization ratio mul</td><td>NA</td></tr>
             <tr><td>Vectorization ratio add_sub</td><td>NA</td></tr>
-            <tr><td>Vectorization ratio other</td><td style="background-color:#FF3333;">18.18</td></tr>
-            <tr><td>Vector-efficiency ratio all</td><td>18.38</td></tr>
+            <tr><td>Vectorization ratio other</td><td style="background-color:#FF3333;">11.11</td></tr>
+            <tr><td>Vector-efficiency ratio all</td><td>17.31</td></tr>
             <tr><td>Vector-efficiency ratio load</td><td>12.50</td></tr>
-            <tr><td>Vector-efficiency ratio store</td><td>12.50</td></tr>
+            <tr><td>Vector-efficiency ratio store</td><td>16.67</td></tr>
             <tr><td>Vector-efficiency ratio mul</td><td>NA</td></tr>
             <tr><td>Vector-efficiency ratio add_sub</td><td>NA</td></tr>
-            <tr><td>Vector-efficiency ratio other</td><td>21.59</td></tr>
+            <tr><td>Vector-efficiency ratio other</td><td>18.06</td></tr>
       </table>
     </div>
   </div>
@@ -1263,31 +1295,31 @@ function cqa_adv_loadhelp (divId) {
       </div>
       <div style="padding-left:10px;margin-bottom: 10px;">
         <table>
-          <tr><td class="_td_shift_20">Coverage</td><td>96.52 %</td></tr>
+          <tr><td class="_td_shift_20">Coverage</td><td>3.46 %</td></tr>
           <tr><td class="_td_shift_20">Function</td><td><a href="../functions/s13_icc_O3_8.html">s13</a></td></tr>
           <tr><td class="_td_shift_20">Source file and lines</td><td></td></tr>
         <tr><td class="_td_shift_20">Module</td><td>s13_icc_O3</td></tr>
         </table>
-<br />Warnings:<br /><ul><li>Ignoring paths for analysis</li><li>Too many paths. Rerun with max-paths=16</li><li>RecMII not computed since number of paths is unknown or > max_paths</li><li>Streams not analyzed since number of paths is unknown or > max_paths</li></ul><br />Try to simplify control and/or increase the maximum number of paths per function/loop through the 'max-paths-nb' option.<br /><br />This loop has 16 execution paths.<br /><br />The presence of multiple execution paths is typically the main/first bottleneck.<br />Try to simplify control inside loop: ideally, try to remove all conditional expressions, for example by (if applicable):<br /><ul><li>hoisting them (moving them outside the loop)</li><li>turning them into conditional moves, MIN or MAX</li></ul><br /><br />      </div><div class="_tab_box">
+<br />Warnings:<br /><ul><li>Non-innermost loop: analyzing only self part (ignoring child loops).</li><li>Ignoring paths for analysis</li><li>Too many paths. If you really need to analyze all of the 85 paths individually, rerun with max-paths=85</li><li>RecMII not computed since number of paths is unknown or > max_paths</li><li>Streams not analyzed since number of paths is unknown or > max_paths</li></ul><br />Try to simplify control and/or increase the maximum number of paths per function/loop through the 'max-paths-nb' option.<br /><br />This loop has 85 execution paths.<br /><br />The presence of multiple execution paths is typically the main/first bottleneck.<br />Try to simplify control inside loop: ideally, try to remove all conditional expressions, for example by (if applicable):<br /><ul><li>hoisting them (moving them outside the loop)</li><li>turning them into conditional moves, MIN or MAX</li></ul><br /><br />      </div><div class="_tab_box">
   <div class="_tab_header">
     <ul>
-      <li class="_tab_header_li selected_tab" data-tab="tab0-1" onclick="change_tab (this, 'tab0-')">gain</li>
-      <li class="_tab_header_li " data-tab="tab0-2" onclick="change_tab (this, 'tab0-')">potential</li>
-      <li class="_tab_header_li " data-tab="tab0-3" onclick="change_tab (this, 'tab0-')">hint</li>
-      <li class="_tab_header_li " data-tab="tab0-4" onclick="change_tab (this, 'tab0-')">expert</li>
+      <li class="_tab_header_li selected_tab" data-tab="tab2-1" onclick="change_tab (this, 'tab2-')">gain</li>
+      <li class="_tab_header_li " data-tab="tab2-2" onclick="change_tab (this, 'tab2-')">potential</li>
+      <li class="_tab_header_li " data-tab="tab2-3" onclick="change_tab (this, 'tab2-')">hint</li>
+      <li class="_tab_header_li " data-tab="tab2-4" onclick="change_tab (this, 'tab2-')">expert</li>
     </ul>
   </div>
   <div class="_tab_content">
-  <div id="tab0-1">
+  <div id="tab2-1">
 <div class="_fixed_box" ><h3 class="_header">Code clean check</h3>
 <div class="_content">Detected a slowdown caused by scalar integer instructions (typically used for address computation).
-By removing them, you can lower the cost of an iteration from 8.25 to 6.00 cycles (1.37x speedup).
+By removing them, you can lower the cost of an iteration from 8.00 to 4.00 cycles (2.00x speedup).
 <div class="_fixed_box" ><h3 class="_header">Workaround</h3>
 <div class="_content"><ul><li>Try to reorganize arrays of structures to structures of arrays</li><li>Consider to permute loops (see vectorization gain report)</li></ul>
 </div></div></div></div><div class="_fixed_box" ><h3 class="_header">Vectorization</h3>
 <div class="_content">Your loop is probably not vectorized.
-Only 18% of vector register length is used (average across all SSE/AVX instructions).
-By vectorizing your loop, you can lower the cost of an iteration from 8.25 to 1.50 cycles (5.50x speedup).
+Only 17% of vector register length is used (average across all SSE/AVX instructions).
+By vectorizing your loop, you can lower the cost of an iteration from 8.00 to 1.06 cycles (7.53x speedup).
 <div class="_fixed_box" ><h3 class="_header">Details</h3>
 <div class="_content">Store and arithmetical SSE/AVX instructions are used in scalar version (process only one data element in vector registers).
 Since your execution units are vector units, only a vectorized loop can use their full power.
@@ -1298,68 +1330,68 @@ Since your execution units are vector units, only a vectorized loop can use thei
 </div></div></div></div><div class="_fixed_box" ><h3 class="_header">Execution units bottlenecks</h3>
 <div class="_content">Found no such bottlenecks but see expert reports for more complex bottlenecks.
 </div></div></div>
-  <div id="tab0-2">
+  <div id="tab2-2">
 No data for this section</div>
-  <div id="tab0-3">
+  <div id="tab2-3">
 <div class="_fixed_box" ><h3 class="_header">Complex instructions</h3>
 <div class="_content">Detected COMPLEX INSTRUCTIONS.
 
 <div class="_fixed_box" ><h3 class="_header">Details</h3>
 <div class="_content">These instructions generate more than one micro-operation and only one of them can be decoded during a cycle and the extra micro-operations increase pressure on execution units.
-<ul><li>CVTSS2SD: 2 occurrences</li></ul>
+<ul><li>CVTSS2SD: 1 occurrences</li></ul>
 </div></div><div class="_fixed_box" ><h3 class="_header">Workaround</h3>
 <div class="_content">Pass to your compiler a micro-architecture specialization option:
 <ul><li>Please read your compiler manual</li></ul>
 </div></div></div></div><div class="_fixed_box" ><h3 class="_header">Conversion instructions</h3>
 <div class="_content">Detected expensive conversion instructions.
 <div class="_fixed_box" ><h3 class="_header">Details</h3>
-<div class="_content"><ul><li>CVTSS2SD (FP32 to FP64, scalar): 2 occurrences</li></ul>
+<div class="_content"><ul><li>CVTSS2SD (FP32 to FP64, scalar): 1 occurrences</li></ul>
 </div></div><div class="_fixed_box" ><h3 class="_header">Workaround</h3>
 <div class="_content">Avoid mixing data with different types. In particular, check if the type of constants is the same as array elements. Use double instead of single precision only when/where needed by numerical stability and avoid mixing precision.
 </div></div></div></div><div class="_fixed_box" ><h3 class="_header">Type of elements and instruction set</h3>
-<div class="_content">2 SSE or AVX instructions are processing arithmetic or math operations on single precision FP elements in scalar mode (one at a time).
-2 SSE or AVX instructions are processing arithmetic or math operations on double precision FP elements in scalar mode (one at a time).
+<div class="_content">1 SSE or AVX instructions are processing arithmetic or math operations on single precision FP elements in scalar mode (one at a time).
+1 SSE or AVX instructions are processing arithmetic or math operations on double precision FP elements in scalar mode (one at a time).
 
 </div></div><div class="_fixed_box" ><h3 class="_header">Matching between your loop (in the source code) and the binary loop</h3>
-<div class="_content">The binary loop is composed of 2 FP arithmetical operations:
-<ul><li>2: divide</li></ul>The binary loop is loading 16 bytes (4 single precision FP elements).
+<div class="_content">The binary loop is composed of 1 FP arithmetical operations:
+<ul><li>1: divide</li></ul>The binary loop is loading 16 bytes (4 single precision FP elements).
 The binary loop is storing 16 bytes (4 single precision FP elements).
 </div></div><div class="_fixed_box" ><h3 class="_header">Arithmetic intensity</h3>
-<div class="_content">Arithmetic intensity is 0.06 FP operations per loaded or stored byte.
+<div class="_content">Arithmetic intensity is 0.03 FP operations per loaded or stored byte.
 </div></div></div>
-  <div id="tab0-4">
+  <div id="tab2-4">
 <div class="_fixed_box" ><h3 class="_header">ASM code</h3>
-<div class="_content">In the binary file, the address of the loop is: 40157f
+<div class="_content">In the binary file, the address of the loop is: 401552
 
-<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOV %R8D,%EDX</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>ADD %R14D,%EDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JS 4015b1 <s13+0x91></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>CMP %EDI,%EDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JAE 4015b1 <s13+0x91></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOVSXD %R12D,%RDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>PXOR %XMM1,%XMM1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>MOV %R13D,(%R15,%RDX,8)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOVSS (%RAX,%RDX,8),%XMM2</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CVTSS2SD %XMM2,%XMM1</td><td>2</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>5</td><td>2</td></tr><tr><td style='word-break:break-all;'>COMISD %XMM1,%XMM0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td style='word-break:break-all;'>JBE 4015b1 <s13+0x91></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>DIVSS (%R9,%RBP,4),%XMM2</td><td>1</td><td>1</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11</td><td>3</td></tr><tr><td style='word-break:break-all;'>MOVSS %XMM2,(%R15,%RDX,8)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>LEA 0x1(%R8,%R14,1),%EDX</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>TEST %EDX,%EDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JL 4015e7 <s13+0xc7></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>CMP %EDI,%EDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JAE 4015e7 <s13+0xc7></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOVSXD %R12D,%RDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>PXOR %XMM1,%XMM1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>MOV %R13D,0x4(%R15,%RDX,8)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOVSS 0x4(%RAX,%RDX,8),%XMM2</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CVTSS2SD %XMM2,%XMM1</td><td>2</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>5</td><td>2</td></tr><tr><td style='word-break:break-all;'>COMISD %XMM1,%XMM0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td style='word-break:break-all;'>JBE 4015e7 <s13+0xc7></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>DIVSS (%R9,%RBP,4),%XMM2</td><td>1</td><td>1</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11</td><td>3</td></tr><tr><td style='word-break:break-all;'>MOVSS %XMM2,0x4(%R15,%RDX,8)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>INC %R12D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>ADD $0x2,%R14D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>CMP %EBX,%R12D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JB 40157f <s13+0x5f></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50</td></tr></table>
+<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOV %R13D,%R12D</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>MOV $0x1,%R15D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>MOV %R12D,%R14D</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>TEST %EBX,%EBX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JE 4015ed <s13+0xdd></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOV %RDX,-0x8(%RSP)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>LEA (%R10,%RSI,1),%R15</td><td>1</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x8(%RSP),%RDX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>LEA 0x1(%R12,%R12,1),%R15D</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>LEA -0x1(%R15),%R12D</td><td>1</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CMP %EDI,%R12D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JAE 401633 <s13+0x123></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>LEA -0x1(%R8,%R15,1),%R12D</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>TEST %R12D,%R12D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JL 401633 <s13+0x123></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>CMP %EDI,%R12D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JAE 401633 <s13+0x123></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOVSXD %R15D,%R15</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>PXOR %XMM1,%XMM1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>LEA (%R10,%R15,4),%R12</td><td>1</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV %R13D,-0x4(%R12,%RCX,4)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOVSS -0x4(%RAX,%R15,4),%XMM2</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CVTSS2SD %XMM2,%XMM1</td><td>2</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>5</td><td>2</td></tr><tr><td style='word-break:break-all;'>COMISD %XMM1,%XMM0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td style='word-break:break-all;'>JBE 401633 <s13+0x123></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>DIVSS (%R9,%RBP,4),%XMM2</td><td>1</td><td>1</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11</td><td>3</td></tr><tr><td style='word-break:break-all;'>MOVSS %XMM2,-0x4(%R12,%RCX,4)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>INC %RBP</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>ADD %R11,%RCX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>LEA (%RSI,%R11,4),%RSI</td><td>1</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CMP %RDX,%RBP</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JB 401552 <s13+0x42></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">General properties</h3>
-<div class="_content"><table><tr><td>nb instructions</td><td>32</td></tr><tr><td>nb uops</td><td>33</td></tr><tr><td>loop length</td><td>116</td></tr><tr><td>used x86 registers</td><td>11</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>3</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>0</td></tr></table>
+<div class="_content"><table><tr><td>nb instructions</td><td>32</td></tr><tr><td>nb uops</td><td>32</td></tr><tr><td>loop length</td><td>128</td></tr><tr><td>used x86 registers</td><td>16</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>3</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>1</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Front-end</h3>
 <div class="_content">ASSUMED MACRO FUSION
 FIT IN UOP CACHE
-<table><tr><td>micro-operation queue</td><td>8.25 cycles</td></tr><tr><td>front end</td><td>8.25 cycles</td></tr></table>
+<table><tr><td>micro-operation queue</td><td>8.00 cycles</td></tr><tr><td>front end</td><td>8.00 cycles</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Back-end</h3>
-<div class="_content"><table><tr><th>      </th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th></tr><tr><td>uops</td><td>6.00</td><td>6.00</td><td>2.67</td><td>2.67</td><td>4.00</td><td>6.00</td><td>6.00</td><td>2.67</td></tr><tr><td>cycles</td><td>6.00</td><td>6.00</td><td>2.67</td><td>2.67</td><td>4.00</td><td>6.00</td><td>6.00</td><td>2.67</td></tr></table>
-<table><tr><td>Cycles executing div or sqrt instructions</td><td>6.00</td></tr></table>
+<div class="_content"><table><tr><th>      </th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th></tr><tr><td>uops</td><td>6.00</td><td>6.00</td><td>2.17</td><td>1.83</td><td>3.00</td><td>6.00</td><td>6.00</td><td>2.00</td></tr><tr><td>cycles</td><td>6.00</td><td>6.00</td><td>2.17</td><td>1.83</td><td>3.00</td><td>6.00</td><td>6.00</td><td>2.00</td></tr></table>
+<table><tr><td>Cycles executing div or sqrt instructions</td><td>3.00</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Cycles summary</h3>
-<div class="_content"><table><tr><td>Front-end</td><td>8.25</td></tr><tr><td>Dispatch</td><td>6.00</td></tr><tr><td>DIV/SQRT</td><td>6.00</td></tr><tr><td>Overall L1</td><td>8.25</td></tr></table>
+<div class="_content"><table><tr><td>Front-end</td><td>8.00</td></tr><tr><td>Dispatch</td><td>6.00</td></tr><tr><td>DIV/SQRT</td><td>3.00</td></tr><tr><td>Overall L1</td><td>8.00</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Vectorization ratios</h3>
 <div class="_content">INT
-<table><tr><td>all</td><td>28%</td></tr><tr><td>load</td><td>NA (no load vectorizable/vectorized instructions)</td></tr><tr><td>store</td><td>0%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>40%</td></tr></table>FP
+<table><tr><td>all</td><td>12%</td></tr><tr><td>load</td><td>NA (no load vectorizable/vectorized instructions)</td></tr><tr><td>store</td><td>0%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>16%</td></tr></table>FP
 <table><tr><td>all</td><td>0%</td></tr><tr><td>load</td><td>0%</td></tr><tr><td>store</td><td>0%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>0%</td></tr></table>INT+FP
-<table><tr><td>all</td><td>11%</td></tr><tr><td>load</td><td>0%</td></tr><tr><td>store</td><td>0%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>18%</td></tr></table>
+<table><tr><td>all</td><td>7%</td></tr><tr><td>load</td><td>0%</td></tr><tr><td>store</td><td>0%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>11%</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Vector efficiency ratios</h3>
 <div class="_content">INT
-<table><tr><td>all</td><td>23%</td></tr><tr><td>load</td><td>NA (no load vectorizable/vectorized instructions)</td></tr><tr><td>store</td><td>12%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>27%</td></tr></table>FP
+<table><tr><td>all</td><td>18%</td></tr><tr><td>load</td><td>NA (no load vectorizable/vectorized instructions)</td></tr><tr><td>store</td><td>18%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>18%</td></tr></table>FP
 <table><tr><td>all</td><td>15%</td></tr><tr><td>load</td><td>12%</td></tr><tr><td>store</td><td>12%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>16%</td></tr></table>INT+FP
-<table><tr><td>all</td><td>18%</td></tr><tr><td>load</td><td>12%</td></tr><tr><td>store</td><td>12%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>21%</td></tr></table>
+<table><tr><td>all</td><td>17%</td></tr><tr><td>load</td><td>12%</td></tr><tr><td>store</td><td>16%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>18%</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Cycles and memory resources usage</h3>
-<div class="_content">Assuming all data fit into the L1 cache, each iteration of the binary loop takes 8.25 cycles. At this rate:
-<ul><li>3% of peak load performance is reached (1.94 out of 64.00 bytes loaded per cycle (GB/s @ 1GHz))</li><li>6% of peak store performance is reached (1.94 out of 32.00 bytes stored per cycle (GB/s @ 1GHz))</li></ul>
+<div class="_content">Assuming all data fit into the L1 cache, each iteration of the binary loop takes 8.00 cycles. At this rate:
+<ul><li>3% of peak load performance is reached (2.00 out of 64.00 bytes loaded per cycle (GB/s @ 1GHz))</li><li>6% of peak store performance is reached (2.00 out of 32.00 bytes stored per cycle (GB/s @ 1GHz))</li></ul>
 </div></div><div class="_fixed_box" ><h3 class="_header">Front-end bottlenecks</h3>
 <div class="_content">Performance is limited by instruction throughput (loading/decoding program instructions to execution core) (front-end is a bottleneck).
 
-By removing all these bottlenecks, you can lower the cost of an iteration from 8.25 to 6.00 cycles (1.38x speedup).
+By removing all these bottlenecks, you can lower the cost of an iteration from 8.00 to 6.00 cycles (1.33x speedup).
 
 </div></div></div>
 </div></div>
@@ -1367,31 +1399,31 @@ By removing all these bottlenecks, you can lower the cost of an iteration from 8
     <div id="loop_cqa_path_1">
       <div style="padding-left:10px;margin-bottom: 10px;">
         <table>
-          <tr><td class="_td_shift_20">Coverage</td><td>96.52 %</td></tr>
+          <tr><td class="_td_shift_20">Coverage</td><td>3.46 %</td></tr>
           <tr><td class="_td_shift_20">Function</td><td><a href="../functions/s13_icc_O3_8.html">s13</a></td></tr>
           <tr><td class="_td_shift_20">Source file and lines</td><td></td></tr>
         <tr><td class="_td_shift_20">Module</td><td>s13_icc_O3</td></tr>
         </table>
-<br />Warnings:<br /><ul><li>Ignoring paths for analysis</li><li>Too many paths. Rerun with max-paths=16</li><li>RecMII not computed since number of paths is unknown or > max_paths</li><li>Streams not analyzed since number of paths is unknown or > max_paths</li></ul><br />Try to simplify control and/or increase the maximum number of paths per function/loop through the 'max-paths-nb' option.<br /><br />This loop has 16 execution paths.<br /><br />The presence of multiple execution paths is typically the main/first bottleneck.<br />Try to simplify control inside loop: ideally, try to remove all conditional expressions, for example by (if applicable):<br /><ul><li>hoisting them (moving them outside the loop)</li><li>turning them into conditional moves, MIN or MAX</li></ul><br /><br />      </div><div class="_tab_box">
+<br />Warnings:<br /><ul><li>Non-innermost loop: analyzing only self part (ignoring child loops).</li><li>Ignoring paths for analysis</li><li>Too many paths. If you really need to analyze all of the 85 paths individually, rerun with max-paths=85</li><li>RecMII not computed since number of paths is unknown or > max_paths</li><li>Streams not analyzed since number of paths is unknown or > max_paths</li></ul><br />Try to simplify control and/or increase the maximum number of paths per function/loop through the 'max-paths-nb' option.<br /><br />This loop has 85 execution paths.<br /><br />The presence of multiple execution paths is typically the main/first bottleneck.<br />Try to simplify control inside loop: ideally, try to remove all conditional expressions, for example by (if applicable):<br /><ul><li>hoisting them (moving them outside the loop)</li><li>turning them into conditional moves, MIN or MAX</li></ul><br /><br />      </div><div class="_tab_box">
   <div class="_tab_header">
     <ul>
-      <li class="_tab_header_li selected_tab" data-tab="tab1-1" onclick="change_tab (this, 'tab1-')">gain</li>
-      <li class="_tab_header_li " data-tab="tab1-2" onclick="change_tab (this, 'tab1-')">potential</li>
-      <li class="_tab_header_li " data-tab="tab1-3" onclick="change_tab (this, 'tab1-')">hint</li>
-      <li class="_tab_header_li " data-tab="tab1-4" onclick="change_tab (this, 'tab1-')">expert</li>
+      <li class="_tab_header_li selected_tab" data-tab="tab3-1" onclick="change_tab (this, 'tab3-')">gain</li>
+      <li class="_tab_header_li " data-tab="tab3-2" onclick="change_tab (this, 'tab3-')">potential</li>
+      <li class="_tab_header_li " data-tab="tab3-3" onclick="change_tab (this, 'tab3-')">hint</li>
+      <li class="_tab_header_li " data-tab="tab3-4" onclick="change_tab (this, 'tab3-')">expert</li>
     </ul>
   </div>
   <div class="_tab_content">
-  <div id="tab1-1">
+  <div id="tab3-1">
 <div class="_fixed_box" ><h3 class="_header">Code clean check</h3>
 <div class="_content">Detected a slowdown caused by scalar integer instructions (typically used for address computation).
-By removing them, you can lower the cost of an iteration from 8.25 to 6.00 cycles (1.37x speedup).
+By removing them, you can lower the cost of an iteration from 8.00 to 4.00 cycles (2.00x speedup).
 <div class="_fixed_box" ><h3 class="_header">Workaround</h3>
 <div class="_content"><ul><li>Try to reorganize arrays of structures to structures of arrays</li><li>Consider to permute loops (see vectorization gain report)</li></ul>
 </div></div></div></div><div class="_fixed_box" ><h3 class="_header">Vectorization</h3>
 <div class="_content">Your loop is probably not vectorized.
-Only 18% of vector register length is used (average across all SSE/AVX instructions).
-By vectorizing your loop, you can lower the cost of an iteration from 8.25 to 1.50 cycles (5.50x speedup).
+Only 17% of vector register length is used (average across all SSE/AVX instructions).
+By vectorizing your loop, you can lower the cost of an iteration from 8.00 to 1.06 cycles (7.53x speedup).
 <div class="_fixed_box" ><h3 class="_header">Details</h3>
 <div class="_content">Store and arithmetical SSE/AVX instructions are used in scalar version (process only one data element in vector registers).
 Since your execution units are vector units, only a vectorized loop can use their full power.
@@ -1402,68 +1434,68 @@ Since your execution units are vector units, only a vectorized loop can use thei
 </div></div></div></div><div class="_fixed_box" ><h3 class="_header">Execution units bottlenecks</h3>
 <div class="_content">Found no such bottlenecks but see expert reports for more complex bottlenecks.
 </div></div></div>
-  <div id="tab1-2">
+  <div id="tab3-2">
 No data for this section</div>
-  <div id="tab1-3">
+  <div id="tab3-3">
 <div class="_fixed_box" ><h3 class="_header">Complex instructions</h3>
 <div class="_content">Detected COMPLEX INSTRUCTIONS.
 
 <div class="_fixed_box" ><h3 class="_header">Details</h3>
 <div class="_content">These instructions generate more than one micro-operation and only one of them can be decoded during a cycle and the extra micro-operations increase pressure on execution units.
-<ul><li>CVTSS2SD: 2 occurrences</li></ul>
+<ul><li>CVTSS2SD: 1 occurrences</li></ul>
 </div></div><div class="_fixed_box" ><h3 class="_header">Workaround</h3>
 <div class="_content">Pass to your compiler a micro-architecture specialization option:
 <ul><li>Please read your compiler manual</li></ul>
 </div></div></div></div><div class="_fixed_box" ><h3 class="_header">Conversion instructions</h3>
 <div class="_content">Detected expensive conversion instructions.
 <div class="_fixed_box" ><h3 class="_header">Details</h3>
-<div class="_content"><ul><li>CVTSS2SD (FP32 to FP64, scalar): 2 occurrences</li></ul>
+<div class="_content"><ul><li>CVTSS2SD (FP32 to FP64, scalar): 1 occurrences</li></ul>
 </div></div><div class="_fixed_box" ><h3 class="_header">Workaround</h3>
 <div class="_content">Avoid mixing data with different types. In particular, check if the type of constants is the same as array elements. Use double instead of single precision only when/where needed by numerical stability and avoid mixing precision.
 </div></div></div></div><div class="_fixed_box" ><h3 class="_header">Type of elements and instruction set</h3>
-<div class="_content">2 SSE or AVX instructions are processing arithmetic or math operations on single precision FP elements in scalar mode (one at a time).
-2 SSE or AVX instructions are processing arithmetic or math operations on double precision FP elements in scalar mode (one at a time).
+<div class="_content">1 SSE or AVX instructions are processing arithmetic or math operations on single precision FP elements in scalar mode (one at a time).
+1 SSE or AVX instructions are processing arithmetic or math operations on double precision FP elements in scalar mode (one at a time).
 
 </div></div><div class="_fixed_box" ><h3 class="_header">Matching between your loop (in the source code) and the binary loop</h3>
-<div class="_content">The binary loop is composed of 2 FP arithmetical operations:
-<ul><li>2: divide</li></ul>The binary loop is loading 16 bytes (4 single precision FP elements).
+<div class="_content">The binary loop is composed of 1 FP arithmetical operations:
+<ul><li>1: divide</li></ul>The binary loop is loading 16 bytes (4 single precision FP elements).
 The binary loop is storing 16 bytes (4 single precision FP elements).
 </div></div><div class="_fixed_box" ><h3 class="_header">Arithmetic intensity</h3>
-<div class="_content">Arithmetic intensity is 0.06 FP operations per loaded or stored byte.
+<div class="_content">Arithmetic intensity is 0.03 FP operations per loaded or stored byte.
 </div></div></div>
-  <div id="tab1-4">
+  <div id="tab3-4">
 <div class="_fixed_box" ><h3 class="_header">ASM code</h3>
-<div class="_content">In the binary file, the address of the loop is: 40157f
+<div class="_content">In the binary file, the address of the loop is: 401552
 
-<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOV %R8D,%EDX</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>ADD %R14D,%EDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JS 4015b1 <s13+0x91></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>CMP %EDI,%EDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JAE 4015b1 <s13+0x91></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOVSXD %R12D,%RDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>PXOR %XMM1,%XMM1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>MOV %R13D,(%R15,%RDX,8)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOVSS (%RAX,%RDX,8),%XMM2</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CVTSS2SD %XMM2,%XMM1</td><td>2</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>5</td><td>2</td></tr><tr><td style='word-break:break-all;'>COMISD %XMM1,%XMM0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td style='word-break:break-all;'>JBE 4015b1 <s13+0x91></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>DIVSS (%R9,%RBP,4),%XMM2</td><td>1</td><td>1</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11</td><td>3</td></tr><tr><td style='word-break:break-all;'>MOVSS %XMM2,(%R15,%RDX,8)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>LEA 0x1(%R8,%R14,1),%EDX</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>TEST %EDX,%EDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JL 4015e7 <s13+0xc7></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>CMP %EDI,%EDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JAE 4015e7 <s13+0xc7></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOVSXD %R12D,%RDX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>PXOR %XMM1,%XMM1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>MOV %R13D,0x4(%R15,%RDX,8)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOVSS 0x4(%RAX,%RDX,8),%XMM2</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CVTSS2SD %XMM2,%XMM1</td><td>2</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>5</td><td>2</td></tr><tr><td style='word-break:break-all;'>COMISD %XMM1,%XMM0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td style='word-break:break-all;'>JBE 4015e7 <s13+0xc7></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>DIVSS (%R9,%RBP,4),%XMM2</td><td>1</td><td>1</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11</td><td>3</td></tr><tr><td style='word-break:break-all;'>MOVSS %XMM2,0x4(%R15,%RDX,8)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>INC %R12D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>ADD $0x2,%R14D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>CMP %EBX,%R12D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JB 40157f <s13+0x5f></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50</td></tr></table>
+<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOV %R13D,%R12D</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>MOV $0x1,%R15D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>MOV %R12D,%R14D</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>TEST %EBX,%EBX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JE 4015ed <s13+0xdd></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOV %RDX,-0x8(%RSP)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>LEA (%R10,%RSI,1),%R15</td><td>1</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x8(%RSP),%RDX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>LEA 0x1(%R12,%R12,1),%R15D</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>LEA -0x1(%R15),%R12D</td><td>1</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CMP %EDI,%R12D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JAE 401633 <s13+0x123></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>LEA -0x1(%R8,%R15,1),%R12D</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>TEST %R12D,%R12D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JL 401633 <s13+0x123></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>CMP %EDI,%R12D</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JAE 401633 <s13+0x123></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOVSXD %R15D,%R15</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>PXOR %XMM1,%XMM1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>LEA (%R10,%R15,4),%R12</td><td>1</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV %R13D,-0x4(%R12,%RCX,4)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOVSS -0x4(%RAX,%R15,4),%XMM2</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CVTSS2SD %XMM2,%XMM1</td><td>2</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>5</td><td>2</td></tr><tr><td style='word-break:break-all;'>COMISD %XMM1,%XMM0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td style='word-break:break-all;'>JBE 401633 <s13+0x123></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>DIVSS (%R9,%RBP,4),%XMM2</td><td>1</td><td>1</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11</td><td>3</td></tr><tr><td style='word-break:break-all;'>MOVSS %XMM2,-0x4(%R12,%RCX,4)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>INC %RBP</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>ADD %R11,%RCX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>LEA (%RSI,%R11,4),%RSI</td><td>1</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CMP %RDX,%RBP</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JB 401552 <s13+0x42></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">General properties</h3>
-<div class="_content"><table><tr><td>nb instructions</td><td>32</td></tr><tr><td>nb uops</td><td>33</td></tr><tr><td>loop length</td><td>116</td></tr><tr><td>used x86 registers</td><td>11</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>3</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>0</td></tr></table>
+<div class="_content"><table><tr><td>nb instructions</td><td>32</td></tr><tr><td>nb uops</td><td>32</td></tr><tr><td>loop length</td><td>128</td></tr><tr><td>used x86 registers</td><td>16</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>3</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>1</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Front-end</h3>
 <div class="_content">ASSUMED MACRO FUSION
 FIT IN UOP CACHE
-<table><tr><td>micro-operation queue</td><td>8.25 cycles</td></tr><tr><td>front end</td><td>8.25 cycles</td></tr></table>
+<table><tr><td>micro-operation queue</td><td>8.00 cycles</td></tr><tr><td>front end</td><td>8.00 cycles</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Back-end</h3>
-<div class="_content"><table><tr><th>      </th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th></tr><tr><td>uops</td><td>6.00</td><td>6.00</td><td>2.67</td><td>2.67</td><td>4.00</td><td>6.00</td><td>6.00</td><td>2.67</td></tr><tr><td>cycles</td><td>6.00</td><td>6.00</td><td>2.67</td><td>2.67</td><td>4.00</td><td>6.00</td><td>6.00</td><td>2.67</td></tr></table>
-<table><tr><td>Cycles executing div or sqrt instructions</td><td>6.00</td></tr></table>
+<div class="_content"><table><tr><th>      </th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th></tr><tr><td>uops</td><td>6.00</td><td>6.00</td><td>2.17</td><td>1.83</td><td>3.00</td><td>6.00</td><td>6.00</td><td>2.00</td></tr><tr><td>cycles</td><td>6.00</td><td>6.00</td><td>2.17</td><td>1.83</td><td>3.00</td><td>6.00</td><td>6.00</td><td>2.00</td></tr></table>
+<table><tr><td>Cycles executing div or sqrt instructions</td><td>3.00</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Cycles summary</h3>
-<div class="_content"><table><tr><td>Front-end</td><td>8.25</td></tr><tr><td>Dispatch</td><td>6.00</td></tr><tr><td>DIV/SQRT</td><td>6.00</td></tr><tr><td>Overall L1</td><td>8.25</td></tr></table>
+<div class="_content"><table><tr><td>Front-end</td><td>8.00</td></tr><tr><td>Dispatch</td><td>6.00</td></tr><tr><td>DIV/SQRT</td><td>3.00</td></tr><tr><td>Overall L1</td><td>8.00</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Vectorization ratios</h3>
 <div class="_content">INT
-<table><tr><td>all</td><td>28%</td></tr><tr><td>load</td><td>NA (no load vectorizable/vectorized instructions)</td></tr><tr><td>store</td><td>0%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>40%</td></tr></table>FP
+<table><tr><td>all</td><td>12%</td></tr><tr><td>load</td><td>NA (no load vectorizable/vectorized instructions)</td></tr><tr><td>store</td><td>0%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>16%</td></tr></table>FP
 <table><tr><td>all</td><td>0%</td></tr><tr><td>load</td><td>0%</td></tr><tr><td>store</td><td>0%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>0%</td></tr></table>INT+FP
-<table><tr><td>all</td><td>11%</td></tr><tr><td>load</td><td>0%</td></tr><tr><td>store</td><td>0%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>18%</td></tr></table>
+<table><tr><td>all</td><td>7%</td></tr><tr><td>load</td><td>0%</td></tr><tr><td>store</td><td>0%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>11%</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Vector efficiency ratios</h3>
 <div class="_content">INT
-<table><tr><td>all</td><td>23%</td></tr><tr><td>load</td><td>NA (no load vectorizable/vectorized instructions)</td></tr><tr><td>store</td><td>12%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>27%</td></tr></table>FP
+<table><tr><td>all</td><td>18%</td></tr><tr><td>load</td><td>NA (no load vectorizable/vectorized instructions)</td></tr><tr><td>store</td><td>18%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>18%</td></tr></table>FP
 <table><tr><td>all</td><td>15%</td></tr><tr><td>load</td><td>12%</td></tr><tr><td>store</td><td>12%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>16%</td></tr></table>INT+FP
-<table><tr><td>all</td><td>18%</td></tr><tr><td>load</td><td>12%</td></tr><tr><td>store</td><td>12%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>21%</td></tr></table>
+<table><tr><td>all</td><td>17%</td></tr><tr><td>load</td><td>12%</td></tr><tr><td>store</td><td>16%</td></tr><tr><td>mul</td><td>NA (no mul vectorizable/vectorized instructions)</td></tr><tr><td>add-sub</td><td>NA (no add-sub vectorizable/vectorized instructions)</td></tr><tr><td>other</td><td>18%</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Cycles and memory resources usage</h3>
-<div class="_content">Assuming all data fit into the L1 cache, each iteration of the binary loop takes 8.25 cycles. At this rate:
-<ul><li>3% of peak load performance is reached (1.94 out of 64.00 bytes loaded per cycle (GB/s @ 1GHz))</li><li>6% of peak store performance is reached (1.94 out of 32.00 bytes stored per cycle (GB/s @ 1GHz))</li></ul>
+<div class="_content">Assuming all data fit into the L1 cache, each iteration of the binary loop takes 8.00 cycles. At this rate:
+<ul><li>3% of peak load performance is reached (2.00 out of 64.00 bytes loaded per cycle (GB/s @ 1GHz))</li><li>6% of peak store performance is reached (2.00 out of 32.00 bytes stored per cycle (GB/s @ 1GHz))</li></ul>
 </div></div><div class="_fixed_box" ><h3 class="_header">Front-end bottlenecks</h3>
 <div class="_content">Performance is limited by instruction throughput (loading/decoding program instructions to execution core) (front-end is a bottleneck).
 
-By removing all these bottlenecks, you can lower the cost of an iteration from 8.25 to 6.00 cycles (1.38x speedup).
+By removing all these bottlenecks, you can lower the cost of an iteration from 8.00 to 6.00 cycles (1.33x speedup).
 
 </div></div></div>
 </div></div>

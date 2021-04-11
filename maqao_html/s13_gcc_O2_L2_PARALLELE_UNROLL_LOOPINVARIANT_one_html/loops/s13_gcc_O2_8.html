@@ -72,12 +72,12 @@ function addLoadEvent(func) {
 <!-- ========================== Summary about the loop ========================== -->
   <table style="width:100%;border-radius:5px;color:white;background:#114B79;margin-bottom:15px;">
     <tr>
-      <th><button class="tooltip-maqao-button" onclick="window.location.href='s13_gcc_O2_7.html';" title="Go to previous loop: 7" >Prev</button></th>
+      <th><button class="tooltip-maqao-button" onclick="window.location.href='s13_gcc_O2_9.html';" title="Go to previous loop: 9" >Prev</button></th>
       <th>Loop Id: 8</th>
       <th>Module: s13_gcc_O2</th>
       <th>Source: :0-0</th>
-      <th>Coverage: 3.58%</th>
-      <th><button class="tooltip-maqao-button" title="No next loop" style="cursor: not-allowed;">No Next</button></th>
+      <th>Coverage: 3.04%</th>
+      <th><button class="tooltip-maqao-button" onclick="window.location.href='s13_gcc_O2_7.html';" title="Go to next loop: 7" >Next</button></th>
     </tr>
   </table>
   <div class="drag-container" id="main_section_content">
@@ -143,16 +143,16 @@ function addLoadEvent(func) {
 <div class="panelcontent" id="OV_panel_asm"><div style="margin-left: 10px;">
   <div id="enable_groups_button" class="tooltip-maqao" title="Check the box to display the group analysis. A group is a set of instructions accessing to the same memory area" data-groups="off" onclick="enable_groups (this);">Show groups analysis</div>
   <table style="width:100%;" id="table_asm">
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#663300;word-break:break-all;"><span class="tooltip-maqao" title="Size: 1&lt;br&gt;Pattern: L&lt;br&gt;Span: 4&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 4&lt;br&gt;Accessed memory without overlapping: 4&lt;br&gt;Accessed memory reused: 0&lt;br&gt;"><pre>0x1920 MOVSS	(%RBP,%RAX,4),%XMM4    [2]</pre></span></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x1926 MOVAPS	%XMM1,%XMM3</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x1929 COMISS	%XMM4,%XMM0</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x192c JA	1935</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x192e MOVAPS	%XMM4,%XMM3</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x1931 DIVSS	%XMM2,%XMM3</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#993333;word-break:break-all;"><span class="tooltip-maqao" title="Size: 1&lt;br&gt;Pattern: S&lt;br&gt;Span: 4&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 4&lt;br&gt;Accessed memory without overlapping: 4&lt;br&gt;Accessed memory reused: 0&lt;br&gt;"><pre>0x1935 MOVSS	%XMM3,(%RCX,%RAX,4)    [1]</pre></span></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x193a ADD	$0x1,%RAX</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x193e CMP	%R8,%RAX</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x1941 JNE	1920</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#993333;word-break:break-all;"><span class="tooltip-maqao" title="Size: 1&lt;br&gt;Pattern: L&lt;br&gt;Span: 4&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 4&lt;br&gt;Accessed memory without overlapping: 4&lt;br&gt;Accessed memory reused: 0&lt;br&gt;"><pre>0x1980 MOVSS	(%RCX,%RAX,4),%XMM4    [1]</pre></span></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x1985 MOVAPS	%XMM0,%XMM3</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x1988 COMISS	%XMM4,%XMM1</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x198b JA	1994</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x198d MOVAPS	%XMM4,%XMM3</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x1990 DIVSS	%XMM2,%XMM3</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#663300;word-break:break-all;"><span class="tooltip-maqao" title="Size: 1&lt;br&gt;Pattern: S&lt;br&gt;Span: 4&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 4&lt;br&gt;Accessed memory without overlapping: 4&lt;br&gt;Accessed memory reused: 0&lt;br&gt;"><pre>0x1994 MOVSS	%XMM3,(%RDX,%RAX,4)    [2]</pre></span></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x1999 ADD	$0x1,%RAX</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x199d CMP	%RAX,%R12</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x19a0 JNE	1980</pre></td></tr>
   </table>
   <script>
 function panel_asm_onmouseover_tr (obj) {
@@ -305,7 +305,7 @@ function src_loadhelp (divId) {
   </style>
 </div>
 <div class="panelcontent" id="OV_panel_callchains">
-<div class="_div_table"><table id="_treed_table_2" class="_treed_table"><tr><th class=" _left tooltip-maqao" title="Coverage of the callchain">Coverage (%)</th><th class=" tooltip-maqao" title="Name of the function">Name</th><th class=" tooltip-maqao" title="Name of the module (binary file) that contains the function">Module</th></tr>
+<div class="_div_table"><table id="_treed_table_1" class="_treed_table"><tr><th class=" _left tooltip-maqao" title="Coverage of the callchain">Coverage (%)</th><th class=" tooltip-maqao" title="Name of the function">Name</th><th class=" tooltip-maqao" title="Name of the module (binary file) that contains the function">Module</th></tr>
 </table></div>
   <script>
 function src_onresize () {
@@ -330,20 +330,20 @@ function src_loadhelp (divId) {
       </td>
     </tr>
   </table>
-<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_12" style="height:500px" ></div></div>
+<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_6" style="height:500px" ></div></div>
 <script class="code">
 </script>
-<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_13" style="height:500px" ></div></div>
+<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_7" style="height:500px" ></div></div>
 <script class="code">
 </script>
   <script>
 function set_ldbal_input (obj) {
-  document.getElementById("chart_cat_12").innerHTML = "";
-  var _width = Math.floor(document.getElementById("chart_cat_12").getBoundingClientRect().width);
+  document.getElementById("chart_cat_6").innerHTML = "";
+  var _width = Math.floor(document.getElementById("chart_cat_6").getBoundingClientRect().width);
   if (obj.value == "regular") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8435_8435'];
-    var data = [{value: 3.58}];
+    var ordinals = ['pop-os_10833_10833','pop-os_10833_10846','pop-os_10833_10847','pop-os_10833_10848'];
+    var data = [{value: 4.61},{value: 2.3},{value: 2.56},{value: 3.05}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -358,7 +358,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_12')
+    const svg = d3.select('#chart_cat_6')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -405,13 +405,13 @@ function set_ldbal_input (obj) {
       .text("Coverage");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_12')
+      .attr('id', 'zoom_chart_6')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_12_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_6_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -450,14 +450,23 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_12_0").click( function () {
-    window.open("../topo/_pop-os_8435_8435.html");
+  $("#zoom_chart_6_0").click( function () {
+    window.open("../topo/_pop-os_10833_10833.html");
+  });
+  $("#zoom_chart_6_1").click( function () {
+    window.open("../topo/_pop-os_10833_10846.html");
+  });
+  $("#zoom_chart_6_2").click( function () {
+    window.open("../topo/_pop-os_10833_10847.html");
+  });
+  $("#zoom_chart_6_3").click( function () {
+    window.open("../topo/_pop-os_10833_10848.html");
   });
   }
   else if (obj.value == "sorted") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8435_8435'];
-    var data = [{value: 3.58}];
+    var ordinals = ['pop-os_10833_10833','pop-os_10833_10848','pop-os_10833_10847','pop-os_10833_10846'];
+    var data = [{value: 4.61},{value: 3.05},{value: 2.56},{value: 2.3}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -472,7 +481,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_12')
+    const svg = d3.select('#chart_cat_6')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -519,13 +528,13 @@ function set_ldbal_input (obj) {
       .text("Coverage");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_12')
+      .attr('id', 'zoom_chart_6')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_12_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_6_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -564,14 +573,23 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_12_0").click( function () {
-    window.open("../topo/_pop-os_8435_8435.html");
+  $("#zoom_chart_6_0").click( function () {
+    window.open("../topo/_pop-os_10833_10833.html");
+  });
+  $("#zoom_chart_6_1").click( function () {
+    window.open("../topo/_pop-os_10833_10848.html");
+  });
+  $("#zoom_chart_6_2").click( function () {
+    window.open("../topo/_pop-os_10833_10847.html");
+  });
+  $("#zoom_chart_6_3").click( function () {
+    window.open("../topo/_pop-os_10833_10846.html");
   });
   }
   else if (obj.value == "all") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8435_8435'];
-    var data = [{value: 3.58}];
+    var ordinals = ['pop-os_10833_10833','pop-os_10833_10846','pop-os_10833_10847','pop-os_10833_10848'];
+    var data = [{value: 4.61},{value: 2.3},{value: 2.56},{value: 3.05}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -586,7 +604,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_12')
+    const svg = d3.select('#chart_cat_6')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -633,13 +651,13 @@ function set_ldbal_input (obj) {
       .text("Coverage");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_12')
+      .attr('id', 'zoom_chart_6')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_12_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_6_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -678,16 +696,25 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_12_0").click( function () {
-    window.open("../topo/_pop-os_8435_8435.html");
+  $("#zoom_chart_6_0").click( function () {
+    window.open("../topo/_pop-os_10833_10833.html");
+  });
+  $("#zoom_chart_6_1").click( function () {
+    window.open("../topo/_pop-os_10833_10846.html");
+  });
+  $("#zoom_chart_6_2").click( function () {
+    window.open("../topo/_pop-os_10833_10847.html");
+  });
+  $("#zoom_chart_6_3").click( function () {
+    window.open("../topo/_pop-os_10833_10848.html");
   });
   }
-  document.getElementById("chart_cat_13").innerHTML = "";
-  var _width = Math.floor(document.getElementById("chart_cat_13").getBoundingClientRect().width);
+  document.getElementById("chart_cat_7").innerHTML = "";
+  var _width = Math.floor(document.getElementById("chart_cat_7").getBoundingClientRect().width);
   if (obj.value == "regular") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8435_8435'];
-    var data = [{value: 0.19}];
+    var ordinals = ['pop-os_10833_10833','pop-os_10833_10846','pop-os_10833_10847','pop-os_10833_10848'];
+    var data = [{value: 0.07},{value: 0.05},{value: 0.05},{value: 0.06}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -702,7 +729,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_13')
+    const svg = d3.select('#chart_cat_7')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -749,13 +776,13 @@ function set_ldbal_input (obj) {
       .text("Time");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_13')
+      .attr('id', 'zoom_chart_7')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_13_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_7_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -794,14 +821,23 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_13_0").click( function () {
-    window.open("../topo/_pop-os_8435_8435.html");
+  $("#zoom_chart_7_0").click( function () {
+    window.open("../topo/_pop-os_10833_10833.html");
+  });
+  $("#zoom_chart_7_1").click( function () {
+    window.open("../topo/_pop-os_10833_10846.html");
+  });
+  $("#zoom_chart_7_2").click( function () {
+    window.open("../topo/_pop-os_10833_10847.html");
+  });
+  $("#zoom_chart_7_3").click( function () {
+    window.open("../topo/_pop-os_10833_10848.html");
   });
   }
   else if (obj.value == "sorted") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8435_8435'];
-    var data = [{value: 0.19}];
+    var ordinals = ['pop-os_10833_10833','pop-os_10833_10848','pop-os_10833_10847','pop-os_10833_10846'];
+    var data = [{value: 0.07},{value: 0.06},{value: 0.05},{value: 0.05}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -816,7 +852,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_13')
+    const svg = d3.select('#chart_cat_7')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -863,13 +899,13 @@ function set_ldbal_input (obj) {
       .text("Time");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_13')
+      .attr('id', 'zoom_chart_7')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_13_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_7_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -908,14 +944,23 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_13_0").click( function () {
-    window.open("../topo/_pop-os_8435_8435.html");
+  $("#zoom_chart_7_0").click( function () {
+    window.open("../topo/_pop-os_10833_10833.html");
+  });
+  $("#zoom_chart_7_1").click( function () {
+    window.open("../topo/_pop-os_10833_10848.html");
+  });
+  $("#zoom_chart_7_2").click( function () {
+    window.open("../topo/_pop-os_10833_10847.html");
+  });
+  $("#zoom_chart_7_3").click( function () {
+    window.open("../topo/_pop-os_10833_10846.html");
   });
   }
   else if (obj.value == "all") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8435_8435'];
-    var data = [{value: 0.19}];
+    var ordinals = ['pop-os_10833_10833','pop-os_10833_10846','pop-os_10833_10847','pop-os_10833_10848'];
+    var data = [{value: 0.07},{value: 0.05},{value: 0.05},{value: 0.06}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -930,7 +975,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_13')
+    const svg = d3.select('#chart_cat_7')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -977,13 +1022,13 @@ function set_ldbal_input (obj) {
       .text("Time");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_13')
+      .attr('id', 'zoom_chart_7')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_13_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_7_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -1022,8 +1067,17 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_13_0").click( function () {
-    window.open("../topo/_pop-os_8435_8435.html");
+  $("#zoom_chart_7_0").click( function () {
+    window.open("../topo/_pop-os_10833_10833.html");
+  });
+  $("#zoom_chart_7_1").click( function () {
+    window.open("../topo/_pop-os_10833_10846.html");
+  });
+  $("#zoom_chart_7_2").click( function () {
+    window.open("../topo/_pop-os_10833_10847.html");
+  });
+  $("#zoom_chart_7_3").click( function () {
+    window.open("../topo/_pop-os_10833_10848.html");
   });
   }
 }
@@ -1055,8 +1109,8 @@ function ldbal_loadhelp (divId) {
     <div id="loop_static_path_0" style="width:100%;">
       <table style="width:100%;">
         <tr><th>Metric</th><th>Value</th></tr>
-            <tr><td>Coverage (% app. time)</td><td>3.58</td></tr>
-            <tr><td>Time (s)</td><td>0.19</td></tr>
+            <tr><td>Coverage (% app. time)</td><td>3.04</td></tr>
+            <tr><td>Time (s)</td><td>0.06</td></tr>
             <tr><td>[VPROF] Instance Count</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (min)</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (avg)</td><td></td></tr>
@@ -1069,9 +1123,9 @@ function ldbal_loadhelp (divId) {
             <tr><td>CQA speedup if fully vectorized</td><td style="background-color:#FF950E;">4.90</td></tr>
             <tr><td>CQA speedup if no inter-iteration dependency</td><td>NA</td></tr>
             <tr><td>CQA speedup if next bottleneck killed</td><td style="background-color:#FFCC99;">1.27</td></tr>
-            <tr><td>Speedup if perfectly load balanced</td><td>1</td></tr>
+            <tr><td>Speedup if perfectly load balanced</td><td>1.17</td></tr>
             <tr><td>Bottlenecks</td><td></td></tr>
-            <tr><td>Function</td><td>s13</td></tr>
+            <tr><td>Function</td><td>s13._omp_fn.0</td></tr>
             <tr><td>Source</td><td></td></tr>
             <tr><td>Source loop unroll info</td><td>NA</td></tr>
             <tr><td>Source loop unroll confidence level</td><td>NA</td></tr>
@@ -1131,8 +1185,8 @@ function ldbal_loadhelp (divId) {
     <div id="loop_static_path_1" style="width:100%;">
       <table style="width:100%;">
         <tr><th>Metric</th><th>Value</th></tr>
-            <tr><td>Coverage (% app. time)</td><td>3.58</td></tr>
-            <tr><td>Time (s)</td><td>0.19</td></tr>
+            <tr><td>Coverage (% app. time)</td><td>3.04</td></tr>
+            <tr><td>Time (s)</td><td>0.06</td></tr>
             <tr><td>[VPROF] Instance Count</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (min)</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (avg)</td><td></td></tr>
@@ -1145,9 +1199,9 @@ function ldbal_loadhelp (divId) {
             <tr><td>CQA speedup if fully vectorized</td><td style="background-color:#FF950E;">4.00</td></tr>
             <tr><td>CQA speedup if no inter-iteration dependency</td><td>NA</td></tr>
             <tr><td>CQA speedup if next bottleneck killed</td><td style="background-color:#FFCC99;">1.33</td></tr>
-            <tr><td>Speedup if perfectly load balanced</td><td>1</td></tr>
+            <tr><td>Speedup if perfectly load balanced</td><td>1.17</td></tr>
             <tr><td>Bottlenecks</td><td>P0, </td></tr>
-            <tr><td>Function</td><td>s13</td></tr>
+            <tr><td>Function</td><td>s13._omp_fn.0</td></tr>
             <tr><td>Source</td><td></td></tr>
             <tr><td>Source loop unroll info</td><td>NA</td></tr>
             <tr><td>Source loop unroll confidence level</td><td>NA</td></tr>
@@ -1207,8 +1261,8 @@ function ldbal_loadhelp (divId) {
     <div id="loop_static_path_2" style="width:100%;">
       <table style="width:100%;">
         <tr><th>Metric</th><th>Value</th></tr>
-            <tr><td>Coverage (% app. time)</td><td>3.58</td></tr>
-            <tr><td>Time (s)</td><td>0.19</td></tr>
+            <tr><td>Coverage (% app. time)</td><td>3.04</td></tr>
+            <tr><td>Time (s)</td><td>0.06</td></tr>
             <tr><td>[VPROF] Instance Count</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (min)</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (avg)</td><td></td></tr>
@@ -1221,9 +1275,9 @@ function ldbal_loadhelp (divId) {
             <tr><td>CQA speedup if fully vectorized</td><td style="background-color:#FF950E;">8.00</td></tr>
             <tr><td>CQA speedup if no inter-iteration dependency</td><td>NA</td></tr>
             <tr><td>CQA speedup if next bottleneck killed</td><td style="background-color:#FFCC99;">1.17</td></tr>
-            <tr><td>Speedup if perfectly load balanced</td><td>1</td></tr>
+            <tr><td>Speedup if perfectly load balanced</td><td>1.17</td></tr>
             <tr><td>Bottlenecks</td><td>micro-operation queue, </td></tr>
-            <tr><td>Function</td><td>s13</td></tr>
+            <tr><td>Function</td><td>s13._omp_fn.0</td></tr>
             <tr><td>Source</td><td></td></tr>
             <tr><td>Source loop unroll info</td><td>NA</td></tr>
             <tr><td>Source loop unroll confidence level</td><td>NA</td></tr>
@@ -1317,22 +1371,22 @@ function cqa_adv_loadhelp (divId) {
       </div>
       <div style="padding-left:10px;margin-bottom: 10px;">
         <table>
-          <tr><td class="_td_shift_20">Coverage</td><td>3.58 %</td></tr>
-          <tr><td class="_td_shift_20">Function</td><td><a href="../functions/s13_gcc_O2_10.html">s13</a></td></tr>
+          <tr><td class="_td_shift_20">Coverage</td><td>3.04 %</td></tr>
+          <tr><td class="_td_shift_20">Function</td><td><a href="../functions/s13_gcc_O2_10.html">s13._omp_fn.0</a></td></tr>
           <tr><td class="_td_shift_20">Source file and lines</td><td></td></tr>
         <tr><td class="_td_shift_20">Module</td><td>s13_gcc_O2</td></tr>
         </table>
 <br />The structure of this loop is probably &lt;if then [else] end&gt;.<br /><br />The presence of multiple execution paths is typically the main/first bottleneck.<br />Try to simplify control inside loop: ideally, try to remove all conditional expressions, for example by (if applicable):<br /><ul><li>hoisting them (moving them outside the loop)</li><li>turning them into conditional moves, MIN or MAX</li></ul><br /><br />      </div><div class="_tab_box">
   <div class="_tab_header">
     <ul>
-      <li class="_tab_header_li selected_tab" data-tab="tab4-1" onclick="change_tab (this, 'tab4-')">gain</li>
-      <li class="_tab_header_li " data-tab="tab4-2" onclick="change_tab (this, 'tab4-')">potential</li>
-      <li class="_tab_header_li " data-tab="tab4-3" onclick="change_tab (this, 'tab4-')">hint</li>
-      <li class="_tab_header_li " data-tab="tab4-4" onclick="change_tab (this, 'tab4-')">expert</li>
+      <li class="_tab_header_li selected_tab" data-tab="tab2-1" onclick="change_tab (this, 'tab2-')">gain</li>
+      <li class="_tab_header_li " data-tab="tab2-2" onclick="change_tab (this, 'tab2-')">potential</li>
+      <li class="_tab_header_li " data-tab="tab2-3" onclick="change_tab (this, 'tab2-')">hint</li>
+      <li class="_tab_header_li " data-tab="tab2-4" onclick="change_tab (this, 'tab2-')">expert</li>
     </ul>
   </div>
   <div class="_tab_content">
-  <div id="tab4-1">
+  <div id="tab2-1">
 <div class="_fixed_box" ><h3 class="_header">Vectorization</h3>
 <div class="_content">Your loop is probably not vectorized.
 Only 23% of vector register length is used (average across all SSE/AVX instructions).
@@ -1345,9 +1399,9 @@ Since your execution units are vector units, only a vectorized loop can use thei
 <div class="_content"><ul><li>Try another compiler or update/tune your current one</li><li>Remove inter-iterations dependences from your loop and make it unit-stride:
 <ul><li>If your arrays have 2 or more dimensions, check whether elements are accessed contiguously and, otherwise, try to permute loops accordingly</li><li>If your loop streams arrays of structures (AoS), try to use structures of arrays instead (SoA)</li></ul></li></ul>
 </div></div></div></div></div>
-  <div id="tab4-2">
+  <div id="tab2-2">
 No data for this section</div>
-  <div id="tab4-3">
+  <div id="tab2-3">
 <div class="_fixed_box" ><h3 class="_header">Type of elements and instruction set</h3>
 <div class="_content">1 SSE or AVX instructions are processing arithmetic or math operations on single precision FP elements in scalar mode (one at a time).
 
@@ -1358,9 +1412,9 @@ The binary loop is storing 4 bytes (1 single precision FP elements).
 </div></div><div class="_fixed_box" ><h3 class="_header">Arithmetic intensity</h3>
 <div class="_content">Arithmetic intensity is 0.06 FP operations per loaded or stored byte.
 </div></div></div>
-  <div id="tab4-4">
+  <div id="tab2-4">
 <div class="_fixed_box" ><h3 class="_header">General properties</h3>
-<div class="_content"><table><tr><td>nb instructions</td><td>9</td></tr><tr><td>nb uops</td><td>8</td></tr><tr><td>loop length</td><td>31.50</td></tr><tr><td>used x86 registers</td><td>4</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>4.50</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>0</td></tr></table>
+<div class="_content"><table><tr><td>nb instructions</td><td>9</td></tr><tr><td>nb uops</td><td>8</td></tr><tr><td>loop length</td><td>30.50</td></tr><tr><td>used x86 registers</td><td>4</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>4.50</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>0</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Front-end</h3>
 <div class="_content">MACRO FUSION NOT POSSIBLE
 <table><tr><td>micro-operation queue</td><td>2.00 cycles</td></tr><tr><td>front end</td><td>2.00 cycles</td></tr></table>
@@ -1382,22 +1436,22 @@ The binary loop is storing 4 bytes (1 single precision FP elements).
     <div id="loop_cqa_path_1">
       <div style="padding-left:10px;margin-bottom: 10px;">
         <table>
-          <tr><td class="_td_shift_20">Coverage</td><td>3.58 %</td></tr>
-          <tr><td class="_td_shift_20">Function</td><td><a href="../functions/s13_gcc_O2_10.html">s13</a></td></tr>
+          <tr><td class="_td_shift_20">Coverage</td><td>3.04 %</td></tr>
+          <tr><td class="_td_shift_20">Function</td><td><a href="../functions/s13_gcc_O2_10.html">s13._omp_fn.0</a></td></tr>
           <tr><td class="_td_shift_20">Source file and lines</td><td></td></tr>
         <tr><td class="_td_shift_20">Module</td><td>s13_gcc_O2</td></tr>
         </table>
 <br />The structure of this loop is probably &lt;if then [else] end&gt;.<br /><br />The presence of multiple execution paths is typically the main/first bottleneck.<br />Try to simplify control inside loop: ideally, try to remove all conditional expressions, for example by (if applicable):<br /><ul><li>hoisting them (moving them outside the loop)</li><li>turning them into conditional moves, MIN or MAX</li></ul><br /><br />      </div><div class="_tab_box">
   <div class="_tab_header">
     <ul>
-      <li class="_tab_header_li selected_tab" data-tab="tab5-1" onclick="change_tab (this, 'tab5-')">gain</li>
-      <li class="_tab_header_li " data-tab="tab5-2" onclick="change_tab (this, 'tab5-')">potential</li>
-      <li class="_tab_header_li " data-tab="tab5-3" onclick="change_tab (this, 'tab5-')">hint</li>
-      <li class="_tab_header_li " data-tab="tab5-4" onclick="change_tab (this, 'tab5-')">expert</li>
+      <li class="_tab_header_li selected_tab" data-tab="tab3-1" onclick="change_tab (this, 'tab3-')">gain</li>
+      <li class="_tab_header_li " data-tab="tab3-2" onclick="change_tab (this, 'tab3-')">potential</li>
+      <li class="_tab_header_li " data-tab="tab3-3" onclick="change_tab (this, 'tab3-')">hint</li>
+      <li class="_tab_header_li " data-tab="tab3-4" onclick="change_tab (this, 'tab3-')">expert</li>
     </ul>
   </div>
   <div class="_tab_content">
-  <div id="tab5-1">
+  <div id="tab3-1">
 <div class="_fixed_box" ><h3 class="_header">Vectorization</h3>
 <div class="_content">Your loop is probably not vectorized.
 Only 25% of vector register length is used (average across all SSE/AVX instructions).
@@ -1418,9 +1472,9 @@ By removing all these bottlenecks, you can lower the cost of an iteration from 3
 <div class="_content">Reduce the number of division or square root instructions:
 <ul><li>If denominator is constant over iterations, use reciprocal (replace x/y with x*(1/y)). Check precision impact.</li></ul>
 </div></div></div></div></div>
-  <div id="tab5-2">
+  <div id="tab3-2">
 No data for this section</div>
-  <div id="tab5-3">
+  <div id="tab3-3">
 <div class="_fixed_box" ><h3 class="_header">Type of elements and instruction set</h3>
 <div class="_content">2 SSE or AVX instructions are processing arithmetic or math operations on single precision FP elements in scalar mode (one at a time).
 
@@ -1431,13 +1485,13 @@ The binary loop is storing 4 bytes (1 single precision FP elements).
 </div></div><div class="_fixed_box" ><h3 class="_header">Arithmetic intensity</h3>
 <div class="_content">Arithmetic intensity is 0.12 FP operations per loaded or stored byte.
 </div></div></div>
-  <div id="tab5-4">
+  <div id="tab3-4">
 <div class="_fixed_box" ><h3 class="_header">ASM code</h3>
-<div class="_content">In the binary file, the address of the loop is: 1920
+<div class="_content">In the binary file, the address of the loop is: 1980
 
-<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOVSS (%RBP,%RAX,4),%XMM4</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOVAPS %XMM1,%XMM3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>COMISS %XMM4,%XMM0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td style='word-break:break-all;'>JA 1935 <s13+0x115></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOVAPS %XMM4,%XMM3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>DIVSS %XMM2,%XMM3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11</td><td>3</td></tr><tr><td style='word-break:break-all;'>MOVSS %XMM3,(%RCX,%RAX,4)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>ADD $0x1,%RAX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>CMP %R8,%RAX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JNE 1920 <s13+0x100></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr></table>
+<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOVSS (%RCX,%RAX,4),%XMM4</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOVAPS %XMM0,%XMM3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>COMISS %XMM4,%XMM1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td style='word-break:break-all;'>JA 1994 <s13._omp_fn.0+0x134></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOVAPS %XMM4,%XMM3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>DIVSS %XMM2,%XMM3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11</td><td>3</td></tr><tr><td style='word-break:break-all;'>MOVSS %XMM3,(%RDX,%RAX,4)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>ADD $0x1,%RAX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>CMP %RAX,%R12</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JNE 1980 <s13._omp_fn.0+0x120></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">General properties</h3>
-<div class="_content"><table><tr><td>nb instructions</td><td>10</td></tr><tr><td>nb uops</td><td>9</td></tr><tr><td>loop length</td><td>35</td></tr><tr><td>used x86 registers</td><td>4</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>5</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>0</td></tr></table>
+<div class="_content"><table><tr><td>nb instructions</td><td>10</td></tr><tr><td>nb uops</td><td>9</td></tr><tr><td>loop length</td><td>34</td></tr><tr><td>used x86 registers</td><td>4</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>5</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>0</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Front-end</h3>
 <div class="_content">ASSUMED MACRO FUSION
 FIT IN UOP CACHE
@@ -1462,22 +1516,22 @@ FIT IN UOP CACHE
     <div id="loop_cqa_path_2">
       <div style="padding-left:10px;margin-bottom: 10px;">
         <table>
-          <tr><td class="_td_shift_20">Coverage</td><td>3.58 %</td></tr>
-          <tr><td class="_td_shift_20">Function</td><td><a href="../functions/s13_gcc_O2_10.html">s13</a></td></tr>
+          <tr><td class="_td_shift_20">Coverage</td><td>3.04 %</td></tr>
+          <tr><td class="_td_shift_20">Function</td><td><a href="../functions/s13_gcc_O2_10.html">s13._omp_fn.0</a></td></tr>
           <tr><td class="_td_shift_20">Source file and lines</td><td></td></tr>
         <tr><td class="_td_shift_20">Module</td><td>s13_gcc_O2</td></tr>
         </table>
 <br />The structure of this loop is probably &lt;if then [else] end&gt;.<br /><br />The presence of multiple execution paths is typically the main/first bottleneck.<br />Try to simplify control inside loop: ideally, try to remove all conditional expressions, for example by (if applicable):<br /><ul><li>hoisting them (moving them outside the loop)</li><li>turning them into conditional moves, MIN or MAX</li></ul><br /><br />      </div><div class="_tab_box">
   <div class="_tab_header">
     <ul>
-      <li class="_tab_header_li selected_tab" data-tab="tab6-1" onclick="change_tab (this, 'tab6-')">gain</li>
-      <li class="_tab_header_li " data-tab="tab6-2" onclick="change_tab (this, 'tab6-')">potential</li>
-      <li class="_tab_header_li " data-tab="tab6-3" onclick="change_tab (this, 'tab6-')">hint</li>
-      <li class="_tab_header_li " data-tab="tab6-4" onclick="change_tab (this, 'tab6-')">expert</li>
+      <li class="_tab_header_li selected_tab" data-tab="tab4-1" onclick="change_tab (this, 'tab4-')">gain</li>
+      <li class="_tab_header_li " data-tab="tab4-2" onclick="change_tab (this, 'tab4-')">potential</li>
+      <li class="_tab_header_li " data-tab="tab4-3" onclick="change_tab (this, 'tab4-')">hint</li>
+      <li class="_tab_header_li " data-tab="tab4-4" onclick="change_tab (this, 'tab4-')">expert</li>
     </ul>
   </div>
   <div class="_tab_content">
-  <div id="tab6-1">
+  <div id="tab4-1">
 <div class="_fixed_box" ><h3 class="_header">Vectorization</h3>
 <div class="_content">Your loop is probably not vectorized.
 Only 21% of vector register length is used (average across all SSE/AVX instructions).
@@ -1492,9 +1546,9 @@ Since your execution units are vector units, only a vectorized loop can use thei
 </div></div></div></div><div class="_fixed_box" ><h3 class="_header">Execution units bottlenecks</h3>
 <div class="_content">Found no such bottlenecks but see expert reports for more complex bottlenecks.
 </div></div></div>
-  <div id="tab6-2">
+  <div id="tab4-2">
 No data for this section</div>
-  <div id="tab6-3">
+  <div id="tab4-3">
 <div class="_fixed_box" ><h3 class="_header">Type of elements and instruction set</h3>
 <div class="_content">1 SSE or AVX instructions are processing arithmetic or math operations on single precision FP elements in scalar mode (one at a time).
 
@@ -1503,13 +1557,13 @@ No data for this section</div>
 The binary loop is loading 4 bytes (1 single precision FP elements).
 The binary loop is storing 4 bytes (1 single precision FP elements).
 </div></div></div>
-  <div id="tab6-4">
+  <div id="tab4-4">
 <div class="_fixed_box" ><h3 class="_header">ASM code</h3>
-<div class="_content">In the binary file, the address of the loop is: 1920
+<div class="_content">In the binary file, the address of the loop is: 1980
 
-<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOVSS (%RBP,%RAX,4),%XMM4</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOVAPS %XMM1,%XMM3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>COMISS %XMM4,%XMM0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td style='word-break:break-all;'>JA 1935 <s13+0x115></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOVSS %XMM3,(%RCX,%RAX,4)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>ADD $0x1,%RAX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>CMP %R8,%RAX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JNE 1920 <s13+0x100></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr></table>
+<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOVSS (%RCX,%RAX,4),%XMM4</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOVAPS %XMM0,%XMM3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>COMISS %XMM4,%XMM1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td style='word-break:break-all;'>JA 1994 <s13._omp_fn.0+0x134></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr><tr><td style='word-break:break-all;'>MOVSS %XMM3,(%RDX,%RAX,4)</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>0</td><td>0.33</td><td>3</td><td>1</td></tr><tr><td style='word-break:break-all;'>ADD $0x1,%RAX</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>CMP %RAX,%R12</td><td>1</td><td>0.25</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>JNE 1980 <s13._omp_fn.0+0x120></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">General properties</h3>
-<div class="_content"><table><tr><td>nb instructions</td><td>8</td></tr><tr><td>nb uops</td><td>7</td></tr><tr><td>loop length</td><td>28</td></tr><tr><td>used x86 registers</td><td>4</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>4</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>0</td></tr></table>
+<div class="_content"><table><tr><td>nb instructions</td><td>8</td></tr><tr><td>nb uops</td><td>7</td></tr><tr><td>loop length</td><td>27</td></tr><tr><td>used x86 registers</td><td>4</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>4</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>0</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Front-end</h3>
 <div class="_content">ASSUMED MACRO FUSION
 FIT IN UOP CACHE
