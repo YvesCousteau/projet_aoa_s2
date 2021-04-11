@@ -374,14 +374,19 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
 
   float r = (float)radius;
 
-  for ( i = 0; i < (n-3) ; i+= 4) {
-    bi[0][0] = b[i];bi[0][1] = b[i];bi[0][2] = b[i];bi[0][3] = b[i];
-    bi[1][0] = b[i+1];bi[1][1] = b[i+1];bi[1][2] = b[i+1];bi[1][3] = b[i+1];
-    bi[2][0] = b[i+2];bi[2][1] = b[i+2];bi[2][2] = b[i+2];bi[2][3] = b[i+2];
-    bi[3][0] = b[i+3];bi[3][1] = b[i+3];bi[3][2] = b[i+3];bi[3][3] = b[i+3];
+  int maxThread = omp_get_max_threads();
+  if(maxThread > 4)
+    maxThread=4;
+  #pragma omp parallel num_threads(maxThread)
+  {
+    #pragma omp for
+    for ( i = 0; i < (n-3) ; i+= 4) {
+      bi[0][0] = b[i];bi[0][1] = b[i];bi[0][2] = b[i];bi[0][3] = b[i];
+      bi[1][0] = b[i+1];bi[1][1] = b[i+1];bi[1][2] = b[i+1];bi[1][3] = b[i+1];
+      bi[2][0] = b[i+2];bi[2][1] = b[i+2];bi[2][2] = b[i+2];bi[2][3] = b[i+2];
+      bi[3][0] = b[i+3];bi[3][1] = b[i+3];bi[3][2] = b[i+3];bi[3][3] = b[i+3];
 
-    #pragma omp parallel for
-    {
+     
       for ( j = offset; j < (n-3); j +=4) {
 
         c [ i ][ j ] =   a[j] < r ? 0.0 :   a[j]  / bi[0][0];
@@ -412,8 +417,8 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
         c [ i+2 ][ j ] = a[j] < r ? 0.0 : a[j] / bi[2][0];
         c [ i+3 ][ j ] = a[j] < r ? 0.0 : a[j] / bi[3][0];
       }
-    }
 
+    }
   }
   for(i = (n-3); i<n;i++){
     bi[0][0] = b[i];bi[0][1] = b[i];bi[0][2] = b[i];bi[0][3] = b[i];
@@ -432,6 +437,8 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
   }
 
 }
+
+
 
 #else
 
