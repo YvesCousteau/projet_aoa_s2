@@ -1,5 +1,5 @@
 
-#include <omp.h>
+//#include <omp.h>
 
 #ifdef ORIGINAL
 
@@ -371,11 +371,6 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
   float bi[4][4];
 
   float r = (float)radius;
-
-  int i, j;
-
-	float bi;
-	float r = (double)radius;
 
 	int maxThread = omp_get_max_threads();
 	if(maxThread > 4)

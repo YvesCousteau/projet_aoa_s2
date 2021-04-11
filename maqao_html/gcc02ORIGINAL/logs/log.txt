@@ -1,8 +1,0 @@
-********************************************************************************
-
-MAQAO 2.13.2 - bc14664714af98ecc0478b407ba8033dd28e872a::20210305-145101 || 2021/03/05
-
-maqao oneview -R1 xp=../maqao_html/gcc02ORIGINAL -- ./s13_gcc_O2 51 30 750 
-
-Info: OMP_NUM_THREADS not set, it will be considered as equal to 1
-CMD:  OMP_NUM_THREADS=1   //home/tmo/.softs/maqao//maqao lprof  --xp=/home/tmo/Documents/IATIC4/ARCH/projet_aoa_s2/src/../maqao_html/gcc02ORIGINAL/tools/lprof_npsu --mpi-command=""   -- /home/tmo/Documents/IATIC4/ARCH/projet_aoa_s2/src/../maqao_html/gcc02ORIGINAL/binaries/s13_gcc_O2  51 30 750

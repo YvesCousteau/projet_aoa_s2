@@ -1,2 +1,0 @@
-function_id;module;function_name;source_info;time_p;time_s;time_s_min;time_s_avg;time_s_max;cov_deviation;nb_threads;
-10;s13_gcc_O2;s13;;100;0.08;0.09;0.09;0.09;0;1;
