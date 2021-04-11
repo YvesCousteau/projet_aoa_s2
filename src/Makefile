@@ -1,4 +1,4 @@
-CC=gcc-10
+CC=gcc
 II=icx
 III=icc
 
@@ -27,10 +27,10 @@ CFILE=driver.c kernel.c rdtsc.c
 #R_ANAL=analysis
 R_HTML=../maqao_html
 
-CACHE_LVL=L3
-SIZE=782
-NB_WARMUP=20
-NB_MESURE_REP=800
+CACHE_LVL=RAM
+SIZE=1516
+NB_WARMUP=10
+NB_MESURE_REP=1000
 
 
 all:	s13
