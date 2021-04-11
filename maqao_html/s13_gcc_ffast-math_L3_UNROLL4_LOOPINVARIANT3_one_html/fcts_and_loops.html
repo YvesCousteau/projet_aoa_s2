@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><title>OV - s13_gcc_ffast-math - Functions and Loops</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/ui.jqgrid.css" />
+<link rel="stylesheet" type="text/css" href="css/themes/redmond_custom/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="css/themes/redmond_custom/jquery.jqplot.min.css" />
+<link rel="stylesheet" type="text/css" href="css/maqao_modal.css" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link rel="stylesheet" type="text/css" href="css/maqao_menu.css" />
+<script src="js/jquery-1.9.0.min.js" ></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js" ></script>
+<script src="js/grid.locale-en.js" ></script>
+<script src="js/jquery.jqGrid.min.js" ></script>
+<script src="js/d3.min.js" ></script>
+<script class="include" src="js/jquery.jqplot.min.js"></script>
+<script class="include" src="js/jqplot.pieRenderer.min.js"></script>
+<script class="include" src="js/jqplot.barRenderer.min.js"></script>
+<script class="include" src="js/jqplot.categoryAxisRenderer.min.js"></script>
+<script class="include" src="js/jqplot.pointLabels.min.js"></script>
+<script class="include" src="js/jqplot.cursor.min.js"></script>
+<script class="include" src="js/jqplot.canvasTextRenderer.min.js"></script>
+<script class="include" src="js/jqplot.canvasAxisTickRenderer.min.js"></script>
+<script class="include" src="js/jqplot.canvasAxisLabelRenderer.min.js"></script>
+<script class="include" src="js/jqplot.enhancedLegendRenderer.min.js"></script>
+<script class="include" src="js/jqplot.highlighter.min.js"></script>
+<script class="include" src="js/maqao_menu.js"></script>
+<script>
+$( function() {
+  $( document ).tooltip({
+    content: function() {
+      if ($(this).hasClass ("tooltip-maqao")
+      ||  $(this).hasClass ("tooltip-maqao-button")) {
+        return $(this).attr('title');
+      }
+    },
+    position: {
+      my: "center bottom-20",
+        at: "center top",
+        using: function( position, feedback ) {
+          $( this ).css( position );
+          $( "<div>" )
+            .addClass( "arrow-tt" )
+            .addClass( feedback.vertical )
+            .addClass( feedback.horizontal )
+            .appendTo( this );
+        }
+      }
+  });
+} );
+
+// Code from https://www.htmlgoodies.com/beyond/javascript/article.php/3724571/Using-Multiple-JavaScript-Onload-Functions.htm
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
+</script>
+</head><body>
+<div id="page_title"><img alt="MAQAO" id="maqao_logo" src="images/MAQAO_small_logo.png" /><ul id="maqao_menu"><li><a  href="index.html">Global</a><ul><li><a  href="config.html">Configurations</a></li><li><a  href="log.html">Logs</a></li></ul></li><li><a  href="application.html">Application</a></li><li><a class="_current_page" href="fcts_and_loops.html">Functions</a></li><li><a  href="loops_index.html">Loops</a></li><li><a  href="topology.html">Topology</a></li></ul></div>
+<div id="anchor_file_start"></div>
+<div id="maqao_content">
+<div id="spacer_page_title" style="height:100px;" ></div>
+<div class="_fixed_box" ><h3 class="_header">Functions and Loops<span class="tooltip-maqao-button help-maqao" title="Profiling of the application. Functions can be expanded / collapsed to display / hide their profiled loops by clicking on the arrow on the left of a row or on the '-' / '+' of the right. If a loop has a circle instead of an arrow, it means it is an innermost loop. By right-clicking on a function / loop, a menu appears, allowing to display some charts about the load distribution:<br><ul><li><b>Load Distribution</b> displays a chart presenting the load distribution between threads where only threads that execute the area (loop or function) are represented;</li><li><b>Sorted Load Distribution</b> displays a chart presenting the load distribution between threads where threads have been sorted from the most time consuming to the lowest;</li><li><b>Load Distribution All threads</b> displays a chart presenting the load distribution between threads where all thread are represented, even ones which do not execute the area (loop or function);</li></ul>By double-clicking on a function / loop, a new tab is opened to display the report of the corresponding object."></span></h3>
+<div class="_content"><div class="_accordion_box collapsed"><h3 id="_accordion_header_1" class="_header collapsed" onclick="_click_accordion_header(this)" ><span class="_accordion_box_button">&#x25B6;</span>Filters<span class="tooltip-maqao-button help-maqao" title="A form that can be displayed / hidden by clicking on the header to specify which modules must be displayed in the profiling. By clicking on the button, only checked categories are displayed. Coverages are computed according displayed modules."></span></h3><div id="_accordion_content_1" class="_content collapsed"></form><button type="button" onclick="_upd_base_run();" style="cursor:pointer;">Choose Reference Run</button><hr>
+<form><u>Modules:</u><br style="margin-bottom:10px;">
+<input id="_input_check_all_mods" type="checkbox" style="vertical-align: middle;cursor:pointer" onchange="_onchange_modules (this)" checked ><span id="_input_check_all_mods_text">Uncheck all modules</span><br>
+<input id="_input_check_mod_s13_gcc_ffast-math" type="checkbox" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >s13_gcc_ffast-math - <span id="cov_mod_s13_gcc_ffast-math" >100</span> %<br>
+</form><hr><button type="button" onclick="_upd_table();" style="cursor:pointer;">Filter Results</button>
+</div></div><div class="_div_table"><div><form><span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table8_opt4" onclick="click_table_menu('_table8_opt4', '_table8_opt_all', 'list_opts_table8')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Time (s)</span>
+<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table8_opt5" onclick="click_table_menu('_table8_opt5', '_table8_opt_all', 'list_opts_table8')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Nb Threads</span>
+<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table8_opt6" onclick="click_table_menu('_table8_opt6', '_table8_opt_all', 'list_opts_table8')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Deviation (coverage)</span>
+<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table8_opt7" onclick="click_table_menu('_table8_opt7', '_table8_opt_all', 'list_opts_table8')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;">Compilation Options</span>
+<span style='white-space:nowrap;'><input class="input_check_table_menu" type="button" id="_table8_opt_all" onclick="set_all_table_menu(this, 'list_opts_table8')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" value="Select all"></span>
+</form></div>
+<table id="_treed_table_8" class="_treed_table"><tr><th class=" _left tooltip-maqao" title="Name of the function / loop identifier">Name</th><th class=" tooltip-maqao" title="Name of the module (binary file) that contains the function / loop">Module</th><th class=" tooltip-maqao" title="Percentage of the execution time spent in the function / loop">Coverage (%)</th><th class=" _table8_opt4 tooltip-maqao" title="Execution time spent in the function / loop in seconds">Time (s)</th><th class=" _table8_opt5 tooltip-maqao" title="Number of threads that executed the function / objects">Nb Threads</th><th class=" _table8_opt6 tooltip-maqao" title="Deviation of the coverage amongs threads">Deviation (coverage)</th><th class=" _table8_opt7 _tcol_hidden tooltip-maqao" title="Compilation options used to compile the loop">Compilation Options</th></tr>
+<tr id="_tr_8_1"  ondblclick="_action_10(this,1,-1, 'functions/s13_gcc_ffast-math_10.html');"  style="cursor:pointer;"><td id="_tr_8_1-1"  data-_i="1" data-_j="1"  data-_p="s13_gcc_ffast-math_10" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span>s13<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_8_1-2"  data-_i="1" data-_j="2"  data-_p="s13_gcc_ffast-math_10" class=" _centered"  style="word-break:break-all;" >s13_gcc_ffast-math</td><td id="_tr_8_1-3"  data-_i="1" data-_j="3"  data-_p="s13_gcc_ffast-math_10" class=" _centered" >100</td><td id="_tr_8_1-4"  data-_i="1" data-_j="4"  data-_p="s13_gcc_ffast-math_10" class=" _centered _table8_opt4" >35.14</td><td id="_tr_8_1-5"  data-_i="1" data-_j="5"  data-_p="s13_gcc_ffast-math_10" class=" _centered _table8_opt5" >1</td><td id="_tr_8_1-6"  data-_i="1" data-_j="6"  data-_p="s13_gcc_ffast-math_10" class=" _centered _table8_opt6" >0.00</td><td id="_tr_8_1-7"  data-_i="1" data-_j="7"  data-_p="s13_gcc_ffast-math_10" class=" _table8_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_8_1"  id="_tr_8_1_1"  ondblclick="_action_10(this,2,-1, 'loops/s13_gcc_ffast-math_9.html');"  style="cursor:pointer;"><td id="_tr_8_1_1-1"  data-_i="2" data-_j="1"  data-_p="s13_gcc_ffast-math_9" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:15px;cursor:pointer;" >&#x25BA;</span>Loop 9 -  - s13_gcc_ffast-math<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_8_1_1-2"  data-_i="2" data-_j="2"  data-_p="s13_gcc_ffast-math_9" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_8_1_1-3"  data-_i="2" data-_j="3"  data-_p="s13_gcc_ffast-math_9" class=" _centered" >0.38</td><td id="_tr_8_1_1-4"  data-_i="2" data-_j="4"  data-_p="s13_gcc_ffast-math_9" class=" _centered _table8_opt4" >0.13</td><td id="_tr_8_1_1-5"  data-_i="2" data-_j="5"  data-_p="s13_gcc_ffast-math_9" class=" _centered _table8_opt5" >1</td><td id="_tr_8_1_1-6"  data-_i="2" data-_j="6"  data-_p="s13_gcc_ffast-math_9" class=" _centered _table8_opt6" >0</td><td id="_tr_8_1_1-7"  data-_i="2" data-_j="7"  data-_p="s13_gcc_ffast-math_9" class=" _table8_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_8_1_1"  id="_tr_8_1_1_1"  ondblclick="_action_10(this,3,-1, 'loops/s13_gcc_ffast-math_7.html');"  style="cursor:pointer;"><td id="_tr_8_1_1_1-1"  data-_i="3" data-_j="1"  data-_p="s13_gcc_ffast-math_7" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 7 -  - s13_gcc_ffast-math</td><td id="_tr_8_1_1_1-2"  data-_i="3" data-_j="2"  data-_p="s13_gcc_ffast-math_7" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_8_1_1_1-3"  data-_i="3" data-_j="3"  data-_p="s13_gcc_ffast-math_7" class=" _centered" >98.79</td><td id="_tr_8_1_1_1-4"  data-_i="3" data-_j="4"  data-_p="s13_gcc_ffast-math_7" class=" _centered _table8_opt4" >34.71</td><td id="_tr_8_1_1_1-5"  data-_i="3" data-_j="5"  data-_p="s13_gcc_ffast-math_7" class=" _centered _table8_opt5" >1</td><td id="_tr_8_1_1_1-6"  data-_i="3" data-_j="6"  data-_p="s13_gcc_ffast-math_7" class=" _centered _table8_opt6" >0</td><td id="_tr_8_1_1_1-7"  data-_i="3" data-_j="7"  data-_p="s13_gcc_ffast-math_7" class=" _table8_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_8_1_1"  id="_tr_8_1_1_2"  ondblclick="_action_10(this,4,-1, 'loops/s13_gcc_ffast-math_8.html');"  style="cursor:pointer;"><td id="_tr_8_1_1_2-1"  data-_i="4" data-_j="1"  data-_p="s13_gcc_ffast-math_8" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 8 -  - s13_gcc_ffast-math</td><td id="_tr_8_1_1_2-2"  data-_i="4" data-_j="2"  data-_p="s13_gcc_ffast-math_8" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_8_1_1_2-3"  data-_i="4" data-_j="3"  data-_p="s13_gcc_ffast-math_8" class=" _centered" >0.37</td><td id="_tr_8_1_1_2-4"  data-_i="4" data-_j="4"  data-_p="s13_gcc_ffast-math_8" class=" _centered _table8_opt4" >0.13</td><td id="_tr_8_1_1_2-5"  data-_i="4" data-_j="5"  data-_p="s13_gcc_ffast-math_8" class=" _centered _table8_opt5" >1</td><td id="_tr_8_1_1_2-6"  data-_i="4" data-_j="6"  data-_p="s13_gcc_ffast-math_8" class=" _centered _table8_opt6" >0</td><td id="_tr_8_1_1_2-7"  data-_i="4" data-_j="7"  data-_p="s13_gcc_ffast-math_8" class=" _table8_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_8_1"  id="_tr_8_1_2"  oncontextmenu="_action_23(this,5,-1, 'nil');"  ondblclick="_action_8(this,5,-1, 'Loop 12 -  - s13_gcc_ffast-math');"  style="cursor:pointer;"><td id="_tr_8_1_2-1"  data-_i="5" data-_j="1"  class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:15px;cursor:pointer;" >&#x25BA;</span>Loop 12 -  - s13_gcc_ffast-math<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_8_1_2-2"  data-_i="5" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_8_1_2-3"  data-_i="5" data-_j="3"  class=" _centered" >0</td><td id="_tr_8_1_2-4"  data-_i="5" data-_j="4"  class=" _centered _table8_opt4"  style="background:#A52B12;" >0</td><td id="_tr_8_1_2-5"  data-_i="5" data-_j="5"  class=" _centered _table8_opt5" >0</td><td id="_tr_8_1_2-6"  data-_i="5" data-_j="6"  class=" _centered _table8_opt6" >0</td><td id="_tr_8_1_2-7"  data-_i="5" data-_j="7"  class=" _table8_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_8_1_2"  id="_tr_8_1_2_1"  ondblclick="_action_10(this,6,-1, 'loops/s13_gcc_ffast-math_10.html');"  style="cursor:pointer;"><td id="_tr_8_1_2_1-1"  data-_i="6" data-_j="1"  data-_p="s13_gcc_ffast-math_10" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 10 -  - s13_gcc_ffast-math</td><td id="_tr_8_1_2_1-2"  data-_i="6" data-_j="2"  data-_p="s13_gcc_ffast-math_10" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_8_1_2_1-3"  data-_i="6" data-_j="3"  data-_p="s13_gcc_ffast-math_10" class=" _centered" >0.44</td><td id="_tr_8_1_2_1-4"  data-_i="6" data-_j="4"  data-_p="s13_gcc_ffast-math_10" class=" _centered _table8_opt4" >0.15</td><td id="_tr_8_1_2_1-5"  data-_i="6" data-_j="5"  data-_p="s13_gcc_ffast-math_10" class=" _centered _table8_opt5" >1</td><td id="_tr_8_1_2_1-6"  data-_i="6" data-_j="6"  data-_p="s13_gcc_ffast-math_10" class=" _centered _table8_opt6" >0</td><td id="_tr_8_1_2_1-7"  data-_i="6" data-_j="7"  data-_p="s13_gcc_ffast-math_10" class=" _table8_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_8_1_2"  id="_tr_8_1_2_2"  oncontextmenu="_action_23(this,7,-1, 'nil');"  ondblclick="_action_8(this,7,-1, 'Loop 11 -  - s13_gcc_ffast-math');"  style="cursor:pointer;"><td id="_tr_8_1_2_2-1"  data-_i="7" data-_j="1"  class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 11 -  - s13_gcc_ffast-math</td><td id="_tr_8_1_2_2-2"  data-_i="7" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_8_1_2_2-3"  data-_i="7" data-_j="3"  class=" _centered" >0</td><td id="_tr_8_1_2_2-4"  data-_i="7" data-_j="4"  class=" _centered _table8_opt4"  style="background:#A52B12;" >0</td><td id="_tr_8_1_2_2-5"  data-_i="7" data-_j="5"  class=" _centered _table8_opt5" >0</td><td id="_tr_8_1_2_2-6"  data-_i="7" data-_j="6"  class=" _centered _table8_opt6" >0</td><td id="_tr_8_1_2_2-7"  data-_i="7" data-_j="7"  class=" _table8_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+</table></div>
+<script>
+document.getElementById("_tr_8_1_2").addEventListener('contextmenu', event => event.preventDefault());
+document.getElementById("_tr_8_1_2_2").addEventListener('contextmenu', event => event.preventDefault());
+function _action_23 (obj, i, j, p){
+           document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/empty_lb.html\"></object>";
+           var modal = document.getElementById('MaqaoModal');
+           modal.style.display = "block";
+}
+function _action_8 (obj, i, j, p){
+           open("loops/empty_loop.html?loop="+p+"");
+}
+function _action_10 (obj, i, j, p){
+           open(""+p+"");
+}
+</script>
+<style>
+.menu {
+width: 250px;
+  z-index: 1;
+  box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  display: none;
+  transition: 0.2s display ease-in;
+  background-color: white;
+}
+.menu-options {
+  list-style: none;
+  padding: 0px 0;
+  z-index: 1;
+}
+.menu-option {
+  font-weight: 500;
+  z-index: 1;
+  font-size: 14px;
+  padding: 2px 10px 2px 10px;
+  cursor: pointer;
+}
+.menu-option:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+</style>
+<div class="menu" data-visible=false id="mctxMenu0">
+  <ul class="menu-options">
+    <li class="menu-option" id="mctxMenu0_1" onclick="_action_11('_p', '_p0_1')" oncontextmenu="_action_11('_p', '_p0_1')" >Load Distribution</li>
+    <li class="menu-option" id="mctxMenu0_2" onclick="_action_13('_p', '_p0_2')" oncontextmenu="_action_13('_p', '_p0_2')" >Sorted Load Distribution</li>
+    <li class="menu-option" id="mctxMenu0_3" onclick="_action_12('_p', '_p0_3')" oncontextmenu="_action_12('_p', '_p0_3')" >Load Distribution All Threads</li>
+    <li class="menu-option" id="mctxMenu0_4" onclick="_action_15('_p', '_p0_4')" oncontextmenu="_action_15('_p', '_p0_4')" >Load Callchains</li>
+    <li class="menu-option" id="mctxMenu0_5" onclick="_action_16('_p', '_p0_5')" oncontextmenu="_action_16('_p', '_p0_5')" >Go to report ...</li>
+  </ul>
+</div>
+<div class="menu" data-visible=false id="mctxMenu3">
+  <ul class="menu-options">
+    <li class="menu-option" id="mctxMenu3_1" onclick="_action_17('_p', '_p3_1')" oncontextmenu="_action_17('_p', '_p3_1')" >Load Distribution</li>
+    <li class="menu-option" id="mctxMenu3_2" onclick="_action_19('_p', '_p3_2')" oncontextmenu="_action_19('_p', '_p3_2')" >Sorted Load Distribution</li>
+    <li class="menu-option" id="mctxMenu3_3" onclick="_action_18('_p', '_p3_3')" oncontextmenu="_action_18('_p', '_p3_3')" >Load Distribution All Threads</li>
+    <li class="menu-option" id="mctxMenu3_4" onclick="_action_21('_p', '_p3_4')" oncontextmenu="_action_21('_p', '_p3_4')" >Load Callchains</li>
+  </ul>
+</div>
+<script>
+function toggleMenu (menu, command) {
+  menu.style.display = command === "show" ? "block" : "none";
+  if (menu.style.display == "block") {
+    menu.dataset.visible = true;
+  }
+  else {
+    menu.dataset.visible = false;
+    if (_previous_elem != null) {
+      _previous_elem.parentNode.classList.remove ("selected-context");
+    }
+  }
+}
+const setPosition = (menu, { top, left }) => {
+  menu.style.left = `${left}px`;
+  menu.style.top = `${top}px`;
+  toggleMenu(menu, "show");
+};
+var _global_elem = null;
+var _previous_elem = null;
+var _ids;
+var _current_menu = null;
+
+document.addEventListener("click", e => {
+  if (_current_menu != null && _current_menu.dataset.visible) {
+    toggleMenu (_current_menu, "hide");
+    _current_menu = null;
+  }
+});
+document.getElementById("mctxMenu0").addEventListener('contextmenu', event => event.preventDefault());
+
+_ids = ["_tr_8_1"];
+for (var i = 0; i < _ids.length; i++) {
+  var elem = document.getElementById(_ids[i]);
+  elem.addEventListener("contextmenu", e => {
+    e.preventDefault();
+    _global_elem = event.target || event.srcElement;
+    if (_global_elem.nodeName == "SPAN") {
+       _global_elem = _global_elem.parentNode;
+    }
+    const origin = {
+      left: e.clientX,
+      top: e.clientY
+    };
+    if (_current_menu != null && _current_menu.dataset.visible) {
+      toggleMenu (_current_menu, "hide");
+      _current_menu = null;
+    }
+    _previous_elem = _global_elem;    var menu = document.getElementById("mctxMenu0");
+    if (menu != null) {
+      _current_menu = menu;
+      setPosition(menu, origin);
+      _global_elem.parentNode.classList.add ("selected-context");
+    }
+    return false;
+  });
+}
+function _action_11 (p, pm){
+           document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+".html\"></object>";
+           var modal = document.getElementById('MaqaoModal');
+           modal.style.display = "block";
+}
+function _action_13 (p, pm){
+           document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+"_sorted.html\"></object>";
+           var modal = document.getElementById('MaqaoModal');
+           modal.style.display = "block";
+}
+function _action_12 (p, pm){
+           document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+"_all.html\"></object>";
+           var modal = document.getElementById('MaqaoModal');
+           modal.style.display = "block";
+}
+function _action_15 (p, pm){
+           document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+"_callchains.html\"></object>";
+           var modal = document.getElementById('MaqaoModal');
+           modal.style.display = "block";
+}
+function _action_16 (p, pm){
+           open("functions/"+_global_elem.dataset._p+".html", "_self");
+}
+document.getElementById("mctxMenu3").addEventListener('contextmenu', event => event.preventDefault());
+
+_ids = ["_tr_8_1_1", "_tr_8_1_1_1", "_tr_8_1_1_2", "_tr_8_1_2_1"];
+for (var i = 0; i < _ids.length; i++) {
+  var elem = document.getElementById(_ids[i]);
+  elem.addEventListener("contextmenu", e => {
+    e.preventDefault();
+    _global_elem = event.target || event.srcElement;
+    if (_global_elem.nodeName == "SPAN") {
+       _global_elem = _global_elem.parentNode;
+    }
+    const origin = {
+      left: e.clientX,
+      top: e.clientY
+    };
+    if (_current_menu != null && _current_menu.dataset.visible) {
+      toggleMenu (_current_menu, "hide");
+      _current_menu = null;
+    }
+    _previous_elem = _global_elem;    var menu = document.getElementById("mctxMenu3");
+    if (menu != null) {
+      _current_menu = menu;
+      setPosition(menu, origin);
+      _global_elem.parentNode.classList.add ("selected-context");
+    }
+    return false;
+  });
+}
+function _action_17 (p, pm){
+           document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+".html\"></object>";
+           var modal = document.getElementById('MaqaoModal');
+           modal.style.display = "block";
+}
+function _action_19 (p, pm){
+           document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+"_sorted.html\"></object>";
+           var modal = document.getElementById('MaqaoModal');
+           modal.style.display = "block";
+}
+function _action_18 (p, pm){
+           document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+"_all.html\"></object>";
+           var modal = document.getElementById('MaqaoModal');
+           modal.style.display = "block";
+}
+function _action_21 (p, pm){
+           document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+"_callchains.html\"></object>";
+           var modal = document.getElementById('MaqaoModal');
+           modal.style.display = "block";
+}
+</script>
+<script>
+addLoadEvent(function(){
+  var boxs_on  = ["_table8_opt_all","_table8_opt4", "_table8_opt5", "_table8_opt6", ];
+  var boxs_off = ["_table8_opt7", ];
+  for (var i = 0; i < boxs_on.length; i++) {
+    var obj = document.getElementById(boxs_on[i]).checked = true;
+  }
+  for (var i = 0; i < boxs_off.length; i++) {
+    var obj = document.getElementById(boxs_off[i]).checked = false;
+  }
+});
+var list_opts_table8 = ['_table8_opt4','_table8_opt5','_table8_opt6','_table8_opt7',];addLoadEvent (function (){
+  _check_all_checkbox_ ("_table8_opt_all", "list_opts_table8");
+});
+</script>
+</div></div><script class="code">
+// Function called to check / uncheck all modules in the filter
+function _onchange_modules (obj) {
+  var inputs = ["_input_check_mod_s13_gcc_ffast-math", ];
+  if (obj.checked == true) {
+    document.getElementById("_input_check_all_mods_text").innerHTML = "Uncheck all modules";
+    for (var i = 0; i < inputs.length; i++) {
+      document.getElementById(inputs[i]).checked = true;
+    }
+  }
+  else {
+    document.getElementById("_input_check_all_mods_text").innerHTML = "Check all modules";
+    for (var i = 0; i < inputs.length; i++) {
+      document.getElementById(inputs[i]).checked = false;
+    }
+  }
+}
+// Function called to handle filters
+addLoadEvent(function(){
+  // Fill some data for each rows that contains all coverages
+  // These data are used to update coverages when some modules are filtered
+  // by the function _upd_table
+  var table   = document.getElementById("_treed_table_8");
+  var nb_runs = 1;
+  for (var i = 1, row; row = table.rows[i]; i++) {
+    for (var j = 0; j < nb_runs; j++) {
+      row.setAttribute("cov_"+j, row.cells[2+j].innerText);
+    }
+  }
+});
+function _upd_table() {
+  var tab = document.getElementById("_treed_table_8");
+  var nb_rows = tab.childNodes[0].rows.length;
+  var rows = tab.childNodes[0].rows;
+  for (var r = 0; r < 1; r++) {
+    var cov = 0
+    for (var i = 1, row; row = tab.rows[i]; i++) {
+      var cells = row.cells;
+      if (cells[1].innerHTML != ""
+      &&  document.getElementById("_input_check_mod_" + cells[1].innerHTML.replace (/ /g, "_")).checked == true) {
+        cov += Number (row.getAttribute ("cov_"+r));
+      }
+    }
+    if (cov > 100) {
+      cov = 100;
+    }
+    for (var i = 1, row; row = tab.rows[i]; i++) {
+      var cells = rows[i].cells;
+      cells[2+r].textContent = Math.floor((Number (row.getAttribute ("cov_"+r)) * 100 * 100) / cov) / 100 ;
+      if (cells[1].innerHTML != "") {
+        if (document.getElementById("_input_check_mod_" + cells[1].innerHTML.replace (/ /g, "_")).checked == true) {
+          if (rows[i].classList.contains("_treed_hidden")) {
+            rows[i].classList.toggle("_treed_hidden");
+          }
+        }
+        else {
+          if (! rows[i].classList.contains("_treed_hidden")) {
+            rows[i].classList.toggle("_treed_hidden");
+            if (rows[i].firstChild.firstChild.textContent == "\u25BC") {
+              rows[i].firstChild.firstChild.textContent = "\u25BA";
+            }
+          }
+          var j = i + 1;
+          while (j < nb_rows && rows[j].cells[1].innerHTML == "") {
+            if (! rows[j].classList.contains("_treed_hidden")) {
+              rows[j].classList.toggle("_treed_hidden");
+              if (rows[j].firstChild.firstChild.textContent == "\u25BC") {
+                rows[j].firstChild.firstChild.textContent = "\u25BA";
+              }
+            }
+            j++;
+          }
+        }
+      }
+    }
+  }
+}
+addLoadEvent(function(){
+  document.getElementById ("radio_run1").checked = true;
+});
+function __compare_functions (a, b) {
+  var selected_radio_value = document.querySelector('input[name="radio_run"]:checked').value;
+  return b.cells[2 + Number (selected_radio_value)].innerText - a.cells[2 + Number (selected_radio_value)].innerText;
+}
+function _upd_base_run () {
+  // Index of the run to use as base
+  var selected_radio_value = document.querySelector('input[name="radio_run"]:checked').value;
+
+  // Sort functions based on the reference run
+  var table = document.getElementById ("_treed_table_8");
+
+  // 1/ Build a table of loops based on their function, a list of functions and compute coverage for each module
+  var functions_list  = [];
+  var loops_map       = new Map ();
+  var modules_map     = new Map ();
+  var loops           = [];
+  var previous_row_id = 0;
+  for (var i = 0, row; row = table.rows[i]; i++) {
+    if (/^_tr_\d+_\d+-\d+$/.test (row.cells[0].id)) {
+      functions_list.push (row);
+      var mod_cov = modules_map.get (row.cells[1].innerText);
+      if (mod_cov == undefined) {
+        mod_cov = 0;
+      }
+      modules_map.set (row.cells[1].innerText, mod_cov + Number (row.getAttribute ("cov_"+selected_radio_value)));
+      if (loops.length > 0) {
+        loops_map.set (table.rows[previous_row_id], loops);
+        loops = [];
+      }
+      previous_row_id = i;
+    }
+    else if (i > 0) {
+      loops.push (row);
+    }
+  }
+  if (loops.length > 0) {
+    loops_map.set (table.rows[previous_row_id], loops);
+  }
+  loops = null;
+
+  // -- Sort functions according to the new reference run
+  functions_list.sort (__compare_functions);
+
+  // -- Build the new loop body
+  var new_tbody = document.createElement("tbody");
+  new_tbody.appendChild(table.rows[0]);
+  for (var i = 0, row; row = functions_list[i]; i++) {
+    new_tbody.appendChild(row);
+    var loops = loops_map[row];
+    if (loops != undefined) {
+      for (var j = 0, row; row = loops[j]; j++) {
+        new_tbody.appendChild(row);
+      }
+    }
+  }
+  table.replaceChild(new_tbody, table.firstChild);
+  // Update module filter data
+  modules_map.forEach((value, key) => {
+    var input_elem = document.getElementById ("cov_mod_"+key);
+    input_elem.innerText = Number.parseFloat(value).toFixed(2);
+  });
+}
+addLoadEvent(function(){
+  var boxs_on  = ["_input_check_all_mods", "_input_check_mod_s13_gcc_ffast-math", ];
+
+  for (var i = 0; i < boxs_on.length; i++) {
+    document.getElementById(boxs_on[i]).checked = true;
+  }
+});
+function _onresize () {
+  document.getElementById("spacer_page_title").style.height = (document.getElementById("page_title").scrollHeight + 20)+"px";
+}
+window.onresize = _onresize;
+</script>
+
+  <div id="MaqaoModal" class="maqao_modal">
+    <div class="maqao_modal-content">
+      <div class="maqao_modal-header">
+        <span class="maqao_close">&times;</span>
+      </div>
+      <div id="maqao_modal-body" class="maqao_modal-body">
+      </div>
+    </div>
+  </div>
+</div><script>
+var modal = document.getElementById('MaqaoModal');
+var span = document.getElementsByClassName("maqao_close")[0];
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
+    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v2 - v1 : v1.toString().localeCompare(v2)
+    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+addLoadEvent(function(){
+  document.querySelectorAll('._fixed_table th').forEach(th => th.addEventListener('click', (() => {
+    const table = th.closest('table');
+    // Remove all symbols in header
+    table.querySelectorAll('th').forEach(function (e) {
+      e.firstChild.textContent = "";
+    });
+    // Change the symbol on the clicked header
+    if (this.asc != true) {
+      th.firstChild.textContent = "\u25BC";
+    }
+    else {
+      th.firstChild.textContent = "\u25B2";
+    }
+    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+        .forEach(tr => table.appendChild(tr) );
+  })));
+});
+function _check_all_checkbox_ (obj_id, opts_ids) {
+  var obj   = document.getElementById (obj_id);
+  var opts  = window[opts_ids];
+  var count = 0
+  for (i = 0; i < opts.length; i++) {
+    var obj_s = document.getElementById(opts[i]);
+    if (obj_s.checked) {
+      count ++;
+    }
+  }
+  if (count == 0) {
+    obj.value = "Select all";
+  }
+  else if (count == opts.length) {
+    obj.value = "Select none";
+  }
+}
+// Fonction for table selector
+function click_table_menu (c, obj_id, opt_ids) {
+  $("."+c).each(function(index, element) {
+    element.classList.toggle("_tcol_hidden");
+  });
+  if (obj_id != undefined) {
+    _check_all_checkbox_ (obj_id, opt_ids)
+  }
+}
+function set_all_table_menu (obj, var_opt_ids) {
+  var opt_ids = window[var_opt_ids];
+  var is_selected = true
+  if (obj.value == "Select all") {
+    is_selected = false;
+  }
+  for (i = 0; i < opt_ids.length; i++) {
+    var obj_s = document.getElementById(opt_ids[i]);
+    if (is_selected == obj_s.checked) {
+      click_table_menu (opt_ids[i]);
+      obj_s.checked = !obj_s.checked;
+    }
+  }
+  if (is_selected == false) {
+    obj.value = "Select none";
+  } else {
+    obj.value = "Select all";
+  }
+}
+// Script for accordion box
+function _click_accordion_header(obj) {
+  var content_id = '_accordion_content_' + obj.id.substr (obj.id.lastIndexOf('_') + 1);
+  var content = document.getElementById(content_id);
+  content.classList.toggle('collapsed');
+  obj.classList.toggle('collapsed');
+  obj.parentNode.classList.toggle('collapsed');
+  // Check if the box must be openned ...
+  if (obj.classList.contains ('collapsed'))
+  {
+    obj.firstChild.textContent = "\u25B6";
+  }
+  // or closed.
+  else 
+  {
+    obj.firstChild.textContent = "\u25BC";
+  }
+}
+  // Script for paged table
+function _click_paged_prev(obj) {
+  var pages_content_id = '_paged_tables_page_' + obj.parentNode.parentNode.id.substr (obj.parentNode.parentNode.id.lastIndexOf('_') + 1);
+  var pages_content = document.getElementById(pages_content_id).innerHTML;
+  var max_pages = pages_content.substr (pages_content.lastIndexOf('/') + 1);
+  var cur_page  = pages_content.substring (pages_content.lastIndexOf(' ') + 1, pages_content.lastIndexOf('/'));
+  max_pages = Number (max_pages);
+  cur_page  = Number (cur_page);
+  if (cur_page > 1) {
+    var div_paged = obj.parentNode.parentNode.id;
+    var i;
+    var x = document.getElementsByClassName(div_paged + '_' + (cur_page - 1));
+    for (i = 0; i < x.length; i++) {
+      x[i].classList.toggle('_paged_hidden');
+    }
+    x = document.getElementsByClassName(div_paged + '_' + (cur_page - 2));
+    for (i = 0; i < x.length; i++) {
+      x[i].classList.toggle('_paged_hidden');
+    }
+  document.getElementById(pages_content_id).textContent = "Page " + (cur_page - 1) + "/" + max_pages;
+  }
+}
+function _click_paged_next(obj) {
+  var pages_content_id = '_paged_tables_page_' + obj.parentNode.parentNode.id.substr (obj.parentNode.parentNode.id.lastIndexOf('_') + 1);
+  var pages_content = document.getElementById(pages_content_id).innerHTML;
+  var max_pages = pages_content.substr (pages_content.lastIndexOf('/') + 1);
+  var cur_page  = pages_content.substring (pages_content.lastIndexOf(' ') + 1, pages_content.lastIndexOf('/'));
+  max_pages = Number (max_pages);
+  cur_page  = Number (cur_page);
+  if (cur_page < max_pages) {
+    var div_paged = obj.parentNode.parentNode.id;
+    var i;
+    var x = document.getElementsByClassName(div_paged + '_' + (cur_page - 1));
+    for (i = 0; i < x.length; i++) {
+      x[i].classList.toggle('_paged_hidden');
+    }
+    x = document.getElementsByClassName(div_paged + '_' + cur_page);
+    for (i = 0; i < x.length; i++) {
+      x[i].classList.toggle('_paged_hidden');
+    }
+    document.getElementById(pages_content_id).textContent = "Page " + (cur_page + 1) + "/" + max_pages;
+  }
+}
+// Function for tree table
+function _click_treed(obj) {
+  if (obj.innerHTML == "\u25BA") {
+    obj.textContent = "\u25BC";
+    // Open childs
+    var x = document.getElementsByClassName(obj.parentNode.parentNode.id);
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.toggle('_treed_hidden');
+    }
+  }
+  else if (obj.innerHTML == "\u25BC") {
+    obj.textContent = "\u25BA";
+    // Close all childs
+    var trs = document.getElementsByTagName('tr');
+    var r   = obj.parentNode.parentNode.id+'_';
+    var re  = new RegExp (r, "g");
+    for (var i = 0; i < trs.length; i++) {
+      var s = trs[i].id+""
+      if (s.match(re)) {
+        var o = document.getElementById(s);
+        if (! o.classList.contains('_treed_hidden')) {
+          o.classList.toggle('_treed_hidden');
+        }
+        if (o.firstChild.firstChild.textContent == "\u25BC") {
+          o.firstChild.firstChild.textContent = "\u25BA";
+        }
+        if (o.firstChild.childNodes.length == 3) {
+          o.firstChild.childNodes[2].textContent = '+';
+        }
+      }
+    }
+    if (obj.parentNode.childNodes.length == 3) {
+      obj.parentNode.childNodes[2].textContent = '+';
+    }
+  }
+}
+function _click_expand (obj) {
+  var trs = document.getElementsByTagName('tr');
+  var r   = obj.parentNode.parentNode.id+'_';
+  var re  = new RegExp (r, "g");
+  // Symbole + => expand all
+  if (obj.textContent == "+") {
+    for (var i = 0; i < trs.length; i++) {
+      var s = trs[i].id+"";
+      if (s.match(re)) {
+        var o = document.getElementById(s);
+        if (o.classList.contains('_treed_hidden')) {
+           o.classList.toggle('_treed_hidden');
+        }
+        if (o.firstChild.firstChild.textContent == "\u25BA") {
+          o.firstChild.firstChild.textContent = "\u25BC";
+        }
+        if (o.firstChild.childNodes.length == 3) {
+          o.firstChild.childNodes[2].textContent = '\u2010';
+        }
+      }
+    }
+    var o = obj.parentNode.parentNode;
+    if (o.firstChild.firstChild.textContent == "\u25BA") {
+      o.firstChild.firstChild.textContent = "\u25BC";
+    }
+    obj.textContent = "\u2010";
+  }
+  // Symbole - => collapse all
+  else {
+    for (var i = 0; i < trs.length; i++) {
+      var s = trs[i].id+"";
+      if (s.match(re)) {
+        var o = document.getElementById(s);
+        if (! o.classList.contains('_treed_hidden')) {
+           o.classList.toggle('_treed_hidden');
+        }
+        if (o.firstChild.firstChild.textContent == "\u25BC") {
+          o.firstChild.firstChild.textContent = "\u25BA";
+        }
+        if (o.firstChild.childNodes.length == 3) {
+          o.firstChild.childNodes[2].textContent = '+';
+        }
+      }
+    }
+    var o = obj.parentNode.parentNode;
+    if (o.firstChild.firstChild.textContent == "\u25BC") {
+      o.firstChild.firstChild.textContent = "\u25BA";
+    }
+    obj.textContent = "+";
+  }
+}
+// Hide unselected tabs
+addLoadEvent(function(){
+  var x = document.getElementsByClassName("_tab_header_li");
+  for (var i = 0; i < x.length; i++) {
+    if (x[i].classList.contains("selected_tab") == false) {
+      var e = document.getElementById (x[i].dataset.tab);
+      e.style.display = "none";
+    }
+  }
+});
+// Change tab
+function change_tab (e, baseId) {
+  // Handle tabs
+  var i = 1;
+  while (true) {
+    var id = baseId + i;
+    var t = document.getElementById (id);
+    if (t == null) {
+      break;
+    }
+    if (id == e.dataset.tab) {
+      t.style.removeProperty("display");
+    }
+    else {
+      t.style.display = "none";
+    }
+    i = i + 1;
+  }
+  // Handle headers
+  $(e).siblings().each( function () {
+    this.classList.remove("selected_tab");
+  });
+  e.classList.add("selected_tab");
+}
+</script>
+</body>
+</html>

@@ -8,9 +8,9 @@ source colors.sh
 
 # subroutines
 
-warmup=100
+warmup=0
 rep=100
-size=1024
+size=1516
 
 function run(){
   local exe=$1

@@ -14,7 +14,7 @@ if (exists("xlabel_")) set xlabel xlabel_
 
 set terminal png enhanced background rgb "#dddddd"
 
-set style data histogram
+set style data line
 set style fill solid border -1
 set boxwidth 0.9
 
@@ -25,5 +25,5 @@ set multiplot layout 2, 2 rowsfirst
 set autoscale y
 
   set title "warmup time / exec time"
-  plot "find_warmup.data" u 1:xtic(2) t "Intel Core i7-lt" lt rgb "#81a1c1"
+  plot "find_warmup.data" u 1:xtic(1) t "Intel Core i7-lt" lt rgb "#81a1c1"
 
