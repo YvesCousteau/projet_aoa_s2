@@ -72,11 +72,11 @@ function addLoadEvent(func) {
 <!-- ========================== Summary about the loop ========================== -->
   <table style="width:100%;border-radius:5px;color:white;background:#114B79;margin-bottom:15px;">
     <tr>
-      <th><button class="tooltip-maqao-button" onclick="window.location.href='s13_gcc_mrecip_9.html';" title="Go to previous loop: 9" >Prev</button></th>
+      <th><button class="tooltip-maqao-button" onclick="window.location.href='s13_gcc_mrecip_10.html';" title="Go to previous loop: 10" >Prev</button></th>
       <th>Loop Id: 3</th>
       <th>Module: s13_gcc_mrecip</th>
       <th>Source: :0-0</th>
-      <th>Coverage: 0.01%</th>
+      <th>Coverage: 0.04%</th>
       <th><button class="tooltip-maqao-button" title="No next loop" style="cursor: not-allowed;">No Next</button></th>
     </tr>
   </table>
@@ -151,7 +151,7 @@ function addLoadEvent(func) {
 <tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#993333;word-break:break-all;"><span class="tooltip-maqao" title="Size: 9&lt;br&gt;Pattern: LLLLLLLLS&lt;br&gt;Span: 76&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 52&lt;br&gt;Accessed memory without overlapping: 48&lt;br&gt;Accessed memory reused: 4&lt;br&gt;"><pre>0x16e4 MOV	-0x68(%RBP),%RSI    [1]</pre></span></td></tr>
 <tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x16e8 MOVQ	%RDI,%XMM0</pre></td></tr>
 <tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x16ed MOV	%EAX,%EDI</pre></td></tr>
-<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x16ef CALL	17fc &lt;s13&gt;</pre></td></tr>
+<tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="word-break:break-all;" ><pre>0x16ef CALL	17f0 &lt;s13&gt;</pre></td></tr>
 <tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#993333;word-break:break-all;"><span class="tooltip-maqao" title="Size: 9&lt;br&gt;Pattern: LLLLLLLLS&lt;br&gt;Span: 76&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 52&lt;br&gt;Accessed memory without overlapping: 48&lt;br&gt;Accessed memory reused: 4&lt;br&gt;"><pre>0x16f4 ADDL	$0x1,-0x94(%RBP)    [1]</pre></span></td></tr>
 <tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#993333;word-break:break-all;"><span class="tooltip-maqao" title="Size: 9&lt;br&gt;Pattern: LLLLLLLLS&lt;br&gt;Span: 76&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 52&lt;br&gt;Accessed memory without overlapping: 48&lt;br&gt;Accessed memory reused: 4&lt;br&gt;"><pre>0x16fb MOV	-0x94(%RBP),%EAX    [1]</pre></span></td></tr>
 <tr onmouseover="panel_asm_onmouseover_tr (this)" onmouseout="panel_asm_onmouseout_tr (this)" data-src="0"><td class="panel_asm_0" style="background-color:#993333;word-break:break-all;"><span class="tooltip-maqao" title="Size: 9&lt;br&gt;Pattern: LLLLLLLLS&lt;br&gt;Span: 76&lt;br&gt;Head: 0&lt;br&gt;Unroll factor: 1&lt;br&gt;Stride status: Not mono block loop&lt;br&gt;Stride: 0&lt;br&gt;Accessed memory status: Success&lt;br&gt;Accessed memory: 52&lt;br&gt;Accessed memory without overlapping: 48&lt;br&gt;Accessed memory reused: 4&lt;br&gt;"><pre>0x1701 CMP	-0x84(%RBP),%EAX    [1]</pre></span></td></tr>
@@ -346,8 +346,8 @@ function set_ldbal_input (obj) {
   var _width = Math.floor(document.getElementById("chart_cat_24").getBoundingClientRect().width);
   if (obj.value == "regular") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_53316_53316'];
-    var data = [{value: 0.01}];
+    var ordinals = ['pop-os_12831_12831'];
+    var data = [{value: 0.04}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -455,13 +455,13 @@ function set_ldbal_input (obj) {
     }
   });
   $("#zoom_chart_24_0").click( function () {
-    window.open("../topo/_pop-os_53316_53316.html");
+    window.open("../topo/_pop-os_12831_12831.html");
   });
   }
   else if (obj.value == "sorted") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_53316_53316'];
-    var data = [{value: 0.01}];
+    var ordinals = ['pop-os_12831_12831'];
+    var data = [{value: 0.04}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -569,13 +569,13 @@ function set_ldbal_input (obj) {
     }
   });
   $("#zoom_chart_24_0").click( function () {
-    window.open("../topo/_pop-os_53316_53316.html");
+    window.open("../topo/_pop-os_12831_12831.html");
   });
   }
   else if (obj.value == "all") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_53316_53316'];
-    var data = [{value: 0.01}];
+    var ordinals = ['pop-os_12831_12831'];
+    var data = [{value: 0.04}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -683,15 +683,15 @@ function set_ldbal_input (obj) {
     }
   });
   $("#zoom_chart_24_0").click( function () {
-    window.open("../topo/_pop-os_53316_53316.html");
+    window.open("../topo/_pop-os_12831_12831.html");
   });
   }
   document.getElementById("chart_cat_25").innerHTML = "";
   var _width = Math.floor(document.getElementById("chart_cat_25").getBoundingClientRect().width);
   if (obj.value == "regular") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_53316_53316'];
-    var data = [{value: 0}];
+    var ordinals = ['pop-os_12831_12831'];
+    var data = [{value: 0.01}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -799,13 +799,13 @@ function set_ldbal_input (obj) {
     }
   });
   $("#zoom_chart_25_0").click( function () {
-    window.open("../topo/_pop-os_53316_53316.html");
+    window.open("../topo/_pop-os_12831_12831.html");
   });
   }
   else if (obj.value == "sorted") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_53316_53316'];
-    var data = [{value: 0}];
+    var ordinals = ['pop-os_12831_12831'];
+    var data = [{value: 0.01}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -913,13 +913,13 @@ function set_ldbal_input (obj) {
     }
   });
   $("#zoom_chart_25_0").click( function () {
-    window.open("../topo/_pop-os_53316_53316.html");
+    window.open("../topo/_pop-os_12831_12831.html");
   });
   }
   else if (obj.value == "all") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_53316_53316'];
-    var data = [{value: 0}];
+    var ordinals = ['pop-os_12831_12831'];
+    var data = [{value: 0.01}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -1027,7 +1027,7 @@ function set_ldbal_input (obj) {
     }
   });
   $("#zoom_chart_25_0").click( function () {
-    window.open("../topo/_pop-os_53316_53316.html");
+    window.open("../topo/_pop-os_12831_12831.html");
   });
   }
 }
@@ -1059,8 +1059,8 @@ function ldbal_loadhelp (divId) {
     <div id="loop_static_path_0" style="width:100%;">
       <table style="width:100%;">
         <tr><th>Metric</th><th>Value</th></tr>
-            <tr><td>Coverage (% app. time)</td><td>0.01</td></tr>
-            <tr><td>Time (s)</td><td>0</td></tr>
+            <tr><td>Coverage (% app. time)</td><td>0.04</td></tr>
+            <tr><td>Time (s)</td><td>0.01</td></tr>
             <tr><td>[VPROF] Instance Count</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (min)</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (avg)</td><td></td></tr>
@@ -1073,7 +1073,7 @@ function ldbal_loadhelp (divId) {
             <tr><td>CQA speedup if fully vectorized</td><td style="background-color:#FF950E;">5.54</td></tr>
             <tr><td>CQA speedup if no inter-iteration dependency</td><td>NA</td></tr>
             <tr><td>CQA speedup if next bottleneck killed</td><td style="background-color:#FFCC99;">1.29</td></tr>
-            <tr><td>Speedup if perfectly load balanced</td><td>0</td></tr>
+            <tr><td>Speedup if perfectly load balanced</td><td>1</td></tr>
             <tr><td>Bottlenecks</td><td>P2, P3, </td></tr>
             <tr><td>Function</td><td>main</td></tr>
             <tr><td>Source</td><td></td></tr>
@@ -1135,8 +1135,8 @@ function ldbal_loadhelp (divId) {
     <div id="loop_static_path_1" style="width:100%;">
       <table style="width:100%;">
         <tr><th>Metric</th><th>Value</th></tr>
-            <tr><td>Coverage (% app. time)</td><td>0.01</td></tr>
-            <tr><td>Time (s)</td><td>0</td></tr>
+            <tr><td>Coverage (% app. time)</td><td>0.04</td></tr>
+            <tr><td>Time (s)</td><td>0.01</td></tr>
             <tr><td>[VPROF] Instance Count</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (min)</td><td></td></tr>
             <tr><td>[VPROF] Iteration Count (avg)</td><td></td></tr>
@@ -1149,7 +1149,7 @@ function ldbal_loadhelp (divId) {
             <tr><td>CQA speedup if fully vectorized</td><td style="background-color:#FF950E;">5.54</td></tr>
             <tr><td>CQA speedup if no inter-iteration dependency</td><td>NA</td></tr>
             <tr><td>CQA speedup if next bottleneck killed</td><td style="background-color:#FFCC99;">1.29</td></tr>
-            <tr><td>Speedup if perfectly load balanced</td><td>0</td></tr>
+            <tr><td>Speedup if perfectly load balanced</td><td>1</td></tr>
             <tr><td>Bottlenecks</td><td>P2, P3, </td></tr>
             <tr><td>Function</td><td>main</td></tr>
             <tr><td>Source</td><td></td></tr>
@@ -1245,7 +1245,7 @@ function cqa_adv_loadhelp (divId) {
       </div>
       <div style="padding-left:10px;margin-bottom: 10px;">
         <table>
-          <tr><td class="_td_shift_20">Coverage</td><td>0.01 %</td></tr>
+          <tr><td class="_td_shift_20">Coverage</td><td>0.04 %</td></tr>
           <tr><td class="_td_shift_20">Function</td><td><a href="../functions/s13_gcc_mrecip_8.html">main</a></td></tr>
           <tr><td class="_td_shift_20">Source file and lines</td><td></td></tr>
         <tr><td class="_td_shift_20">Module</td><td>s13_gcc_mrecip</td></tr>
@@ -1312,7 +1312,7 @@ The binary loop is storing 4 bytes.
 <div class="_fixed_box" ><h3 class="_header">ASM code</h3>
 <div class="_content">In the binary file, the address of the loop is: 16fb
 
-<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOV -0x8c(%RBP),%EAX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x80(%RBP),%RDI</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x90(%RBP),%R8D</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x50(%RBP),%RCX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x60(%RBP),%RDX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x68(%RBP),%RSI</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOVQ %RDI,%XMM0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOV %EAX,%EDI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>CALL 17fc <s13></td><td>2</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>1</td><td>0.33</td><td>0</td><td>2</td></tr><tr><td style='word-break:break-all;'>ADDL $0x1,-0x94(%RBP)</td><td>2</td><td>0.50</td><td>0.50</td><td>0.83</td><td>0.83</td><td>1</td><td>0.50</td><td>0.50</td><td>0.33</td><td>5</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOV -0x94(%RBP),%EAX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CMP -0x84(%RBP),%EAX</td><td>1</td><td>0.25</td><td>0.25</td><td>0.50</td><td>0.50</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>JL 16cb <main+0x34b></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr></table>
+<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOV -0x8c(%RBP),%EAX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x80(%RBP),%RDI</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x90(%RBP),%R8D</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x50(%RBP),%RCX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x60(%RBP),%RDX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x68(%RBP),%RSI</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOVQ %RDI,%XMM0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOV %EAX,%EDI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>CALL 17f0 <s13></td><td>2</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>1</td><td>0.33</td><td>0</td><td>2</td></tr><tr><td style='word-break:break-all;'>ADDL $0x1,-0x94(%RBP)</td><td>2</td><td>0.50</td><td>0.50</td><td>0.83</td><td>0.83</td><td>1</td><td>0.50</td><td>0.50</td><td>0.33</td><td>5</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOV -0x94(%RBP),%EAX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CMP -0x84(%RBP),%EAX</td><td>1</td><td>0.25</td><td>0.25</td><td>0.50</td><td>0.50</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>JL 16cb <main+0x34b></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">General properties</h3>
 <div class="_content"><table><tr><td>nb instructions</td><td>13</td></tr><tr><td>nb uops</td><td>14</td></tr><tr><td>loop length</td><td>62</td></tr><tr><td>used x86 registers</td><td>7</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>1</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>8</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Front-end</h3>
@@ -1339,7 +1339,7 @@ FIT IN UOP CACHE
     <div id="loop_cqa_path_1">
       <div style="padding-left:10px;margin-bottom: 10px;">
         <table>
-          <tr><td class="_td_shift_20">Coverage</td><td>0.01 %</td></tr>
+          <tr><td class="_td_shift_20">Coverage</td><td>0.04 %</td></tr>
           <tr><td class="_td_shift_20">Function</td><td><a href="../functions/s13_gcc_mrecip_8.html">main</a></td></tr>
           <tr><td class="_td_shift_20">Source file and lines</td><td></td></tr>
         <tr><td class="_td_shift_20">Module</td><td>s13_gcc_mrecip</td></tr>
@@ -1406,7 +1406,7 @@ The binary loop is storing 4 bytes.
 <div class="_fixed_box" ><h3 class="_header">ASM code</h3>
 <div class="_content">In the binary file, the address of the loop is: 16fb
 
-<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOV -0x8c(%RBP),%EAX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x80(%RBP),%RDI</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x90(%RBP),%R8D</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x50(%RBP),%RCX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x60(%RBP),%RDX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x68(%RBP),%RSI</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOVQ %RDI,%XMM0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOV %EAX,%EDI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>CALL 17fc <s13></td><td>2</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>1</td><td>0.33</td><td>0</td><td>2</td></tr><tr><td style='word-break:break-all;'>ADDL $0x1,-0x94(%RBP)</td><td>2</td><td>0.50</td><td>0.50</td><td>0.83</td><td>0.83</td><td>1</td><td>0.50</td><td>0.50</td><td>0.33</td><td>5</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOV -0x94(%RBP),%EAX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CMP -0x84(%RBP),%EAX</td><td>1</td><td>0.25</td><td>0.25</td><td>0.50</td><td>0.50</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>JL 16cb <main+0x34b></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr></table>
+<table><tr><th>Instruction</th><th>Nb FU</th><th>P0</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Latency</th><th>Recip. throughput</th></tr><tr><td style='word-break:break-all;'>MOV -0x8c(%RBP),%EAX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x80(%RBP),%RDI</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x90(%RBP),%R8D</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x50(%RBP),%RCX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x60(%RBP),%RDX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOV -0x68(%RBP),%RSI</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>MOVQ %RDI,%XMM0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOV %EAX,%EDI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.25</td></tr><tr><td style='word-break:break-all;'>CALL 17f0 <s13></td><td>2</td><td>0</td><td>0</td><td>0.33</td><td>0.33</td><td>1</td><td>0</td><td>1</td><td>0.33</td><td>0</td><td>2</td></tr><tr><td style='word-break:break-all;'>ADDL $0x1,-0x94(%RBP)</td><td>2</td><td>0.50</td><td>0.50</td><td>0.83</td><td>0.83</td><td>1</td><td>0.50</td><td>0.50</td><td>0.33</td><td>5</td><td>1</td></tr><tr><td style='word-break:break-all;'>MOV -0x94(%RBP),%EAX</td><td>1</td><td>0</td><td>0</td><td>0.50</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>CMP -0x84(%RBP),%EAX</td><td>1</td><td>0.25</td><td>0.25</td><td>0.50</td><td>0.50</td><td>0</td><td>0.25</td><td>0.25</td><td>0</td><td>1</td><td>0.50</td></tr><tr><td style='word-break:break-all;'>JL 16cb <main+0x34b></td><td>1</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.50</td><td>0</td><td>0</td><td>0.50-1</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">General properties</h3>
 <div class="_content"><table><tr><td>nb instructions</td><td>13</td></tr><tr><td>nb uops</td><td>14</td></tr><tr><td>loop length</td><td>62</td></tr><tr><td>used x86 registers</td><td>7</td></tr><tr><td>used mmx registers</td><td>0</td></tr><tr><td>used xmm registers</td><td>1</td></tr><tr><td>used ymm registers</td><td>0</td></tr><tr><td>used zmm registers</td><td>0</td></tr><tr><td>nb stack references</td><td>8</td></tr></table>
 </div></div><div class="_fixed_box" ><h3 class="_header">Front-end</h3>
