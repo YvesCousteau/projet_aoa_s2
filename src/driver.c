@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <omp.h>
-#define NB_METAS 1
+#define NB_METAS 31
 
 
 
@@ -54,7 +54,9 @@ int main (int argc, char *argv[]) {
    int repm = atoi (argv[3]); /* repetition number */
 
    uint64_t rep [NB_METAS][repm];
+   float _rep [NB_METAS];
 
+   float tmp;
 
    for (m=0; m<NB_METAS; m++) {
       /* allocate arrays */
@@ -99,15 +101,15 @@ int main (int argc, char *argv[]) {
       //   // rep[m][i]=(t2 - t1);
       // }
 
-      uint64_t t1 = rdtsc();
+      // uint64_t t1 = rdtsc();
       for (i=0; i<repm; i++)
       {
            s13 (size, a, b, c, offset, radius);
       }
-      uint64_t t2 = rdtsc();
-      printf ("%.2f cycles/c_element\n",(t2 - t1)/ ((float) size * size ));
-
-
+      // uint64_t t2 = rdtsc();
+      // _rep[i]=(t2 - t1)/ ((float) size * size * repm );
+      // tmp = tmp + _rep[i];
+      // printf ("%.2f cycles/c_element\n",tmp);
       /* print output */
       //if (argc==5) dump_array (argv[4], size, c);
 
@@ -137,6 +139,10 @@ int main (int argc, char *argv[]) {
 	}
 	printf("\n");
      	}*/
+
+
+
+  // printf ("%.2f cycles/c_element\n",tmp/31);
 
    return EXIT_SUCCESS;
 }

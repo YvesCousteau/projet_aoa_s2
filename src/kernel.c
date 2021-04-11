@@ -310,21 +310,26 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
 void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int offset , double radius)
 {
    int i, j;
-   
-   for ( i =0; i < n ; i ++)
+   int maxThread = omp_get_max_threads();
+   if (maxThread > 4)
    {
-     #pragma omp parallel for
-       for ( j =0; j < n ; j ++)
-       {
-           if ( offset + j < 0 || offset + j >= n )
-              continue;
-           c [ i ][ offset + j ] = 0.0;
-           if ( a[offset + j] < radius )
-           {
-             c [ i ][ offset + j ] = a [ offset + j ] / b [ i ];
-           }
-        }
+     maxThread = 4;
    }
+   #pragma omp parallel for num(maxThread) collapse(2)
+     for ( i =0; i < n ; i ++)
+     {
+
+         for ( j =0; j < n ; j ++)
+         {
+             if ( offset + j < 0 || offset + j >= n )
+                continue;
+             c [ i ][ offset + j ] = 0.0;
+             if ( a[offset + j] < radius )
+             {
+               c [ i ][ offset + j ] = a [ offset + j ] / b [ i ];
+             }
+          }
+     }
 }
 
 #elif defined PARALLELE_UNROLL_LOOPINVARIANT
@@ -334,12 +339,16 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
 
   float bi;
   float r = (double)radius;
-  omp_set_num_threads(4);
-  for ( i = 0; i < n ; i ++)
+  int maxThread = omp_get_max_threads();
+  if (maxThread > 4)
   {
-    bi = b [ i ];
-    #pragma omp parallel for
+    maxThread = 4;
+  }
+  #pragma omp parallel for num(maxThread) collapse(2)
+  {
+    for ( i = 0; i < n ; i ++)
     {
+      bi = b [ i ];
       for ( j = offset; j < (n-3); j +=4) {
         c [ i ][ j ] = a[j] < r ? 0.0 : a [ j ] / bi;
         c [ i ][ j+1 ] = a[j+1] < r ? 0.0 : a [ j+1 ] / bi;
@@ -363,15 +372,20 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
   float bi[4][4];
 
   float r = (float)radius;
-  omp_set_num_threads(4);
-  for ( i = 0; i < (n-3) ; i+= 4) {
-    bi[0][0] = b[i];bi[0][1] = b[i];bi[0][2] = b[i];bi[0][3] = b[i];
-    bi[1][0] = b[i+1];bi[1][1] = b[i+1];bi[1][2] = b[i+1];bi[1][3] = b[i+1];
-    bi[2][0] = b[i+2];bi[2][1] = b[i+2];bi[2][2] = b[i+2];bi[2][3] = b[i+2];
-    bi[3][0] = b[i+3];bi[3][1] = b[i+3];bi[3][2] = b[i+3];bi[3][3] = b[i+3];
+  int maxThread = omp_get_max_threads();
+  if (maxThread > 4)
+  {
+    maxThread = 4;
+  }
+  #pragma omp parallel for num(maxThread)
+  {
+    for ( i = 0; i < (n-3) ; i+= 4) {
+      bi[0][0] = b[i];bi[0][1] = b[i];bi[0][2] = b[i];bi[0][3] = b[i];
+      bi[1][0] = b[i+1];bi[1][1] = b[i+1];bi[1][2] = b[i+1];bi[1][3] = b[i+1];
+      bi[2][0] = b[i+2];bi[2][1] = b[i+2];bi[2][2] = b[i+2];bi[2][3] = b[i+2];
+      bi[3][0] = b[i+3];bi[3][1] = b[i+3];bi[3][2] = b[i+3];bi[3][3] = b[i+3];
 
-    #pragma omp parallel for
-    {
+
       for ( j = offset; j < (n-3); j +=4) {
 
         c [ i ][ j ] =   a[j] < r ? 0.0 :   a[j]  / bi[0][0];
@@ -404,20 +418,21 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
       }
     }
 
-  }
-  for(i = (n-3); i<n;i++){
-    bi[0][0] = b[i];bi[0][1] = b[i];bi[0][2] = b[i];bi[0][3] = b[i];
-
-    for ( j = offset; j < (n-3); j +=4) {
-
-      c [ i ][ j ] =   a[j]  <  r ? 0.0 :  a[j]  / bi[0][0];
-      c [ i ][ j+1 ] = a[j+1] < r ? 0.0 : a[j+1] / bi[0][1];
-      c [ i ][ j+2 ] = a[j+2] < r ? 0.0 : a[j+2] / bi[0][2];
-      c [ i ][ j+3 ] = a[j+3] < r ? 0.0 : a[j+3] / bi[0][3];
     }
+    for(i = (n-3); i<n;i++){
+      bi[0][0] = b[i];bi[0][1] = b[i];bi[0][2] = b[i];bi[0][3] = b[i];
 
-    for(j = (n-3); j<n;j++){
-      c [ i ][ j ]   = a[j] < r ? 0.0 : a[j] / bi[0][0];
+      for ( j = offset; j < (n-3); j +=4) {
+
+        c [ i ][ j ] =   a[j]  <  r ? 0.0 :  a[j]  / bi[0][0];
+        c [ i ][ j+1 ] = a[j+1] < r ? 0.0 : a[j+1] / bi[0][1];
+        c [ i ][ j+2 ] = a[j+2] < r ? 0.0 : a[j+2] / bi[0][2];
+        c [ i ][ j+3 ] = a[j+3] < r ? 0.0 : a[j+3] / bi[0][3];
+      }
+
+      for(j = (n-3); j<n;j++){
+        c [ i ][ j ]   = a[j] < r ? 0.0 : a[j] / bi[0][0];
+      }
     }
   }
 
