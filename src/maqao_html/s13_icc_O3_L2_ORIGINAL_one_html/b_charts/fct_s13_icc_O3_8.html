@@ -66,11 +66,11 @@ function addLoadEvent(func) {
 <div id="maqao_content">
 
 <div class="_fixed_box" ><h3 class="_header">s13 - Load Distribution</h3>
-<div class="_content"><div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_40" style="height:500px" ></div></div>
+<div class="_content"><div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_46" style="height:500px" ></div></div>
 <script class="code">
   $(document).ready(function(){
-    var ordinals = ['pop-os_7091_7091'];
-    var data = [{value: 100}];
+    var ordinals = ['pop-os_8054_8054'];
+    var data = [{value: 99.95}];
     var widthgl  = 900;
     var widthin  = 900;
     var heightgl = 400;
@@ -85,7 +85,7 @@ function addLoadEvent(func) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_40')
+    const svg = d3.select('#chart_cat_46')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -132,13 +132,13 @@ function addLoadEvent(func) {
       .text("Coverage");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_40')
+      .attr('id', 'zoom_chart_46')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_40_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_46_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -178,11 +178,11 @@ function addLoadEvent(func) {
     }
   });
 </script>
-<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_41" style="height:500px" ></div></div>
+<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_47" style="height:500px" ></div></div>
 <script class="code">
   $(document).ready(function(){
-    var ordinals = ['pop-os_7091_7091'];
-    var data = [{value: 11.36}];
+    var ordinals = ['pop-os_8054_8054'];
+    var data = [{value: 9.4}];
     var widthgl  = 900;
     var widthin  = 900;
     var heightgl = 400;
@@ -197,7 +197,7 @@ function addLoadEvent(func) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_41')
+    const svg = d3.select('#chart_cat_47')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -244,13 +244,13 @@ function addLoadEvent(func) {
       .text("Time");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_41')
+      .attr('id', 'zoom_chart_47')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_41_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_47_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -292,11 +292,11 @@ function addLoadEvent(func) {
 </script>
 </div></div><script>
 document.addEventListener("DOMContentLoaded", function() {
-  $("#zoom_chart_40_0").click( function () {
-    window.open("../topo/_pop-os_7091_7091.html");
+  $("#zoom_chart_46_0").click( function () {
+    window.open("../topo/_pop-os_8054_8054.html");
   });
-  $("#zoom_chart_41_0").click( function () {
-    window.open("../topo/_pop-os_7091_7091.html");
+  $("#zoom_chart_47_0").click( function () {
+    window.open("../topo/_pop-os_8054_8054.html");
   });
 }, false);
 </script>

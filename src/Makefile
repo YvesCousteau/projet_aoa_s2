@@ -1,6 +1,6 @@
-CC=gcc
-II=icx
-IIC=icc
+CC=gcc -fopenmp
+II=icx -fopenmp
+IIC=icc -fopenmp
 
 
 OFLAG_gcc_O2=-O2
@@ -46,7 +46,7 @@ R_HTML=maqao_html
 CACHE_LVL=L2
 SIZE=159
 NB_WARMUP=25
-NB_MESURE_REP=500000
+NB_MESURE_REP=10000
 # NB_MESURE_REP=1000
 
 all:	s13
@@ -54,37 +54,37 @@ all:	s13
 s13: $(OBJS)
 	@echo --- Compilation ---
 
-	@$(CC) -fopenmp driver.c rdtsc.c s13_gcc_O2.o -o s13_gcc_O2
-	@$(CC) -fopenmp driver.c rdtsc.c s13_gcc_O3.o -o s13_gcc_O3
-	@$(CC) -fopenmp driver.c rdtsc.c s13_gcc_O3n.o -o s13_gcc_O3n
-	@$(CC) -fopenmp driver.c rdtsc.c s13_gcc_OFast.o -o s13_gcc_OFast
+	@$(CC) driver.c rdtsc.c s13_gcc_O2.o -o s13_gcc_O2
+	@$(CC) driver.c rdtsc.c s13_gcc_O3.o -o s13_gcc_O3
+	@$(CC) driver.c rdtsc.c s13_gcc_O3n.o -o s13_gcc_O3n
+	@$(CC) driver.c rdtsc.c s13_gcc_OFast.o -o s13_gcc_OFast
 
 
-	@$(II) -fopenmp driver.c rdtsc.c s13_icx_O2.o -o s13_icx_O2
-	@$(II) -fopenmp driver.c rdtsc.c s13_icx_O3.o -o s13_icx_O3
+	@$(II) driver.c rdtsc.c s13_icx_O2.o -o s13_icx_O2
+	@$(II) driver.c rdtsc.c s13_icx_O3.o -o s13_icx_O3
 
 
-	@$(IIC) -fopenmp driver.c rdtsc.c s13_icc_O2.o -o s13_icc_O2
-	@$(IIC) -fopenmp driver.c rdtsc.c s13_icc_O3.o -o s13_icc_O3
+	@$(IIC) driver.c rdtsc.c s13_icc_O2.o -o s13_icc_O2
+	@$(IIC) driver.c rdtsc.c s13_icc_O3.o -o s13_icc_O3
 
 s13_gcc_O2.o: kernel.c
-	@$(CC) $(OFLAG_gcc_O2) -D $(OPT) -c -o  $@ $<
+	@$(CC)  $(OFLAG_gcc_O2) -D $(OPT) -c -o  $@ $<
 s13_gcc_O3.o: kernel.c
-	@$(CC) $(OFLAG_gcc_O3) -D $(OPT) -c -o $@ $<
+	@$(CC)  $(OFLAG_gcc_O3) -D $(OPT) -c -o $@ $<
 s13_gcc_O3n.o: kernel.c
-	@$(CC) $(OFLAG_gcc_O3n) -D $(OPT) -c -o $@ $<
+	@$(CC)  $(OFLAG_gcc_O3n) -D $(OPT) -c -o $@ $<
 s13_gcc_OFast.o: kernel.c
-	@$(CC) $(OFLAG_gcc_OFAST) -D $(OPT) -c -o $@ $<
+	@$(CC)  $(OFLAG_gcc_OFAST) -D $(OPT) -c -o $@ $<
 #------------------------#
 s13_icx_O2.o: kernel.c
-	@$(II)  $(OFLAG_icx_O2) -D $(OPT) -c -o $@ $<
+	@$(II)   $(OFLAG_icx_O2) -D $(OPT) -c -o $@ $<
 s13_icx_O3.o: kernel.c
-	@$(II)  $(OFLAG_icx_O3) -D $(OPT) -c -o $@ $<
+	@$(II)   $(OFLAG_icx_O3) -D $(OPT) -c -o $@ $<
 #------------------------#
 s13_icc_O2.o: kernel.c
-	@$(IIC)  $(OFLAG_icc_O2) -D $(OPT) -c -o $@ $<
+	@$(IIC)   $(OFLAG_icc_O2) -D $(OPT) -c -o $@ $<
 s13_icc_O3.o: kernel.c
-	@$(IIC)  $(OFLAG_icc_O3) -D $(OPT) -c -o $@ $<
+	@$(IIC)   $(OFLAG_icc_O3) -D $(OPT) -c -o $@ $<
 
 
 maqao: clean s13

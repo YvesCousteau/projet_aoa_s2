@@ -72,12 +72,12 @@ function addLoadEvent(func) {
 <!-- ========================== Summary about the function ========================== -->
   <table style="width:100%;border-radius:5px;color:white;background:#114B79;margin-bottom:15px;">
     <tr>
-      <th><button class="tooltip-maqao-button" onclick="window.location.href='s13_icc_O2_8.html';" title="Go to previous function: s13" >Prev</button></th>
+      <th><button class="tooltip-maqao-button" onclick="window.location.href='libiomp5.so_975.html';" title="Go to previous function: __kmp_fork_barrier(int, int)" >Prev</button></th>
       <th>Function: @plt_start@</th>
       <th>Module: libiomp5.so</th>
       <th>Source: Not Available</th>
-      <th>Coverage: 0.07%</th>
-      <th><button class="tooltip-maqao-button" title="No next function" style="cursor: not-allowed;">No Next</button></th>
+      <th>Coverage: 0.02%</th>
+      <th><button class="tooltip-maqao-button" onclick="window.location.href='kernel_-1.html';" title="Go to next function: unknown kernel region" >Next</button></th>
     </tr>
   </table>
   <div class="drag-container" id="main_section_content">
@@ -297,7 +297,7 @@ for (var i = 0, row; row = table_asm.rows[i]; i++) {
   </style>
 </div></div>
 <div class="panelcontent" id="OV_panel_callchains">
-<div class="_div_table"><table id="_treed_table_4" class="_treed_table"><tr><th class=" _left tooltip-maqao" title="Coverage of the callchain">Coverage (%)</th><th class=" tooltip-maqao" title="Name of the function">Name</th><th class=" tooltip-maqao" title="Name of the module (binary file) that contains the function">Module</th></tr>
+<div class="_div_table"><table id="_treed_table_50" class="_treed_table"><tr><th class=" _left tooltip-maqao" title="Coverage of the callchain">Coverage (%)</th><th class=" tooltip-maqao" title="Name of the function">Name</th><th class=" tooltip-maqao" title="Name of the module (binary file) that contains the function">Module</th></tr>
 </table></div>
   <script>
 function src_onresize () {
@@ -322,20 +322,20 @@ function src_loadhelp (divId) {
       </td>
     </tr>
   </table>
-<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_18" style="height:500px" ></div></div>
+<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_156" style="height:500px" ></div></div>
 <script class="code">
 </script>
-<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_19" style="height:500px" ></div></div>
+<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_157" style="height:500px" ></div></div>
 <script class="code">
 </script>
   <script>
 function set_ldbal_input (obj) {
-  document.getElementById("chart_cat_18").innerHTML = "";
-  var _width = Math.floor(document.getElementById("chart_cat_18").getBoundingClientRect().width);
+  document.getElementById("chart_cat_156").innerHTML = "";
+  var _width = Math.floor(document.getElementById("chart_cat_156").getBoundingClientRect().width);
   if (obj.value == "regular") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8626_8626'];
-    var data = [{value: 0.07}];
+    var ordinals = ['pop-os_11165_11165'];
+    var data = [{value: 0.26}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -350,7 +350,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_18')
+    const svg = d3.select('#chart_cat_156')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -397,13 +397,13 @@ function set_ldbal_input (obj) {
       .text("Coverage");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_18')
+      .attr('id', 'zoom_chart_156')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_18_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_156_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -442,14 +442,14 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_18_0").click( function () {
-    window.open("../topo/_pop-os_8626_8626.html");
+  $("#zoom_chart_156_0").click( function () {
+    window.open("../topo/_pop-os_11165_11165.html");
   });
   }
   else if (obj.value == "sorted") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8626_8626'];
-    var data = [{value: 0.07}];
+    var ordinals = ['pop-os_11165_11165'];
+    var data = [{value: 0.26}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -464,7 +464,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_18')
+    const svg = d3.select('#chart_cat_156')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -511,13 +511,13 @@ function set_ldbal_input (obj) {
       .text("Coverage");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_18')
+      .attr('id', 'zoom_chart_156')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_18_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_156_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -556,14 +556,14 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_18_0").click( function () {
-    window.open("../topo/_pop-os_8626_8626.html");
+  $("#zoom_chart_156_0").click( function () {
+    window.open("../topo/_pop-os_11165_11165.html");
   });
   }
   else if (obj.value == "all") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8626_8626'];
-    var data = [{value: 0.07}];
+    var ordinals = ['pop-os_11165_11165','pop-os_11165_11178','pop-os_11165_11179','pop-os_11165_11180'];
+    var data = [{value: 0.26},{value: 0},{value: 0},{value: 0}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -578,7 +578,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_18')
+    const svg = d3.select('#chart_cat_156')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -625,13 +625,13 @@ function set_ldbal_input (obj) {
       .text("Coverage");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_18')
+      .attr('id', 'zoom_chart_156')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_18_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_156_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -670,15 +670,24 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_18_0").click( function () {
-    window.open("../topo/_pop-os_8626_8626.html");
+  $("#zoom_chart_156_0").click( function () {
+    window.open("../topo/_pop-os_11165_11165.html");
+  });
+  $("#zoom_chart_156_1").click( function () {
+    window.open("../topo/_pop-os_11165_11178.html");
+  });
+  $("#zoom_chart_156_2").click( function () {
+    window.open("../topo/_pop-os_11165_11179.html");
+  });
+  $("#zoom_chart_156_3").click( function () {
+    window.open("../topo/_pop-os_11165_11180.html");
   });
   }
-  document.getElementById("chart_cat_19").innerHTML = "";
-  var _width = Math.floor(document.getElementById("chart_cat_19").getBoundingClientRect().width);
+  document.getElementById("chart_cat_157").innerHTML = "";
+  var _width = Math.floor(document.getElementById("chart_cat_157").getBoundingClientRect().width);
   if (obj.value == "regular") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8626_8626'];
+    var ordinals = ['pop-os_11165_11165'];
     var data = [{value: 0}];
     var widthgl  = _width;
     var widthin  = _width;
@@ -694,7 +703,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_19')
+    const svg = d3.select('#chart_cat_157')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -741,13 +750,13 @@ function set_ldbal_input (obj) {
       .text("Time");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_19')
+      .attr('id', 'zoom_chart_157')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_19_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_157_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -786,13 +795,13 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_19_0").click( function () {
-    window.open("../topo/_pop-os_8626_8626.html");
+  $("#zoom_chart_157_0").click( function () {
+    window.open("../topo/_pop-os_11165_11165.html");
   });
   }
   else if (obj.value == "sorted") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8626_8626'];
+    var ordinals = ['pop-os_11165_11165'];
     var data = [{value: 0}];
     var widthgl  = _width;
     var widthin  = _width;
@@ -808,7 +817,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_19')
+    const svg = d3.select('#chart_cat_157')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -855,13 +864,13 @@ function set_ldbal_input (obj) {
       .text("Time");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_19')
+      .attr('id', 'zoom_chart_157')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_19_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_157_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -900,14 +909,14 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_19_0").click( function () {
-    window.open("../topo/_pop-os_8626_8626.html");
+  $("#zoom_chart_157_0").click( function () {
+    window.open("../topo/_pop-os_11165_11165.html");
   });
   }
   else if (obj.value == "all") {
   $(document).ready(function(){
-    var ordinals = ['pop-os_8626_8626'];
-    var data = [{value: 0}];
+    var ordinals = ['pop-os_11165_11165','pop-os_11165_11178','pop-os_11165_11179','pop-os_11165_11180'];
+    var data = [{value: 0},{value: 0},{value: 0},{value: 0}];
     var widthgl  = _width;
     var widthin  = _width;
     var heightgl = 400;
@@ -922,7 +931,7 @@ function set_ldbal_input (obj) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_19')
+    const svg = d3.select('#chart_cat_157')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -969,13 +978,13 @@ function set_ldbal_input (obj) {
       .text("Time");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_19')
+      .attr('id', 'zoom_chart_157')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_19_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_157_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -1014,8 +1023,17 @@ function set_ldbal_input (obj) {
         bars.attr("transform", "translate(" + d3.event.transform.x+",0)scale(" + d3.event.transform.k + ",1)")
     }
   });
-  $("#zoom_chart_19_0").click( function () {
-    window.open("../topo/_pop-os_8626_8626.html");
+  $("#zoom_chart_157_0").click( function () {
+    window.open("../topo/_pop-os_11165_11165.html");
+  });
+  $("#zoom_chart_157_1").click( function () {
+    window.open("../topo/_pop-os_11165_11178.html");
+  });
+  $("#zoom_chart_157_2").click( function () {
+    window.open("../topo/_pop-os_11165_11179.html");
+  });
+  $("#zoom_chart_157_3").click( function () {
+    window.open("../topo/_pop-os_11165_11180.html");
   });
   }
 }
@@ -1044,7 +1062,7 @@ function ldbal_loadhelp (divId) {
     </table>
   </div>
   <div id="loop_cqa">
-<table><tr><td class="_td_shift_20">Coverage</td><td>0.07 %</td></tr>
+<table><tr><td class="_td_shift_20">Coverage</td><td>0.02 %</td></tr>
 <tr><td class="_td_shift_20">Source file and lines</td><td></td></tr>
 <tr><td class="_td_shift_20">Module</td><td>libiomp5.so</td></tr>
 </table><br/>  </div>
@@ -1066,8 +1084,8 @@ function cqa_loadhelp (divId) {
   </script>
 </div>
 <div class="panelcontent" id="OV_panel_loops">
-<div class="_div_table"><table id="_treed_table_5" class="_treed_table"><tr><th class=" _left">Name</th><th>Coverage (%)</th><th>Time (s)</th></tr>
-<tr id="_tr_5_1" ><td id="_tr_5_1-1"  data-_i="1" data-_j="1"  class=" _left"  style="width:70%;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span></td><td id="_tr_5_1-2"  data-_i="1" data-_j="2"  class=" _centered"  style="width:15%;" ></td><td id="_tr_5_1-3"  data-_i="1" data-_j="3"  class=" _centered"  style="width:15%;" ></td></tr>
+<div class="_div_table"><table id="_treed_table_51" class="_treed_table"><tr><th class=" _left">Name</th><th>Coverage (%)</th><th>Time (s)</th></tr>
+<tr id="_tr_51_1" ><td id="_tr_51_1-1"  data-_i="1" data-_j="1"  class=" _left"  style="width:70%;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span></td><td id="_tr_51_1-2"  data-_i="1" data-_j="2"  class=" _centered"  style="width:15%;" ></td><td id="_tr_51_1-3"  data-_i="1" data-_j="3"  class=" _centered"  style="width:15%;" ></td></tr>
 </table></div>
   <script>
 function loops_onresize ()

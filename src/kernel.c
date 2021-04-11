@@ -315,7 +315,7 @@ void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int o
    {
      maxThread = 4;
    }
-   #pragma omp parallel for num(maxThread) collapse(2)
+   #pragma omp parallel for num_threads(maxThread) collapse(2)
      for ( i =0; i < n ; i ++)
      {
 
@@ -336,31 +336,28 @@ void s13 (unsigned n , const float a[n] ,const float b[n] , float c[n][n] ,int o
 
 void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int offset, double radius) {
 	int i, j;
+	float r = (double)radius;
 
+	int maxThread = omp_get_max_threads();
   float bi;
-  float r = (double)radius;
-  int maxThread = omp_get_max_threads();
-  if (maxThread > 4)
-  {
-    maxThread = 4;
-  }
-  #pragma omp parallel for num(maxThread) collapse(2)
-  {
-    for ( i = 0; i < n ; i ++)
-    {
-      bi = b [ i ];
-      for ( j = offset; j < (n-3); j +=4) {
-        c [ i ][ j ] = a[j] < r ? 0.0 : a [ j ] / bi;
-        c [ i ][ j+1 ] = a[j+1] < r ? 0.0 : a [ j+1 ] / bi;
-        c [ i ][ j+2 ] = a[j+2] < r ? 0.0 : a [ j+2 ] / bi;
-        c [ i ][ j+3 ] = a[j+3] < r ? 0.0 : a [ j+3 ] / bi;
-      }
+	if(maxThread > 4)
+		maxThread=4;
 
-      for(j = (n-3); j<n;j++){
-        c [ i ][ j ] = a[j] < r ? 0.0 : a [ j ] / bi;
-      }
-    }
-  }
+	#pragma omp parallel for num_threads(maxThread)
+  	for ( i = 0; i < n ; i ++)
+    {
+      bi = b[i];
+  		for ( j = offset; j < (n-3); j +=4) {
+  			c [i][j] = a[j] < r ? 0.0 : a [ j ] / bi;
+  			c [i][j+1] = a[j+1] < r ? 0.0 : a [ j+1 ] / bi;
+  			c [i][j+2] = a[j+2] < r ? 0.0 : a [ j+2 ] / bi;
+  			c [i][j+3] = a[j+3] < r ? 0.0 : a [ j+3 ] / bi;
+  		}
+
+  		for(j = (n-3); j<n;j++){
+  			c [ i ][ j ] = a[j] < r ? 0.0 : a [ j ] / bi;
+  		}
+  	}
 
 }
 
@@ -377,8 +374,8 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
   {
     maxThread = 4;
   }
-  #pragma omp parallel for num(maxThread)
-  {
+  #pragma omp parallel for num_threads(maxThread)
+
     for ( i = 0; i < (n-3) ; i+= 4) {
       bi[0][0] = b[i];bi[0][1] = b[i];bi[0][2] = b[i];bi[0][3] = b[i];
       bi[1][0] = b[i+1];bi[1][1] = b[i+1];bi[1][2] = b[i+1];bi[1][3] = b[i+1];
@@ -418,7 +415,6 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
       }
     }
 
-    }
     for(i = (n-3); i<n;i++){
       bi[0][0] = b[i];bi[0][1] = b[i];bi[0][2] = b[i];bi[0][3] = b[i];
 
@@ -434,7 +430,7 @@ void s13 (unsigned n, const float a[n], const float b[n], float c[n][n], int off
         c [ i ][ j ]   = a[j] < r ? 0.0 : a[j] / bi[0][0];
       }
     }
-  }
+  
 
 }
 

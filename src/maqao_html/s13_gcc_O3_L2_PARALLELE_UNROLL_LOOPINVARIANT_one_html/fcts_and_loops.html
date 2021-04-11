@@ -72,39 +72,28 @@ function addLoadEvent(func) {
 <div class="_content"><div class="_accordion_box collapsed"><h3 id="_accordion_header_1" class="_header collapsed" onclick="_click_accordion_header(this)" ><span class="_accordion_box_button">&#x25B6;</span>Filters<span class="tooltip-maqao-button help-maqao" title="A form that can be displayed / hidden by clicking on the header to specify which modules must be displayed in the profiling. By clicking on the button, only checked categories are displayed. Coverages are computed according displayed modules."></span></h3><div id="_accordion_content_1" class="_content collapsed"></form><button type="button" onclick="_upd_base_run();" style="cursor:pointer;">Choose Reference Run</button><hr>
 <form><u>Modules:</u><br style="margin-bottom:10px;">
 <input id="_input_check_all_mods" type="checkbox" style="vertical-align: middle;cursor:pointer" onchange="_onchange_modules (this)" checked ><span id="_input_check_all_mods_text">Uncheck all modules</span><br>
-<input id="_input_check_mod_s13_gcc_O3" type="checkbox" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >s13_gcc_O3 - <span id="cov_mod_s13_gcc_O3" >99.91</span> %<br>
-<input id="_input_check_mod_libgomp.so.1.0.0" type="checkbox" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >libgomp.so.1.0.0 - <span id="cov_mod_libgomp.so.1.0.0" >0.09</span> %<br>
+<input id="_input_check_mod_s13_gcc_O3" type="checkbox" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >s13_gcc_O3 - <span id="cov_mod_s13_gcc_O3" >61.11</span> %<br>
+<input id="_input_check_mod_libgomp.so.1.0.0" type="checkbox" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >libgomp.so.1.0.0 - <span id="cov_mod_libgomp.so.1.0.0" >38.91</span> %<br>
 </form><hr><button type="button" onclick="_upd_table();" style="cursor:pointer;">Filter Results</button>
-</div></div><div class="_div_table"><div><form><span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table13_opt4" onclick="click_table_menu('_table13_opt4', '_table13_opt_all', 'list_opts_table13')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Time (s)</span>
-<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table13_opt5" onclick="click_table_menu('_table13_opt5', '_table13_opt_all', 'list_opts_table13')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Nb Threads</span>
-<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table13_opt6" onclick="click_table_menu('_table13_opt6', '_table13_opt_all', 'list_opts_table13')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Deviation (coverage)</span>
-<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table13_opt7" onclick="click_table_menu('_table13_opt7', '_table13_opt_all', 'list_opts_table13')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;">Compilation Options</span>
-<span style='white-space:nowrap;'><input class="input_check_table_menu" type="button" id="_table13_opt_all" onclick="set_all_table_menu(this, 'list_opts_table13')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" value="Select all"></span>
+</div></div><div class="_div_table"><div><form><span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table24_opt4" onclick="click_table_menu('_table24_opt4', '_table24_opt_all', 'list_opts_table24')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Time (s)</span>
+<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table24_opt5" onclick="click_table_menu('_table24_opt5', '_table24_opt_all', 'list_opts_table24')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Nb Threads</span>
+<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table24_opt6" onclick="click_table_menu('_table24_opt6', '_table24_opt_all', 'list_opts_table24')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" checked >Deviation (coverage)</span>
+<span style="white-space:nowrap;"><input class="input_check_table_menu" type="checkbox" id="_table24_opt7" onclick="click_table_menu('_table24_opt7', '_table24_opt_all', 'list_opts_table24')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;">Compilation Options</span>
+<span style='white-space:nowrap;'><input class="input_check_table_menu" type="button" id="_table24_opt_all" onclick="set_all_table_menu(this, 'list_opts_table24')" style="margin-left: 30px;vertical-align: middle;cursor:pointer;" value="Select all"></span>
 </form></div>
-<table id="_treed_table_13" class="_treed_table"><tr><th class=" _left tooltip-maqao" title="Name of the function / loop identifier">Name</th><th class=" tooltip-maqao" title="Name of the module (binary file) that contains the function / loop">Module</th><th class=" tooltip-maqao" title="Percentage of the execution time spent in the function / loop">Coverage (%)</th><th class=" _table13_opt4 tooltip-maqao" title="Execution time spent in the function / loop in seconds">Time (s)</th><th class=" _table13_opt5 tooltip-maqao" title="Number of threads that executed the function / objects">Nb Threads</th><th class=" _table13_opt6 tooltip-maqao" title="Deviation of the coverage amongs threads">Deviation (coverage)</th><th class=" _table13_opt7 _tcol_hidden tooltip-maqao" title="Compilation options used to compile the loop">Compilation Options</th></tr>
-<tr id="_tr_13_1"  ondblclick="_action_15(this,1,-1, 'functions/s13_gcc_O3_10.html');"  style="cursor:pointer;"><td id="_tr_13_1-1"  data-_i="1" data-_j="1"  data-_p="s13_gcc_O3_10" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span>s13<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_13_1-2"  data-_i="1" data-_j="2"  data-_p="s13_gcc_O3_10" class=" _centered"  style="word-break:break-all;" >s13_gcc_O3</td><td id="_tr_13_1-3"  data-_i="1" data-_j="3"  data-_p="s13_gcc_O3_10" class=" _centered" >99.73</td><td id="_tr_13_1-4"  data-_i="1" data-_j="4"  data-_p="s13_gcc_O3_10" class=" _centered _table13_opt4" >5.47</td><td id="_tr_13_1-5"  data-_i="1" data-_j="5"  data-_p="s13_gcc_O3_10" class=" _centered _table13_opt5" >1</td><td id="_tr_13_1-6"  data-_i="1" data-_j="6"  data-_p="s13_gcc_O3_10" class=" _centered _table13_opt6" >0.00</td><td id="_tr_13_1-7"  data-_i="1" data-_j="7"  data-_p="s13_gcc_O3_10" class=" _table13_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr class="_treed_hidden _tr_13_1"  id="_tr_13_1_1"  ondblclick="_action_15(this,2,-1, 'loops/s13_gcc_O3_7.html');"  style="cursor:pointer;"><td id="_tr_13_1_1-1"  data-_i="2" data-_j="1"  data-_p="s13_gcc_O3_7" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:15px;cursor:pointer;" >&#x25BA;</span>Loop 7 -  - s13_gcc_O3<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_13_1_1-2"  data-_i="2" data-_j="2"  data-_p="s13_gcc_O3_7" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_13_1_1-3"  data-_i="2" data-_j="3"  data-_p="s13_gcc_O3_7" class=" _centered" >11.11</td><td id="_tr_13_1_1-4"  data-_i="2" data-_j="4"  data-_p="s13_gcc_O3_7" class=" _centered _table13_opt4" >0.61</td><td id="_tr_13_1_1-5"  data-_i="2" data-_j="5"  data-_p="s13_gcc_O3_7" class=" _centered _table13_opt5" >1</td><td id="_tr_13_1_1-6"  data-_i="2" data-_j="6"  data-_p="s13_gcc_O3_7" class=" _centered _table13_opt6" >0</td><td id="_tr_13_1_1-7"  data-_i="2" data-_j="7"  data-_p="s13_gcc_O3_7" class=" _table13_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr class="_treed_hidden _tr_13_1_1"  id="_tr_13_1_1_1"  ondblclick="_action_15(this,3,-1, 'loops/s13_gcc_O3_8.html');"  style="cursor:pointer;"><td id="_tr_13_1_1_1-1"  data-_i="3" data-_j="1"  data-_p="s13_gcc_O3_8" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 8 -  - s13_gcc_O3</td><td id="_tr_13_1_1_1-2"  data-_i="3" data-_j="2"  data-_p="s13_gcc_O3_8" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_13_1_1_1-3"  data-_i="3" data-_j="3"  data-_p="s13_gcc_O3_8" class=" _centered" >88.52</td><td id="_tr_13_1_1_1-4"  data-_i="3" data-_j="4"  data-_p="s13_gcc_O3_8" class=" _centered _table13_opt4" >4.86</td><td id="_tr_13_1_1_1-5"  data-_i="3" data-_j="5"  data-_p="s13_gcc_O3_8" class=" _centered _table13_opt5" >1</td><td id="_tr_13_1_1_1-6"  data-_i="3" data-_j="6"  data-_p="s13_gcc_O3_8" class=" _centered _table13_opt6" >0</td><td id="_tr_13_1_1_1-7"  data-_i="3" data-_j="7"  data-_p="s13_gcc_O3_8" class=" _table13_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr id="_tr_13_2"  ondblclick="_action_15(this,4,-1, 'functions/s13_gcc_O3_8.html');"  style="cursor:pointer;"><td id="_tr_13_2-1"  data-_i="4" data-_j="1"  data-_p="s13_gcc_O3_8" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span>main<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_13_2-2"  data-_i="4" data-_j="2"  data-_p="s13_gcc_O3_8" class=" _centered"  style="word-break:break-all;" >s13_gcc_O3</td><td id="_tr_13_2-3"  data-_i="4" data-_j="3"  data-_p="s13_gcc_O3_8" class=" _centered" >0.18</td><td id="_tr_13_2-4"  data-_i="4" data-_j="4"  data-_p="s13_gcc_O3_8" class=" _centered _table13_opt4"  style="background:#C69E3B;" >0.01</td><td id="_tr_13_2-5"  data-_i="4" data-_j="5"  data-_p="s13_gcc_O3_8" class=" _centered _table13_opt5" >1</td><td id="_tr_13_2-6"  data-_i="4" data-_j="6"  data-_p="s13_gcc_O3_8" class=" _centered _table13_opt6" >0.00</td><td id="_tr_13_2-7"  data-_i="4" data-_j="7"  data-_p="s13_gcc_O3_8" class=" _table13_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr class="_treed_hidden _tr_13_2"  id="_tr_13_2_1"  oncontextmenu="_action_28(this,5,-1, 'nil');"  ondblclick="_action_13(this,5,-1, 'Loop 6 -  - s13_gcc_O3');"  style="cursor:pointer;"><td id="_tr_13_2_1-1"  data-_i="5" data-_j="1"  class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 6 -  - s13_gcc_O3</td><td id="_tr_13_2_1-2"  data-_i="5" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_13_2_1-3"  data-_i="5" data-_j="3"  class=" _centered" >0</td><td id="_tr_13_2_1-4"  data-_i="5" data-_j="4"  class=" _centered _table13_opt4"  style="background:#A52B12;" >0</td><td id="_tr_13_2_1-5"  data-_i="5" data-_j="5"  class=" _centered _table13_opt5" >0</td><td id="_tr_13_2_1-6"  data-_i="5" data-_j="6"  class=" _centered _table13_opt6" >0</td><td id="_tr_13_2_1-7"  data-_i="5" data-_j="7"  class=" _table13_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr class="_treed_hidden _tr_13_2"  id="_tr_13_2_2"  oncontextmenu="_action_28(this,6,-1, 'nil');"  ondblclick="_action_13(this,6,-1, 'Loop 4 -  - s13_gcc_O3');"  style="cursor:pointer;"><td id="_tr_13_2_2-1"  data-_i="6" data-_j="1"  class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:15px;cursor:pointer;" >&#x25BA;</span>Loop 4 -  - s13_gcc_O3<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_13_2_2-2"  data-_i="6" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_13_2_2-3"  data-_i="6" data-_j="3"  class=" _centered" >0</td><td id="_tr_13_2_2-4"  data-_i="6" data-_j="4"  class=" _centered _table13_opt4"  style="background:#A52B12;" >0</td><td id="_tr_13_2_2-5"  data-_i="6" data-_j="5"  class=" _centered _table13_opt5" >0</td><td id="_tr_13_2_2-6"  data-_i="6" data-_j="6"  class=" _centered _table13_opt6" >0</td><td id="_tr_13_2_2-7"  data-_i="6" data-_j="7"  class=" _table13_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr class="_treed_hidden _tr_13_2_2"  id="_tr_13_2_2_1"  ondblclick="_action_15(this,7,-1, 'loops/s13_gcc_O3_3.html');"  style="cursor:pointer;"><td id="_tr_13_2_2_1-1"  data-_i="7" data-_j="1"  data-_p="s13_gcc_O3_3" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 3 -  - s13_gcc_O3</td><td id="_tr_13_2_2_1-2"  data-_i="7" data-_j="2"  data-_p="s13_gcc_O3_3" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_13_2_2_1-3"  data-_i="7" data-_j="3"  data-_p="s13_gcc_O3_3" class=" _centered" >0.18</td><td id="_tr_13_2_2_1-4"  data-_i="7" data-_j="4"  data-_p="s13_gcc_O3_3" class=" _centered _table13_opt4"  style="background:#C69E3B;" >0.01</td><td id="_tr_13_2_2_1-5"  data-_i="7" data-_j="5"  data-_p="s13_gcc_O3_3" class=" _centered _table13_opt5" >1</td><td id="_tr_13_2_2_1-6"  data-_i="7" data-_j="6"  data-_p="s13_gcc_O3_3" class=" _centered _table13_opt6" >0</td><td id="_tr_13_2_2_1-7"  data-_i="7" data-_j="7"  data-_p="s13_gcc_O3_3" class=" _table13_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr class="_treed_hidden _tr_13_2_2"  id="_tr_13_2_2_2"  oncontextmenu="_action_28(this,8,-1, 'nil');"  ondblclick="_action_13(this,8,-1, 'Loop 5 -  - s13_gcc_O3');"  style="cursor:pointer;"><td id="_tr_13_2_2_2-1"  data-_i="8" data-_j="1"  class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 5 -  - s13_gcc_O3</td><td id="_tr_13_2_2_2-2"  data-_i="8" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_13_2_2_2-3"  data-_i="8" data-_j="3"  class=" _centered" >0</td><td id="_tr_13_2_2_2-4"  data-_i="8" data-_j="4"  class=" _centered _table13_opt4"  style="background:#A52B12;" >0</td><td id="_tr_13_2_2_2-5"  data-_i="8" data-_j="5"  class=" _centered _table13_opt5" >0</td><td id="_tr_13_2_2_2-6"  data-_i="8" data-_j="6"  class=" _centered _table13_opt6" >0</td><td id="_tr_13_2_2_2-7"  data-_i="8" data-_j="7"  class=" _table13_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
-<tr id="_tr_13_3"  ondblclick="_action_15(this,9,-1, 'functions/libgomp.so.1.0.0_124.html');"  style="cursor:pointer;"><td id="_tr_13_3-1"  data-_i="9" data-_j="1"  data-_p="libgomp.so.1.0.0_124" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>omp_get_max_threads</td><td id="_tr_13_3-2"  data-_i="9" data-_j="2"  data-_p="libgomp.so.1.0.0_124" class=" _centered"  style="word-break:break-all;" >libgomp.so.1.0.0</td><td id="_tr_13_3-3"  data-_i="9" data-_j="3"  data-_p="libgomp.so.1.0.0_124" class=" _centered" >0.09</td><td id="_tr_13_3-4"  data-_i="9" data-_j="4"  data-_p="libgomp.so.1.0.0_124" class=" _centered _table13_opt4"  style="background:#A52B12;" >0</td><td id="_tr_13_3-5"  data-_i="9" data-_j="5"  data-_p="libgomp.so.1.0.0_124" class=" _centered _table13_opt5" >1</td><td id="_tr_13_3-6"  data-_i="9" data-_j="6"  data-_p="libgomp.so.1.0.0_124" class=" _centered _table13_opt6" >0.00</td><td id="_tr_13_3-7"  data-_i="9" data-_j="7"  data-_p="libgomp.so.1.0.0_124" class=" _table13_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<table id="_treed_table_24" class="_treed_table"><tr><th class=" _left tooltip-maqao" title="Name of the function / loop identifier">Name</th><th class=" tooltip-maqao" title="Name of the module (binary file) that contains the function / loop">Module</th><th class=" tooltip-maqao" title="Percentage of the execution time spent in the function / loop">Coverage (%)</th><th class=" _table24_opt4 tooltip-maqao" title="Execution time spent in the function / loop in seconds">Time (s)</th><th class=" _table24_opt5 tooltip-maqao" title="Number of threads that executed the function / objects">Nb Threads</th><th class=" _table24_opt6 tooltip-maqao" title="Deviation of the coverage amongs threads">Deviation (coverage)</th><th class=" _table24_opt7 _tcol_hidden tooltip-maqao" title="Compilation options used to compile the loop">Compilation Options</th></tr>
+<tr id="_tr_24_1"  ondblclick="_action_26(this,1,-1, 'functions/s13_gcc_O3_10.html');"  style="cursor:pointer;"><td id="_tr_24_1-1"  data-_i="1" data-_j="1"  data-_p="s13_gcc_O3_10" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span>s13._omp_fn.0<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_24_1-2"  data-_i="1" data-_j="2"  data-_p="s13_gcc_O3_10" class=" _centered"  style="word-break:break-all;" >s13_gcc_O3</td><td id="_tr_24_1-3"  data-_i="1" data-_j="3"  data-_p="s13_gcc_O3_10" class=" _centered" >61.03</td><td id="_tr_24_1-4"  data-_i="1" data-_j="4"  data-_p="s13_gcc_O3_10" class=" _centered _table24_opt4" >1.01</td><td id="_tr_24_1-5"  data-_i="1" data-_j="5"  data-_p="s13_gcc_O3_10" class=" _centered _table24_opt5" >4</td><td id="_tr_24_1-6"  data-_i="1" data-_j="6"  data-_p="s13_gcc_O3_10" class=" _centered _table24_opt6" >8.55</td><td id="_tr_24_1-7"  data-_i="1" data-_j="7"  data-_p="s13_gcc_O3_10" class=" _table24_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_24_1"  id="_tr_24_1_1"  ondblclick="_action_26(this,2,-1, 'loops/s13_gcc_O3_7.html');"  style="cursor:pointer;"><td id="_tr_24_1_1-1"  data-_i="2" data-_j="1"  data-_p="s13_gcc_O3_7" class=" _left"  style="width:40%;word-break:break-all;" ><span onclick="_click_treed(this)" style="margin-right:5px;margin-left:15px;cursor:pointer;" >&#x25BA;</span>Loop 7 -  - s13_gcc_O3<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_24_1_1-2"  data-_i="2" data-_j="2"  data-_p="s13_gcc_O3_7" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_24_1_1-3"  data-_i="2" data-_j="3"  data-_p="s13_gcc_O3_7" class=" _centered" >8.01</td><td id="_tr_24_1_1-4"  data-_i="2" data-_j="4"  data-_p="s13_gcc_O3_7" class=" _centered _table24_opt4" >0.14</td><td id="_tr_24_1_1-5"  data-_i="2" data-_j="5"  data-_p="s13_gcc_O3_7" class=" _centered _table24_opt5" >4</td><td id="_tr_24_1_1-6"  data-_i="2" data-_j="6"  data-_p="s13_gcc_O3_7" class=" _centered _table24_opt6" >1.16</td><td id="_tr_24_1_1-7"  data-_i="2" data-_j="7"  data-_p="s13_gcc_O3_7" class=" _table24_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr class="_treed_hidden _tr_24_1_1"  id="_tr_24_1_1_1"  ondblclick="_action_26(this,3,-1, 'loops/s13_gcc_O3_8.html');"  style="cursor:pointer;"><td id="_tr_24_1_1_1-1"  data-_i="3" data-_j="1"  data-_p="s13_gcc_O3_8" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:33px;" >&#x25CB;</span>Loop 8 -  - s13_gcc_O3</td><td id="_tr_24_1_1_1-2"  data-_i="3" data-_j="2"  data-_p="s13_gcc_O3_8" class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_24_1_1_1-3"  data-_i="3" data-_j="3"  data-_p="s13_gcc_O3_8" class=" _centered" >51.81</td><td id="_tr_24_1_1_1-4"  data-_i="3" data-_j="4"  data-_p="s13_gcc_O3_8" class=" _centered _table24_opt4" >0.92</td><td id="_tr_24_1_1_1-5"  data-_i="3" data-_j="5"  data-_p="s13_gcc_O3_8" class=" _centered _table24_opt5" >4</td><td id="_tr_24_1_1_1-6"  data-_i="3" data-_j="6"  data-_p="s13_gcc_O3_8" class=" _centered _table24_opt6" >8.03</td><td id="_tr_24_1_1_1-7"  data-_i="3" data-_j="7"  data-_p="s13_gcc_O3_8" class=" _table24_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr id="_tr_24_2"  ondblclick="_action_26(this,4,-1, 'functions/libgomp.so.1.0.0_256.html');"  style="cursor:pointer;"><td id="_tr_24_2-1"  data-_i="4" data-_j="1"  data-_p="libgomp.so.1.0.0_256" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>omp_get_num_procs</td><td id="_tr_24_2-2"  data-_i="4" data-_j="2"  data-_p="libgomp.so.1.0.0_256" class=" _centered"  style="word-break:break-all;" >libgomp.so.1.0.0</td><td id="_tr_24_2-3"  data-_i="4" data-_j="3"  data-_p="libgomp.so.1.0.0_256" class=" _centered" >34.52</td><td id="_tr_24_2-4"  data-_i="4" data-_j="4"  data-_p="libgomp.so.1.0.0_256" class=" _centered _table24_opt4" >0.57</td><td id="_tr_24_2-5"  data-_i="4" data-_j="5"  data-_p="libgomp.so.1.0.0_256" class=" _centered _table24_opt5" >4</td><td id="_tr_24_2-6"  data-_i="4" data-_j="6"  data-_p="libgomp.so.1.0.0_256" class=" _centered _table24_opt6" >13.72</td><td id="_tr_24_2-7"  data-_i="4" data-_j="7"  data-_p="libgomp.so.1.0.0_256" class=" _table24_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr id="_tr_24_3"  ondblclick="_action_26(this,5,-1, 'functions/libgomp.so.1.0.0_240.html');"  style="cursor:pointer;"><td id="_tr_24_3-1"  data-_i="5" data-_j="1"  data-_p="libgomp.so.1.0.0_240" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>omp_in_final</td><td id="_tr_24_3-2"  data-_i="5" data-_j="2"  data-_p="libgomp.so.1.0.0_240" class=" _centered"  style="word-break:break-all;" >libgomp.so.1.0.0</td><td id="_tr_24_3-3"  data-_i="5" data-_j="3"  data-_p="libgomp.so.1.0.0_240" class=" _centered" >3.55</td><td id="_tr_24_3-4"  data-_i="5" data-_j="4"  data-_p="libgomp.so.1.0.0_240" class=" _centered _table24_opt4"  style="background:#C69E3B;" >0.06</td><td id="_tr_24_3-5"  data-_i="5" data-_j="5"  data-_p="libgomp.so.1.0.0_240" class=" _centered _table24_opt5" >4</td><td id="_tr_24_3-6"  data-_i="5" data-_j="6"  data-_p="libgomp.so.1.0.0_240" class=" _centered _table24_opt6" >4.64</td><td id="_tr_24_3-7"  data-_i="5" data-_j="7"  data-_p="libgomp.so.1.0.0_240" class=" _table24_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr id="_tr_24_4"  ondblclick="_action_26(this,6,-1, 'functions/libgomp.so.1.0.0_209.html');"  style="cursor:pointer;"><td id="_tr_24_4-1"  data-_i="6" data-_j="1"  data-_p="libgomp.so.1.0.0_209" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>omp_get_num_threads</td><td id="_tr_24_4-2"  data-_i="6" data-_j="2"  data-_p="libgomp.so.1.0.0_209" class=" _centered"  style="word-break:break-all;" >libgomp.so.1.0.0</td><td id="_tr_24_4-3"  data-_i="6" data-_j="3"  data-_p="libgomp.so.1.0.0_209" class=" _centered" >0.53</td><td id="_tr_24_4-4"  data-_i="6" data-_j="4"  data-_p="libgomp.so.1.0.0_209" class=" _centered _table24_opt4"  style="background:#C69E3B;" >0.01</td><td id="_tr_24_4-5"  data-_i="6" data-_j="5"  data-_p="libgomp.so.1.0.0_209" class=" _centered _table24_opt5" >4</td><td id="_tr_24_4-6"  data-_i="6" data-_j="6"  data-_p="libgomp.so.1.0.0_209" class=" _centered _table24_opt6" >0.22</td><td id="_tr_24_4-7"  data-_i="6" data-_j="7"  data-_p="libgomp.so.1.0.0_209" class=" _table24_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr id="_tr_24_5"  ondblclick="_action_26(this,7,-1, 'functions/libgomp.so.1.0.0_226.html');"  style="cursor:pointer;"><td id="_tr_24_5-1"  data-_i="7" data-_j="1"  data-_p="libgomp.so.1.0.0_226" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>GOMP_single_copy_end</td><td id="_tr_24_5-2"  data-_i="7" data-_j="2"  data-_p="libgomp.so.1.0.0_226" class=" _centered"  style="word-break:break-all;" >libgomp.so.1.0.0</td><td id="_tr_24_5-3"  data-_i="7" data-_j="3"  data-_p="libgomp.so.1.0.0_226" class=" _centered" >0.23</td><td id="_tr_24_5-4"  data-_i="7" data-_j="4"  data-_p="libgomp.so.1.0.0_226" class=" _centered _table24_opt4"  style="background:#C69E3B;" >0.01</td><td id="_tr_24_5-5"  data-_i="7" data-_j="5"  data-_p="libgomp.so.1.0.0_226" class=" _centered _table24_opt5" >1</td><td id="_tr_24_5-6"  data-_i="7" data-_j="6"  data-_p="libgomp.so.1.0.0_226" class=" _centered _table24_opt6" >0.00</td><td id="_tr_24_5-7"  data-_i="7" data-_j="7"  data-_p="libgomp.so.1.0.0_226" class=" _table24_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr id="_tr_24_6"  ondblclick="_action_26(this,8,-1, 'functions/libgomp.so.1.0.0_205.html');"  style="cursor:pointer;"><td id="_tr_24_6-1"  data-_i="8" data-_j="1"  data-_p="libgomp.so.1.0.0_205" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>GOMP_parallel</td><td id="_tr_24_6-2"  data-_i="8" data-_j="2"  data-_p="libgomp.so.1.0.0_205" class=" _centered"  style="word-break:break-all;" >libgomp.so.1.0.0</td><td id="_tr_24_6-3"  data-_i="8" data-_j="3"  data-_p="libgomp.so.1.0.0_205" class=" _centered" >0.08</td><td id="_tr_24_6-4"  data-_i="8" data-_j="4"  data-_p="libgomp.so.1.0.0_205" class=" _centered _table24_opt4"  style="background:#A52B12;" >0</td><td id="_tr_24_6-5"  data-_i="8" data-_j="5"  data-_p="libgomp.so.1.0.0_205" class=" _centered _table24_opt5" >1</td><td id="_tr_24_6-6"  data-_i="8" data-_j="6"  data-_p="libgomp.so.1.0.0_205" class=" _centered _table24_opt6" >0.00</td><td id="_tr_24_6-7"  data-_i="8" data-_j="7"  data-_p="libgomp.so.1.0.0_205" class=" _table24_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
+<tr id="_tr_24_7"  ondblclick="_action_26(this,9,-1, 'functions/s13_gcc_O3_11.html');"  style="cursor:pointer;"><td id="_tr_24_7-1"  data-_i="9" data-_j="1"  data-_p="s13_gcc_O3_11" class=" _left"  style="width:40%;word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>s13</td><td id="_tr_24_7-2"  data-_i="9" data-_j="2"  data-_p="s13_gcc_O3_11" class=" _centered"  style="word-break:break-all;" >s13_gcc_O3</td><td id="_tr_24_7-3"  data-_i="9" data-_j="3"  data-_p="s13_gcc_O3_11" class=" _centered" >0.08</td><td id="_tr_24_7-4"  data-_i="9" data-_j="4"  data-_p="s13_gcc_O3_11" class=" _centered _table24_opt4"  style="background:#A52B12;" >0</td><td id="_tr_24_7-5"  data-_i="9" data-_j="5"  data-_p="s13_gcc_O3_11" class=" _centered _table24_opt5" >1</td><td id="_tr_24_7-6"  data-_i="9" data-_j="6"  data-_p="s13_gcc_O3_11" class=" _centered _table24_opt6" >0.00</td><td id="_tr_24_7-7"  data-_i="9" data-_j="7"  data-_p="s13_gcc_O3_11" class=" _table24_opt7 _tcol_hidden"  style="word-break:break-all;" ></td></tr>
 </table></div>
 <script>
-document.getElementById("_tr_13_2_1").addEventListener('contextmenu', event => event.preventDefault());
-document.getElementById("_tr_13_2_2").addEventListener('contextmenu', event => event.preventDefault());
-document.getElementById("_tr_13_2_2_2").addEventListener('contextmenu', event => event.preventDefault());
-function _action_28 (obj, i, j, p){
-           document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/empty_lb.html\"></object>";
-           var modal = document.getElementById('MaqaoModal');
-           modal.style.display = "block";
-}
-function _action_13 (obj, i, j, p){
-           open("loops/empty_loop.html?loop="+p+"");
-}
-function _action_15 (obj, i, j, p){
+function _action_26 (obj, i, j, p){
            open(""+p+"");
 }
 </script>
@@ -136,19 +125,19 @@ width: 250px;
 </style>
 <div class="menu" data-visible=false id="mctxMenu0">
   <ul class="menu-options">
-    <li class="menu-option" id="mctxMenu0_1" onclick="_action_16('_p', '_p0_1')" oncontextmenu="_action_16('_p', '_p0_1')" >Load Distribution</li>
-    <li class="menu-option" id="mctxMenu0_2" onclick="_action_18('_p', '_p0_2')" oncontextmenu="_action_18('_p', '_p0_2')" >Sorted Load Distribution</li>
-    <li class="menu-option" id="mctxMenu0_3" onclick="_action_17('_p', '_p0_3')" oncontextmenu="_action_17('_p', '_p0_3')" >Load Distribution All Threads</li>
-    <li class="menu-option" id="mctxMenu0_4" onclick="_action_20('_p', '_p0_4')" oncontextmenu="_action_20('_p', '_p0_4')" >Load Callchains</li>
-    <li class="menu-option" id="mctxMenu0_5" onclick="_action_21('_p', '_p0_5')" oncontextmenu="_action_21('_p', '_p0_5')" >Go to report ...</li>
+    <li class="menu-option" id="mctxMenu0_1" onclick="_action_27('_p', '_p0_1')" oncontextmenu="_action_27('_p', '_p0_1')" >Load Distribution</li>
+    <li class="menu-option" id="mctxMenu0_2" onclick="_action_29('_p', '_p0_2')" oncontextmenu="_action_29('_p', '_p0_2')" >Sorted Load Distribution</li>
+    <li class="menu-option" id="mctxMenu0_3" onclick="_action_28('_p', '_p0_3')" oncontextmenu="_action_28('_p', '_p0_3')" >Load Distribution All Threads</li>
+    <li class="menu-option" id="mctxMenu0_4" onclick="_action_31('_p', '_p0_4')" oncontextmenu="_action_31('_p', '_p0_4')" >Load Callchains</li>
+    <li class="menu-option" id="mctxMenu0_5" onclick="_action_32('_p', '_p0_5')" oncontextmenu="_action_32('_p', '_p0_5')" >Go to report ...</li>
   </ul>
 </div>
 <div class="menu" data-visible=false id="mctxMenu3">
   <ul class="menu-options">
-    <li class="menu-option" id="mctxMenu3_1" onclick="_action_22('_p', '_p3_1')" oncontextmenu="_action_22('_p', '_p3_1')" >Load Distribution</li>
-    <li class="menu-option" id="mctxMenu3_2" onclick="_action_24('_p', '_p3_2')" oncontextmenu="_action_24('_p', '_p3_2')" >Sorted Load Distribution</li>
-    <li class="menu-option" id="mctxMenu3_3" onclick="_action_23('_p', '_p3_3')" oncontextmenu="_action_23('_p', '_p3_3')" >Load Distribution All Threads</li>
-    <li class="menu-option" id="mctxMenu3_4" onclick="_action_26('_p', '_p3_4')" oncontextmenu="_action_26('_p', '_p3_4')" >Load Callchains</li>
+    <li class="menu-option" id="mctxMenu3_1" onclick="_action_33('_p', '_p3_1')" oncontextmenu="_action_33('_p', '_p3_1')" >Load Distribution</li>
+    <li class="menu-option" id="mctxMenu3_2" onclick="_action_35('_p', '_p3_2')" oncontextmenu="_action_35('_p', '_p3_2')" >Sorted Load Distribution</li>
+    <li class="menu-option" id="mctxMenu3_3" onclick="_action_34('_p', '_p3_3')" oncontextmenu="_action_34('_p', '_p3_3')" >Load Distribution All Threads</li>
+    <li class="menu-option" id="mctxMenu3_4" onclick="_action_37('_p', '_p3_4')" oncontextmenu="_action_37('_p', '_p3_4')" >Load Callchains</li>
   </ul>
 </div>
 <script>
@@ -182,7 +171,7 @@ document.addEventListener("click", e => {
 });
 document.getElementById("mctxMenu0").addEventListener('contextmenu', event => event.preventDefault());
 
-_ids = ["_tr_13_1", "_tr_13_2", "_tr_13_3"];
+_ids = ["_tr_24_1", "_tr_24_2", "_tr_24_3", "_tr_24_4", "_tr_24_5", "_tr_24_6", "_tr_24_7"];
 for (var i = 0; i < _ids.length; i++) {
   var elem = document.getElementById(_ids[i]);
   elem.addEventListener("contextmenu", e => {
@@ -208,32 +197,32 @@ for (var i = 0; i < _ids.length; i++) {
     return false;
   });
 }
-function _action_16 (p, pm){
+function _action_27 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+".html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_18 (p, pm){
+function _action_29 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+"_sorted.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_17 (p, pm){
+function _action_28 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+"_all.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_20 (p, pm){
+function _action_31 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/fct_"+_global_elem.dataset._p+"_callchains.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_21 (p, pm){
+function _action_32 (p, pm){
            open("functions/"+_global_elem.dataset._p+".html", "_self");
 }
 document.getElementById("mctxMenu3").addEventListener('contextmenu', event => event.preventDefault());
 
-_ids = ["_tr_13_1_1", "_tr_13_1_1_1", "_tr_13_2_2_1"];
+_ids = ["_tr_24_1_1", "_tr_24_1_1_1"];
 for (var i = 0; i < _ids.length; i++) {
   var elem = document.getElementById(_ids[i]);
   elem.addEventListener("contextmenu", e => {
@@ -259,22 +248,22 @@ for (var i = 0; i < _ids.length; i++) {
     return false;
   });
 }
-function _action_22 (p, pm){
+function _action_33 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+".html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_24 (p, pm){
+function _action_35 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+"_sorted.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_23 (p, pm){
+function _action_34 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+"_all.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
 }
-function _action_26 (p, pm){
+function _action_37 (p, pm){
            document.getElementById("maqao_modal-body").innerHTML="<object id=\"maqao_modal-body_content\" type=\"text/html\" data=\"b_charts/"+_global_elem.dataset._p+"_callchains.html\"></object>";
            var modal = document.getElementById('MaqaoModal');
            modal.style.display = "block";
@@ -282,8 +271,8 @@ function _action_26 (p, pm){
 </script>
 <script>
 addLoadEvent(function(){
-  var boxs_on  = ["_table13_opt_all","_table13_opt4", "_table13_opt5", "_table13_opt6", ];
-  var boxs_off = ["_table13_opt7", ];
+  var boxs_on  = ["_table24_opt_all","_table24_opt4", "_table24_opt5", "_table24_opt6", ];
+  var boxs_off = ["_table24_opt7", ];
   for (var i = 0; i < boxs_on.length; i++) {
     var obj = document.getElementById(boxs_on[i]).checked = true;
   }
@@ -291,8 +280,8 @@ addLoadEvent(function(){
     var obj = document.getElementById(boxs_off[i]).checked = false;
   }
 });
-var list_opts_table13 = ['_table13_opt4','_table13_opt5','_table13_opt6','_table13_opt7',];addLoadEvent (function (){
-  _check_all_checkbox_ ("_table13_opt_all", "list_opts_table13");
+var list_opts_table24 = ['_table24_opt4','_table24_opt5','_table24_opt6','_table24_opt7',];addLoadEvent (function (){
+  _check_all_checkbox_ ("_table24_opt_all", "list_opts_table24");
 });
 </script>
 </div></div><script class="code">
@@ -317,7 +306,7 @@ addLoadEvent(function(){
   // Fill some data for each rows that contains all coverages
   // These data are used to update coverages when some modules are filtered
   // by the function _upd_table
-  var table   = document.getElementById("_treed_table_13");
+  var table   = document.getElementById("_treed_table_24");
   var nb_runs = 1;
   for (var i = 1, row; row = table.rows[i]; i++) {
     for (var j = 0; j < nb_runs; j++) {
@@ -326,7 +315,7 @@ addLoadEvent(function(){
   }
 });
 function _upd_table() {
-  var tab = document.getElementById("_treed_table_13");
+  var tab = document.getElementById("_treed_table_24");
   var nb_rows = tab.childNodes[0].rows.length;
   var rows = tab.childNodes[0].rows;
   for (var r = 0; r < 1; r++) {
@@ -384,7 +373,7 @@ function _upd_base_run () {
   var selected_radio_value = document.querySelector('input[name="radio_run"]:checked').value;
 
   // Sort functions based on the reference run
-  var table = document.getElementById ("_treed_table_13");
+  var table = document.getElementById ("_treed_table_24");
 
   // 1/ Build a table of loops based on their function, a list of functions and compute coverage for each module
   var functions_list  = [];

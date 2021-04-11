@@ -66,11 +66,11 @@ function addLoadEvent(func) {
 <div id="maqao_content">
 
 <div class="_fixed_box" ><h3 class="_header">s13_gcc_O3 - Loop 7 - Load Distribution All Threads</h3>
-<div class="_content"><div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_56" style="height:500px" ></div></div>
+<div class="_content"><div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_74" style="height:500px" ></div></div>
 <script class="code">
   $(document).ready(function(){
-    var ordinals = ['pop-os_8468_8468'];
-    var data = [{value: 11.11}];
+    var ordinals = ['pop-os_10890_10890','pop-os_10890_10903','pop-os_10890_10904','pop-os_10890_10905'];
+    var data = [{value: 9.85},{value: 8.47},{value: 6.82},{value: 7.34}];
     var widthgl  = 900;
     var widthin  = 900;
     var heightgl = 400;
@@ -85,7 +85,7 @@ function addLoadEvent(func) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_56')
+    const svg = d3.select('#chart_cat_74')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -132,13 +132,13 @@ function addLoadEvent(func) {
       .text("Coverage");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_56')
+      .attr('id', 'zoom_chart_74')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_56_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_74_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -178,11 +178,11 @@ function addLoadEvent(func) {
     }
   });
 </script>
-<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_57" style="height:500px" ></div></div>
+<div style="margin: 10px; overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_75" style="height:500px" ></div></div>
 <script class="code">
   $(document).ready(function(){
-    var ordinals = ['pop-os_8468_8468'];
-    var data = [{value: 0.61}];
+    var ordinals = ['pop-os_10890_10890','pop-os_10890_10903','pop-os_10890_10904','pop-os_10890_10905'];
+    var data = [{value: 0.13},{value: 0.15},{value: 0.12},{value: 0.13}];
     var widthgl  = 900;
     var widthin  = 900;
     var heightgl = 400;
@@ -197,7 +197,7 @@ function addLoadEvent(func) {
     height = heightgl - margin.top - margin.bottom,
     radius = (Math.min(width, height) / 2) - 10,
     node;
-    const svg = d3.select('#chart_cat_57')
+    const svg = d3.select('#chart_cat_75')
         .append('svg')
         .attr('width', widthin)
         .attr('height', heightin)
@@ -244,13 +244,13 @@ function addLoadEvent(func) {
       .text("Time");
     let bars = svg.append('g')
       .attr('clip-path','url(#my-clip-path)')
-      .attr('id', 'zoom_chart_57')
+      .attr('id', 'zoom_chart_75')
       .selectAll('.bar')
       .data(data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('id', function (d, i){ return 'zoom_chart_57_'+i;})
+      .attr('id', function (d, i){ return 'zoom_chart_75_'+i;})
       .attr('x', function(d, i){
         return xScale(i) - xBand.bandwidth()*0.9/2
       })
@@ -292,11 +292,29 @@ function addLoadEvent(func) {
 </script>
 </div></div><script>
 document.addEventListener("DOMContentLoaded", function() {
-  $("#zoom_chart_56_0").click( function () {
-    window.open("../topo/_pop-os_8468_8468.html");
+  $("#zoom_chart_74_0").click( function () {
+    window.open("../topo/_pop-os_10890_10890.html");
   });
-  $("#zoom_chart_57_0").click( function () {
-    window.open("../topo/_pop-os_8468_8468.html");
+  $("#zoom_chart_74_1").click( function () {
+    window.open("../topo/_pop-os_10890_10903.html");
+  });
+  $("#zoom_chart_74_2").click( function () {
+    window.open("../topo/_pop-os_10890_10904.html");
+  });
+  $("#zoom_chart_74_3").click( function () {
+    window.open("../topo/_pop-os_10890_10905.html");
+  });
+  $("#zoom_chart_75_0").click( function () {
+    window.open("../topo/_pop-os_10890_10890.html");
+  });
+  $("#zoom_chart_75_1").click( function () {
+    window.open("../topo/_pop-os_10890_10903.html");
+  });
+  $("#zoom_chart_75_2").click( function () {
+    window.open("../topo/_pop-os_10890_10904.html");
+  });
+  $("#zoom_chart_75_3").click( function () {
+    window.open("../topo/_pop-os_10890_10905.html");
   });
 }, false);
 </script>
